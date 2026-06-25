@@ -39,6 +39,12 @@
       <origin xyz="${wheel_x_offset} ${y_reflect * wheel_separation / 2} ${wheel_z_offset}" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
     </joint>
+
+    <gazebo reference="${prefix}_wheel_link">
+      <material>Gazebo/DarkGrey</material>
+      <mu1>1.0</mu1>
+      <mu2>1.0</mu2>
+    </gazebo>
   </xacro:macro>
 
   <xacro:drive_wheel prefix="left" y_reflect="1"/>
@@ -75,5 +81,11 @@
     <child link="caster_wheel_link"/>
     <origin xyz="${caster_x_offset} 0 ${caster_z_offset}" rpy="0 0 0"/>
   </joint>
+
+  <gazebo reference="caster_wheel_link">
+    <material>Gazebo/DarkGrey</material>
+    <mu1>0.01</mu1>
+    <mu2>0.01</mu2>
+  </gazebo>
 
 </robot>

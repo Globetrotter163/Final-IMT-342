@@ -39,4 +39,8 @@
     </inertial>
   </link>
 
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
 </robot>
