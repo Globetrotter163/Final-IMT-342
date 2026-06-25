@@ -1,0 +1,4 @@
+warehouse_interfaces/ProductRecord product
+---
+bool success
+string message

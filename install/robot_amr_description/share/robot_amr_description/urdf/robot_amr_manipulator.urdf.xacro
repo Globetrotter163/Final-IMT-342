@@ -1,8 +1,1 @@
-<?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="amr_manipulator">
-    <xacro:include filename="amr_base.xacro"/>
-    <xacro:include filename="sensors.xacro"/>
-    <xacro:include filename="arm.xacro"/>
-    <xacro:include filename="ros2_control.xacro"/>
-    <xacro:include filename="gazebo.xacro"/>
-</robot>
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/robot_amr_description/urdf/robot_amr_manipulator.urdf.xacro

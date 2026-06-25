@@ -1,0 +1,6 @@
+setup.py
+warehouse_interfaces/__init__.py
+warehouse_interfaces.egg-info/PKG-INFO
+warehouse_interfaces.egg-info/SOURCES.txt
+warehouse_interfaces.egg-info/dependency_links.txt
+warehouse_interfaces.egg-info/top_level.txt

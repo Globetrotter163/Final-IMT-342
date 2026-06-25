@@ -1,0 +1,46 @@
+[0.007s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_robot_description': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_robot_description -DCMAKE_INSTALL_PREFIX=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description
+[0.015s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.226s] Error parsing '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_robot_description/package.xml':
+[1.544s] Traceback (most recent call last):
+[1.545s]   File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 610, in parse_package_string
+[1.545s]     root = dom.parseString(data)
+[1.545s]            ^^^^^^^^^^^^^^^^^^^^^
+[1.545s]   File "/usr/lib/python3.12/xml/dom/minidom.py", line 1995, in parseString
+[1.545s]     return expatbuilder.parseString(string)
+[1.545s]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1.545s]   File "/usr/lib/python3.12/xml/dom/expatbuilder.py", line 922, in parseString
+[1.545s]     return builder.parseString(string)
+[1.545s]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1.545s]   File "/usr/lib/python3.12/xml/dom/expatbuilder.py", line 220, in parseString
+[1.545s]     parser.Parse(string, True)
+[1.545s] xml.parsers.expat.ExpatError: junk after document element: line 12, column 0
+[1.545s] 
+[1.545s] During handling of the above exception, another exception occurred:
+[1.545s] 
+[1.546s] Traceback (most recent call last):
+[1.546s]   File "/opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 150, in <module>
+[1.546s]     main()
+[1.546s]   File "/opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 53, in main
+[1.546s]     raise e
+[1.546s]   File "/opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 49, in main
+[1.546s]     package = parse_package_string(
+[1.546s]               ^^^^^^^^^^^^^^^^^^^^^
+[1.546s]   File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 612, in parse_package_string
+[1.546s]     raise InvalidPackage('The manifest contains invalid XML:\n%s' % ex, filename)
+[1.546s] catkin_pkg.package.InvalidPackage: Error(s) in package '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_robot_description/package.xml':
+[1.546s] The manifest contains invalid XML:
+[1.546s] junk after document element: line 12, column 0
+[1.574s] CMake Error at /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:95 (message):
+[1.574s]   execute_process(/usr/bin/python3
+[1.574s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py
+[1.574s]   /home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_robot_description/package.xml
+[1.574s]   /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_robot_description/ament_cmake_core/package.cmake)
+[1.574s]   returned error code 1
+[1.574s] Call Stack (most recent call first):
+[1.574s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:49 (_ament_package_xml)
+[1.575s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:63 (ament_package_xml)
+[1.575s]   CMakeLists.txt:6 (ament_package)
+[1.575s] 
+[1.575s] 
+[1.575s] -- Configuring incomplete, errors occurred!
+[1.577s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_robot_description' returned '1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_robot_description -DCMAKE_INSTALL_PREFIX=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description

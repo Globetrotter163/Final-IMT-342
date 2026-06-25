@@ -1,0 +1,15 @@
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/ament_index/resource_index/package_run_dependencies/warehouse_inventory
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/ament_index/resource_index/parent_prefix_path/warehouse_inventory
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/environment/ament_prefix_path.sh
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/environment/ament_prefix_path.dsv
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/environment/path.sh
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/environment/path.dsv
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/local_setup.bash
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/local_setup.sh
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/local_setup.zsh
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/local_setup.dsv
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/package.dsv
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/ament_index/resource_index/packages/warehouse_inventory
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/cmake/warehouse_inventoryConfig.cmake
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/cmake/warehouse_inventoryConfig-version.cmake
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/package.xml

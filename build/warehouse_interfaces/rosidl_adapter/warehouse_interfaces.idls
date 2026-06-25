@@ -1,0 +1,7 @@
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_adapter/warehouse_interfaces:msg/DetectedProduct.idl
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_adapter/warehouse_interfaces:msg/ProductRecord.idl
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_adapter/warehouse_interfaces:msg/StorageLocation.idl
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_adapter/warehouse_interfaces:srv/RegisterProduct.idl
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_adapter/warehouse_interfaces:srv/AssignStorageLocation.idl
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_adapter/warehouse_interfaces:srv/UpdateInventory.idl
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_adapter/warehouse_interfaces:action/ExecuteStorageMission.idl

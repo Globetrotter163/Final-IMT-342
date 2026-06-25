@@ -1,0 +1,15 @@
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/ament_index/resource_index/package_run_dependencies/warehouse_manipulation
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/ament_index/resource_index/parent_prefix_path/warehouse_manipulation
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/environment/ament_prefix_path.sh
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/environment/ament_prefix_path.dsv
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/environment/path.sh
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/environment/path.dsv
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/local_setup.bash
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/local_setup.sh
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/local_setup.zsh
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/local_setup.dsv
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/package.dsv
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/ament_index/resource_index/packages/warehouse_manipulation
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/cmake/warehouse_manipulationConfig.cmake
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/cmake/warehouse_manipulationConfig-version.cmake
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/package.xml

@@ -1,0 +1,19 @@
+{
+  "package_name": "warehouse_interfaces",
+  "output_dir": "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_generator_type_description/warehouse_interfaces",
+  "idl_tuples": [
+    "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_adapter/warehouse_interfaces:msg/DetectedProduct.idl",
+    "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_adapter/warehouse_interfaces:msg/ProductRecord.idl",
+    "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_adapter/warehouse_interfaces:msg/StorageLocation.idl",
+    "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_adapter/warehouse_interfaces:srv/RegisterProduct.idl",
+    "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_adapter/warehouse_interfaces:srv/AssignStorageLocation.idl",
+    "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_adapter/warehouse_interfaces:srv/UpdateInventory.idl",
+    "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_adapter/warehouse_interfaces:action/ExecuteStorageMission.idl"
+  ],
+  "include_paths": [
+    "service_msgs:/opt/ros/jazzy/share/service_msgs",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces",
+    "action_msgs:/opt/ros/jazzy/share/action_msgs",
+    "unique_identifier_msgs:/opt/ros/jazzy/share/unique_identifier_msgs"
+  ]
+}

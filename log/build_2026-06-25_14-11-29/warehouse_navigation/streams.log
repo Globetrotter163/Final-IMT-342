@@ -1,0 +1,46 @@
+[0.025s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_navigation -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation
+[0.120s] -- The C compiler identification is GNU 13.3.0
+[0.212s] -- The CXX compiler identification is GNU 13.3.0
+[0.242s] -- Detecting C compiler ABI info
+[0.374s] -- Detecting C compiler ABI info - done
+[0.398s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.399s] -- Detecting C compile features
+[0.400s] -- Detecting C compile features - done
+[0.409s] -- Detecting CXX compiler ABI info
+[0.586s] -- Detecting CXX compiler ABI info - done
+[0.600s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.600s] -- Detecting CXX compile features
+[0.600s] -- Detecting CXX compile features - done
+[0.607s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.849s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.222s] -- Configuring done (1.2s)
+[1.229s] -- Generating done (0.0s)
+[1.229s] [33mCMake Warning:
+[1.229s]   Manually-specified variables were not used by the project:
+[1.229s] 
+[1.229s]     CATKIN_INSTALL_INTO_PREFIX_ROOT
+[1.229s]     CATKIN_SYMLINK_INSTALL
+[1.229s] 
+[1.229s] [0m
+[1.229s] -- Build files have been written to: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation
+[1.249s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_navigation -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation
+[1.250s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation -- -j12 -l12
+[1.308s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation -- -j12 -l12
+[1.308s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation
+[1.380s] -- Install configuration: ""
+[1.382s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/ament_index/resource_index/package_run_dependencies/warehouse_navigation
+[1.382s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/ament_index/resource_index/parent_prefix_path/warehouse_navigation
+[1.382s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/environment/ament_prefix_path.sh
+[1.382s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/environment/ament_prefix_path.dsv
+[1.382s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/environment/path.sh
+[1.382s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/environment/path.dsv
+[1.384s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/local_setup.bash
+[1.385s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/local_setup.sh
+[1.385s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/local_setup.zsh
+[1.385s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/local_setup.dsv
+[1.385s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/package.dsv
+[1.385s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/ament_index/resource_index/packages/warehouse_navigation
+[1.385s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/cmake/warehouse_navigationConfig.cmake
+[1.386s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/cmake/warehouse_navigationConfig-version.cmake
+[1.386s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/package.xml
+[1.387s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation

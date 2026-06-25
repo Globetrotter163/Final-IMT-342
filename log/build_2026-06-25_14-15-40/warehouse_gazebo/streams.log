@@ -1,0 +1,20 @@
+[0.039s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo -- -j12 -l12
+[0.120s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo -- -j12 -l12
+[0.121s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo
+[0.141s] -- Install configuration: ""
+[0.141s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo/share/ament_index/resource_index/package_run_dependencies/warehouse_gazebo
+[0.141s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo/share/ament_index/resource_index/parent_prefix_path/warehouse_gazebo
+[0.141s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo/share/warehouse_gazebo/environment/ament_prefix_path.sh
+[0.141s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo/share/warehouse_gazebo/environment/ament_prefix_path.dsv
+[0.142s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo/share/warehouse_gazebo/environment/path.sh
+[0.143s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo/share/warehouse_gazebo/environment/path.dsv
+[0.143s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo/share/warehouse_gazebo/local_setup.bash
+[0.143s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo/share/warehouse_gazebo/local_setup.sh
+[0.143s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo/share/warehouse_gazebo/local_setup.zsh
+[0.143s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo/share/warehouse_gazebo/local_setup.dsv
+[0.144s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo/share/warehouse_gazebo/package.dsv
+[0.145s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo/share/ament_index/resource_index/packages/warehouse_gazebo
+[0.145s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo/share/warehouse_gazebo/cmake/warehouse_gazeboConfig.cmake
+[0.145s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo/share/warehouse_gazebo/cmake/warehouse_gazeboConfig-version.cmake
+[0.145s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo/share/warehouse_gazebo/package.xml
+[0.188s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo

@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_generator_py/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_c.so" "TARGETS" "warehouse_interfaces_s__rosidl_typesupport_c" "DESTINATION" "lib/python3.12/site-packages/warehouse_interfaces")

@@ -1,18 +1,1 @@
-<?xml version="1.0"?>
-<robot name="robot_amr" xmlns:xacro="http://www.ros.org/wiki/xacro">
-
-  <!-- INCLUDES -->
-  <xacro:include filename="$(find robot_amr_description)/urdf/amr_base.xacro"/>
-  <xacro:include filename="$(find robot_amr_description)/urdf/arm.xacro"/>
-  <xacro:include filename="$(find robot_amr_description)/urdf/sensors.xacro"/>
-  <xacro:include filename="$(find robot_amr_description)/urdf/ros2_control.xacro"/>
-  <xacro:include filename="$(find robot_amr_description)/urdf/gazebo.xacro"/>
-
-  <!-- INSTANCIACIÓN (esto SOLO funciona si son macros) -->
-  <xacro:amr_base/>
-  <xacro:arm/>
-  <xacro:sensors/>
-  <xacro:ros2_control/>
-  <xacro:gazebo/>
-
-</robot>
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/robot_amr_description/urdf/robot.urdf.xacro

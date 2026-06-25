@@ -1,0 +1,12 @@
+from warehouse_interfaces.srv._assign_storage_location import AssignStorageLocation  # noqa: F401
+from warehouse_interfaces.srv._assign_storage_location import AssignStorageLocation_Event  # noqa: F401
+from warehouse_interfaces.srv._assign_storage_location import AssignStorageLocation_Request  # noqa: F401
+from warehouse_interfaces.srv._assign_storage_location import AssignStorageLocation_Response  # noqa: F401
+from warehouse_interfaces.srv._register_product import RegisterProduct  # noqa: F401
+from warehouse_interfaces.srv._register_product import RegisterProduct_Event  # noqa: F401
+from warehouse_interfaces.srv._register_product import RegisterProduct_Request  # noqa: F401
+from warehouse_interfaces.srv._register_product import RegisterProduct_Response  # noqa: F401
+from warehouse_interfaces.srv._update_inventory import UpdateInventory  # noqa: F401
+from warehouse_interfaces.srv._update_inventory import UpdateInventory_Event  # noqa: F401
+from warehouse_interfaces.srv._update_inventory import UpdateInventory_Request  # noqa: F401
+from warehouse_interfaces.srv._update_inventory import UpdateInventory_Response  # noqa: F401
