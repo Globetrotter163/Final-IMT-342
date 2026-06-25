@@ -51,7 +51,9 @@ def generate_launch_description():
                 '/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry',
                 '/tf@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V',
                 '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
-                '/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model'
+                '/joint_states@sensor_msgs/msg/JointState[gz.msgs.Model',
+                '/camera/image_raw@sensor_msgs/msg/Image[gz.msgs.Image',
+                '/camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo'
             ],
             output='screen'
         )

@@ -8,6 +8,7 @@
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/robot_amr_description/share/robot_amr_description/urdf/robot_amr_manipulator.urdf.xacro
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/robot_amr_description/share/robot_amr_description/launch/gazebo.launch.py
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/robot_amr_description/share/robot_amr_description/launch/display.launch.py
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/robot_amr_description/lib/robot_amr_description/read_camera.py
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/robot_amr_description/share/ament_index/resource_index/package_run_dependencies/robot_amr_description
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/robot_amr_description/share/ament_index/resource_index/parent_prefix_path/robot_amr_description
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/robot_amr_description/share/robot_amr_description/environment/ament_prefix_path.sh

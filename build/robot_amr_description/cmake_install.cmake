@@ -53,6 +53,10 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robot_amr_description" TYPE PROGRAM FILES "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/robot_amr_description/scripts/read_camera.py")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/robot_amr_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_amr_description")
 endif()
 
