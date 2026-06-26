@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_manipulation/demo_pick_place" "TARGETS" "demo_pick_place" "DESTINATION" "lib/warehouse_manipulation")

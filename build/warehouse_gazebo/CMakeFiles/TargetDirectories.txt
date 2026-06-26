@@ -1,9 +1,0 @@
-/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo/CMakeFiles/uninstall.dir
-/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo/CMakeFiles/warehouse_gazebo_uninstall.dir
-/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo/CMakeFiles/test.dir
-/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo/CMakeFiles/edit_cache.dir
-/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo/CMakeFiles/rebuild_cache.dir
-/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo/CMakeFiles/list_install_components.dir
-/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo/CMakeFiles/install.dir
-/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo/CMakeFiles/install/local.dir
-/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo/CMakeFiles/install/strip.dir

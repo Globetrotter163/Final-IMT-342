@@ -1,1 +1,0 @@
-/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_generator_cpp/warehouse_interfaces/srv/detail/update_inventory__type_support.hpp

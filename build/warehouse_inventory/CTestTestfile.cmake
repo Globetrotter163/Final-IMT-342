@@ -1,9 +1,0 @@
-# CMake generated Testfile for 
-# Source directory: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_inventory
-# Build directory: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory
-# 
-# This file includes the relevant testing commands required for 
-# testing this directory and lists subdirectories to be tested as well.
-add_test(test_inventory_store "/usr/bin/python3" "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml" "--package-name" "warehouse_inventory" "--output-file" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/ament_cmake_gtest/test_inventory_store.txt" "--command" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_inventory_store" "--gtest_output=xml:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml")
-set_tests_properties(test_inventory_store PROPERTIES  LABELS "gtest" REQUIRED_FILES "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_inventory_store" TIMEOUT "60" WORKING_DIRECTORY "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory" _BACKTRACE_TRIPLES "/opt/ros/jazzy/share/ament_cmake_test/cmake/ament_add_test.cmake;125;add_test;/opt/ros/jazzy/share/ament_cmake_gtest/cmake/ament_add_gtest_test.cmake;95;ament_add_test;/opt/ros/jazzy/share/ament_cmake_gtest/cmake/ament_add_gtest.cmake;93;ament_add_gtest_test;/home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_inventory/CMakeLists.txt;46;ament_add_gtest;/home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_inventory/CMakeLists.txt;0;")
-subdirs("gtest")

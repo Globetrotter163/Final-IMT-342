@@ -1,1 +1,0 @@
-/home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/robot_amr_description/scripts/read_camera.py

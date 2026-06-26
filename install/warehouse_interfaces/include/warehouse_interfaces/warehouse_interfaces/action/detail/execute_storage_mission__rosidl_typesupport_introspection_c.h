@@ -1,1 +1,0 @@
-/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_typesupport_introspection_c/warehouse_interfaces/action/detail/execute_storage_mission__rosidl_typesupport_introspection_c.h

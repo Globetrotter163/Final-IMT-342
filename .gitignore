@@ -1,0 +1,30 @@
+# ROS 2 / colcon generated artifacts
+build/
+install/
+log/
+
+# Local agent state and tool caches
+.agents/
+.codex/
+AGENT_*.md
+
+# Runtime databases and generated local data
+database/*.db
+database/*.sqlite
+database/*.sqlite3
+
+# Generated debug/visualization files
+frames_*.gv
+frames_*.pdf
+test.urdf
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# CMake/editor/local environment noise
+CMakeFiles/
+CMakeCache.txt
+.env
+.vscode/

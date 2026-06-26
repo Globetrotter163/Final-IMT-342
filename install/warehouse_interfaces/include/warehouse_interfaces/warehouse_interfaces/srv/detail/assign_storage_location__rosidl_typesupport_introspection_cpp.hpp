@@ -1,1 +1,0 @@
-/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_typesupport_introspection_cpp/warehouse_interfaces/srv/detail/assign_storage_location__rosidl_typesupport_introspection_cpp.hpp
