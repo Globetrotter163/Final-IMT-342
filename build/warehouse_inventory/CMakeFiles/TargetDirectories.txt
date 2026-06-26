@@ -1,5 +1,8 @@
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CMakeFiles/uninstall.dir
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CMakeFiles/warehouse_inventory_uninstall.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CMakeFiles/inventory_store.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CMakeFiles/inventory_manager.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CMakeFiles/test_inventory_store.dir
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CMakeFiles/test.dir
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CMakeFiles/edit_cache.dir
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CMakeFiles/rebuild_cache.dir
@@ -7,3 +10,12 @@
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CMakeFiles/install.dir
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CMakeFiles/install/local.dir
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CMakeFiles/install/strip.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/gtest/CMakeFiles/gtest.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/gtest/CMakeFiles/gtest_main.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/gtest/CMakeFiles/test.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/gtest/CMakeFiles/edit_cache.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/gtest/CMakeFiles/rebuild_cache.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/gtest/CMakeFiles/list_install_components.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/gtest/CMakeFiles/install.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/gtest/CMakeFiles/install/local.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/gtest/CMakeFiles/install/strip.dir

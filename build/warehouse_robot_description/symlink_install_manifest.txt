@@ -1,6 +1,9 @@
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/urdf/arm.xacro
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/urdf/arm_mount.xacro
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/urdf/base.xacro
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/urdf/gripper.xacro
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/urdf/robot.urdf.xacro
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/urdf/ros2_control.xacro
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/urdf/sensors.xacro
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/urdf/wheels.xacro
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/launch/display.launch.py

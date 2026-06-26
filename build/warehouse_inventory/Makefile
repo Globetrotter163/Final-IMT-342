@@ -197,6 +197,143 @@ warehouse_inventory_uninstall/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/warehouse_inventory_uninstall.dir/build.make CMakeFiles/warehouse_inventory_uninstall.dir/build
 .PHONY : warehouse_inventory_uninstall/fast
 
+#=============================================================================
+# Target rules for targets named inventory_store
+
+# Build rule for target.
+inventory_store: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 inventory_store
+.PHONY : inventory_store
+
+# fast build rule for target.
+inventory_store/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_store.dir/build.make CMakeFiles/inventory_store.dir/build
+.PHONY : inventory_store/fast
+
+#=============================================================================
+# Target rules for targets named inventory_manager
+
+# Build rule for target.
+inventory_manager: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 inventory_manager
+.PHONY : inventory_manager
+
+# fast build rule for target.
+inventory_manager/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_manager.dir/build.make CMakeFiles/inventory_manager.dir/build
+.PHONY : inventory_manager/fast
+
+#=============================================================================
+# Target rules for targets named test_inventory_store
+
+# Build rule for target.
+test_inventory_store: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_inventory_store
+.PHONY : test_inventory_store
+
+# fast build rule for target.
+test_inventory_store/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_inventory_store.dir/build.make CMakeFiles/test_inventory_store.dir/build
+.PHONY : test_inventory_store/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+src/inventory_manager.o: src/inventory_manager.cpp.o
+.PHONY : src/inventory_manager.o
+
+# target to build an object file
+src/inventory_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_manager.dir/build.make CMakeFiles/inventory_manager.dir/src/inventory_manager.cpp.o
+.PHONY : src/inventory_manager.cpp.o
+
+src/inventory_manager.i: src/inventory_manager.cpp.i
+.PHONY : src/inventory_manager.i
+
+# target to preprocess a source file
+src/inventory_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_manager.dir/build.make CMakeFiles/inventory_manager.dir/src/inventory_manager.cpp.i
+.PHONY : src/inventory_manager.cpp.i
+
+src/inventory_manager.s: src/inventory_manager.cpp.s
+.PHONY : src/inventory_manager.s
+
+# target to generate assembly for a file
+src/inventory_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_manager.dir/build.make CMakeFiles/inventory_manager.dir/src/inventory_manager.cpp.s
+.PHONY : src/inventory_manager.cpp.s
+
+src/inventory_store.o: src/inventory_store.cpp.o
+.PHONY : src/inventory_store.o
+
+# target to build an object file
+src/inventory_store.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_store.dir/build.make CMakeFiles/inventory_store.dir/src/inventory_store.cpp.o
+.PHONY : src/inventory_store.cpp.o
+
+src/inventory_store.i: src/inventory_store.cpp.i
+.PHONY : src/inventory_store.i
+
+# target to preprocess a source file
+src/inventory_store.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_store.dir/build.make CMakeFiles/inventory_store.dir/src/inventory_store.cpp.i
+.PHONY : src/inventory_store.cpp.i
+
+src/inventory_store.s: src/inventory_store.cpp.s
+.PHONY : src/inventory_store.s
+
+# target to generate assembly for a file
+src/inventory_store.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/inventory_store.dir/build.make CMakeFiles/inventory_store.dir/src/inventory_store.cpp.s
+.PHONY : src/inventory_store.cpp.s
+
+test/test_inventory_store.o: test/test_inventory_store.cpp.o
+.PHONY : test/test_inventory_store.o
+
+# target to build an object file
+test/test_inventory_store.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_inventory_store.dir/build.make CMakeFiles/test_inventory_store.dir/test/test_inventory_store.cpp.o
+.PHONY : test/test_inventory_store.cpp.o
+
+test/test_inventory_store.i: test/test_inventory_store.cpp.i
+.PHONY : test/test_inventory_store.i
+
+# target to preprocess a source file
+test/test_inventory_store.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_inventory_store.dir/build.make CMakeFiles/test_inventory_store.dir/test/test_inventory_store.cpp.i
+.PHONY : test/test_inventory_store.cpp.i
+
+test/test_inventory_store.s: test/test_inventory_store.cpp.s
+.PHONY : test/test_inventory_store.s
+
+# target to generate assembly for a file
+test/test_inventory_store.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_inventory_store.dir/build.make CMakeFiles/test_inventory_store.dir/test/test_inventory_store.cpp.s
+.PHONY : test/test_inventory_store.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,6 +349,20 @@ help:
 	@echo "... test"
 	@echo "... uninstall"
 	@echo "... warehouse_inventory_uninstall"
+	@echo "... gtest"
+	@echo "... gtest_main"
+	@echo "... inventory_manager"
+	@echo "... inventory_store"
+	@echo "... test_inventory_store"
+	@echo "... src/inventory_manager.o"
+	@echo "... src/inventory_manager.i"
+	@echo "... src/inventory_manager.s"
+	@echo "... src/inventory_store.o"
+	@echo "... src/inventory_store.i"
+	@echo "... src/inventory_store.s"
+	@echo "... test/test_inventory_store.o"
+	@echo "... test/test_inventory_store.i"
+	@echo "... test/test_inventory_store.s"
 .PHONY : help
 
 

@@ -55,3 +55,6 @@ endforeach()
 message(STATUS "Execute custom uninstall script")
 
 # begin of custom uninstall code
+
+# uninstall files installed using the symlink install functions
+include("/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config/ament_cmake_symlink_install/ament_cmake_symlink_install_uninstall_script.cmake")

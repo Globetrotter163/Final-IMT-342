@@ -1,0 +1,26 @@
+[0.025s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_task_manager -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager
+[0.395s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.410s] -- Configuring done (0.4s)
+[0.415s] -- Generating done (0.0s)
+[0.419s] -- Build files have been written to: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager
+[0.425s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_task_manager -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager
+[0.425s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager -- -j12 -l12
+[0.486s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager -- -j12 -l12
+[0.487s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager
+[0.500s] -- Install configuration: ""
+[0.500s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/ament_index/resource_index/package_run_dependencies/warehouse_task_manager
+[0.500s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/ament_index/resource_index/parent_prefix_path/warehouse_task_manager
+[0.500s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/environment/ament_prefix_path.sh
+[0.500s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/environment/ament_prefix_path.dsv
+[0.500s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/environment/path.sh
+[0.500s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/environment/path.dsv
+[0.501s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/local_setup.bash
+[0.501s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/local_setup.sh
+[0.501s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/local_setup.zsh
+[0.502s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/local_setup.dsv
+[0.502s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/package.dsv
+[0.505s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/ament_index/resource_index/packages/warehouse_task_manager
+[0.506s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/cmake/warehouse_task_managerConfig.cmake
+[0.506s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/cmake/warehouse_task_managerConfig-version.cmake
+[0.506s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/package.xml
+[0.555s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager

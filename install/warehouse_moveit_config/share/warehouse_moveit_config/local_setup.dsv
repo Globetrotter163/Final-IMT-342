@@ -1,2 +1,1 @@
-source;share/warehouse_moveit_config/environment/ament_prefix_path.sh
-source;share/warehouse_moveit_config/environment/path.sh
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config/ament_cmake_environment_hooks/local_setup.dsv

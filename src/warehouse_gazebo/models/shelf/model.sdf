@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <model name="shelf">
+    <static>true</static>
+    <!-- Left Leg -->
+    <link name="leg1">
+      <pose>-0.95 0 0.55 0 0 0</pose>
+      <collision name="col_leg1">
+        <geometry><box><size>0.05 0.6 1.1</size></box></geometry>
+      </collision>
+      <visual name="vis_leg1">
+        <geometry><box><size>0.05 0.6 1.1</size></box></geometry>
+        <material><ambient>0.5 0.5 0.5 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material>
+      </visual>
+    </link>
+    <!-- Right Leg -->
+    <link name="leg2">
+      <pose>0.95 0 0.55 0 0 0</pose>
+      <collision name="col_leg2">
+        <geometry><box><size>0.05 0.6 1.1</size></box></geometry>
+      </collision>
+      <visual name="vis_leg2">
+        <geometry><box><size>0.05 0.6 1.1</size></box></geometry>
+        <material><ambient>0.5 0.5 0.5 1</ambient><diffuse>0.5 0.5 0.5 1</diffuse></material>
+      </visual>
+    </link>
+    <!-- Level 1 (0.35m) -->
+    <link name="level1">
+      <pose>0 0 0.35 0 0 0</pose>
+      <collision name="col_level1">
+        <geometry><box><size>2.0 0.6 0.05</size></box></geometry>
+      </collision>
+      <visual name="vis_level1">
+        <geometry><box><size>2.0 0.6 0.05</size></box></geometry>
+        <material><ambient>0 0 0.8 1</ambient><diffuse>0 0 0.8 1</diffuse></material>
+      </visual>
+    </link>
+    <!-- Level 2 (0.70m) -->
+    <link name="level2">
+      <pose>0 0 0.70 0 0 0</pose>
+      <collision name="col_level2">
+        <geometry><box><size>2.0 0.6 0.05</size></box></geometry>
+      </collision>
+      <visual name="vis_level2">
+        <geometry><box><size>2.0 0.6 0.05</size></box></geometry>
+        <material><ambient>0 0 0.8 1</ambient><diffuse>0 0 0.8 1</diffuse></material>
+      </visual>
+    </link>
+    <!-- Level 3 (1.05m) -->
+    <link name="level3">
+      <pose>0 0 1.05 0 0 0</pose>
+      <collision name="col_level3">
+        <geometry><box><size>2.0 0.6 0.05</size></box></geometry>
+      </collision>
+      <visual name="vis_level3">
+        <geometry><box><size>2.0 0.6 0.05</size></box></geometry>
+        <material><ambient>0 0 0.8 1</ambient><diffuse>0 0 0.8 1</diffuse></material>
+      </visual>
+    </link>
+  </model>
+</sdf>

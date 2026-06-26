@@ -1,3 +1,6 @@
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/lib/warehouse_task_manager/task_manager_fsm
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/launch/task_manager_fsm.launch.py
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/launch/mission_mock.launch.py
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/ament_index/resource_index/package_run_dependencies/warehouse_task_manager
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/ament_index/resource_index/parent_prefix_path/warehouse_task_manager
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/environment/ament_prefix_path.sh

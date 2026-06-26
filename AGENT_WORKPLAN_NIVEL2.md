@@ -257,8 +257,8 @@ Este bloque debe actualizarse después de cada sesión de trabajo.
 |---|---|---|---|---|
 | Workspace ROS2 | Codex | Pendiente | N/A | Crear estructura base |
 | Interfaces ROS2 | Codex | Pendiente | N/A | Definir msg/srv/action |
-| Inventario SQLite | Codex | Pendiente | N/A | Diseñar esquema |
-| FSM Task Manager | Codex | Pendiente | N/A | Definir estados |
+| Inventario SQLite | Codex | Completado | `colcon build --packages-select warehouse_inventory`; `colcon test --packages-select warehouse_inventory` con 8 tests OK | Integrar con FSM Task Manager |
+| FSM Task Manager | Codex | Completado | Acción `/execute_storage_mission` ejecutó misión mock completa con resultado `SUCCEEDED` | Integrar Nav2/MoveIt2 reales en Fase 12 |
 | AMR URDF/Xacro | Antigravity | Pendiente | N/A | Crear modelo base |
 | Brazo 5 GDL URDF/Xacro | Antigravity | Pendiente | N/A | Crear cadena cinemática |
 | Gripper | Antigravity | Pendiente | N/A | Definir mecanismo paralelo |
@@ -266,7 +266,7 @@ Este bloque debe actualizarse después de cada sesión de trabajo.
 | Sensores simulados | Antigravity | Pendiente | N/A | Añadir LiDAR, cámara, IMU |
 | ros2_control | Antigravity | Pendiente | N/A | Configurar controladores |
 | MoveIt2 | Antigravity | Pendiente | N/A | Generar config inicial |
-| Integración Nav2 | Ambos | Pendiente | N/A | Conectar modelo + navegación |
+| Integración Nav2 | Ambos | Completado | `ros2 launch warehouse_navigation warehouse_nav2.launch.py rviz:=false`; `/navigate_to_pose` a `(0.8, 0.0)` terminó `SUCCEEDED`; odometría avanzó `x=0.0 -> x≈0.588` | Integrar Nav2 real dentro del FSM de misión |
 | Integración final | Ambos | Pendiente | N/A | Ejecutar misión completa |
 
 Estados permitidos:
@@ -613,12 +613,12 @@ Codex
 
 | ID | Tarea | Responsable | Estado |
 |---|---|---|---|
-| F6-T01 | Crear esquema `schema.sql` | Codex | Pendiente |
-| F6-T02 | Crear nodo `inventory_manager` | Codex | Pendiente |
-| F6-T03 | Implementar registro de producto | Codex | Pendiente |
-| F6-T04 | Implementar asignación de ubicación | Codex | Pendiente |
-| F6-T05 | Implementar actualización de estado | Codex | Pendiente |
-| F6-T06 | Añadir pruebas unitarias | Codex | Pendiente |
+| F6-T01 | Crear esquema `schema.sql` | Codex | Completado |
+| F6-T02 | Crear nodo `inventory_manager` | Codex | Completado |
+| F6-T03 | Implementar registro de producto | Codex | Completado |
+| F6-T04 | Implementar asignación de ubicación | Codex | Completado |
+| F6-T05 | Implementar actualización de estado | Codex | Completado |
+| F6-T06 | Añadir pruebas unitarias | Codex | Completado |
 
 ### Esquema mínimo
 
@@ -717,13 +717,13 @@ Antigravity
 
 | ID | Tarea | Responsable | Estado |
 |---|---|---|---|
-| F9-T01 | Configurar SLAM Toolbox | Codex | Pendiente |
-| F9-T02 | Generar mapa del almacén | Codex | Pendiente |
-| F9-T03 | Configurar AMCL | Codex | Pendiente |
-| F9-T04 | Configurar Nav2 | Codex | Pendiente |
-| F9-T05 | Configurar Smac Planner | Codex | Pendiente |
-| F9-T06 | Configurar MPPI Controller | Codex | Pendiente |
-| F9-T07 | Validar navegación a puntos fijos | Ambos | Pendiente |
+| F9-T01 | Configurar SLAM Toolbox | Codex | Completado |
+| F9-T02 | Generar mapa del almacén | Codex | Completado |
+| F9-T03 | Configurar AMCL | Codex | Completado |
+| F9-T04 | Configurar Nav2 | Codex | Completado |
+| F9-T05 | Configurar Smac Planner | Codex | Completado |
+| F9-T06 | Configurar MPPI Controller | Codex | Completado |
+| F9-T07 | Validar navegación a puntos fijos | Ambos | Completado |
 
 ### Criterio de finalización
 
@@ -767,14 +767,14 @@ Codex
 
 | ID | Tarea | Responsable | Estado |
 |---|---|---|---|
-| F11-T01 | Definir estados FSM | Codex | Pendiente |
-| F11-T02 | Implementar transición `IDLE → DETECT` | Codex | Pendiente |
-| F11-T03 | Implementar registro de producto | Codex | Pendiente |
-| F11-T04 | Implementar solicitud de ubicación | Codex | Pendiente |
-| F11-T05 | Implementar llamada a Nav2 | Codex | Pendiente |
-| F11-T06 | Implementar llamada a MoveIt2 | Codex | Pendiente |
-| F11-T07 | Implementar actualización de inventario | Codex | Pendiente |
-| F11-T08 | Añadir logs de misión | Codex | Pendiente |
+| F11-T01 | Definir estados FSM | Codex | Completado |
+| F11-T02 | Implementar transición `IDLE → DETECT` | Codex | Completado |
+| F11-T03 | Implementar registro de producto | Codex | Completado |
+| F11-T04 | Implementar solicitud de ubicación | Codex | Completado |
+| F11-T05 | Implementar llamada a Nav2 | Codex | Completado (mock por defecto, cliente Nav2 opcional) |
+| F11-T06 | Implementar llamada a MoveIt2 | Codex | Completado (mock por defecto hasta integración MoveIt2 real) |
+| F11-T07 | Implementar actualización de inventario | Codex | Completado |
+| F11-T08 | Añadir logs de misión | Codex | Completado |
 
 ### Estados oficiales
 

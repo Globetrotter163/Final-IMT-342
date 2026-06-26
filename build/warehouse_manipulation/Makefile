@@ -197,6 +197,43 @@ warehouse_manipulation_uninstall/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/warehouse_manipulation_uninstall.dir/build.make CMakeFiles/warehouse_manipulation_uninstall.dir/build
 .PHONY : warehouse_manipulation_uninstall/fast
 
+#=============================================================================
+# Target rules for targets named demo_pick_place
+
+# Build rule for target.
+demo_pick_place: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 demo_pick_place
+.PHONY : demo_pick_place
+
+# fast build rule for target.
+demo_pick_place/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_pick_place.dir/build.make CMakeFiles/demo_pick_place.dir/build
+.PHONY : demo_pick_place/fast
+
+src/demo_pick_place.o: src/demo_pick_place.cpp.o
+.PHONY : src/demo_pick_place.o
+
+# target to build an object file
+src/demo_pick_place.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_pick_place.dir/build.make CMakeFiles/demo_pick_place.dir/src/demo_pick_place.cpp.o
+.PHONY : src/demo_pick_place.cpp.o
+
+src/demo_pick_place.i: src/demo_pick_place.cpp.i
+.PHONY : src/demo_pick_place.i
+
+# target to preprocess a source file
+src/demo_pick_place.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_pick_place.dir/build.make CMakeFiles/demo_pick_place.dir/src/demo_pick_place.cpp.i
+.PHONY : src/demo_pick_place.cpp.i
+
+src/demo_pick_place.s: src/demo_pick_place.cpp.s
+.PHONY : src/demo_pick_place.s
+
+# target to generate assembly for a file
+src/demo_pick_place.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_pick_place.dir/build.make CMakeFiles/demo_pick_place.dir/src/demo_pick_place.cpp.s
+.PHONY : src/demo_pick_place.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,6 +249,10 @@ help:
 	@echo "... test"
 	@echo "... uninstall"
 	@echo "... warehouse_manipulation_uninstall"
+	@echo "... demo_pick_place"
+	@echo "... src/demo_pick_place.o"
+	@echo "... src/demo_pick_place.i"
+	@echo "... src/demo_pick_place.s"
 .PHONY : help
 
 

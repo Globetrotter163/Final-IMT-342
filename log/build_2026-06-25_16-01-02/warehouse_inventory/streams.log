@@ -1,0 +1,61 @@
+[0.010s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory': AMENT_PREFIX_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory -- -j12 -l12
+[0.026s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.169s] -- Found rclcpp: 28.1.21 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.187s] -- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.192s] -- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.199s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.208s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.247s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.247s] -- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.294s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.339s] -- Found warehouse_interfaces: 0.1.0 (/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake)
+[0.378s] -- Found ament_cmake_gtest: 2.5.6 (/opt/ros/jazzy/share/ament_cmake_gtest/cmake)
+[0.389s] -- Found gtest sources under '/opt/ros/jazzy/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[0.391s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.456s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.458s] -- Found Threads: TRUE  
+[0.517s] -- Configuring done (0.5s)
+[0.529s] -- Generating done (0.0s)
+[0.532s] -- Build files have been written to: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory
+[0.562s] [ 10%] Building CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[0.564s] [ 20%] Building CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+[0.565s] [ 30%] Building CXX object CMakeFiles/inventory_store.dir/src/inventory_store.cpp.o
+[0.977s] [ 40%] Linking CXX static library libinventory_store.a
+[1.003s] [ 40%] Built target inventory_store
+[1.033s] [ 50%] Building CXX object CMakeFiles/inventory_manager.dir/src/inventory_manager.cpp.o
+[1.103s] [ 60%] Linking CXX static library libgtest_main.a
+[1.137s] [ 60%] Built target gtest_main
+[2.962s] [ 70%] Linking CXX static library libgtest.a
+[3.009s] [ 70%] Built target gtest
+[3.027s] [ 80%] Building CXX object CMakeFiles/test_inventory_store.dir/test/test_inventory_store.cpp.o
+[3.758s] [ 90%] Linking CXX executable test_inventory_store
+[3.861s] [ 90%] Built target test_inventory_store
+[4.138s] [100%] Linking CXX executable inventory_manager
+[4.268s] [100%] Built target inventory_manager
+[4.278s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory' returned '0': AMENT_PREFIX_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory -- -j12 -l12
+[4.287s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory': AMENT_PREFIX_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory
+[4.292s] -- Install configuration: ""
+[4.292s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/lib/libinventory_store.a
+[4.292s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/lib/warehouse_inventory/inventory_manager
+[4.293s] -- Set non-toolchain portion of runtime path of "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/lib/warehouse_inventory/inventory_manager" to ""
+[4.294s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/include
+[4.294s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/include/warehouse_inventory
+[4.294s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/include/warehouse_inventory/inventory_store.hpp
+[4.294s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/launch
+[4.294s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/launch/inventory_manager.launch.py
+[4.294s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/ament_index/resource_index/package_run_dependencies/warehouse_inventory
+[4.294s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/ament_index/resource_index/parent_prefix_path/warehouse_inventory
+[4.294s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/environment/ament_prefix_path.sh
+[4.294s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/environment/ament_prefix_path.dsv
+[4.294s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/environment/path.sh
+[4.295s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/environment/path.dsv
+[4.295s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/local_setup.bash
+[4.295s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/local_setup.sh
+[4.295s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/local_setup.zsh
+[4.295s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/local_setup.dsv
+[4.295s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/package.dsv
+[4.296s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/ament_index/resource_index/packages/warehouse_inventory
+[4.296s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/cmake/warehouse_inventoryConfig.cmake
+[4.296s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/cmake/warehouse_inventoryConfig-version.cmake
+[4.296s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/package.xml
+[4.296s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory' returned '0': AMENT_PREFIX_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory

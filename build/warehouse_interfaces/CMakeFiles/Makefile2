@@ -199,11 +199,11 @@ CMakeFiles/warehouse_interfaces.dir/all: CMakeFiles/warehouse_interfaces__cpp.di
 CMakeFiles/warehouse_interfaces.dir/all: CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_cpp.dir/all
 CMakeFiles/warehouse_interfaces.dir/all: CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_cpp.dir/all
 CMakeFiles/warehouse_interfaces.dir/all: CMakeFiles/warehouse_interfaces__rosidl_typesupport_cpp.dir/all
+CMakeFiles/warehouse_interfaces.dir/all: warehouse_interfaces__rs/CMakeFiles/warehouse_interfaces__rs.dir/all
 CMakeFiles/warehouse_interfaces.dir/all: CMakeFiles/warehouse_interfaces__rosidl_generator_type_description.dir/all
 CMakeFiles/warehouse_interfaces.dir/all: CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/all
 CMakeFiles/warehouse_interfaces.dir/all: CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_c.dir/all
 CMakeFiles/warehouse_interfaces.dir/all: CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_c.dir/all
-CMakeFiles/warehouse_interfaces.dir/all: warehouse_interfaces__rs/CMakeFiles/warehouse_interfaces__rs.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/warehouse_interfaces.dir/build.make CMakeFiles/warehouse_interfaces.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/warehouse_interfaces.dir/build.make CMakeFiles/warehouse_interfaces.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/CMakeFiles --progress-num= "Built target warehouse_interfaces"

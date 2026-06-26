@@ -1,5 +1,6 @@
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager/CMakeFiles/uninstall.dir
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager/CMakeFiles/warehouse_task_manager_uninstall.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager/CMakeFiles/task_manager_fsm.dir
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager/CMakeFiles/test.dir
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager/CMakeFiles/edit_cache.dir
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager/CMakeFiles/rebuild_cache.dir

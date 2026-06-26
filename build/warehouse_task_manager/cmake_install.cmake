@@ -43,6 +43,34 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/warehouse_task_manager/task_manager_fsm" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/warehouse_task_manager/task_manager_fsm")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/warehouse_task_manager/task_manager_fsm"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/warehouse_task_manager" TYPE EXECUTABLE FILES "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager/task_manager_fsm")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/warehouse_task_manager/task_manager_fsm" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/warehouse_task_manager/task_manager_fsm")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/warehouse_task_manager/task_manager_fsm"
+         OLD_RPATH "/opt/ros/jazzy/lib:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/warehouse_task_manager/task_manager_fsm")
+    endif()
+  endif()
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  include("/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager/CMakeFiles/task_manager_fsm.dir/install-cxx-module-bmi-noconfig.cmake" OPTIONAL)
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/warehouse_task_manager" TYPE DIRECTORY FILES "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_task_manager/launch")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/warehouse_task_manager")
 endif()
 

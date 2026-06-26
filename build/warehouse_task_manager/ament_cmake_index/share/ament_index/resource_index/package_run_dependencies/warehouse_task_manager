@@ -1,1 +1,1 @@
-rclcpp
+geometry_msgs;nav2_msgs;rclcpp_action;warehouse_inventory;warehouse_interfaces;rclcpp

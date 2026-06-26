@@ -1,11 +1,1 @@
-<?xml version="1.0"?>
-<package format="3">
-  <name>warehouse_moveit_config</name>
-  <version>0.1.0</version>
-  <description>MoveIt2 config placeholders</description>
-  <maintainer email="dev@example.com">Dev Team</maintainer>
-  <license>Apache-2.0</license>
-
-  <buildtool_depend>ament_cmake</buildtool_depend>
-
-</package>
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_moveit_config/package.xml

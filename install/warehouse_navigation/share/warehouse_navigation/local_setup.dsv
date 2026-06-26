@@ -1,2 +1,1 @@
-source;share/warehouse_navigation/environment/ament_prefix_path.sh
-source;share/warehouse_navigation/environment/path.sh
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation/ament_cmake_environment_hooks/local_setup.dsv

@@ -197,6 +197,43 @@ warehouse_task_manager_uninstall/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/warehouse_task_manager_uninstall.dir/build.make CMakeFiles/warehouse_task_manager_uninstall.dir/build
 .PHONY : warehouse_task_manager_uninstall/fast
 
+#=============================================================================
+# Target rules for targets named task_manager_fsm
+
+# Build rule for target.
+task_manager_fsm: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 task_manager_fsm
+.PHONY : task_manager_fsm
+
+# fast build rule for target.
+task_manager_fsm/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task_manager_fsm.dir/build.make CMakeFiles/task_manager_fsm.dir/build
+.PHONY : task_manager_fsm/fast
+
+src/task_manager_fsm.o: src/task_manager_fsm.cpp.o
+.PHONY : src/task_manager_fsm.o
+
+# target to build an object file
+src/task_manager_fsm.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task_manager_fsm.dir/build.make CMakeFiles/task_manager_fsm.dir/src/task_manager_fsm.cpp.o
+.PHONY : src/task_manager_fsm.cpp.o
+
+src/task_manager_fsm.i: src/task_manager_fsm.cpp.i
+.PHONY : src/task_manager_fsm.i
+
+# target to preprocess a source file
+src/task_manager_fsm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task_manager_fsm.dir/build.make CMakeFiles/task_manager_fsm.dir/src/task_manager_fsm.cpp.i
+.PHONY : src/task_manager_fsm.cpp.i
+
+src/task_manager_fsm.s: src/task_manager_fsm.cpp.s
+.PHONY : src/task_manager_fsm.s
+
+# target to generate assembly for a file
+src/task_manager_fsm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/task_manager_fsm.dir/build.make CMakeFiles/task_manager_fsm.dir/src/task_manager_fsm.cpp.s
+.PHONY : src/task_manager_fsm.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,6 +249,10 @@ help:
 	@echo "... test"
 	@echo "... uninstall"
 	@echo "... warehouse_task_manager_uninstall"
+	@echo "... task_manager_fsm"
+	@echo "... src/task_manager_fsm.o"
+	@echo "... src/task_manager_fsm.i"
+	@echo "... src/task_manager_fsm.s"
 .PHONY : help
 
 
