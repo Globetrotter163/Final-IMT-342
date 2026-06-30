@@ -23,19 +23,14 @@ def generate_launch_description():
         .to_moveit_configs()
     )
 
-    d = moveit_config.to_dict()
-    print("MOVEIT CONFIG KEYS:", d.keys())
-    if 'ompl' in d:
-        print("OMPL KEYS:", d['ompl'].keys())
-    else:
-        print("OMPL IS MISSING!")
+    moveit_config_dict = moveit_config.to_dict()
 
     move_group_node = Node(
         package="moveit_ros_move_group",
         executable="move_group",
         output="screen",
         parameters=[
-            moveit_config.to_dict(),
+            moveit_config_dict,
             {"use_sim_time": True},
             {"publish_robot_description_semantic": True},
         ],

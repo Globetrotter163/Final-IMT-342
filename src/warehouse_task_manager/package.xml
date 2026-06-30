@@ -12,6 +12,10 @@
   <depend>rclcpp_action</depend>
   <depend>warehouse_inventory</depend>
   <depend>warehouse_interfaces</depend>
+  <exec_depend>warehouse_manipulation</exec_depend>
+  <exec_depend>warehouse_moveit_config</exec_depend>
+  <exec_depend>warehouse_navigation</exec_depend>
+  <exec_depend>warehouse_perception</exec_depend>
   <exec_depend>rclcpp</exec_depend>
 
   <export>

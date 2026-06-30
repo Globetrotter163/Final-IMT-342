@@ -12,6 +12,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/RegisterProduct.srv"
   "srv/AssignStorageLocation.srv"
   "srv/UpdateInventory.srv"
+  "srv/PlaceProduct.srv"
   "action/ExecuteStorageMission.action"
 )
 

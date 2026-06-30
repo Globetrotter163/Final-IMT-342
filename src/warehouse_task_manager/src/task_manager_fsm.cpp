@@ -1,7 +1,10 @@
 #include <chrono>
+#include <condition_variable>
 #include <cmath>
+#include <future>
 #include <functional>
 #include <memory>
+#include <mutex>
 #include <sstream>
 #include <string>
 #include <thread>
@@ -11,9 +14,11 @@
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
 #include "warehouse_interfaces/action/execute_storage_mission.hpp"
+#include "warehouse_interfaces/msg/detected_product.hpp"
 #include "warehouse_interfaces/msg/product_record.hpp"
 #include "warehouse_interfaces/msg/storage_location.hpp"
 #include "warehouse_interfaces/srv/assign_storage_location.hpp"
+#include "warehouse_interfaces/srv/place_product.hpp"
 #include "warehouse_interfaces/srv/register_product.hpp"
 #include "warehouse_interfaces/srv/update_inventory.hpp"
 
@@ -30,17 +35,32 @@ public:
   : Node("task_manager_fsm")
   {
     mock_detection_ = declare_parameter<bool>("mock_detection", true);
-    mock_navigation_ = declare_parameter<bool>("mock_navigation", true);
-    mock_manipulation_ = declare_parameter<bool>("mock_manipulation", true);
+    mock_navigation_ = declare_parameter<bool>("mock_navigation", false);
+    mock_manipulation_ = declare_parameter<bool>("mock_manipulation", false);
     service_timeout_ = std::chrono::duration<double>(
       declare_parameter<double>("service_timeout_sec", 5.0));
     action_timeout_ = std::chrono::duration<double>(
-      declare_parameter<double>("action_timeout_sec", 30.0));
+      declare_parameter<double>("action_timeout_sec", 90.0));
+    manipulation_timeout_ = std::chrono::duration<double>(
+      declare_parameter<double>("manipulation_timeout_sec", 60.0));
+    detection_timeout_ = std::chrono::duration<double>(
+      declare_parameter<double>("detection_timeout_sec", 10.0));
     mock_product_id_ = declare_parameter<std::string>("mock_product_id", "mock_product_001");
     mock_product_name_ = declare_parameter<std::string>("mock_product_name", "Tipo A");
     mock_barcode_ = declare_parameter<std::string>("mock_barcode", "TAG-001");
+    detected_products_topic_ =
+      declare_parameter<std::string>("detected_products_topic", "/detected_products");
     inventory_update_delta_ = declare_parameter<int>("inventory_update_delta", 0);
-    nav2_action_name_ = declare_parameter<std::string>("nav2_action_name", "navigate_to_pose");
+    nav2_action_name_ = declare_parameter<std::string>("nav2_action_name", "/navigate_to_pose");
+    place_product_service_name_ = declare_parameter<std::string>(
+      "place_product_service_name", "/place_product");
+    nav_goal_frame_id_ = declare_parameter<std::string>("nav_goal_frame_id", "map");
+    nav_goal_yaw_ = declare_parameter<double>("nav_goal_yaw", 0.0);
+    storage_map_offset_x_ = declare_parameter<double>("storage_map_offset_x", 0.0);
+    storage_map_offset_y_ = declare_parameter<double>("storage_map_offset_y", 0.0);
+    storage_map_offset_z_ = declare_parameter<double>("storage_map_offset_z", 0.0);
+    recover_outside_map_goals_ = declare_parameter<bool>("recover_outside_map_goals", true);
+    outside_map_recovery_max_x_ = declare_parameter<double>("outside_map_recovery_max_x", 3.0);
 
     register_product_client_ =
       create_client<warehouse_interfaces::srv::RegisterProduct>("register_product");
@@ -48,7 +68,13 @@ public:
       create_client<warehouse_interfaces::srv::AssignStorageLocation>("assign_storage_location");
     update_inventory_client_ =
       create_client<warehouse_interfaces::srv::UpdateInventory>("update_inventory");
+    place_product_client_ =
+      create_client<warehouse_interfaces::srv::PlaceProduct>(place_product_service_name_);
     nav2_client_ = rclcpp_action::create_client<NavigateToPose>(this, nav2_action_name_);
+    detected_product_subscription_ =
+      create_subscription<warehouse_interfaces::msg::DetectedProduct>(
+      detected_products_topic_, rclcpp::QoS(10).transient_local(),
+      std::bind(&TaskManagerFsm::handle_detected_product, this, std::placeholders::_1));
 
     mission_server_ = rclcpp_action::create_server<ExecuteStorageMission>(
       this,
@@ -73,6 +99,14 @@ private:
     UPDATE_INVENTORY,
     MISSION_COMPLETE,
     MISSION_FAILED
+  };
+
+  struct NavExecutionResult
+  {
+    bool succeeded{false};
+    rclcpp_action::ResultCode result_code{rclcpp_action::ResultCode::UNKNOWN};
+    uint16_t error_code{0};
+    std::string error_msg;
   };
 
   rclcpp_action::GoalResponse handle_goal(
@@ -140,6 +174,10 @@ private:
   warehouse_interfaces::msg::ProductRecord detect_product(
     const ExecuteStorageMission::Goal & goal)
   {
+    if (!mock_detection_) {
+      return wait_for_detected_product(goal);
+    }
+
     warehouse_interfaces::msg::ProductRecord product;
     product.product_id = goal.product_id.empty() ? mock_product_id_ : goal.product_id;
     product.name = mock_product_name_;
@@ -148,12 +186,54 @@ private:
     product.unit = "unit";
     product.weight = 1.0F;
 
-    if (!mock_detection_) {
-      RCLCPP_WARN(
-        get_logger(),
-        "Real perception is not wired yet; falling back to goal/mock product data");
+    return product;
+  }
+
+  void handle_detected_product(
+    const warehouse_interfaces::msg::DetectedProduct::SharedPtr detection)
+  {
+    {
+      std::lock_guard<std::mutex> lock(detection_mutex_);
+      latest_detection_ = *detection;
+      has_detection_ = true;
+    }
+    detection_cv_.notify_all();
+  }
+
+  warehouse_interfaces::msg::ProductRecord wait_for_detected_product(
+    const ExecuteStorageMission::Goal & goal)
+  {
+    warehouse_interfaces::msg::DetectedProduct detection;
+    {
+      std::unique_lock<std::mutex> lock(detection_mutex_);
+      const auto ready = detection_cv_.wait_for(
+        lock, detection_timeout_,
+        [this, &goal]() {
+          return has_detection_ &&
+                 (goal.product_id.empty() || latest_detection_.id == goal.product_id);
+        });
+
+      if (!ready) {
+        throw std::runtime_error(
+                "Timed out waiting for detected product on " + detected_products_topic_);
+      }
+
+      detection = latest_detection_;
     }
 
+    warehouse_interfaces::msg::ProductRecord product;
+    product.product_id = detection.id;
+    product.name = detection.name.empty() ? detection.id : detection.name;
+    product.barcode = detection.barcode;
+    product.quantity = goal.quantity;
+    product.unit = "unit";
+    product.weight = 1.0F;
+
+    RCLCPP_INFO(
+      get_logger(),
+      "Detected product %s (%s, barcode %s, confidence %.2f)",
+      product.product_id.c_str(), product.name.c_str(), product.barcode.c_str(),
+      detection.confidence);
     return product;
   }
 
@@ -161,14 +241,15 @@ private:
   typename ServiceT::Response::SharedPtr call_service(
     const typename ServiceT::Request::SharedPtr & request,
     const typename rclcpp::Client<ServiceT>::SharedPtr & client,
-    const std::string & service_name)
+    const std::string & service_name,
+    const std::chrono::duration<double> & timeout)
   {
-    if (!client->wait_for_service(service_timeout_)) {
+    if (!client->wait_for_service(timeout)) {
       throw std::runtime_error("Timed out waiting for service " + service_name);
     }
 
     auto future = client->async_send_request(request);
-    if (future.wait_for(service_timeout_) != std::future_status::ready) {
+    if (future.wait_for(timeout) != std::future_status::ready) {
       throw std::runtime_error("Timed out waiting for response from " + service_name);
     }
 
@@ -185,7 +266,7 @@ private:
 
     const auto response =
       call_service<warehouse_interfaces::srv::AssignStorageLocation>(
-      request, assign_location_client_, "/assign_storage_location");
+      request, assign_location_client_, "/assign_storage_location", service_timeout_);
 
     if (!response->success) {
       throw std::runtime_error("Assign location failed: " + response->message);
@@ -201,37 +282,54 @@ private:
 
     const auto response =
       call_service<warehouse_interfaces::srv::RegisterProduct>(
-      request, register_product_client_, "/register_product");
+      request, register_product_client_, "/register_product", service_timeout_);
 
     if (!response->success) {
       throw std::runtime_error("Register product failed: " + response->message);
     }
   }
 
-  void navigate_to_storage(const warehouse_interfaces::msg::StorageLocation & location)
+  geometry_msgs::msg::PoseStamped build_storage_nav_goal(
+    const warehouse_interfaces::msg::StorageLocation & location)
   {
-    if (mock_navigation_) {
-      RCLCPP_INFO(
-        get_logger(),
-        "Mock navigation to %s at (%.2f, %.2f, %.2f)",
-        location.location_id.c_str(), location.x, location.y, location.z);
-      std::this_thread::sleep_for(300ms);
-      return;
-    }
+    geometry_msgs::msg::PoseStamped pose;
+    pose.header.frame_id = nav_goal_frame_id_;
+    pose.header.stamp = now();
+    pose.pose.position.x = static_cast<double>(location.x) + storage_map_offset_x_;
+    pose.pose.position.y = static_cast<double>(location.y) + storage_map_offset_y_;
+    pose.pose.position.z = storage_map_offset_z_;
+    pose.pose.orientation.z = std::sin(nav_goal_yaw_ * 0.5);
+    pose.pose.orientation.w = std::cos(nav_goal_yaw_ * 0.5);
+    return pose;
+  }
 
-    if (!nav2_client_->wait_for_action_server(action_timeout_)) {
-      throw std::runtime_error("Timed out waiting for Nav2 action server " + nav2_action_name_);
-    }
-
+  NavExecutionResult send_nav_goal(
+    const geometry_msgs::msg::PoseStamped & target_pose,
+    const std::string & goal_label,
+    const std::shared_ptr<GoalHandleMission> & mission_goal_handle)
+  {
     NavigateToPose::Goal nav_goal;
-    nav_goal.pose.header.frame_id = "map";
-    nav_goal.pose.header.stamp = now();
-    nav_goal.pose.pose.position.x = location.x;
-    nav_goal.pose.pose.position.y = location.y;
-    nav_goal.pose.pose.position.z = 0.0;
-    nav_goal.pose.pose.orientation.w = 1.0;
+    nav_goal.pose = target_pose;
 
-    auto goal_future = nav2_client_->async_send_goal(nav_goal);
+    RCLCPP_INFO(
+      get_logger(),
+      "Sending Nav2 goal '%s' -> %s(%.2f, %.2f, %.2f)",
+      goal_label.c_str(), nav_goal.pose.header.frame_id.c_str(),
+      nav_goal.pose.pose.position.x, nav_goal.pose.pose.position.y, nav_goal.pose.pose.position.z);
+
+    rclcpp_action::Client<NavigateToPose>::SendGoalOptions send_goal_options;
+    send_goal_options.feedback_callback =
+      [this](
+      rclcpp_action::ClientGoalHandle<NavigateToPose>::SharedPtr,
+      const std::shared_ptr<const NavigateToPose::Feedback> feedback)
+      {
+        RCLCPP_INFO_THROTTLE(
+          get_logger(), *get_clock(), 2000,
+          "Nav2 feedback: remaining %.2f m, recoveries %d",
+          feedback->distance_remaining, feedback->number_of_recoveries);
+      };
+
+    auto goal_future = nav2_client_->async_send_goal(nav_goal, send_goal_options);
     if (goal_future.wait_for(action_timeout_) != std::future_status::ready) {
       throw std::runtime_error("Timed out sending Nav2 goal");
     }
@@ -242,14 +340,120 @@ private:
     }
 
     auto result_future = nav2_client_->async_get_result(nav_goal_handle);
-    if (result_future.wait_for(action_timeout_) != std::future_status::ready) {
-      throw std::runtime_error("Timed out waiting for Nav2 result");
+    const auto deadline = std::chrono::steady_clock::now() + action_timeout_;
+    while (result_future.wait_for(200ms) != std::future_status::ready) {
+      if (mission_goal_handle->is_canceling()) {
+        nav2_client_->async_cancel_goal(nav_goal_handle);
+        throw std::runtime_error("mission canceled during Nav2 navigation");
+      }
+      if (std::chrono::steady_clock::now() > deadline) {
+        nav2_client_->async_cancel_goal(nav_goal_handle);
+        throw std::runtime_error("Timed out waiting for Nav2 result");
+      }
     }
 
     const auto wrapped_result = result_future.get();
-    if (wrapped_result.code != rclcpp_action::ResultCode::SUCCEEDED) {
-      throw std::runtime_error("Nav2 did not complete storage navigation");
+    NavExecutionResult result;
+    result.result_code = wrapped_result.code;
+    result.succeeded = wrapped_result.code == rclcpp_action::ResultCode::SUCCEEDED;
+    if (wrapped_result.result) {
+      result.error_code = wrapped_result.result->error_code;
+      result.error_msg = wrapped_result.result->error_msg;
     }
+
+    return result;
+  }
+
+  std::string nav_error_message(
+    const std::string & prefix,
+    const NavExecutionResult & result) const
+  {
+    std::ostringstream error;
+    error << prefix << " (error_code=" << result.error_code
+          << ", error_msg='" << result.error_msg << "')";
+    return error.str();
+  }
+
+  bool build_outside_map_recovery_goal(
+    const geometry_msgs::msg::PoseStamped & target_pose,
+    geometry_msgs::msg::PoseStamped & recovery_pose)
+  {
+    recovery_pose = target_pose;
+    recovery_pose.header.stamp = now();
+
+    if (target_pose.pose.position.x > outside_map_recovery_max_x_) {
+      recovery_pose.pose.position.x = outside_map_recovery_max_x_;
+      return true;
+    }
+
+    if (target_pose.pose.position.x < -outside_map_recovery_max_x_) {
+      recovery_pose.pose.position.x = -outside_map_recovery_max_x_;
+      return true;
+    }
+
+    return false;
+  }
+
+  void navigate_to_storage(
+    const warehouse_interfaces::msg::StorageLocation & location,
+    const std::shared_ptr<GoalHandleMission> & mission_goal_handle)
+  {
+    auto target_pose = build_storage_nav_goal(location);
+
+    if (mock_navigation_) {
+      RCLCPP_INFO(
+        get_logger(),
+        "Mock navigation to %s at %s(%.2f, %.2f, %.2f)",
+        location.location_id.c_str(), target_pose.header.frame_id.c_str(),
+        target_pose.pose.position.x, target_pose.pose.position.y, target_pose.pose.position.z);
+      std::this_thread::sleep_for(300ms);
+      return;
+    }
+
+    if (!nav2_client_->wait_for_action_server(action_timeout_)) {
+      throw std::runtime_error("Timed out waiting for Nav2 action server " + nav2_action_name_);
+    }
+
+    RCLCPP_INFO(
+      get_logger(),
+      "Sending Nav2 goal for %s: storage(%.2f, %.2f, %.2f) -> %s(%.2f, %.2f, %.2f)",
+      location.location_id.c_str(), location.x, location.y, location.z,
+      target_pose.header.frame_id.c_str(),
+      target_pose.pose.position.x, target_pose.pose.position.y, target_pose.pose.position.z);
+
+    auto result = send_nav_goal(target_pose, location.location_id, mission_goal_handle);
+    if (result.succeeded) {
+      RCLCPP_INFO(get_logger(), "Nav2 reached storage goal %s", location.location_id.c_str());
+      return;
+    }
+
+    constexpr uint16_t goal_outside_map = 204;
+    if (recover_outside_map_goals_ && result.error_code == goal_outside_map) {
+      geometry_msgs::msg::PoseStamped recovery_pose;
+      if (build_outside_map_recovery_goal(target_pose, recovery_pose)) {
+        RCLCPP_WARN(
+          get_logger(),
+          "Nav2 reported GOAL_OUTSIDE_MAP for %s; trying intermediate map goal %.2f, %.2f",
+          location.location_id.c_str(),
+          recovery_pose.pose.position.x, recovery_pose.pose.position.y);
+
+        const auto recovery_result =
+          send_nav_goal(recovery_pose, location.location_id + "_map_recovery", mission_goal_handle);
+        if (!recovery_result.succeeded) {
+          throw std::runtime_error(
+            nav_error_message("Nav2 outside-map recovery failed", recovery_result));
+        }
+
+        target_pose.header.stamp = now();
+        result = send_nav_goal(target_pose, location.location_id + "_final", mission_goal_handle);
+        if (result.succeeded) {
+          RCLCPP_INFO(get_logger(), "Nav2 reached storage goal %s", location.location_id.c_str());
+          return;
+        }
+      }
+    }
+
+    throw std::runtime_error(nav_error_message("Nav2 did not complete storage navigation", result));
   }
 
   void align_with_shelf(const warehouse_interfaces::msg::StorageLocation & location)
@@ -272,8 +476,18 @@ private:
       return;
     }
 
-    throw std::runtime_error(
-      "Real MoveIt2 place execution is not configured yet; set mock_manipulation:=true");
+    auto request = std::make_shared<warehouse_interfaces::srv::PlaceProduct::Request>();
+    request->location = location;
+
+    const auto response =
+      call_service<warehouse_interfaces::srv::PlaceProduct>(
+      request, place_product_client_, place_product_service_name_, manipulation_timeout_);
+
+    if (!response->success) {
+      throw std::runtime_error("MoveIt2 place failed: " + response->message);
+    }
+
+    RCLCPP_INFO(get_logger(), "%s", response->message.c_str());
   }
 
   void update_inventory(const std::string & product_id)
@@ -284,7 +498,7 @@ private:
 
     const auto response =
       call_service<warehouse_interfaces::srv::UpdateInventory>(
-      request, update_inventory_client_, "/update_inventory");
+      request, update_inventory_client_, "/update_inventory", service_timeout_);
 
     if (!response->success) {
       throw std::runtime_error("Update inventory failed: " + response->message);
@@ -334,7 +548,7 @@ private:
 
       state = State::NAVIGATE_TO_STORAGE;
       publish_feedback(goal_handle, 0.55F, state_name(state));
-      navigate_to_storage(location);
+      navigate_to_storage(location, goal_handle);
 
       state = State::ALIGN_WITH_SHELF;
       publish_feedback(goal_handle, 0.70F, state_name(state));
@@ -364,21 +578,39 @@ private:
   }
 
   bool mock_detection_{true};
-  bool mock_navigation_{true};
-  bool mock_manipulation_{true};
+  bool mock_navigation_{false};
+  bool mock_manipulation_{false};
   std::chrono::duration<double> service_timeout_{5.0};
-  std::chrono::duration<double> action_timeout_{30.0};
+  std::chrono::duration<double> action_timeout_{90.0};
+  std::chrono::duration<double> manipulation_timeout_{60.0};
+  std::chrono::duration<double> detection_timeout_{10.0};
   std::string mock_product_id_;
   std::string mock_product_name_;
   std::string mock_barcode_;
+  std::string detected_products_topic_;
   int inventory_update_delta_{0};
   std::string nav2_action_name_;
+  std::string place_product_service_name_;
+  std::string nav_goal_frame_id_;
+  double nav_goal_yaw_{0.0};
+  double storage_map_offset_x_{0.0};
+  double storage_map_offset_y_{0.0};
+  double storage_map_offset_z_{0.0};
+  bool recover_outside_map_goals_{true};
+  double outside_map_recovery_max_x_{3.0};
 
   rclcpp::Client<warehouse_interfaces::srv::RegisterProduct>::SharedPtr register_product_client_;
   rclcpp::Client<warehouse_interfaces::srv::AssignStorageLocation>::SharedPtr assign_location_client_;
   rclcpp::Client<warehouse_interfaces::srv::UpdateInventory>::SharedPtr update_inventory_client_;
+  rclcpp::Client<warehouse_interfaces::srv::PlaceProduct>::SharedPtr place_product_client_;
   rclcpp_action::Client<NavigateToPose>::SharedPtr nav2_client_;
+  rclcpp::Subscription<warehouse_interfaces::msg::DetectedProduct>::SharedPtr
+    detected_product_subscription_;
   rclcpp_action::Server<ExecuteStorageMission>::SharedPtr mission_server_;
+  std::mutex detection_mutex_;
+  std::condition_variable detection_cv_;
+  warehouse_interfaces::msg::DetectedProduct latest_detection_;
+  bool has_detection_{false};
 };
 
 int main(int argc, char ** argv)
