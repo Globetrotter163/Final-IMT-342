@@ -1,6 +1,6 @@
-/.agents
-/.codex
-/docs
-/database
-/install
-/log
+/.agents/*
+/.codex/*
+/docs/*
+/database/*
+/install/*
+/log/*
