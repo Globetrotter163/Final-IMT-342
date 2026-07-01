@@ -117,6 +117,16 @@ def generate_launch_description():
                 "action_timeout_sec": manipulation_timeout_sec,
             }.items(),
         ),
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(
+                PathJoinSubstitution([
+                    FindPackageShare("warehouse_manipulation"),
+                    "launch",
+                    "pick_product_server.launch.py",
+                ])
+            ),
+            condition=UnlessCondition(mock_manipulation),
+        ),
         Node(
             package="warehouse_task_manager",
             executable="task_manager_fsm",

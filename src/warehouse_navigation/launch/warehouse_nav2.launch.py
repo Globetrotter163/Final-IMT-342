@@ -14,6 +14,7 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time')
     rviz = LaunchConfiguration('rviz')
     nav_start_delay = LaunchConfiguration('nav_start_delay')
+    slam_warmup_delay = LaunchConfiguration('slam_warmup_delay')
 
     gazebo_launch = os.path.join(gazebo_pkg, 'launch', 'warehouse.launch.py')
     nav_launch = os.path.join(nav_pkg, 'launch', 'navigation_launch.py')
@@ -34,8 +35,10 @@ def generate_launch_description():
             default_value='8.0',
             description='Seconds to wait before starting SLAM/Nav2 after Gazebo spawn',
         ),
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(gazebo_launch),
+        DeclareLaunchArgument(
+            'slam_warmup_delay',
+            default_value='6.0',
+            description='Seconds to wait between starting slam_toolbox and starting Nav2 lifecycle nodes',
         ),
         TimerAction(
             period=nav_start_delay,
@@ -46,6 +49,7 @@ def generate_launch_description():
                         'use_sim_time': use_sim_time,
                         'autostart': 'true',
                         'rviz': rviz,
+                        'slam_warmup_delay': slam_warmup_delay,
                     }.items(),
                 )
             ],

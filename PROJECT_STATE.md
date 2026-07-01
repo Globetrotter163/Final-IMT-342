@@ -1,99 +1,89 @@
-# PROJECT_STATE.md — Estado vivo del proyecto
+# PROJECT_STATE.md — Executive dashboard
 
-## Última actualización
+Estado actualizado: 2026-07-01.
 
-2026-06-30
+## Estado ejecutivo
 
-## Estado general
+**Nivel 2 no esta cerrado con evidencia S5.**
 
-**En revisión para cierre de Nivel 2.**
+El workspace compila y las pruebas pasan, pero la corrida end-to-end real
+solicitada para Sprint S5 no finalizo en `SUCCEEDED`. El bloqueo activo esta en
+la activacion lifecycle de Nav2: despues de corregir el problema inicial de TF
+`odom -> base_footprint`, el stack queda atascado durante la transicion de
+Nav2 y no publica `/navigate_to_pose` activo.
 
-El proyecto tiene implementación avanzada en ROS2 Jazzy/Gazebo Sim, pero el Nivel 2 todavía no está certificado porque falta una validación completa de extremo a extremo con grafo ROS estable, percepción real o equivalente aceptado, navegación, manipulación e inventario final.
+## Evidencia S5 validada
 
-## Snapshot del workspace
+| Area | Estado | Evidencia |
+|---|:---:|---|
+| Build | OK | `colcon build --symlink-install --event-handlers console_direct+`: 11 paquetes finalizados |
+| Tests | OK | `colcon test` + `colcon test-result --verbose`: 9 tests, 0 errores, 0 fallos |
+| Validador sprint | OK | `./scripts/sprint_validator.sh`: build/test OK e interfaces obligatorias OK |
+| Interfaces | OK | Incluye `PickProduct`, `SpawnProduct` y `ExecuteStorageMission` |
+| Gazebo + spawn | OK parcial | El launch S5 arranca Gazebo y spawnea `product_box_conveyor` con ArUco 1 |
+| Percepcion ArUco | OK parcial | `aruco_detector` arranca y escucha camara; requiere mision completa para validar inventario final |
+| Manipulacion | OK parcial | Servidores `/pick_product` y `/place_product` arrancan con MoveIt2 |
+| TF odometria | OK tras fix | `diff_drive_controller` publica odom TF; EKF ya no duplica TF; smoke confirmo `odom -> base_footprint` |
+| Nav2 | BLOQUEADO | Lifecycle no llega a activar `bt_navigator`; `/navigate_to_pose` no queda disponible |
+| Mision S5 | FALLA | `/execute_storage_mission` termina ABORTED, no `SUCCEEDED` |
+| SQLite S5 | FALLA | DB temporal queda sin producto registrado por aborto temprano de la mision |
 
-```text
-Workspace: /home/agonb/Desktop/Robotica1-26/robotics/final_ws
-Rama auditada: feature/codex-interfaces
-Paquetes detectados: 11
-Tipo de paquetes: ros.ament_cmake
-```
+## Cambios tecnicos S5
 
-Paquetes detectados:
+- `scripts/sprint_validator.sh`: sourcing robusto con `set -u`, validacion de
+  `PickProduct` y `SpawnProduct`.
+- `warehouse_task_manager`: launch integrado con Gazebo, producto ArUco 1 por
+  defecto y FSM sin `|| true` en navegacion a cinta.
+- `warehouse_bringup`: `diff_drive_controller.enable_odom_tf=true` y
+  `ekf.publish_tf=false` para evitar TF duplicado.
+- `warehouse_navigation`: Nav2 consume `/diff_drive_controller/odom`; launch
+  reducido a core Nav2 para aislar lifecycle.
+- `warehouse_manipulation`: `pick_product_server` robustecido y
+  `place_product_server.launch.py` recibe configuracion MoveIt.
 
-```text
-robot_amr_description
-warehouse_bringup
-warehouse_gazebo
-warehouse_interfaces
-warehouse_inventory
-warehouse_manipulation
-warehouse_moveit_config
-warehouse_navigation
-warehouse_perception
-warehouse_robot_description
-warehouse_task_manager
-```
+## Bloqueador activo
 
-## Estado Git observado
-
-Hay múltiples archivos modificados y no trackeados. Antes de reestructurar o eliminar paquetes se debe hacer commit o branch de seguridad.
-
-Archivos no trackeados relevantes observados:
-
-```text
-REPORTE_ESTADO_FASES.md
-src/warehouse_gazebo/models/product_box/materials/
-src/warehouse_interfaces/srv/PlaceProduct.srv
-src/warehouse_manipulation/launch/
-src/warehouse_manipulation/src/place_product_server.cpp
-src/warehouse_perception/launch/
-src/warehouse_perception/src/
-src/warehouse_task_manager/launch/level2_integration.launch.py
-src/warehouse_task_manager/launch/storage_mission_nav2.launch.py
-```
-
-## Estado por fases
-
-| Fase | Estado consolidado | Evidencia reportada | Falta para cierre |
+| Bloqueador | Evidencia | Impacto | Proxima accion |
 |---|---|---|---|
-| Fase 1 - Baseline y estructura | Completa parcial | 11 paquetes `ament_cmake`; build previo registrado | Consolidar documentación base definitiva |
-| Fase 2 - AMR URDF/Xacro | Completa | `warehouse_robot_description` contiene URDF/Xacro oficial modular | Revalidación visual final |
-| Fase 3 - Brazo y gripper | Completa parcial | Xacro brazo/gripper y controladores presentes | Documentar validación cinemática y runtime |
-| Fase 4 - Gazebo Warehouse | Completa parcial | `warehouse_level2.world`, modelos y launch arrancan | Validación visual larga |
-| Fase 5 - Interfaces ROS2 | Completa parcial | Msg/Srv/Action existen | Resolver contrato de `/get_product_status` |
-| Fase 6 - Inventario SQLite | Completa parcial | `InventoryStore`, `inventory_manager`, `schema.sql`, tests previos | Servicio de consulta/status y control de DB runtime |
-| Fase 7 - ros2_control | Completa parcial | Controladores base, brazo y gripper reportados activos | Revalidación estable |
-| Fase 8 - MoveIt2 | Completa parcial / en revisión | Config MoveIt2 + `/place_product` en código | Runtime largo reproducible; revisar warnings/segfault al apagar |
-| Fase 9 - Nav2 y mapeo | Completa parcial | Nav2/SLAM arranca; `/navigate_to_pose` existe | Validación larga; evitar goals fuera del mapa |
-| Fase 10 - Percepción | Completa parcial | Mock publica; ArUco/OpenCV existe | Validar ArUco real en Gazebo con cámara observando caja |
-| Fase 11 - Task Manager FSM | En revisión | FSM integra inventario, detección, Nav2 y MoveIt2 | Confirmar aparición de `/execute_storage_mission` en integración |
-| Fase 12 - Integración Nivel 2 | En revisión | `level2_integration.launch.py` arranca stack principal | Misión completa con grafo ROS estable |
+| Nav2 lifecycle service timeout | Logs S5 muestran timeout en transicion lifecycle (`/planner_server/change_state`; previamente `/behavior_server/change_state` con launch oficial) | Sin `bt_navigator` activo no existe navegacion real y la mision aborta | Aislar middleware/lifecycle: probar transiciones manuales, comparar `rmw_cyclonedds_cpp` vs Fast DDS, revisar timeouts y secuenciar Nav2 tras controladores |
 
-## Bloqueos actuales
+## Comando de reproduccion S5
 
-| Bloqueo | Impacto | Acción requerida |
-|---|---|---|
-| Documentación desfasada | Alto | Usar `PROJECT.md`, `PROJECT_STATE.md`, `REPO_MAP.md` como nueva fuente de verdad |
-| `robot_amr_description` duplicado | Alto | Confirmar que no se usa y archivar/eliminar en rama separada |
-| `/get_product_status` no existe | Medio | Implementar o retirar formalmente del contrato |
-| Servicios/action no visibles en integración | Alto | Revalidar con daemon limpio y logs específicos |
-| Validación larga Nivel 2 pendiente | Alto | Ejecutar `VALIDATION_PLAN.md` |
-| Percepción real Gazebo no cerrada | Medio/alto | Confirmar cámara viendo ArUco real en mundo |
-| MoveIt2 runtime no cerrado | Medio | Validar `/place_product` con `move_group` y controladores |
-| Nav2 puede fallar por mapa/meta | Alto | Validar mapa listo antes de enviar goal |
-| Archivos no trackeados críticos | Alto | Decidir qué entra al commit antes de limpiar |
+```bash
+rm -f /tmp/warehouse_s5_e2e.db /tmp/warehouse_s5_e2e_launch.log
+ros2 daemon stop || true
+ros2 daemon start
+source /opt/ros/jazzy/setup.bash
+source install/setup.bash
 
-## Criterio de cierre
+ROS_DOMAIN_ID=57 timeout --signal=SIGINT --kill-after=20s 360s \
+  ros2 launch warehouse_task_manager level2_integration.launch.py \
+  rviz:=false \
+  auto_start_mission:=true \
+  use_mock_perception:=false \
+  mock_manipulation:=false \
+  nav_start_delay:=8.0 \
+  mission_stack_delay:=35.0 \
+  auto_goal_delay:=55.0 \
+  detection_timeout_sec:=30.0 \
+  product_id:=mock_product_1 \
+  database_path:=/tmp/warehouse_s5_e2e.db \
+  2>&1 | tee /tmp/warehouse_s5_e2e_launch.log
+```
 
-Nivel 2 solo puede declararse completado si:
+Resultado observado: goal `/execute_storage_mission` abortado porque Nav2 no
+estaba activo. SQLite consultado con Python stdlib porque `sqlite3` CLI no esta
+instalado; no hubo filas de producto ni ubicaciones ocupadas.
 
-1. build y tests pasan;
-2. Gazebo carga robot y mundo;
-3. Nav2 navega a ubicación válida;
-4. percepción genera producto detectado;
-5. inventario registra producto y asigna ubicación;
-6. FSM ejecuta la misión;
-7. MoveIt2 o `/place_product` completa el almacenamiento;
-8. SQLite queda actualizado;
-9. la acción termina en `SUCCEEDED`.
+## Criterio pendiente para cerrar Nivel 2
+
+Nivel 2 solo puede cerrarse cuando una corrida sin mocks de percepcion ni
+manipulacion demuestre:
+
+1. ArUco detectado desde la caja en cinta.
+2. Producto registrado en SQLite.
+3. Ubicacion asignada.
+4. Navegacion Nav2 a cinta y almacenamiento completada.
+5. Pick y place ejecutados en simulacion.
+6. `/execute_storage_mission` termina `SUCCEEDED`.
+7. SQLite final queda coherente con producto almacenado.

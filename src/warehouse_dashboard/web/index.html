@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warehouse Dashboard — ROS2</title>
+<script src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0f172a; color: #e2e8f0; padding: 2rem; }
+h1 { color: #38bdf8; margin-bottom: 0.5rem; }
+.subtitle { color: #94a3b8; margin-bottom: 2rem; }
+.card { background: #1e293b; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem; border: 1px solid #334155; }
+.card h2 { font-size: 1.1rem; margin-bottom: 1rem; color: #7dd3fc; }
+.status-dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 0.5rem; }
+.status-dot.connected { background: #22c55e; }
+.status-dot.disconnected { background: #ef4444; }
+.status-dot.connecting { background: #facc15; }
+label { display: block; margin-bottom: 0.3rem; font-size: 0.9rem; color: #94a3b8; }
+input[type="number"] { width: 100%; padding: 0.6rem; background: #0f172a; border: 1px solid #475569; border-radius: 0.4rem; color: #e2e8f0; font-size: 1rem; margin-bottom: 1rem; }
+button { background: #2563eb; color: #fff; border: none; padding: 0.6rem 1.5rem; border-radius: 0.4rem; font-size: 1rem; cursor: pointer; transition: background 0.2s; }
+button:hover { background: #1d4ed8; }
+button:disabled { background: #475569; cursor: not-allowed; }
+button.danger { background: #dc2626; }
+button.danger:hover { background: #b91c1c; }
+#status-bar { background: #1e293b; border: 1px solid #334155; border-radius: 0.4rem; padding: 0.8rem 1rem; margin-bottom: 1rem; }
+#status-bar.connected { border-left: 4px solid #22c55e; }
+#status-bar.disconnected { border-left: 4px solid #ef4444; }
+#robot-position { font-family: 'Courier New', monospace; font-size: 0.95rem; }
+#log-area { background: #0f172a; border: 1px solid #334155; border-radius: 0.4rem; padding: 0.8rem; height: 150px; overflow-y: auto; font-family: 'Courier New', monospace; font-size: 0.85rem; }
+.log-entry { padding: 0.2rem 0; border-bottom: 1px solid #1e293b; color: #94a3b8; }
+.log-entry.info { color: #7dd3fc; }
+.log-entry.success { color: #22c55e; }
+.log-entry.error { color: #ef4444; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+@media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<h1>Warehouse Dashboard</h1>
+<p class="subtitle">Monitoreo y control del sistema de inventario autónomo</p>
+
+<div id="status-bar" class="disconnected">
+  <span class="status-dot disconnected" id="status-dot"></span>
+  <span id="status-text">Desconectado — intentando conectar a rosbridge...</span>
+</div>
+
+<div class="grid-2">
+  <div class="card">
+    <h2>Posición del Robot</h2>
+    <div id="robot-position">
+      <div>x: <span id="pose-x">—</span></div>
+      <div>y: <span id="pose-y">—</span></div>
+      <div>z: <span id="pose-z">—</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Spawneo de Caja</h2>
+    <label for="aruco-id">ArUco ID (1–10)</label>
+    <input type="number" id="aruco-id" min="1" max="10" value="1">
+    <div class="grid-2">
+      <button id="spawn-btn" disabled>Spawn Caja</button>
+      <button id="delete-btn" class="danger" disabled>Eliminar por ArUco</button>
+    </div>
+    <div style="margin-top: 1rem;">
+      <button id="delete-all-btn" class="danger" disabled>Eliminar Todas</button>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Registro de Eventos</h2>
+  <div id="log-area"></div>
+</div>
+
+<script>
+const ROSBRIDGE_URL = 'ws://localhost:9090';
+
+const ros = new ROSLIB.Ros({ url: ROSBRIDGE_URL });
+
+const statusBar = document.getElementById('status-bar');
+const statusDot = document.getElementById('status-dot');
+const statusText = document.getElementById('status-text');
+const spawnBtn = document.getElementById('spawn-btn');
+const deleteBtn = document.getElementById('delete-btn');
+const deleteAllBtn = document.getElementById('delete-all-btn');
+const logArea = document.getElementById('log-area');
+
+function log(text, type) {
+  const entry = document.createElement('div');
+  entry.className = 'log-entry ' + (type || '');
+  entry.textContent = '[' + new Date().toLocaleTimeString() + '] ' + text;
+  logArea.appendChild(entry);
+  logArea.scrollTop = logArea.scrollHeight;
+}
+
+function setConnected() {
+  statusBar.className = 'connected';
+  statusDot.className = 'status-dot connected';
+  statusText.textContent = 'Conectado a rosbridge en ' + ROSBRIDGE_URL;
+  spawnBtn.disabled = false;
+  deleteBtn.disabled = false;
+  deleteAllBtn.disabled = false;
+  log('Conectado a rosbridge', 'success');
+}
+
+function setDisconnected() {
+  statusBar.className = 'disconnected';
+  statusDot.className = 'status-dot disconnected';
+  statusText.textContent = 'Desconectado';
+  spawnBtn.disabled = true;
+  deleteBtn.disabled = true;
+  deleteAllBtn.disabled = true;
+}
+
+function setConnecting() {
+  statusDot.className = 'status-dot connecting';
+  statusText.textContent = 'Conectando...';
+}
+
+ros.on('connection', setConnected);
+ros.on('close', setDisconnected);
+ros.on('error', function (e) {
+  log('Error de conexión: ' + e, 'error');
+  setDisconnected();
+});
+
+setConnecting();
+
+const poseListener = new ROSLIB.Topic({
+  ros: ros,
+  name: '/diff_drive_controller/odom',
+  messageType: 'nav_msgs/msg/Odometry',
+});
+
+poseListener.subscribe(function (msg) {
+  document.getElementById('pose-x').textContent = msg.pose.pose.position.x.toFixed(3);
+  document.getElementById('pose-y').textContent = msg.pose.pose.position.y.toFixed(3);
+  document.getElementById('pose-z').textContent = msg.pose.pose.position.z.toFixed(3);
+  // No loguear cada vez para no llenar el log de la UI (odom va muy rápido)
+});
+
+const spawnClient = new ROSLIB.Service({
+  ros: ros,
+  name: '/spawn_product_box',
+  serviceType: 'warehouse_interfaces/srv/SpawnProduct',
+});
+
+const deleteClient = new ROSLIB.Service({
+  ros: ros,
+  name: '/delete_product_box',
+  serviceType: 'warehouse_interfaces/srv/DeleteProduct',
+});
+
+spawnBtn.addEventListener('click', function () {
+  const arucoId = parseInt(document.getElementById('aruco-id').value, 10);
+  if (isNaN(arucoId) || arucoId < 1 || arucoId > 10) {
+    log('ArUco ID inválido: debe ser entre 1 y 10', 'error');
+    return;
+  }
+
+  spawnBtn.disabled = true;
+  spawnBtn.textContent = 'Spawneando...';
+  log('Llamando /spawn_product_box con aruco_id=' + arucoId, 'info');
+
+  const request = new ROSLIB.ServiceRequest({ aruco_id: arucoId });
+
+  spawnClient.callService(request, function (result) {
+    log('Respuesta: ' + result.message, result.success ? 'success' : 'error');
+    spawnBtn.disabled = false;
+    spawnBtn.textContent = 'Spawn Caja';
+  }, function (error) {
+    log('Error en servicio: ' + error, 'error');
+    spawnBtn.disabled = false;
+    spawnBtn.textContent = 'Spawn Caja';
+  });
+});
+
+deleteBtn.addEventListener('click', function () {
+  const arucoId = parseInt(document.getElementById('aruco-id').value, 10);
+  if (isNaN(arucoId) || arucoId < 1 || arucoId > 10) {
+    log('ArUco ID inválido: debe ser entre 1 y 10', 'error');
+    return;
+  }
+
+  deleteBtn.disabled = true;
+  deleteBtn.textContent = 'Eliminando...';
+  log('Llamando /delete_product_box para aruco_id=' + arucoId, 'info');
+
+  const request = new ROSLIB.ServiceRequest({ aruco_id: arucoId, delete_all: false });
+
+  deleteClient.callService(request, function (result) {
+    log('Respuesta: ' + result.message, result.success ? 'success' : 'error');
+    deleteBtn.disabled = false;
+    deleteBtn.textContent = 'Eliminar por ArUco';
+  }, function (error) {
+    log('Error en servicio: ' + error, 'error');
+    deleteBtn.disabled = false;
+    deleteBtn.textContent = 'Eliminar por ArUco';
+  });
+});
+
+deleteAllBtn.addEventListener('click', function () {
+  deleteAllBtn.disabled = true;
+  deleteAllBtn.textContent = 'Eliminando...';
+  log('Llamando /delete_product_box para eliminar todas las cajas spawneadas', 'info');
+
+  const request = new ROSLIB.ServiceRequest({ aruco_id: 0, delete_all: true });
+
+  deleteClient.callService(request, function (result) {
+    log('Respuesta: ' + result.message, result.success ? 'success' : 'error');
+    deleteAllBtn.disabled = false;
+    deleteAllBtn.textContent = 'Eliminar Todas';
+  }, function (error) {
+    log('Error en servicio: ' + error, 'error');
+    deleteAllBtn.disabled = false;
+    deleteAllBtn.textContent = 'Eliminar Todas';
+  });
+});
+</script>
+</body>
+</html>

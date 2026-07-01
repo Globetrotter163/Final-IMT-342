@@ -10,9 +10,11 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration("use_sim_time")
     rviz = LaunchConfiguration("rviz")
     nav_start_delay = LaunchConfiguration("nav_start_delay")
+    slam_warmup_delay = LaunchConfiguration("slam_warmup_delay")
     mission_stack_delay = LaunchConfiguration("mission_stack_delay")
     auto_start_mission = LaunchConfiguration("auto_start_mission")
     auto_goal_delay = LaunchConfiguration("auto_goal_delay")
+    launch_mission_stack = LaunchConfiguration("launch_mission_stack")
     database_path = LaunchConfiguration("database_path")
     mock_manipulation = LaunchConfiguration("mock_manipulation")
     use_mock_perception = LaunchConfiguration("use_mock_perception")
@@ -23,6 +25,11 @@ def generate_launch_description():
     barcode = LaunchConfiguration("barcode")
     quantity = LaunchConfiguration("quantity")
 
+    gazebo_launch = PathJoinSubstitution([
+        FindPackageShare("warehouse_gazebo"),
+        "launch",
+        "warehouse.launch.py",
+    ])
     nav2_launch = PathJoinSubstitution([
         FindPackageShare("warehouse_navigation"),
         "launch",
@@ -61,8 +68,13 @@ def generate_launch_description():
             description="Delay before Nav2 starts after Gazebo spawn.",
         ),
         DeclareLaunchArgument(
+            "slam_warmup_delay",
+            default_value="6.0",
+            description="Delay between slam_toolbox startup and Nav2 lifecycle startup.",
+        ),
+        DeclareLaunchArgument(
             "mission_stack_delay",
-            default_value="24.0",
+            default_value="35.0",
             description="Delay before inventory, MoveIt/manipulation and FSM start.",
         ),
         DeclareLaunchArgument(
@@ -72,8 +84,13 @@ def generate_launch_description():
         ),
         DeclareLaunchArgument(
             "auto_goal_delay",
-            default_value="45.0",
+            default_value="55.0",
             description="Delay before sending the automatic mission goal.",
+        ),
+        DeclareLaunchArgument(
+            "launch_mission_stack",
+            default_value="true",
+            description="Launch inventory, manipulation and FSM stack after the configured delay.",
         ),
         DeclareLaunchArgument(
             "database_path",
@@ -102,8 +119,8 @@ def generate_launch_description():
         ),
         DeclareLaunchArgument(
             "product_id",
-            default_value="level2_product_001",
-            description="Product ID published by perception and used by the automatic goal.",
+            default_value="mock_product_1",
+            description="Product ID detected from the default ArUco marker and used by the automatic goal.",
         ),
         DeclareLaunchArgument(
             "product_name",
@@ -112,7 +129,7 @@ def generate_launch_description():
         ),
         DeclareLaunchArgument(
             "barcode",
-            default_value="TAG-001",
+            default_value="ARUCO-1",
             description="AprilTag/barcode value associated with the product.",
         ),
         DeclareLaunchArgument(
@@ -121,11 +138,15 @@ def generate_launch_description():
             description="Quantity used by the automatic ExecuteStorageMission goal.",
         ),
         IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(gazebo_launch),
+        ),
+        IncludeLaunchDescription(
             PythonLaunchDescriptionSource(nav2_launch),
             launch_arguments={
                 "use_sim_time": use_sim_time,
                 "rviz": rviz,
                 "nav_start_delay": nav_start_delay,
+                "slam_warmup_delay": slam_warmup_delay,
             }.items(),
         ),
         IncludeLaunchDescription(
@@ -151,6 +172,7 @@ def generate_launch_description():
         ),
         TimerAction(
             period=mission_stack_delay,
+            condition=IfCondition(launch_mission_stack),
             actions=[
                 IncludeLaunchDescription(
                     PythonLaunchDescriptionSource(mission_launch),

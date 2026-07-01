@@ -7,12 +7,16 @@
 #include <sstream>
 #include <stdexcept>
 #include <string>
+#include <thread>
 #include <vector>
 
 #include "control_msgs/action/follow_joint_trajectory.hpp"
 #include "moveit/move_group_interface/move_group_interface.hpp"
+#include "moveit/planning_scene_interface/planning_scene_interface.hpp"
+#include "moveit_msgs/msg/attached_collision_object.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
+#include "shape_msgs/msg/solid_primitive.hpp"
 #include "trajectory_msgs/msg/joint_trajectory_point.hpp"
 #include "warehouse_interfaces/srv/pick_product.hpp"
 #include "geometry_msgs/msg/pose.hpp"
@@ -48,13 +52,23 @@ public:
     max_acceleration_scaling_ = parameter_or<double>("max_acceleration_scaling", 0.35);
     action_timeout_ = std::chrono::duration<double>(
       parameter_or<double>("action_timeout_sec", 45.0));
-    
+    pre_grasp_z_offset_ = parameter_or<double>("pre_grasp_z_offset", 0.18);
+    grasp_z_offset_ = parameter_or<double>("grasp_z_offset", 0.05);
+    lift_z_offset_ = parameter_or<double>("lift_z_offset", 0.35);
+    settle_after_grasp_sec_ = parameter_or<double>("settle_after_grasp_sec", 0.4);
+    attach_object_in_planning_scene_ =
+      parameter_or<bool>("attach_object_in_planning_scene", false);
+    attached_object_link_ = parameter_or<std::string>("attached_object_link", "wrist_roll_link");
+    object_length_ = parameter_or<double>("object_length", 0.20);
+    object_width_ = parameter_or<double>("object_width", 0.15);
+    object_height_ = parameter_or<double>("object_height", 0.12);
+
     gripper_action_name_ = parameter_or<std::string>(
       "gripper_action_name", "/gripper_controller/follow_joint_trajectory");
     gripper_joint_names_ = parameter_or<std::vector<std::string>>(
       "gripper_joint_names", {"left_finger_joint", "right_finger_joint"});
-    gripper_open_position_ = parameter_or<double>("gripper_open_position", 0.018);
-    gripper_close_position_ = parameter_or<double>("gripper_close_position", 0.005);
+    gripper_open_position_ = parameter_or<double>("gripper_open_position", 0.0);
+    gripper_close_position_ = parameter_or<double>("gripper_close_position", 0.04);
     gripper_motion_duration_sec_ = parameter_or<double>("gripper_motion_duration_sec", 1.0);
 
     arm_group_ = std::make_unique<MoveGroupInterface>(node_, arm_group_name_);
@@ -78,7 +92,7 @@ public:
       callback_group_);
 
     clear_octomap_client_ = node_->create_client<std_srvs::srv::Empty>(
-      "/clear_octomap", rmw_qos_profile_services_default, callback_group_);
+      "/clear_octomap", rclcpp::ServicesQoS(), callback_group_);
 
     RCLCPP_INFO(
       logger_,
@@ -108,42 +122,30 @@ private:
       request->product_id.c_str(), request->x, request->y, request->z);
 
     try {
-      // 1. Open gripper
       command_gripper(gripper_open_position_, "open");
+      clear_octomap();
 
-      // 1.5 Clear Octomap
-      if (clear_octomap_client_->wait_for_service(2s)) {
-        auto req = std::make_shared<std_srvs::srv::Empty::Request>();
-        auto future = clear_octomap_client_->async_send_request(req);
-        if (future.wait_for(2s) == std::future_status::ready) {
-          RCLCPP_INFO(logger_, "Cleared Octomap before picking");
-        }
+      const auto pre_grasp_pose = make_pick_pose(*request, pre_grasp_z_offset_);
+      move_arm_to_pose(pre_grasp_pose, "pre-grasp");
+
+      const auto grasp_pose = make_pick_pose(*request, grasp_z_offset_);
+      move_arm_to_pose(grasp_pose, "grasp");
+
+      command_gripper(gripper_close_position_, "close");
+      if (settle_after_grasp_sec_ > 0.0) {
+        std::this_thread::sleep_for(std::chrono::duration<double>(settle_after_grasp_sec_));
       }
 
-      // 2. Approach the box
-      geometry_msgs::msg::Pose target_pose;
-      target_pose.position.x = request->x;
-      target_pose.position.y = request->y;
-      target_pose.position.z = request->z + 0.15; // Gripper center will be at box center + offset if needed
-      // Actually we need to point the gripper downwards or forwards. Let's assume pointing down.
-      tf2::Quaternion q;
-      q.setRPY(0, kPi / 2.0, 0); // Pointing down
-      target_pose.orientation = tf2::toMsg(q);
-      
-      move_arm_to_pose(target_pose);
+      if (attach_object_in_planning_scene_) {
+        attach_object_to_gripper(request->product_id);
+      }
 
-      // Move down to grab
-      target_pose.position.z = request->z + 0.05; // lower
-      move_arm_to_pose(target_pose);
-
-      // 3. Close the gripper
-      command_gripper(gripper_close_position_, "close");
-
-      // 4. Move arm to a safe transport position
+      const auto lift_pose = make_pick_pose(*request, lift_z_offset_);
+      move_arm_to_pose(lift_pose, "lift");
       move_arm_to_named_target(pre_place_named_target_);
 
       response->success = true;
-      response->message = "MoveIt2 pick completed for " + request->product_id;
+      response->message = "MoveIt2 pick completed and lifted " + request->product_id;
       RCLCPP_INFO(logger_, "%s", response->message.c_str());
     } catch (const std::exception & error) {
       response->success = false;
@@ -152,26 +154,63 @@ private:
     }
   }
 
-  void move_arm_to_pose(const geometry_msgs::msg::Pose & target_pose)
+  geometry_msgs::msg::Pose make_pick_pose(
+    const PickProduct::Request & request,
+    double z_offset) const
+  {
+    geometry_msgs::msg::Pose target_pose;
+    target_pose.position.x = request.x;
+    target_pose.position.y = request.y;
+    target_pose.position.z = request.z + z_offset;
+
+    tf2::Quaternion q;
+    q.setRPY(0.0, kPi / 2.0, 0.0);
+    target_pose.orientation = tf2::toMsg(q);
+    return target_pose;
+  }
+
+  void clear_octomap()
+  {
+    if (!clear_octomap_client_->wait_for_service(2s)) {
+      RCLCPP_WARN(logger_, "Clear octomap service not available; continuing pick");
+      return;
+    }
+
+    auto req = std::make_shared<std_srvs::srv::Empty::Request>();
+    auto future = clear_octomap_client_->async_send_request(req);
+    if (future.wait_for(2s) == std::future_status::ready) {
+      RCLCPP_INFO(logger_, "Cleared Octomap before picking");
+    } else {
+      RCLCPP_WARN(logger_, "Timed out clearing Octomap; continuing pick");
+    }
+  }
+
+  void move_arm_to_pose(const geometry_msgs::msg::Pose & target_pose, const std::string & label)
   {
     arm_group_->setPoseReferenceFrame("base_link");
     arm_group_->setStartStateToCurrentState();
+    arm_group_->clearPoseTargets();
     arm_group_->setPositionTarget(target_pose.position.x, target_pose.position.y, target_pose.position.z);
 
-    RCLCPP_INFO(logger_, "Planning arm motion to pose x=%.2f y=%.2f z=%.2f", target_pose.position.x, target_pose.position.y, target_pose.position.z);
+    RCLCPP_INFO(
+      logger_,
+      "Planning arm motion to %s pose x=%.2f y=%.2f z=%.2f",
+      label.c_str(), target_pose.position.x, target_pose.position.y, target_pose.position.z);
     MoveGroupInterface::Plan plan;
     const auto planning_result = arm_group_->plan(plan);
     if (planning_result != moveit::core::MoveItErrorCode::SUCCESS) {
       std::ostringstream error;
-      error << "MoveIt2 planning to pose failed (code=" << planning_result.val << ")";
+      error << "MoveIt2 planning to " << label << " pose failed (code="
+            << planning_result.val << ")";
       throw std::runtime_error(error.str());
     }
 
-    RCLCPP_INFO(logger_, "Executing arm motion to pose");
+    RCLCPP_INFO(logger_, "Executing arm motion to %s pose", label.c_str());
     const auto execution_result = arm_group_->execute(plan);
     if (execution_result != moveit::core::MoveItErrorCode::SUCCESS) {
       std::ostringstream error;
-      error << "MoveIt2 execution to pose failed (code=" << execution_result.val << ")";
+      error << "MoveIt2 execution to " << label << " pose failed (code="
+            << execution_result.val << ")";
       throw std::runtime_error(error.str());
     }
   }
@@ -201,6 +240,43 @@ private:
             << " (code=" << execution_result.val << ")";
       throw std::runtime_error(error.str());
     }
+  }
+
+  void attach_object_to_gripper(const std::string & product_id)
+  {
+    if (!planning_scene_interface_) {
+      planning_scene_interface_ =
+        std::make_unique<moveit::planning_interface::PlanningSceneInterface>();
+    }
+
+    moveit_msgs::msg::AttachedCollisionObject attached_object;
+    attached_object.link_name = attached_object_link_;
+    attached_object.object.id = product_id.empty() ? "picked_product" : product_id;
+    attached_object.object.header.frame_id = attached_object_link_;
+
+    shape_msgs::msg::SolidPrimitive box;
+    box.type = shape_msgs::msg::SolidPrimitive::BOX;
+    box.dimensions = {object_length_, object_width_, object_height_};
+
+    geometry_msgs::msg::Pose pose;
+    pose.orientation.w = 1.0;
+    pose.position.z = object_height_ * 0.5;
+
+    attached_object.object.primitives.push_back(box);
+    attached_object.object.primitive_poses.push_back(pose);
+    attached_object.object.operation = attached_object.object.ADD;
+    attached_object.touch_links = {
+      attached_object_link_,
+      "gripper_base_link",
+      "left_finger",
+      "right_finger"
+    };
+
+    planning_scene_interface_->applyAttachedCollisionObject(attached_object);
+    RCLCPP_INFO(
+      logger_,
+      "Attached %s to %s in MoveIt planning scene",
+      attached_object.object.id.c_str(), attached_object_link_.c_str());
   }
 
   void command_gripper(double position, const std::string & label)
@@ -275,6 +351,7 @@ private:
   rclcpp::CallbackGroup::SharedPtr callback_group_;
   rclcpp::Service<PickProduct>::SharedPtr service_;
   std::unique_ptr<MoveGroupInterface> arm_group_;
+  std::unique_ptr<moveit::planning_interface::PlanningSceneInterface> planning_scene_interface_;
   rclcpp_action::Client<FollowJointTrajectory>::SharedPtr gripper_client_;
   rclcpp::Client<std_srvs::srv::Empty>::SharedPtr clear_octomap_client_;
 
@@ -287,10 +364,19 @@ private:
   double max_velocity_scaling_{0.35};
   double max_acceleration_scaling_{0.35};
   std::chrono::duration<double> action_timeout_{45.0};
+  double pre_grasp_z_offset_{0.18};
+  double grasp_z_offset_{0.05};
+  double lift_z_offset_{0.35};
+  double settle_after_grasp_sec_{0.4};
+  bool attach_object_in_planning_scene_{false};
+  std::string attached_object_link_{"wrist_roll_link"};
+  double object_length_{0.20};
+  double object_width_{0.15};
+  double object_height_{0.12};
   std::string gripper_action_name_;
   std::vector<std::string> gripper_joint_names_;
-  double gripper_open_position_{0.018};
-  double gripper_close_position_{0.005};
+  double gripper_open_position_{0.0};
+  double gripper_close_position_{0.04};
   double gripper_motion_duration_sec_{1.0};
 };
 

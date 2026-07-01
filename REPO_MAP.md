@@ -10,17 +10,17 @@
 
 | Paquete | Ruta | Estado | Responsable probable | Propósito |
 |---|---|---|---|---|
-| `warehouse_robot_description` | `src/warehouse_robot_description` | Oficial activo | Antigravity | URDF/Xacro modular oficial del robot |
-| `robot_amr_description` | `src/robot_amr_description` | Legacy/duplicado | Antigravity/prototipo | URDF/Xacro antiguo; no usar en nuevas integraciones |
-| `warehouse_gazebo` | `src/warehouse_gazebo` | Activo | Antigravity + Codex | Mundo Gazebo Sim, modelos, bridges, spawn |
-| `warehouse_bringup` | `src/warehouse_bringup` | Activo | Antigravity + Codex | Controladores y relay `Twist` → `TwistStamped` |
-| `warehouse_navigation` | `src/warehouse_navigation` | Activo | Antigravity + Codex | Nav2 + SLAM Toolbox + RViz config |
-| `warehouse_moveit_config` | `src/warehouse_moveit_config` | Activo | Antigravity + Codex | Config MoveIt2 para `warehouse_robot` |
-| `warehouse_manipulation` | `src/warehouse_manipulation` | Activo parcial | Antigravity + Codex | Demo MoveIt2 y servidor `/place_product` |
-| `warehouse_interfaces` | `src/warehouse_interfaces` | Activo | Codex | Msg/Srv/Action del sistema |
-| `warehouse_inventory` | `src/warehouse_inventory` | Activo parcial | Codex | SQLite + servicios de inventario |
-| `warehouse_perception` | `src/warehouse_perception` | Activo parcial | Codex | Mock percepción y ArUco/OpenCV |
-| `warehouse_task_manager` | `src/warehouse_task_manager` | En revisión | Codex | FSM, action server e integración |
+| `warehouse_robot_description` | `src/warehouse_robot_description` | Oficial activo | B (GPT/Codex) | URDF/Xacro modular oficial del robot |
+| `robot_amr_description` | `src/robot_amr_description` | Legacy/duplicado | Director decide | URDF/Xacro antiguo; no usar en nuevas integraciones |
+| `warehouse_gazebo` | `src/warehouse_gazebo` | Activo | B (GPT/Codex) | Mundo Gazebo Sim, modelos, bridges, spawn |
+| `warehouse_bringup` | `src/warehouse_bringup` | Activo | B (GPT/Codex) | Controladores y relay `Twist` → `TwistStamped` |
+| `warehouse_navigation` | `src/warehouse_navigation` | Activo parcial | C (Gemini/Antigravity) | Nav2 + SLAM Toolbox + RViz config; S5 bloqueado en lifecycle |
+| `warehouse_moveit_config` | `src/warehouse_moveit_config` | Activo | B (GPT/Codex) | Config MoveIt2 para `warehouse_robot` |
+| `warehouse_manipulation` | `src/warehouse_manipulation` | Activo parcial | B (GPT/Codex) | Servidores MoveIt2 `/pick_product` y `/place_product` |
+| `warehouse_interfaces` | `src/warehouse_interfaces` | Activo | A (DeepSeek/OpenCode) | Msg/Srv/Action del sistema |
+| `warehouse_inventory` | `src/warehouse_inventory` | Activo parcial | A (DeepSeek/OpenCode) | SQLite + servicios de inventario |
+| `warehouse_perception` | `src/warehouse_perception` | Activo parcial | A (DeepSeek/OpenCode) | Mock percepción y ArUco/OpenCV |
+| `warehouse_task_manager` | `src/warehouse_task_manager` | En revisión | C (Gemini/Antigravity) | FSM, action server e integración |
 
 ## Paquete oficial de descripción robótica
 
@@ -79,7 +79,9 @@ La estructura real empaqueta esos recursos dentro de paquetes ROS2:
 | `RegisterProduct` | srv | `warehouse_interfaces` | Activa |
 | `AssignStorageLocation` | srv | `warehouse_interfaces` | Activa |
 | `UpdateInventory` | srv | `warehouse_interfaces` | Activa |
-| `PlaceProduct` | srv | `warehouse_interfaces` | Activa, nueva/no trackeada en auditoría |
+| `PlaceProduct` | srv | `warehouse_interfaces` | Activa |
+| `PickProduct` | srv | `warehouse_interfaces` | Activa |
+| `SpawnProduct` | srv | `warehouse_interfaces` | Activa |
 | `ExecuteStorageMission` | action | `warehouse_interfaces` | Activa en código |
 
 No existe:
@@ -98,5 +100,5 @@ No existe:
 | `VALIDATION_PLAN.md` | Protocolo de cierre Nivel 2 |
 | `SKILLS.md` | Capacidades necesarias |
 | `docs/adr/*.md` | Decisiones técnicas |
-| `docs/audit/*.md` | Auditorías originales |
-| `docs/archive/*.md` | Documentos históricos |
+| `docs/audit/AUDIT_CURRENT_STATUS.md` | Auditoría viva consolidada |
+| `docs/archive/*.md` | Documentos y auditorías históricas |

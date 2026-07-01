@@ -13,6 +13,7 @@ def generate_launch_description():
             "robot.urdf.xacro"
         ))
         .robot_description_semantic(file_path="config/warehouse_robot.srdf")
+        .robot_description_kinematics(file_path="config/kinematics.yaml")
         .planning_scene_monitor(
             publish_robot_description=True, publish_robot_description_semantic=True
         )

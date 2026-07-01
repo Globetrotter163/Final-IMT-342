@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+- Consolidate audits into `docs/audit/AUDIT_CURRENT_STATUS.md` and move historical audits to `docs/archive/`.
+- Add stable per-agent task files for Codex, Antigravity, and Director under `docs/tasks/`; these are living files to update, not date-based task copies.
+- Add Director initial audit report and align live documentation with the current audited branch, ADR-008 contract decision, and build/test evidence.
 - Add SQLite inventory schema and `inventory_manager` service node.
 - Add `InventoryStore` unit tests for product registration, location assignment, and stock updates.
 - Add `task_manager_fsm` action server with mock mission execution and inventory service integration.

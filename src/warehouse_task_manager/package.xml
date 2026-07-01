@@ -8,10 +8,13 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
   <depend>geometry_msgs</depend>
+  <depend>lifecycle_msgs</depend>
   <depend>nav2_msgs</depend>
+  <depend>nav_msgs</depend>
   <depend>rclcpp_action</depend>
   <depend>warehouse_inventory</depend>
   <depend>warehouse_interfaces</depend>
+  <exec_depend>warehouse_gazebo</exec_depend>
   <exec_depend>warehouse_manipulation</exec_depend>
   <exec_depend>warehouse_moveit_config</exec_depend>
   <exec_depend>warehouse_navigation</exec_depend>

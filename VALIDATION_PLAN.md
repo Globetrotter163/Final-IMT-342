@@ -1,24 +1,20 @@
-# VALIDATION_PLAN.md — Protocolo de validación Nivel 2
+# VALIDATION_PLAN.md — Protocolo de validacion Nivel 2
 
 ## Objetivo
 
-Validar que el sistema ejecuta en simulación el flujo Nivel 2:
+Validar el flujo Nivel 2 en simulacion:
 
 ```text
-Detectar → Identificar → Registrar → Asignar ubicación → Navegar → Depositar → Actualizar inventario
+caja con ArUco en cinta -> deteccion -> SQLite -> asignacion -> Nav2 -> pick fisico -> navegacion a almacen -> place -> inventario -> /execute_storage_mission SUCCEEDED
 ```
 
 ## Estado actual
 
-La integración está en revisión. El launch integrador existe y arranca parcialmente, pero aún se reportan anomalías:
+Sprint S5 esta bloqueado. Build, tests e interfaces pasan, pero la corrida real
+sin mocks aborta porque Nav2 no completa su activacion lifecycle y
+`/navigate_to_pose` no queda disponible.
 
-- servicios propios no siempre aparecen en `ros2 service list`;
-- `/execute_storage_mission` no siempre aparece en `ros2 action list`;
-- percepción real con cámara/ArUco en Gazebo no está cerrada;
-- MoveIt2 runtime y `/place_product` requieren revalidación larga;
-- Nav2 puede fallar si el mapa aún no está listo o si el goal cae fuera del mapa.
-
-## Preparación
+## Preparacion
 
 ```bash
 ros2 daemon stop || true
@@ -27,104 +23,123 @@ source /opt/ros/jazzy/setup.bash
 source install/setup.bash
 ```
 
-## Build
+Si el entorno tiene `set -u`, desactivarlo antes de sourcear ROS:
+
+```bash
+set +u
+source /opt/ros/jazzy/setup.bash
+source install/setup.bash
+```
+
+## Build y tests
 
 ```bash
 colcon build --symlink-install --event-handlers console_direct+
-```
-
-## Tests
-
-```bash
+source install/setup.bash
 colcon test --event-handlers console_direct+
+colcon test-result --verbose
 ```
 
-## Validación de interfaces
+Criterio: 11 paquetes compilados y `9 tests, 0 errors, 0 failures`.
+
+## Validador sprint
 
 ```bash
-ros2 interface show warehouse_interfaces/msg/DetectedProduct
-ros2 interface show warehouse_interfaces/msg/ProductRecord
-ros2 interface show warehouse_interfaces/msg/StorageLocation
-ros2 interface show warehouse_interfaces/srv/RegisterProduct
-ros2 interface show warehouse_interfaces/srv/AssignStorageLocation
-ros2 interface show warehouse_interfaces/srv/UpdateInventory
-ros2 interface show warehouse_interfaces/srv/PlaceProduct
-ros2 interface show warehouse_interfaces/action/ExecuteStorageMission
+./scripts/sprint_validator.sh
 ```
 
-## Validación del stack integrado sin misión automática
+Criterio: build/test OK e interfaces obligatorias OK, incluyendo:
+
+```text
+warehouse_interfaces/msg/DetectedProduct
+warehouse_interfaces/msg/ProductRecord
+warehouse_interfaces/msg/StorageLocation
+warehouse_interfaces/srv/RegisterProduct
+warehouse_interfaces/srv/AssignStorageLocation
+warehouse_interfaces/srv/UpdateInventory
+warehouse_interfaces/srv/PlaceProduct
+warehouse_interfaces/srv/PickProduct
+warehouse_interfaces/srv/SpawnProduct
+warehouse_interfaces/action/ExecuteStorageMission
+```
+
+## Validacion Nav2 aislada
+
+Antes de repetir la mision completa, Nav2 debe quedar activo.
 
 ```bash
-ros2 launch warehouse_task_manager level2_integration.launch.py   rviz:=false   auto_start_mission:=false   mock_manipulation:=true   use_mock_perception:=true   nav_start_delay:=5.0   mission_stack_delay:=16.0   database_path:=/tmp/warehouse_level2_validation.db
+ROS_DOMAIN_ID=59 ros2 launch warehouse_task_manager level2_integration.launch.py \
+  rviz:=false \
+  auto_start_mission:=false \
+  mock_manipulation:=true \
+  use_mock_perception:=true \
+  nav_start_delay:=8.0 \
+  mission_stack_delay:=35.0 \
+  database_path:=/tmp/warehouse_nav_smoke.db
 ```
 
 En otra terminal:
 
 ```bash
-ros2 topic list
-ros2 service list
-ros2 action list
+source /opt/ros/jazzy/setup.bash
+source install/setup.bash
+ROS_DOMAIN_ID=59 ros2 action list | grep navigate_to_pose
+ROS_DOMAIN_ID=59 ros2 lifecycle get /bt_navigator
+ROS_DOMAIN_ID=59 ros2 run tf2_ros tf2_echo odom base_footprint
 ```
 
-Services esperados:
+Criterio para avanzar: `/navigate_to_pose` existe y `/bt_navigator` esta
+`active`. Si aparece timeout en `/planner_server/change_state` o
+`/behavior_server/change_state`, no avanzar a mision completa.
 
-```text
-/register_product
-/assign_storage_location
-/update_inventory
+## Mision S5 sin mocks
+
+```bash
+rm -f /tmp/warehouse_s5_e2e.db /tmp/warehouse_s5_e2e_launch.log
+
+ROS_DOMAIN_ID=57 timeout --signal=SIGINT --kill-after=20s 360s \
+  ros2 launch warehouse_task_manager level2_integration.launch.py \
+  rviz:=false \
+  auto_start_mission:=true \
+  use_mock_perception:=false \
+  mock_manipulation:=false \
+  nav_start_delay:=8.0 \
+  mission_stack_delay:=35.0 \
+  auto_goal_delay:=55.0 \
+  detection_timeout_sec:=30.0 \
+  product_id:=mock_product_1 \
+  database_path:=/tmp/warehouse_s5_e2e.db \
+  2>&1 | tee /tmp/warehouse_s5_e2e_launch.log
 ```
 
-Actions esperadas:
+## Validacion SQLite
 
-```text
-/execute_storage_mission
-/navigate_to_pose
-/arm_controller/follow_joint_trajectory
-/gripper_controller/follow_joint_trajectory
+Si `sqlite3` CLI no esta instalado, usar Python stdlib:
+
+```bash
+python3 - <<'PY'
+import sqlite3
+db = "/tmp/warehouse_s5_e2e.db"
+con = sqlite3.connect(db)
+cur = con.cursor()
+print(cur.execute("select product_id,status,storage_location,quantity from products").fetchall())
+print(cur.execute("select location_id,occupied,product_id from storage_locations where product_id is not null").fetchall())
+con.close()
+PY
 ```
-
-## Validación progresiva de misión
-
-### Etapa A
-
-```text
-use_mock_perception:=true
-mock_manipulation:=true
-```
-
-### Etapa B
-
-```text
-use_mock_perception:=false
-mock_manipulation:=true
-```
-
-### Etapa C
-
-```text
-use_mock_perception:=true
-mock_manipulation:=false
-```
-
-### Etapa D
-
-```text
-use_mock_perception:=false
-mock_manipulation:=false
-```
-
-No avanzar a la siguiente etapa si la anterior falla.
 
 ## Criterio final de cierre
 
-| Área | Criterio |
+| Area | Criterio |
 |---|---|
 | Build | `colcon build` exitoso |
-| Tests | `colcon test` exitoso |
-| Gazebo | robot + mundo + sensores cargados |
-| Percepción | producto detectado |
-| Inventario | producto registrado y actualizado |
-| Nav2 | navegación exitosa |
-| MoveIt2 / Place | colocación ejecutada o validada |
+| Tests | `colcon test-result`: 0 errores, 0 fallos |
+| Gazebo | Mundo, robot, cinta, caja ArUco y sensores cargados |
+| Percepcion | Producto `mock_product_1` detectado desde ArUco 1 |
+| Inventario | Producto registrado y asignado |
+| Nav2 | `/navigate_to_pose` activo y navegacion exitosa |
+| Manipulacion | `/pick_product` y `/place_product` completan |
 | FSM | `/execute_storage_mission` termina `SUCCEEDED` |
-| SQLite | estado final coherente |
+| SQLite | Producto final almacenado y ubicacion ocupada coherente |
+
+Hasta cumplir todos los criterios, Nivel 2 permanece abierto.

@@ -10,17 +10,17 @@ from launch_ros.actions import Node
 def generate_launch_description():
     gazebo_pkg = get_package_share_directory('warehouse_gazebo')
     robot_desc_pkg = get_package_share_directory('warehouse_robot_description')
-    
+
     world_file = os.path.join(gazebo_pkg, 'worlds', 'warehouse_level2.world')
     robot_urdf = os.path.join(robot_desc_pkg, 'urdf', 'robot.urdf.xacro')
-    
+
     # Declare arguments
     world_arg = DeclareLaunchArgument(
         'world',
         default_value=world_file,
         description='Path to the Gazebo world file'
     )
-    
+
     # Append the models directory to GZ_SIM_RESOURCE_PATH
     models_dir = os.path.join(gazebo_pkg, 'models')
     gazebo_model_path_env = AppendEnvironmentVariable(
@@ -48,7 +48,7 @@ def generate_launch_description():
     spawn_robot = Node(
         package='ros_gz_sim',
         executable='create',
-        arguments=['-topic', 'robot_description', '-name', 'warehouse_robot', '-x', '1.5', '-y', '1.0', '-z', '0.1'],
+        arguments=['-topic', 'robot_description', '-name', 'warehouse_robot', '-x', '1.9', '-y', '1.0', '-z', '0.1'],
         output='screen'
     )
 
@@ -114,7 +114,7 @@ def generate_launch_description():
         )
     )
 
-    # Bridge clock and LiDAR
+    # Bridge clock, LiDAR, Camera and IMU
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
@@ -123,6 +123,7 @@ def generate_launch_description():
             '/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
             '/camera/image_raw@sensor_msgs/msg/Image[gz.msgs.Image',
             '/camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo',
+            '/imu/data@sensor_msgs/msg/Imu[gz.msgs.IMU',
         ],
         output='screen'
     )
@@ -140,14 +141,43 @@ def generate_launch_description():
         }]
     )
 
-    odom_relay = Node(
-        package='topic_tools',
-        executable='relay',
-        name='odom_relay',
-        arguments=['/diff_drive_controller/odom', '/odom'],
+    ekf_config_path = os.path.join(get_package_share_directory('warehouse_bringup'), 'config', 'ekf.yaml')
+    ekf_node = Node(
+        package='robot_localization',
+        executable='ekf_node',
+        name='ekf_filter_node',
         output='screen',
-        parameters=[{'use_sim_time': True}]
+        parameters=[ekf_config_path, {'use_sim_time': True}]
     )
+
+    # Conveyor Spawner — spawns product_box on the conveyor belt
+    conveyor_spawner = Node(
+        package='warehouse_gazebo',
+        executable='conveyor_spawner.py',
+        name='conveyor_spawner',
+        output='screen',
+        parameters=[{
+            'use_sim_time': True,
+            'model_name': 'product_box',
+            'model_instance_name': 'product_box_conveyor',
+            'spawn_x': 1.0,
+            'spawn_y': 6.5,
+            'spawn_z': 0.35,
+            'spawn_yaw': 0.0,
+            'default_aruco_id': 1,
+            'auto_spawn': True,
+            'spawn_delay': 5.0,
+        }]
+    )
+
+    rosbridge_server = Node(
+        package='rosbridge_server',
+        executable='rosbridge_websocket',
+        name='rosbridge_websocket',
+        output='screen',
+        parameters=[{'port': 9090}]
+    )
+
 
     # Cleanup handler on shutdown
     cleanup_handler = RegisterEventHandler(
@@ -173,6 +203,8 @@ def generate_launch_description():
         spawn_gripper_controller,
         bridge,
         cmd_vel_relay,
-        odom_relay,
+        ekf_node,
+        conveyor_spawner,
+        rosbridge_server,
         cleanup_handler
     ])

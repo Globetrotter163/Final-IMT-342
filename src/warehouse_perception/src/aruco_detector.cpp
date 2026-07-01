@@ -26,7 +26,7 @@ public:
     annotated_image_topic_ =
       declare_parameter<std::string>("annotated_image_topic", "/camera/aruco_debug");
     product_name_ = declare_parameter<std::string>("product_name", "Tipo A");
-    product_id_prefix_ = declare_parameter<std::string>("product_id_prefix", "aruco_product_");
+    product_id_prefix_ = declare_parameter<std::string>("product_id_prefix", "mock_product_");
     barcode_prefix_ = declare_parameter<std::string>("barcode_prefix", "ARUCO-");
     publish_debug_image_ = declare_parameter<bool>("publish_debug_image", true);
     min_marker_perimeter_rate_ = declare_parameter<double>("min_marker_perimeter_rate", 0.03);

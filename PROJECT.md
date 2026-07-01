@@ -63,17 +63,14 @@ No implementar en Nivel 2:
 
 Nota: el baseline original mencionaba ROS2 Humble. La desviación queda formalizada en `docs/adr/ADR-005-ros2-jazzy-gazebo-sim.md`.
 
-## Workspace observado
+## Workspace del proyecto
 
 ```text
 /home/agonb/Desktop/Robotica1-26/robotics/final_ws
 ```
 
-Rama observada:
-
-```text
-feature/codex-interfaces
-```
+La rama observada es estado vivo y debe consultarse en `PROJECT_STATE.md` y en
+la auditoría más reciente dentro de `docs/audit/`.
 
 ## Paquete oficial del robot
 
@@ -111,6 +108,7 @@ Navigation Layer
 Manipulation Layer
  ├── warehouse_moveit_config
  └── warehouse_manipulation
+     ├── pick_product_server
      └── place_product_server
 
 Inventory Layer

@@ -1,23 +1,12 @@
-# docs/archive
+# Archivo histórico
 
-Esta carpeta almacena documentos históricos del proyecto.
+Esta carpeta contiene documentos históricos que ya no son fuente viva de estado.
 
-## Documentos a archivar
+Para el estado actual del proyecto usar:
 
-```text
-AGENT_STATE_legacy.md
-AGENT_WORKPLAN_NIVEL2_legacy.md
-REPORTE_ESTADO_FASES_legacy.md
-```
+- `PROJECT_STATE.md`
+- `docs/audit/AUDIT_CURRENT_STATUS.md`
+- `docs/tasks/`
 
-## Regla
-
-Los documentos archivados no son fuente de verdad operativa.
-
-Fuente de verdad actual:
-
-1. `PROJECT.md`
-2. `PROJECT_STATE.md`
-3. `REPO_MAP.md`
-4. `VALIDATION_PLAN.md`
-5. ADRs aceptadas
+Los audits fechados archivados preservan evidencia y contexto, pero no deben
+contradecir ni reemplazar el audit vivo.

@@ -9,6 +9,9 @@
 #include <string>
 #include <thread>
 
+#include "lifecycle_msgs/srv/get_state.hpp"
+#include "nav_msgs/msg/occupancy_grid.hpp"
+
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "nav2_msgs/action/navigate_to_pose.hpp"
 #include "rclcpp/rclcpp.hpp"
@@ -18,6 +21,7 @@
 #include "warehouse_interfaces/msg/product_record.hpp"
 #include "warehouse_interfaces/msg/storage_location.hpp"
 #include "warehouse_interfaces/srv/assign_storage_location.hpp"
+#include "warehouse_interfaces/srv/pick_product.hpp"
 #include "warehouse_interfaces/srv/place_product.hpp"
 #include "warehouse_interfaces/srv/register_product.hpp"
 #include "warehouse_interfaces/srv/update_inventory.hpp"
@@ -34,7 +38,7 @@ public:
   TaskManagerFsm()
   : Node("task_manager_fsm")
   {
-    mock_detection_ = declare_parameter<bool>("mock_detection", true);
+    mock_detection_ = declare_parameter<bool>("mock_detection", false);
     mock_navigation_ = declare_parameter<bool>("mock_navigation", false);
     mock_manipulation_ = declare_parameter<bool>("mock_manipulation", false);
     service_timeout_ = std::chrono::duration<double>(
@@ -70,7 +74,10 @@ public:
       create_client<warehouse_interfaces::srv::UpdateInventory>("update_inventory");
     place_product_client_ =
       create_client<warehouse_interfaces::srv::PlaceProduct>(place_product_service_name_);
+    pick_product_client_ =
+      create_client<warehouse_interfaces::srv::PickProduct>("/pick_product");
     nav2_client_ = rclcpp_action::create_client<NavigateToPose>(this, nav2_action_name_);
+    nav2_lifecycle_client_ = create_client<lifecycle_msgs::srv::GetState>("/bt_navigator/get_state");
     detected_product_subscription_ =
       create_subscription<warehouse_interfaces::msg::DetectedProduct>(
       detected_products_topic_, rclcpp::QoS(10).transient_local(),
@@ -90,9 +97,11 @@ private:
   enum class State
   {
     IDLE,
+    NAVIGATE_TO_CONVEYOR,
     DETECT_PRODUCT,
     REGISTER_PRODUCT,
     ASSIGN_LOCATION,
+    PICK_PRODUCT,
     NAVIGATE_TO_STORAGE,
     ALIGN_WITH_SHELF,
     PLACE_PRODUCT,
@@ -149,12 +158,16 @@ private:
     switch (state) {
       case State::IDLE:
         return "IDLE";
+      case State::NAVIGATE_TO_CONVEYOR:
+        return "NAVIGATE_TO_CONVEYOR";
       case State::DETECT_PRODUCT:
         return "DETECT_PRODUCT";
       case State::REGISTER_PRODUCT:
         return "REGISTER_PRODUCT";
       case State::ASSIGN_LOCATION:
         return "ASSIGN_LOCATION";
+      case State::PICK_PRODUCT:
+        return "PICK_PRODUCT";
       case State::NAVIGATE_TO_STORAGE:
         return "NAVIGATE_TO_STORAGE";
       case State::ALIGN_WITH_SHELF:
@@ -289,6 +302,34 @@ private:
     }
   }
 
+  void pick_product(const std::string & product_id, float x, float y, float z)
+  {
+    if (mock_manipulation_) {
+      RCLCPP_INFO(
+        get_logger(),
+        "Mock pick product %s at %.2f, %.2f, %.2f",
+        product_id.c_str(), x, y, z);
+      std::this_thread::sleep_for(300ms);
+      return;
+    }
+
+    auto request = std::make_shared<warehouse_interfaces::srv::PickProduct::Request>();
+    request->product_id = product_id;
+    request->x = x;
+    request->y = y;
+    request->z = z;
+
+    const auto response =
+      call_service<warehouse_interfaces::srv::PickProduct>(
+      request, pick_product_client_, "/pick_product", manipulation_timeout_);
+
+    if (!response->success) {
+      throw std::runtime_error("MoveIt2 pick failed: " + response->message);
+    }
+
+    RCLCPP_INFO(get_logger(), "Pick success: %s", response->message.c_str());
+  }
+
   geometry_msgs::msg::PoseStamped build_storage_nav_goal(
     const warehouse_interfaces::msg::StorageLocation & location)
   {
@@ -394,6 +435,139 @@ private:
     return false;
   }
 
+  // ── C2: Nav2 Lifecycle Readiness Gate ─────────────────────────────────────
+  // Checks bt_navigator lifecycle state, action server availability and /map.
+  // Returns an empty string if Nav2 is ready, or a descriptive error message.
+  std::string check_nav2_readiness()
+  {
+    const int max_retries = 30; // 30 attempts, roughly 30+ seconds
+    const auto retry_delay = 1s;
+
+    for (int attempt = 1; attempt <= max_retries; ++attempt) {
+      // 1. Verify /navigate_to_pose action server is reachable
+      if (!nav2_client_->wait_for_action_server(1s)) {
+        if (attempt == max_retries) {
+          return "Nav2 action server '" + nav2_action_name_ + "' not reachable (action server not found)";
+        }
+        RCLCPP_INFO(get_logger(), "[Nav2 Readiness] Waiting for action server... (attempt %d/%d)", attempt, max_retries);
+        continue;
+      }
+
+      // 2. Query bt_navigator lifecycle state via /bt_navigator/get_state
+      if (!nav2_lifecycle_client_->wait_for_service(1s)) {
+        if (attempt == max_retries) {
+          return "bt_navigator lifecycle service not available — node may not have started";
+        }
+        RCLCPP_INFO(get_logger(), "[Nav2 Readiness] Waiting for bt_navigator lifecycle service... (attempt %d/%d)", attempt, max_retries);
+        continue;
+      }
+
+      auto lc_req = std::make_shared<lifecycle_msgs::srv::GetState::Request>();
+      auto lc_future = nav2_lifecycle_client_->async_send_request(lc_req);
+      if (lc_future.wait_for(2s) != std::future_status::ready) {
+        if (attempt == max_retries) {
+          return "Timed out querying bt_navigator lifecycle state";
+        }
+        RCLCPP_INFO(get_logger(), "[Nav2 Readiness] Timed out querying lifecycle state, retrying... (attempt %d/%d)", attempt, max_retries);
+        continue;
+      }
+
+      const auto lc_resp = lc_future.get();
+      // lifecycle state id 3 == ACTIVE in ROS2 lifecycle
+      constexpr uint8_t LIFECYCLE_ACTIVE = 3;
+      if (lc_resp->current_state.id != LIFECYCLE_ACTIVE) {
+        if (attempt == max_retries) {
+          std::ostringstream oss;
+          oss << "bt_navigator is NOT active — current lifecycle state: '"
+              << lc_resp->current_state.label
+              << "' (id=" << static_cast<int>(lc_resp->current_state.id) << "). "
+              << "Ensure lifecycle_manager_navigation has finished configuring and activating Nav2.";
+          return oss.str();
+        }
+        RCLCPP_INFO(
+          get_logger(),
+          "[Nav2 Readiness] bt_navigator state is '%s', waiting for ACTIVE... (attempt %d/%d)",
+          lc_resp->current_state.label.c_str(), attempt, max_retries);
+        std::this_thread::sleep_for(retry_delay);
+        continue;
+      }
+
+      // 3. Verify /map has been published (topic exists and has subscribers/publishers)
+      auto pub_infos = get_publishers_info_by_topic("/map");
+      if (pub_infos.empty()) {
+        if (attempt == max_retries) {
+          return "/map topic has no publishers — SLAM Toolbox may not have generated a map yet.";
+        }
+        RCLCPP_INFO(get_logger(), "[Nav2 Readiness] Waiting for /map publishers... (attempt %d/%d)", attempt, max_retries);
+        std::this_thread::sleep_for(retry_delay);
+        continue;
+      }
+
+      RCLCPP_INFO(
+        get_logger(),
+        "[Nav2 Readiness] bt_navigator ACTIVE, action server reachable, /map published. Ready.");
+      return "";  // empty == ready
+    }
+
+    return "Failed to become ready within timeout";
+  }
+
+  void navigate_to_conveyor(const std::shared_ptr<GoalHandleMission> & mission_goal_handle)
+  {
+    geometry_msgs::msg::PoseStamped target_pose;
+    target_pose.header.frame_id = nav_goal_frame_id_;
+    target_pose.header.stamp = now();
+    target_pose.pose.position.x = 1.0;
+    target_pose.pose.position.y = 5.7;
+    target_pose.pose.position.z = 0.0;
+
+    // Yaw = pi/2
+    target_pose.pose.orientation.z = std::sin(M_PI / 4.0);
+    target_pose.pose.orientation.w = std::cos(M_PI / 4.0);
+
+    if (mock_navigation_) {
+      RCLCPP_INFO(get_logger(), "Mock navigation to conveyor");
+      std::this_thread::sleep_for(300ms);
+      return;
+    }
+
+    const std::string readiness_error = check_nav2_readiness();
+    if (!readiness_error.empty()) {
+      throw std::runtime_error("[Nav2 NOT READY] " + readiness_error);
+    }
+
+    RCLCPP_INFO(get_logger(), "Sending Nav2 goal to conveyor");
+    auto result = send_nav_goal(target_pose, "conveyor", mission_goal_handle);
+
+    if (!result.succeeded) {
+      constexpr uint16_t goal_outside_map = 204;
+      const bool likely_outside_map =
+        result.error_code == goal_outside_map ||
+        result.error_msg.find("outside") != std::string::npos ||
+        result.error_msg.find("Outside") != std::string::npos;
+      if (likely_outside_map) {
+        // Recover by navigating to a midpoint first
+        RCLCPP_WARN(get_logger(), "Conveyor goal failed (likely outside map). Trying intermediate goal.");
+        geometry_msgs::msg::PoseStamped midpoint = target_pose;
+        midpoint.header.stamp = now();
+        midpoint.pose.position.x = 1.0;
+        midpoint.pose.position.y = 3.0; // Halfway
+
+        auto mid_result = send_nav_goal(midpoint, "conveyor_midpoint", mission_goal_handle);
+        if (mid_result.succeeded) {
+          target_pose.header.stamp = now();
+          result = send_nav_goal(target_pose, "conveyor_final", mission_goal_handle);
+        }
+      }
+
+      if (!result.succeeded) {
+        throw std::runtime_error(nav_error_message("Nav2 did not complete conveyor navigation", result));
+      }
+    }
+
+    RCLCPP_INFO(get_logger(), "Nav2 reached conveyor");
+  }
+
   void navigate_to_storage(
     const warehouse_interfaces::msg::StorageLocation & location,
     const std::shared_ptr<GoalHandleMission> & mission_goal_handle)
@@ -410,8 +584,11 @@ private:
       return;
     }
 
-    if (!nav2_client_->wait_for_action_server(action_timeout_)) {
-      throw std::runtime_error("Timed out waiting for Nav2 action server " + nav2_action_name_);
+    // ── C2: Readiness gate — fail fast with diagnostic before sending goal ──
+    const std::string readiness_error = check_nav2_readiness();
+    if (!readiness_error.empty()) {
+      throw std::runtime_error(
+        "[Nav2 NOT READY] " + readiness_error);
     }
 
     RCLCPP_INFO(
@@ -529,6 +706,15 @@ private:
     warehouse_interfaces::msg::StorageLocation location;
 
     try {
+      state = State::NAVIGATE_TO_CONVEYOR;
+      publish_feedback(goal_handle, 0.05F, state_name(state));
+      navigate_to_conveyor(goal_handle);
+
+      if (goal_handle->is_canceling()) {
+        complete_goal(goal_handle, false, "mission canceled");
+        return;
+      }
+
       state = State::DETECT_PRODUCT;
       publish_feedback(goal_handle, 0.10F, state_name(state));
       product = detect_product(*goal);
@@ -546,6 +732,14 @@ private:
       publish_feedback(goal_handle, 0.40F, state_name(state));
       location = assign_location(product.product_id, product.quantity);
 
+      state = State::PICK_PRODUCT;
+      publish_feedback(goal_handle, 0.45F, state_name(state));
+
+      // Call pick_product with relative coordinates to the robot base
+      // Robot is at x=1.0, y=5.7 facing North (pi/2). Box is at x=1.0, y=6.5. Relative front (local X) is 0.8m
+      // We pass Z=0.15 so that MoveIt doesn't hit the floor.
+      pick_product(product.product_id, 0.8, 0.0, 0.15);
+
       state = State::NAVIGATE_TO_STORAGE;
       publish_feedback(goal_handle, 0.55F, state_name(state));
       navigate_to_storage(location, goal_handle);
@@ -556,7 +750,10 @@ private:
 
       state = State::PLACE_PRODUCT;
       publish_feedback(goal_handle, 0.82F, state_name(state));
-      place_product(location);
+
+      auto place_location = location;
+      place_location.z += 0.15;
+      place_product(place_location);
 
       state = State::UPDATE_INVENTORY;
       publish_feedback(goal_handle, 0.92F, state_name(state));
@@ -577,7 +774,7 @@ private:
     }
   }
 
-  bool mock_detection_{true};
+  bool mock_detection_{false};
   bool mock_navigation_{false};
   bool mock_manipulation_{false};
   std::chrono::duration<double> service_timeout_{5.0};
@@ -603,6 +800,8 @@ private:
   rclcpp::Client<warehouse_interfaces::srv::AssignStorageLocation>::SharedPtr assign_location_client_;
   rclcpp::Client<warehouse_interfaces::srv::UpdateInventory>::SharedPtr update_inventory_client_;
   rclcpp::Client<warehouse_interfaces::srv::PlaceProduct>::SharedPtr place_product_client_;
+  rclcpp::Client<warehouse_interfaces::srv::PickProduct>::SharedPtr pick_product_client_;
+  rclcpp::Client<lifecycle_msgs::srv::GetState>::SharedPtr nav2_lifecycle_client_;
   rclcpp_action::Client<NavigateToPose>::SharedPtr nav2_client_;
   rclcpp::Subscription<warehouse_interfaces::msg::DetectedProduct>::SharedPtr
     detected_product_subscription_;
