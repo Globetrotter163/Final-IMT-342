@@ -103,7 +103,7 @@
     <include>
       <uri>model://product_box</uri>
       <name>box_a</name>
-      <pose>1 1 0.06 0 0 0</pose>
+      <pose>2.6 1.0 0.06 0 0 3.14159</pose>
     </include>
   </world>
 </sdf>
