@@ -14,22 +14,31 @@
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
 #include "trajectory_msgs/msg/joint_trajectory_point.hpp"
-#include "warehouse_interfaces/srv/place_product.hpp"
+#include "warehouse_interfaces/srv/pick_product.hpp"
+#include "geometry_msgs/msg/pose.hpp"
+#include "std_srvs/srv/empty.hpp"
+#include "tf2/LinearMath/Quaternion.h"
+#include "tf2_geometry_msgs/tf2_geometry_msgs.hpp"
 
 using namespace std::chrono_literals;
 
-class PlaceProductServer
+namespace
+{
+constexpr double kPi = 3.14159265358979323846;
+}
+
+class PickProductServer
 {
 public:
   using FollowJointTrajectory = control_msgs::action::FollowJointTrajectory;
   using MoveGroupInterface = moveit::planning_interface::MoveGroupInterface;
-  using PlaceProduct = warehouse_interfaces::srv::PlaceProduct;
+  using PickProduct = warehouse_interfaces::srv::PickProduct;
 
-  explicit PlaceProductServer(const rclcpp::Node::SharedPtr & node)
+  explicit PickProductServer(const rclcpp::Node::SharedPtr & node)
   : node_(node),
     logger_(node_->get_logger())
   {
-    place_service_name_ = parameter_or<std::string>("place_service_name", "/place_product");
+    pick_service_name_ = parameter_or<std::string>("pick_service_name", "/pick_product");
     arm_group_name_ = parameter_or<std::string>("arm_group_name", "arm");
     pre_place_named_target_ = parameter_or<std::string>("pre_place_named_target", "pre_place");
     home_named_target_ = parameter_or<std::string>("home_named_target", "home");
@@ -39,13 +48,13 @@ public:
     max_acceleration_scaling_ = parameter_or<double>("max_acceleration_scaling", 0.35);
     action_timeout_ = std::chrono::duration<double>(
       parameter_or<double>("action_timeout_sec", 45.0));
-    open_gripper_after_place_ = parameter_or<bool>("open_gripper_after_place", true);
-    return_home_after_place_ = parameter_or<bool>("return_home_after_place", true);
+    
     gripper_action_name_ = parameter_or<std::string>(
       "gripper_action_name", "/gripper_controller/follow_joint_trajectory");
     gripper_joint_names_ = parameter_or<std::vector<std::string>>(
       "gripper_joint_names", {"left_finger_joint", "right_finger_joint"});
     gripper_open_position_ = parameter_or<double>("gripper_open_position", 0.018);
+    gripper_close_position_ = parameter_or<double>("gripper_close_position", 0.005);
     gripper_motion_duration_sec_ = parameter_or<double>("gripper_motion_duration_sec", 1.0);
 
     arm_group_ = std::make_unique<MoveGroupInterface>(node_, arm_group_name_);
@@ -58,20 +67,23 @@ public:
     gripper_client_ = rclcpp_action::create_client<FollowJointTrajectory>(
       node_, gripper_action_name_, callback_group_);
 
-    service_ = node_->create_service<PlaceProduct>(
-      place_service_name_,
+    service_ = node_->create_service<PickProduct>(
+      pick_service_name_,
       std::bind(
-        &PlaceProductServer::handle_place_product,
+        &PickProductServer::handle_pick_product,
         this,
         std::placeholders::_1,
         std::placeholders::_2),
       rclcpp::ServicesQoS(),
       callback_group_);
 
+    clear_octomap_client_ = node_->create_client<std_srvs::srv::Empty>(
+      "/clear_octomap", rmw_qos_profile_services_default, callback_group_);
+
     RCLCPP_INFO(
       logger_,
-      "MoveIt2 place server ready on %s using arm group '%s'",
-      place_service_name_.c_str(), arm_group_name_.c_str());
+      "MoveIt2 pick server ready on %s using arm group '%s'",
+      pick_service_name_.c_str(), arm_group_name_.c_str());
   }
 
 private:
@@ -86,35 +98,81 @@ private:
     return node_->declare_parameter<T>(name, default_value);
   }
 
-  void handle_place_product(
-    const std::shared_ptr<PlaceProduct::Request> request,
-    std::shared_ptr<PlaceProduct::Response> response)
+  void handle_pick_product(
+    const std::shared_ptr<PickProduct::Request> request,
+    std::shared_ptr<PickProduct::Response> response)
   {
-    const auto & location = request->location;
     RCLCPP_INFO(
       logger_,
-      "Executing deposit at %s (zone %s, shelf %u, bin %u, xyz %.2f %.2f %.2f)",
-      location.location_id.c_str(), location.zone.c_str(), location.shelf, location.bin,
-      location.x, location.y, location.z);
+      "Executing pick for product %s at (xyz %.2f %.2f %.2f)",
+      request->product_id.c_str(), request->x, request->y, request->z);
 
     try {
+      // 1. Open gripper
+      command_gripper(gripper_open_position_, "open");
+
+      // 1.5 Clear Octomap
+      if (clear_octomap_client_->wait_for_service(2s)) {
+        auto req = std::make_shared<std_srvs::srv::Empty::Request>();
+        auto future = clear_octomap_client_->async_send_request(req);
+        if (future.wait_for(2s) == std::future_status::ready) {
+          RCLCPP_INFO(logger_, "Cleared Octomap before picking");
+        }
+      }
+
+      // 2. Approach the box
+      geometry_msgs::msg::Pose target_pose;
+      target_pose.position.x = request->x;
+      target_pose.position.y = request->y;
+      target_pose.position.z = request->z + 0.15; // Gripper center will be at box center + offset if needed
+      // Actually we need to point the gripper downwards or forwards. Let's assume pointing down.
+      tf2::Quaternion q;
+      q.setRPY(0, kPi / 2.0, 0); // Pointing down
+      target_pose.orientation = tf2::toMsg(q);
+      
+      move_arm_to_pose(target_pose);
+
+      // Move down to grab
+      target_pose.position.z = request->z + 0.05; // lower
+      move_arm_to_pose(target_pose);
+
+      // 3. Close the gripper
+      command_gripper(gripper_close_position_, "close");
+
+      // 4. Move arm to a safe transport position
       move_arm_to_named_target(pre_place_named_target_);
 
-      if (open_gripper_after_place_) {
-        command_gripper(gripper_open_position_, "open");
-      }
-
-      if (return_home_after_place_) {
-        move_arm_to_named_target(home_named_target_);
-      }
-
       response->success = true;
-      response->message = "MoveIt2 deposit completed at " + location.location_id;
+      response->message = "MoveIt2 pick completed for " + request->product_id;
       RCLCPP_INFO(logger_, "%s", response->message.c_str());
     } catch (const std::exception & error) {
       response->success = false;
       response->message = error.what();
-      RCLCPP_ERROR(logger_, "MoveIt2 deposit failed: %s", error.what());
+      RCLCPP_ERROR(logger_, "MoveIt2 pick failed: %s", error.what());
+    }
+  }
+
+  void move_arm_to_pose(const geometry_msgs::msg::Pose & target_pose)
+  {
+    arm_group_->setPoseReferenceFrame("base_link");
+    arm_group_->setStartStateToCurrentState();
+    arm_group_->setPositionTarget(target_pose.position.x, target_pose.position.y, target_pose.position.z);
+
+    RCLCPP_INFO(logger_, "Planning arm motion to pose x=%.2f y=%.2f z=%.2f", target_pose.position.x, target_pose.position.y, target_pose.position.z);
+    MoveGroupInterface::Plan plan;
+    const auto planning_result = arm_group_->plan(plan);
+    if (planning_result != moveit::core::MoveItErrorCode::SUCCESS) {
+      std::ostringstream error;
+      error << "MoveIt2 planning to pose failed (code=" << planning_result.val << ")";
+      throw std::runtime_error(error.str());
+    }
+
+    RCLCPP_INFO(logger_, "Executing arm motion to pose");
+    const auto execution_result = arm_group_->execute(plan);
+    if (execution_result != moveit::core::MoveItErrorCode::SUCCESS) {
+      std::ostringstream error;
+      error << "MoveIt2 execution to pose failed (code=" << execution_result.val << ")";
+      throw std::runtime_error(error.str());
     }
   }
 
@@ -215,11 +273,12 @@ private:
   rclcpp::Node::SharedPtr node_;
   rclcpp::Logger logger_;
   rclcpp::CallbackGroup::SharedPtr callback_group_;
-  rclcpp::Service<PlaceProduct>::SharedPtr service_;
+  rclcpp::Service<PickProduct>::SharedPtr service_;
   std::unique_ptr<MoveGroupInterface> arm_group_;
   rclcpp_action::Client<FollowJointTrajectory>::SharedPtr gripper_client_;
+  rclcpp::Client<std_srvs::srv::Empty>::SharedPtr clear_octomap_client_;
 
-  std::string place_service_name_;
+  std::string pick_service_name_;
   std::string arm_group_name_;
   std::string pre_place_named_target_;
   std::string home_named_target_;
@@ -228,22 +287,22 @@ private:
   double max_velocity_scaling_{0.35};
   double max_acceleration_scaling_{0.35};
   std::chrono::duration<double> action_timeout_{45.0};
-  bool open_gripper_after_place_{true};
-  bool return_home_after_place_{true};
   std::string gripper_action_name_;
   std::vector<std::string> gripper_joint_names_;
   double gripper_open_position_{0.018};
+  double gripper_close_position_{0.005};
   double gripper_motion_duration_sec_{1.0};
 };
 
 int main(int argc, char ** argv)
 {
   rclcpp::init(argc, argv);
+
   auto node = std::make_shared<rclcpp::Node>(
-    "place_product_server",
+    "pick_product_server",
     rclcpp::NodeOptions().automatically_declare_parameters_from_overrides(true));
 
-  auto server = std::make_shared<PlaceProductServer>(node);
+  auto server = std::make_shared<PickProductServer>(node);
   rclcpp::executors::MultiThreadedExecutor executor;
   executor.add_node(node);
   executor.spin();
