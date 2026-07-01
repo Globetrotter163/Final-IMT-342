@@ -1,0 +1,26 @@
+[0.008s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_interfaces -DCMAKE_INSTALL_PREFIX=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces
+[0.016s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.088s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.092s] -- Found rosidl_default_generators: 1.6.1 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.094s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.118s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.137s] -- Found rosidl_adapter: 4.6.9 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[0.311s] -- Found ament_cmake_ros: 0.12.1 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[0.386s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.494s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.494s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[0.749s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[0.841s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.924s] -- Configuring done (0.9s)
+[0.966s] -- Generating done (0.0s)
+[0.975s] -- Build files have been written to: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces
+[0.982s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_interfaces -DCMAKE_INSTALL_PREFIX=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces
+[0.983s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces -- -j12 -l12
+[1.026s] [  1%] Built target warehouse_interfaces__rs
+[1.028s] failed to create symbolic link '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/ament_cmake_python/warehouse_interfaces/warehouse_interfaces' because existing path cannot be removed: Is a directory
+[1.028s] gmake[2]: *** [CMakeFiles/ament_cmake_python_symlink_warehouse_interfaces.dir/build.make:70: CMakeFiles/ament_cmake_python_symlink_warehouse_interfaces] Error 1
+[1.028s] gmake[1]: *** [CMakeFiles/Makefile2:471: CMakeFiles/ament_cmake_python_symlink_warehouse_interfaces.dir/all] Error 2
+[1.028s] gmake[1]: *** Waiting for unfinished jobs....
+[1.029s] [  2%] Built target warehouse_interfaces__rosidl_generator_type_description
+[1.030s] gmake: *** [Makefile:146: all] Error 2
+[1.031s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces -- -j12 -l12

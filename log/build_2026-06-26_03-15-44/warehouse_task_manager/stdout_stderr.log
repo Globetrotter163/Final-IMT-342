@@ -1,0 +1,22 @@
+[100%] Built target task_manager_fsm
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/lib/warehouse_task_manager/task_manager_fsm
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/launch/mission_mock.launch.py
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/launch/storage_mission_nav2.launch.py
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/launch/task_manager_fsm.launch.py
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/ament_index/resource_index/package_run_dependencies/warehouse_task_manager
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/ament_index/resource_index/parent_prefix_path/warehouse_task_manager
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/environment/path.sh
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/environment/path.dsv
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/local_setup.bash
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/local_setup.sh
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/local_setup.zsh
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/local_setup.dsv
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/package.dsv
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/ament_index/resource_index/packages/warehouse_task_manager
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/cmake/warehouse_task_managerConfig.cmake
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/cmake/warehouse_task_managerConfig-version.cmake
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager/share/warehouse_task_manager/package.xml

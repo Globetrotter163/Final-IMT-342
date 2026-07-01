@@ -1,0 +1,20 @@
+-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception
+-- Install configuration: ""
+-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/ament_index/resource_index/package_run_dependencies/warehouse_perception
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/ament_index/resource_index/parent_prefix_path/warehouse_perception
+-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/environment/ament_prefix_path.sh
+-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/environment/path.sh
+-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/environment/path.dsv
+-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/local_setup.bash
+-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/local_setup.sh
+-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/local_setup.zsh
+-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/local_setup.dsv
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/package.dsv
+-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/ament_index/resource_index/packages/warehouse_perception
+-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/cmake/warehouse_perceptionConfig.cmake
+-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/cmake/warehouse_perceptionConfig-version.cmake
+-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/package.xml

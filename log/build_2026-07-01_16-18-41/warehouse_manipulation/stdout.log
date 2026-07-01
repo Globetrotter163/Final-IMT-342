@@ -1,0 +1,25 @@
+[ 66%] Built target pick_product_server
+[ 50%] Built target place_product_server
+[100%] Built target demo_pick_place
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/lib/warehouse_manipulation/demo_pick_place
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/lib/warehouse_manipulation/place_product_server
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/lib/warehouse_manipulation/pick_product_server
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/launch/pick_product_server.launch.py
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/launch/place_product_server.launch.py
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/ament_index/resource_index/package_run_dependencies/warehouse_manipulation
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/ament_index/resource_index/parent_prefix_path/warehouse_manipulation
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/environment/path.sh
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/environment/path.dsv
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/local_setup.bash
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/local_setup.sh
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/local_setup.zsh
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/local_setup.dsv
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/package.dsv
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/ament_index/resource_index/packages/warehouse_manipulation
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/cmake/warehouse_manipulationConfig.cmake
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/cmake/warehouse_manipulationConfig-version.cmake
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/package.xml

@@ -1,0 +1,11 @@
+[0.000000] (-) TimerEvent: {}
+[0.000045] (warehouse_bringup) JobQueued: {'identifier': 'warehouse_bringup', 'dependencies': OrderedDict({'warehouse_bringup': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup'})}
+[0.000109] (warehouse_gazebo) JobQueued: {'identifier': 'warehouse_gazebo', 'dependencies': OrderedDict({'warehouse_bringup': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup', 'warehouse_robot_description': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description', 'warehouse_gazebo': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo'})}
+[0.000191] (warehouse_manipulation) JobQueued: {'identifier': 'warehouse_manipulation', 'dependencies': OrderedDict({'warehouse_interfaces': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces', 'warehouse_manipulation': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation'})}
+[0.000371] (warehouse_bringup) JobStarted: {'identifier': 'warehouse_bringup'}
+[0.008737] (warehouse_manipulation) JobStarted: {'identifier': 'warehouse_manipulation'}
+[0.023509] (warehouse_bringup) JobEnded: {'identifier': 'warehouse_bringup', 'rc': 0}
+[0.024314] (warehouse_gazebo) JobStarted: {'identifier': 'warehouse_gazebo'}
+[0.031158] (warehouse_manipulation) JobEnded: {'identifier': 'warehouse_manipulation', 'rc': 0}
+[0.044151] (warehouse_gazebo) JobEnded: {'identifier': 'warehouse_gazebo', 'rc': 0}
+[0.044659] (-) EventReactorShutdown: {}

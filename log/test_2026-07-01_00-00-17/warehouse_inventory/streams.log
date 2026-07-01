@@ -1,0 +1,61 @@
+[0.038s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory': CMAKE_PREFIX_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/robot_amr_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process
+[0.047s] UpdateCTestConfiguration  from :/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CTestConfiguration.ini
+[0.047s] Parse Config file:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CTestConfiguration.ini
+[0.048s]    Site: agonb-Victus
+[0.048s]    Build name: (empty)
+[0.048s]  Add coverage exclude regular expressions.
+[0.048s] Create new tag: 20260701-0400 - Experimental
+[0.048s] UpdateCTestConfiguration  from :/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CTestConfiguration.ini
+[0.048s] Parse Config file:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CTestConfiguration.ini
+[0.048s] Test project /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory
+[0.049s] Constructing a list of tests
+[0.049s] Done constructing a list of tests
+[0.049s] Updating test list for fixtures
+[0.049s] Added 0 tests to meet fixture requirements
+[0.049s] Checking test dependency graph...
+[0.049s] Checking test dependency graph end
+[0.049s] test 1
+[0.049s]     Start 1: test_inventory_store
+[0.049s] 
+[0.050s] 1: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml" "--package-name" "warehouse_inventory" "--output-file" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/ament_cmake_gtest/test_inventory_store.txt" "--command" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_inventory_store" "--gtest_output=xml:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml"
+[0.050s] 1: Working Directory: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory
+[0.050s] 1: Test timeout computed to be: 60
+[0.100s] 1: -- run_test.py: invoking following command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory':
+[0.100s] 1:  - /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_inventory_store --gtest_output=xml:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml
+[0.102s] 1: Running main() from /opt/ros/jazzy/src/gtest_vendor/src/gtest_main.cc
+[0.102s] 1: [==========] Running 8 tests from 1 test suite.
+[0.102s] 1: [----------] Global test environment set-up.
+[0.102s] 1: [----------] 8 tests from InventoryStoreTest
+[0.102s] 1: [ RUN      ] InventoryStoreTest.SeedsStorageLocations
+[0.344s] 1: [       OK ] InventoryStoreTest.SeedsStorageLocations (241 ms)
+[0.344s] 1: [ RUN      ] InventoryStoreTest.RegistersProduct
+[0.604s] 1: [       OK ] InventoryStoreTest.RegistersProduct (259 ms)
+[0.604s] 1: [ RUN      ] InventoryStoreTest.RejectsEmptyProductId
+[0.859s] 1: [       OK ] InventoryStoreTest.RejectsEmptyProductId (255 ms)
+[0.859s] 1: [ RUN      ] InventoryStoreTest.AssignsFirstAvailableLocation
+[1.127s] 1: [       OK ] InventoryStoreTest.AssignsFirstAvailableLocation (267 ms)
+[1.127s] 1: [ RUN      ] InventoryStoreTest.DoesNotReassignExistingLocation
+[1.368s] 1: [       OK ] InventoryStoreTest.DoesNotReassignExistingLocation (240 ms)
+[1.368s] 1: [ RUN      ] InventoryStoreTest.RejectsAssignmentForUnknownProduct
+[1.619s] 1: [       OK ] InventoryStoreTest.RejectsAssignmentForUnknownProduct (251 ms)
+[1.620s] 1: [ RUN      ] InventoryStoreTest.UpdatesInventoryWithoutGoingNegative
+[1.896s] 1: [       OK ] InventoryStoreTest.UpdatesInventoryWithoutGoingNegative (277 ms)
+[1.896s] 1: [ RUN      ] InventoryStoreTest.RejectsInventoryUpdateForUnknownProduct
+[2.145s] 1: [       OK ] InventoryStoreTest.RejectsInventoryUpdateForUnknownProduct (248 ms)
+[2.146s] 1: [----------] 8 tests from InventoryStoreTest (2042 ms total)
+[2.146s] 1: 
+[2.147s] 1: [----------] Global test environment tear-down
+[2.147s] 1: [==========] 8 tests from 1 test suite ran. (2042 ms total)
+[2.147s] 1: [  PASSED  ] 8 tests.
+[2.148s] 1: -- run_test.py: return code 0
+[2.148s] 1: -- run_test.py: inject classname prefix into gtest result file '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml'
+[2.148s] 1: -- run_test.py: verify result file '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml'
+[2.168s] 1/1 Test #1: test_inventory_store .............   Passed    2.12 sec
+[2.169s] 
+[2.169s] 100% tests passed, 0 tests failed out of 1
+[2.169s] 
+[2.170s] Label Time Summary:
+[2.170s] gtest    =   2.12 sec*proc (1 test)
+[2.170s] 
+[2.171s] Total Test time (real) =   2.12 sec
+[2.175s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory' returned '0': CMAKE_PREFIX_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/robot_amr_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process

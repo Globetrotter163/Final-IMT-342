@@ -1,0 +1,299 @@
+[0.019s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces -- -j12 -l12
+[0.067s] [  0%] Built target warehouse_interfaces__rosidl_generator_type_description
+[0.092s] [  1%] Built target warehouse_interfaces__rs
+[0.092s] [  1%] Built target ament_cmake_python_symlink_warehouse_interfaces
+[0.093s] [  1%] Built target warehouse_interfaces__cpp
+[0.122s] [ 27%] Built target warehouse_interfaces__rosidl_generator_c
+[0.122s] [ 37%] Built target warehouse_interfaces__rosidl_typesupport_c
+[0.122s] [ 47%] Built target warehouse_interfaces__rosidl_typesupport_fastrtps_cpp
+[0.122s] [ 57%] Built target warehouse_interfaces__rosidl_typesupport_introspection_cpp
+[0.122s] [ 66%] Built target warehouse_interfaces__rosidl_typesupport_introspection_c
+[0.122s] [ 76%] Built target warehouse_interfaces__rosidl_typesupport_cpp
+[0.123s] [ 85%] Built target warehouse_interfaces__rosidl_typesupport_fastrtps_c
+[0.134s] [ 85%] Built target warehouse_interfaces
+[0.154s] [ 86%] Built target warehouse_interfaces__py
+[0.175s] [ 95%] Built target warehouse_interfaces__rosidl_generator_py
+[0.189s] [ 97%] Built target warehouse_interfaces_s__rosidl_typesupport_fastrtps_c
+[0.192s] [ 98%] Built target warehouse_interfaces_s__rosidl_typesupport_c
+[0.195s] [100%] Built target warehouse_interfaces_s__rosidl_typesupport_introspection_c
+[0.226s] running egg_info
+[0.237s] writing warehouse_interfaces.egg-info/PKG-INFO
+[0.237s] writing dependency_links to warehouse_interfaces.egg-info/dependency_links.txt
+[0.237s] writing top-level names to warehouse_interfaces.egg-info/top_level.txt
+[0.270s] reading manifest file 'warehouse_interfaces.egg-info/SOURCES.txt'
+[0.271s] writing manifest file 'warehouse_interfaces.egg-info/SOURCES.txt'
+[0.291s] [100%] Built target ament_cmake_python_build_warehouse_interfaces_egg
+[0.299s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces -- -j12 -l12
+[0.300s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces
+[0.304s] -- Install configuration: ""
+[0.305s] -- Execute custom install script
+[0.305s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/ament_index/resource_index/rosidl_interfaces/warehouse_interfaces
+[0.305s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/DetectedProduct.json
+[0.305s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/ProductRecord.json
+[0.305s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/StorageLocation.json
+[0.305s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/RegisterProduct.json
+[0.306s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/AssignStorageLocation.json
+[0.306s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/UpdateInventory.json
+[0.306s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/PlaceProduct.json
+[0.306s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/PickProduct.json
+[0.306s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/SpawnProduct.json
+[0.306s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/action/ExecuteStorageMission.json
+[0.306s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__functions.h
+[0.306s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__struct.h
+[0.307s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__type_support.h
+[0.307s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/execute_storage_mission.h
+[0.307s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__functions.h
+[0.307s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__struct.h
+[0.307s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__type_support.h
+[0.307s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__functions.h
+[0.307s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__struct.h
+[0.307s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__type_support.h
+[0.307s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__functions.h
+[0.308s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__struct.h
+[0.308s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__type_support.h
+[0.308s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detected_product.h
+[0.308s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/product_record.h
+[0.308s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/rosidl_generator_c__visibility_control.h
+[0.308s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/storage_location.h
+[0.308s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/assign_storage_location.h
+[0.308s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__functions.h
+[0.309s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__struct.h
+[0.309s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__type_support.h
+[0.309s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/pick_product__functions.h
+[0.309s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/pick_product__struct.h
+[0.309s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/pick_product__type_support.h
+[0.309s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__functions.h
+[0.309s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__struct.h
+[0.309s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__type_support.h
+[0.309s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__functions.h
+[0.309s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__struct.h
+[0.310s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__type_support.h
+[0.310s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/spawn_product__functions.h
+[0.310s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/spawn_product__struct.h
+[0.310s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/spawn_product__type_support.h
+[0.310s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__functions.h
+[0.310s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__struct.h
+[0.310s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__type_support.h
+[0.310s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/pick_product.h
+[0.311s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/place_product.h
+[0.311s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/register_product.h
+[0.311s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/spawn_product.h
+[0.311s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/update_inventory.h
+[0.311s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/library_path.sh
+[0.311s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/library_path.dsv
+[0.311s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__rosidl_typesupport_fastrtps_c.h
+[0.311s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__rosidl_typesupport_fastrtps_c.h
+[0.311s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__rosidl_typesupport_fastrtps_c.h
+[0.312s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__rosidl_typesupport_fastrtps_c.h
+[0.312s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[0.312s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__rosidl_typesupport_fastrtps_c.h
+[0.312s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/pick_product__rosidl_typesupport_fastrtps_c.h
+[0.312s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__rosidl_typesupport_fastrtps_c.h
+[0.312s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__rosidl_typesupport_fastrtps_c.h
+[0.312s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/spawn_product__rosidl_typesupport_fastrtps_c.h
+[0.312s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__rosidl_typesupport_fastrtps_c.h
+[0.312s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__rosidl_typesupport_introspection_c.h
+[0.312s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__rosidl_typesupport_introspection_c.h
+[0.313s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__rosidl_typesupport_introspection_c.h
+[0.313s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__rosidl_typesupport_introspection_c.h
+[0.313s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[0.313s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__rosidl_typesupport_introspection_c.h
+[0.313s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/pick_product__rosidl_typesupport_introspection_c.h
+[0.313s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__rosidl_typesupport_introspection_c.h
+[0.313s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__rosidl_typesupport_introspection_c.h
+[0.313s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/spawn_product__rosidl_typesupport_introspection_c.h
+[0.313s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__rosidl_typesupport_introspection_c.h
+[0.314s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__builder.hpp
+[0.314s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__struct.hpp
+[0.314s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__traits.hpp
+[0.314s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__type_support.hpp
+[0.314s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/execute_storage_mission.hpp
+[0.314s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__builder.hpp
+[0.314s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__struct.hpp
+[0.314s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__traits.hpp
+[0.315s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__type_support.hpp
+[0.315s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__builder.hpp
+[0.315s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__struct.hpp
+[0.315s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__traits.hpp
+[0.315s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__type_support.hpp
+[0.315s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__builder.hpp
+[0.315s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__struct.hpp
+[0.315s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__traits.hpp
+[0.315s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__type_support.hpp
+[0.316s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detected_product.hpp
+[0.316s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/product_record.hpp
+[0.316s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[0.316s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/storage_location.hpp
+[0.316s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/assign_storage_location.hpp
+[0.316s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__builder.hpp
+[0.316s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__struct.hpp
+[0.316s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__traits.hpp
+[0.317s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__type_support.hpp
+[0.317s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/pick_product__builder.hpp
+[0.317s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/pick_product__struct.hpp
+[0.317s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/pick_product__traits.hpp
+[0.317s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/pick_product__type_support.hpp
+[0.317s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__builder.hpp
+[0.317s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__struct.hpp
+[0.317s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__traits.hpp
+[0.318s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__type_support.hpp
+[0.318s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__builder.hpp
+[0.318s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__struct.hpp
+[0.318s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__traits.hpp
+[0.318s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__type_support.hpp
+[0.318s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/spawn_product__builder.hpp
+[0.318s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/spawn_product__struct.hpp
+[0.318s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/spawn_product__traits.hpp
+[0.318s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/spawn_product__type_support.hpp
+[0.318s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__builder.hpp
+[0.319s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__struct.hpp
+[0.319s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__traits.hpp
+[0.319s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__type_support.hpp
+[0.319s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/pick_product.hpp
+[0.319s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/place_product.hpp
+[0.319s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/register_product.hpp
+[0.319s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/spawn_product.hpp
+[0.319s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/update_inventory.hpp
+[0.319s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__rosidl_typesupport_fastrtps_cpp.hpp
+[0.319s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__rosidl_typesupport_fastrtps_cpp.hpp
+[0.319s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__rosidl_typesupport_fastrtps_cpp.hpp
+[0.319s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__rosidl_typesupport_fastrtps_cpp.hpp
+[0.319s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[0.319s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__rosidl_typesupport_fastrtps_cpp.hpp
+[0.320s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/pick_product__rosidl_typesupport_fastrtps_cpp.hpp
+[0.320s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__rosidl_typesupport_fastrtps_cpp.hpp
+[0.320s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__rosidl_typesupport_fastrtps_cpp.hpp
+[0.320s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/spawn_product__rosidl_typesupport_fastrtps_cpp.hpp
+[0.320s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__rosidl_typesupport_fastrtps_cpp.hpp
+[0.320s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__rosidl_typesupport_introspection_cpp.hpp
+[0.321s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__rosidl_typesupport_introspection_cpp.hpp
+[0.321s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__rosidl_typesupport_introspection_cpp.hpp
+[0.321s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__rosidl_typesupport_introspection_cpp.hpp
+[0.321s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__rosidl_typesupport_introspection_cpp.hpp
+[0.321s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/pick_product__rosidl_typesupport_introspection_cpp.hpp
+[0.321s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__rosidl_typesupport_introspection_cpp.hpp
+[0.321s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__rosidl_typesupport_introspection_cpp.hpp
+[0.321s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/spawn_product__rosidl_typesupport_introspection_cpp.hpp
+[0.321s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__rosidl_typesupport_introspection_cpp.hpp
+[0.321s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/pythonpath.sh
+[0.321s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/pythonpath.dsv
+[0.322s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces-0.1.0-py3.12.egg-info/PKG-INFO
+[0.322s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces-0.1.0-py3.12.egg-info/SOURCES.txt
+[0.322s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces-0.1.0-py3.12.egg-info/dependency_links.txt
+[0.322s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces-0.1.0-py3.12.egg-info/top_level.txt
+[0.322s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/__init__.py
+[0.322s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/_warehouse_interfaces_s.ep.rosidl_typesupport_c.c
+[0.322s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/_warehouse_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[0.323s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/_warehouse_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[0.323s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/action/__init__.py
+[0.323s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/action/_execute_storage_mission.py
+[0.323s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/action/_execute_storage_mission_s.c
+[0.323s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/__init__.py
+[0.323s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_detected_product.py
+[0.323s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_detected_product_s.c
+[0.323s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_product_record.py
+[0.323s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_product_record_s.c
+[0.323s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_storage_location.py
+[0.323s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_storage_location_s.c
+[0.323s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/__init__.py
+[0.324s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_assign_storage_location.py
+[0.324s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_assign_storage_location_s.c
+[0.324s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_pick_product.py
+[0.324s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_pick_product_s.c
+[0.324s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_place_product.py
+[0.324s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_place_product_s.c
+[0.324s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_register_product.py
+[0.324s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_register_product_s.c
+[0.324s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_spawn_product.py
+[0.324s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_spawn_product_s.c
+[0.325s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_update_inventory.py
+[0.325s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_update_inventory_s.c
+[0.325s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_c.so
+[0.325s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[0.325s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_introspection_c.so
+[0.325s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[0.325s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_introspection_c.so
+[0.325s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_c.so
+[0.325s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/ament_index/resource_index/rust_packages/warehouse_interfaces
+[0.325s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/Cargo.toml
+[0.325s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/build.rs
+[0.326s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/action.rs
+[0.326s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/action/rmw.rs
+[0.326s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/lib.rs
+[0.326s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/msg.rs
+[0.326s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/msg/rmw.rs
+[0.326s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/srv.rs
+[0.326s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/srv/rmw.rs
+[0.326s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/DetectedProduct.idl
+[0.326s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/ProductRecord.idl
+[0.326s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/StorageLocation.idl
+[0.326s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/RegisterProduct.idl
+[0.326s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/AssignStorageLocation.idl
+[0.326s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/UpdateInventory.idl
+[0.326s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/PlaceProduct.idl
+[0.327s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/PickProduct.idl
+[0.327s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/SpawnProduct.idl
+[0.327s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/action/ExecuteStorageMission.idl
+[0.327s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/DetectedProduct.msg
+[0.327s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/ProductRecord.msg
+[0.327s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/StorageLocation.msg
+[0.327s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/RegisterProduct.srv
+[0.327s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/AssignStorageLocation.srv
+[0.327s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/UpdateInventory.srv
+[0.327s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/PlaceProduct.srv
+[0.328s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/PickProduct.srv
+[0.328s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/SpawnProduct.srv
+[0.328s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/action/ExecuteStorageMission.action
+[0.328s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/ament_index/resource_index/package_run_dependencies/warehouse_interfaces
+[0.328s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/ament_index/resource_index/parent_prefix_path/warehouse_interfaces
+[0.328s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/ament_prefix_path.sh
+[0.328s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/ament_prefix_path.dsv
+[0.328s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/path.sh
+[0.328s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/path.dsv
+[0.328s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/local_setup.bash
+[0.328s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/local_setup.sh
+[0.329s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/local_setup.zsh
+[0.329s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/local_setup.dsv
+[0.329s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/package.dsv
+[0.335s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/ament_index/resource_index/packages/warehouse_interfaces
+[0.335s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/rosidl_cmake-extras.cmake
+[0.335s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.335s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.335s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[0.335s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[0.335s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[0.336s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[0.336s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/rosidl_cmake_aggregate_target-extras.cmake
+[0.336s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfacesConfig.cmake
+[0.336s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfacesConfig-version.cmake
+[0.336s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/package.xml
+[0.336s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_generator_c.so
+[0.336s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_fastrtps_c.so
+[0.336s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_introspection_c.so
+[0.336s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_c.so
+[0.336s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[0.336s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_introspection_cpp.so
+[0.336s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_cpp.so
+[0.358s] Listing '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces'...
+[0.358s] Listing '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/action'...
+[0.358s] Listing '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg'...
+[0.358s] Listing '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv'...
+[0.361s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_generator_py.so
+[0.361s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_generator_cExport.cmake
+[0.361s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_generator_cExport-noconfig.cmake
+[0.361s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[0.361s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[0.361s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[0.362s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[0.362s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_cExport.cmake
+[0.362s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[0.362s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_generator_cppExport.cmake
+[0.362s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[0.362s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[0.362s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[0.362s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[0.362s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_cppExport.cmake
+[0.362s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[0.362s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_generator_pyExport.cmake
+[0.362s] -- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[0.363s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces

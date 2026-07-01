@@ -1,0 +1,33 @@
+[0.008s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_moveit_config -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config
+[0.016s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.172s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.244s] -- Configuring done (0.2s)
+[0.246s] -- Generating done (0.0s)
+[0.248s] -- Build files have been written to: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config
+[0.250s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_moveit_config -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config
+[0.251s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config -- -j12 -l12
+[0.287s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config -- -j12 -l12
+[0.297s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config
+[0.305s] -- Install configuration: ""
+[0.305s] -- Execute custom install script
+[0.305s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/warehouse_moveit_config/config/joint_limits.yaml
+[0.313s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/warehouse_moveit_config/config/kinematics.yaml
+[0.320s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/warehouse_moveit_config/config/moveit_controllers.yaml
+[0.329s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/warehouse_moveit_config/config/warehouse_robot.srdf
+[0.336s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/warehouse_moveit_config/launch/move_group.launch.py
+[0.346s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/ament_index/resource_index/package_run_dependencies/warehouse_moveit_config
+[0.355s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/ament_index/resource_index/parent_prefix_path/warehouse_moveit_config
+[0.361s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/warehouse_moveit_config/environment/ament_prefix_path.sh
+[0.370s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/warehouse_moveit_config/environment/ament_prefix_path.dsv
+[0.377s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/warehouse_moveit_config/environment/path.sh
+[0.385s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/warehouse_moveit_config/environment/path.dsv
+[0.390s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/warehouse_moveit_config/local_setup.bash
+[0.398s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/warehouse_moveit_config/local_setup.sh
+[0.404s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/warehouse_moveit_config/local_setup.zsh
+[0.411s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/warehouse_moveit_config/local_setup.dsv
+[0.418s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/warehouse_moveit_config/package.dsv
+[0.427s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/ament_index/resource_index/packages/warehouse_moveit_config
+[0.433s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/warehouse_moveit_config/cmake/warehouse_moveit_configConfig.cmake
+[0.440s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/warehouse_moveit_config/cmake/warehouse_moveit_configConfig-version.cmake
+[0.449s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config/share/warehouse_moveit_config/package.xml
+[0.458s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config

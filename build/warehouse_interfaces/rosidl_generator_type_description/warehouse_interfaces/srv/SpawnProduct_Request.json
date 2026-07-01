@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "warehouse_interfaces/srv/SpawnProduct_Request",
+      "fields": [
+        {
+          "name": "aruco_id",
+          "type": {
+            "type_id": 6,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "warehouse_interfaces/srv/SpawnProduct_Request",
+      "hash_string": "RIHS01_531e95f0548fbb68d1e5f0400c6405ad5d9573280ecd8aedf57eebcd26d2655c"
+    }
+  ]
+}

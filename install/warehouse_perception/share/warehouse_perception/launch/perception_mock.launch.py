@@ -1,0 +1,1 @@
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_perception/launch/perception_mock.launch.py

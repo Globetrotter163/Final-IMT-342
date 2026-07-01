@@ -1,0 +1,19 @@
+[0.083s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'test-result', '--verbose']
+[0.083s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='test-result', test_result_base='build', all=False, result_files_only=False, verbose=True, delete=False, delete_yes=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7ccf359a6c60>, verb_extension=<colcon_test_result.verb.test_result.TestResultVerb object at 0x7ccf359a63c0>, main=<bound method TestResultVerb.main of <colcon_test_result.verb.test_result.TestResultVerb object at 0x7ccf359a63c0>>, mixin_verb=('test-result',))
+[0.086s] Level 1:colcon.colcon_test_result.test_result:get_test_results(ctest)
+[0.097s] Level 1:colcon.colcon_test_result.test_result:get_test_results(xunit)
+[0.101s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/warehouse_inventory/Testing/20260625-2001/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.101s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/warehouse_inventory/Testing/20260625-2005/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.101s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/warehouse_inventory/Testing/20260626-0707/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.101s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/warehouse_inventory/Testing/20260626-0709/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.101s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/warehouse_inventory/Testing/20260626-0715/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.101s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/warehouse_inventory/Testing/20260626-0724/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.101s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/warehouse_inventory/Testing/20260626-0735/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.101s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/warehouse_inventory/Testing/20260630-2249/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.102s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/warehouse_inventory/Testing/20260630-2250/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.102s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/warehouse_inventory/Testing/20260701-0004/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.102s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/warehouse_inventory/Testing/20260701-0058/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.102s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/warehouse_inventory/Testing/20260701-0353/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.102s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/warehouse_inventory/Testing/20260701-0354/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.102s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/warehouse_inventory/Testing/20260701-0400/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'
+[0.102s] DEBUG:colcon.colcon_test_result.test_result.xunit:Skipping 'build/warehouse_inventory/Testing/20260701-0419/Test.xml': the root tag is neither 'testsuite' nor 'testsuites'

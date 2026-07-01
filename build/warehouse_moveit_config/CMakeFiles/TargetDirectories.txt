@@ -1,0 +1,9 @@
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config/CMakeFiles/uninstall.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config/CMakeFiles/warehouse_moveit_config_uninstall.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config/CMakeFiles/test.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config/CMakeFiles/edit_cache.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config/CMakeFiles/rebuild_cache.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config/CMakeFiles/list_install_components.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config/CMakeFiles/install.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config/CMakeFiles/install/local.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config/CMakeFiles/install/strip.dir

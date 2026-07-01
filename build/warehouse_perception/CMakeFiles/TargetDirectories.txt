@@ -1,0 +1,12 @@
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception/CMakeFiles/uninstall.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception/CMakeFiles/warehouse_perception_uninstall.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception/CMakeFiles/yolo_detector_mock.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception/CMakeFiles/apriltag_detector_mock.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception/CMakeFiles/aruco_detector.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception/CMakeFiles/test.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception/CMakeFiles/edit_cache.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception/CMakeFiles/rebuild_cache.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception/CMakeFiles/list_install_components.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception/CMakeFiles/install.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception/CMakeFiles/install/local.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception/CMakeFiles/install/strip.dir

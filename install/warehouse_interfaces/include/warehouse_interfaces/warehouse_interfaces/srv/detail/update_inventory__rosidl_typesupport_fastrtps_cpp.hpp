@@ -1,0 +1,1 @@
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_typesupport_fastrtps_cpp/warehouse_interfaces/srv/detail/update_inventory__rosidl_typesupport_fastrtps_cpp.hpp

@@ -1,0 +1,1 @@
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces/rosidl_generator_c/warehouse_interfaces/srv/detail/place_product__type_support.h

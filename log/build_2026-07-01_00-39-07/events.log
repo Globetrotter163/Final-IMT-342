@@ -1,0 +1,1033 @@
+[0.000000] (-) TimerEvent: {}
+[0.000130] (-) JobUnselected: {'identifier': 'robot_amr_description'}
+[0.000185] (-) JobUnselected: {'identifier': 'warehouse_bringup'}
+[0.000219] (-) JobUnselected: {'identifier': 'warehouse_gazebo'}
+[0.000245] (-) JobUnselected: {'identifier': 'warehouse_inventory'}
+[0.000285] (-) JobUnselected: {'identifier': 'warehouse_manipulation'}
+[0.000311] (-) JobUnselected: {'identifier': 'warehouse_moveit_config'}
+[0.000333] (-) JobUnselected: {'identifier': 'warehouse_navigation'}
+[0.000356] (-) JobUnselected: {'identifier': 'warehouse_perception'}
+[0.000376] (-) JobUnselected: {'identifier': 'warehouse_robot_description'}
+[0.000395] (-) JobUnselected: {'identifier': 'warehouse_task_manager'}
+[0.000419] (warehouse_interfaces) JobQueued: {'identifier': 'warehouse_interfaces', 'dependencies': OrderedDict()}
+[0.001286] (warehouse_interfaces) JobStarted: {'identifier': 'warehouse_interfaces'}
+[0.012244] (warehouse_interfaces) JobProgress: {'identifier': 'warehouse_interfaces', 'progress': 'cmake'}
+[0.013248] (warehouse_interfaces) Command: {'cmd': ['/usr/bin/cmake', '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_interfaces', '-DCMAKE_INSTALL_PREFIX=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces'], 'cwd': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'agonb', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/agonb', 'OLDPWD': '/home/agonb', 'DESKTOP_SESSION': 'ubuntu', 'NVM_BIN': '/home/agonb/.nvm/versions/node/v24.18.0/bin', 'NVM_INC': '/home/agonb/.nvm/versions/node/v24.18.0/include/node', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2200', 'SYSTEMD_EXEC_PID': '2817', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '15184', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'NVM_DIR': '/home/agonb/.nvm', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'agonb', 'JOURNAL_STREAM': '9:16968', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'agonb', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/home/agonb/.nvm/versions/node/v24.18.0/bin:/home/agonb/.opencode/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/agonb/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/agonb-Victus:@/tmp/.ICE-unix/2663,unix/agonb-Victus:/tmp/.ICE-unix/2663', 'INVOCATION_ID': 'f8efe5813efc4f3abb5fcfe7536d1a58', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:e7150086-6202-4478-ad30-3242313fa368', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'RCUTILS_COLORIZED_OUTPUT': '1', 'NVM_CD_FLAGS': '', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.099568] (-) TimerEvent: {}
+[0.114427] (warehouse_interfaces) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.188358] (warehouse_interfaces) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.199693] (-) TimerEvent: {}
+[0.212907] (warehouse_interfaces) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.299794] (-) TimerEvent: {}
+[0.333444] (warehouse_interfaces) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.347761] (warehouse_interfaces) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.348207] (warehouse_interfaces) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.349561] (warehouse_interfaces) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.362434] (warehouse_interfaces) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.399915] (-) TimerEvent: {}
+[0.500186] (-) TimerEvent: {}
+[0.505447] (warehouse_interfaces) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.522401] (warehouse_interfaces) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.522767] (warehouse_interfaces) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.523498] (warehouse_interfaces) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.540330] (warehouse_interfaces) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.600307] (-) TimerEvent: {}
+[0.700523] (-) TimerEvent: {}
+[0.778305] (warehouse_interfaces) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[0.800686] (-) TimerEvent: {}
+[0.900983] (-) TimerEvent: {}
+[1.001250] (-) TimerEvent: {}
+[1.051875] (warehouse_interfaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.6.1 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)\n'}
+[1.072838] (warehouse_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.101365] (-) TimerEvent: {}
+[1.201624] (-) TimerEvent: {}
+[1.231238] (warehouse_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.301740] (-) TimerEvent: {}
+[1.386803] (warehouse_interfaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 4.6.9 (/opt/ros/jazzy/share/rosidl_adapter/cmake)\n'}
+[1.402636] (-) TimerEvent: {}
+[1.502888] (-) TimerEvent: {}
+[1.603127] (-) TimerEvent: {}
+[1.703374] (-) TimerEvent: {}
+[1.803636] (-) TimerEvent: {}
+[1.904028] (-) TimerEvent: {}
+[2.004310] (-) TimerEvent: {}
+[2.104711] (-) TimerEvent: {}
+[2.204991] (-) TimerEvent: {}
+[2.306098] (-) TimerEvent: {}
+[2.406352] (-) TimerEvent: {}
+[2.506662] (-) TimerEvent: {}
+[2.607251] (-) TimerEvent: {}
+[2.707556] (-) TimerEvent: {}
+[2.770502] (warehouse_interfaces) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.12.1 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)\n'}
+[2.807713] (-) TimerEvent: {}
+[2.908391] (-) TimerEvent: {}
+[3.008805] (-) TimerEvent: {}
+[3.109075] (-) TimerEvent: {}
+[3.209892] (-) TimerEvent: {}
+[3.310156] (-) TimerEvent: {}
+[3.410822] (-) TimerEvent: {}
+[3.511047] (-) TimerEvent: {}
+[3.611664] (-) TimerEvent: {}
+[3.711952] (-) TimerEvent: {}
+[3.797109] (warehouse_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[3.812049] (-) TimerEvent: {}
+[3.912424] (-) TimerEvent: {}
+[4.012663] (-) TimerEvent: {}
+[4.113058] (-) TimerEvent: {}
+[4.213403] (-) TimerEvent: {}
+[4.313648] (-) TimerEvent: {}
+[4.414347] (-) TimerEvent: {}
+[4.514603] (-) TimerEvent: {}
+[4.614849] (-) TimerEvent: {}
+[4.715097] (-) TimerEvent: {}
+[4.815319] (-) TimerEvent: {}
+[4.917832] (-) TimerEvent: {}
+[5.018074] (-) TimerEvent: {}
+[5.046501] (warehouse_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[5.058670] (warehouse_interfaces) StdoutLine: {'line': b'-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)\n'}
+[5.118216] (-) TimerEvent: {}
+[5.218517] (-) TimerEvent: {}
+[5.318778] (-) TimerEvent: {}
+[5.371488] (warehouse_interfaces) StdoutLine: {'line': b'-- Found PythonExtra: /usr/bin/python3  \n'}
+[5.418876] (-) TimerEvent: {}
+[5.519092] (-) TimerEvent: {}
+[5.619327] (-) TimerEvent: {}
+[5.719981] (-) TimerEvent: {}
+[5.820172] (-) TimerEvent: {}
+[5.920688] (-) TimerEvent: {}
+[6.021002] (-) TimerEvent: {}
+[6.109900] (warehouse_interfaces) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed \n'}
+[6.122371] (-) TimerEvent: {}
+[6.222627] (-) TimerEvent: {}
+[6.323136] (-) TimerEvent: {}
+[6.387809] (warehouse_interfaces) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[6.423265] (-) TimerEvent: {}
+[6.523512] (-) TimerEvent: {}
+[6.572946] (warehouse_interfaces) StdoutLine: {'line': b'-- Configuring done (6.5s)\n'}
+[6.624325] (-) TimerEvent: {}
+[6.674288] (warehouse_interfaces) StdoutLine: {'line': b'-- Generating done (0.1s)\n'}
+[6.699212] (warehouse_interfaces) StdoutLine: {'line': b'-- Build files have been written to: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces\n'}
+[6.724446] (warehouse_interfaces) CommandEnded: {'returncode': 0}
+[6.725040] (-) TimerEvent: {}
+[6.725080] (warehouse_interfaces) JobProgress: {'identifier': 'warehouse_interfaces', 'progress': 'build'}
+[6.726236] (warehouse_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces', '--', '-j12', '-l12'], 'cwd': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'agonb', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/agonb', 'OLDPWD': '/home/agonb', 'DESKTOP_SESSION': 'ubuntu', 'NVM_BIN': '/home/agonb/.nvm/versions/node/v24.18.0/bin', 'NVM_INC': '/home/agonb/.nvm/versions/node/v24.18.0/include/node', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2200', 'SYSTEMD_EXEC_PID': '2817', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '15184', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'NVM_DIR': '/home/agonb/.nvm', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'agonb', 'JOURNAL_STREAM': '9:16968', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'agonb', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/home/agonb/.nvm/versions/node/v24.18.0/bin:/home/agonb/.opencode/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/agonb/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/agonb-Victus:@/tmp/.ICE-unix/2663,unix/agonb-Victus:/tmp/.ICE-unix/2663', 'INVOCATION_ID': 'f8efe5813efc4f3abb5fcfe7536d1a58', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:e7150086-6202-4478-ad30-3242313fa368', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'RCUTILS_COLORIZED_OUTPUT': '1', 'NVM_CD_FLAGS': '', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[6.806519] (warehouse_interfaces) StdoutLine: {'line': b'[  1%] Generating Rust code for ROS interfaces\n'}
+[6.825768] (-) TimerEvent: {}
+[6.926037] (-) TimerEvent: {}
+[7.027551] (-) TimerEvent: {}
+[7.127771] (-) TimerEvent: {}
+[7.228956] (-) TimerEvent: {}
+[7.329150] (-) TimerEvent: {}
+[7.432299] (-) TimerEvent: {}
+[7.532512] (-) TimerEvent: {}
+[7.543604] (warehouse_interfaces) StdoutLine: {'line': b'[  1%] Built target warehouse_interfaces__rs\n'}
+[7.598111] (warehouse_interfaces) StdoutLine: {'line': b'[  1%] Built target ament_cmake_python_copy_warehouse_interfaces\n'}
+[7.632609] (-) TimerEvent: {}
+[7.634982] (warehouse_interfaces) StdoutLine: {'line': b'[  2%] Generating type hashes for ROS interfaces\n'}
+[7.732705] (-) TimerEvent: {}
+[7.832927] (-) TimerEvent: {}
+[7.933154] (-) TimerEvent: {}
+[8.033350] (-) TimerEvent: {}
+[8.133867] (-) TimerEvent: {}
+[8.157794] (warehouse_interfaces) StdoutLine: {'line': b'[  2%] Built target warehouse_interfaces__rosidl_generator_type_description\n'}
+[8.234073] (-) TimerEvent: {}
+[8.334286] (-) TimerEvent: {}
+[8.434497] (-) TimerEvent: {}
+[8.471290] (warehouse_interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[8.472567] (warehouse_interfaces) StdoutLine: {'line': b'creating warehouse_interfaces.egg-info\n'}
+[8.498380] (warehouse_interfaces) StdoutLine: {'line': b'writing warehouse_interfaces.egg-info/PKG-INFO\n'}
+[8.498930] (warehouse_interfaces) StdoutLine: {'line': b'writing dependency_links to warehouse_interfaces.egg-info/dependency_links.txt\n'}
+[8.499544] (warehouse_interfaces) StdoutLine: {'line': b'writing top-level names to warehouse_interfaces.egg-info/top_level.txt\n'}
+[8.502323] (warehouse_interfaces) StdoutLine: {'line': b"writing manifest file 'warehouse_interfaces.egg-info/SOURCES.txt'\n"}
+[8.534641] (-) TimerEvent: {}
+[8.608616] (warehouse_interfaces) StdoutLine: {'line': b"reading manifest file 'warehouse_interfaces.egg-info/SOURCES.txt'\n"}
+[8.609839] (warehouse_interfaces) StdoutLine: {'line': b"writing manifest file 'warehouse_interfaces.egg-info/SOURCES.txt'\n"}
+[8.636003] (-) TimerEvent: {}
+[8.681950] (warehouse_interfaces) StdoutLine: {'line': b'[  2%] Built target ament_cmake_python_build_warehouse_interfaces_egg\n'}
+[8.699243] (warehouse_interfaces) StdoutLine: {'line': b'[  3%] Generating C code for ROS interfaces\n'}
+[8.736104] (-) TimerEvent: {}
+[8.836347] (-) TimerEvent: {}
+[8.936574] (-) TimerEvent: {}
+[9.037690] (-) TimerEvent: {}
+[9.137944] (-) TimerEvent: {}
+[9.238140] (-) TimerEvent: {}
+[9.338332] (-) TimerEvent: {}
+[9.442418] (-) TimerEvent: {}
+[9.542622] (-) TimerEvent: {}
+[9.642876] (-) TimerEvent: {}
+[9.743062] (-) TimerEvent: {}
+[9.843296] (-) TimerEvent: {}
+[9.943519] (-) TimerEvent: {}
+[10.043982] (-) TimerEvent: {}
+[10.147240] (-) TimerEvent: {}
+[10.247476] (-) TimerEvent: {}
+[10.348325] (-) TimerEvent: {}
+[10.448577] (-) TimerEvent: {}
+[10.548814] (-) TimerEvent: {}
+[10.649050] (-) TimerEvent: {}
+[10.749270] (-) TimerEvent: {}
+[10.849460] (-) TimerEvent: {}
+[10.929362] (warehouse_interfaces) StdoutLine: {'line': b'[  4%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/detected_product__description.c.o\n'}
+[10.949712] (-) TimerEvent: {}
+[10.974521] (warehouse_interfaces) StdoutLine: {'line': b'[  5%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/register_product__functions.c.o\n'}
+[11.049815] (-) TimerEvent: {}
+[11.060084] (warehouse_interfaces) StdoutLine: {'line': b'[  6%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/register_product__type_support.c.o\n'}
+[11.103529] (warehouse_interfaces) StdoutLine: {'line': b'[  7%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/assign_storage_location__description.c.o\n'}
+[11.149896] (-) TimerEvent: {}
+[11.165296] (warehouse_interfaces) StdoutLine: {'line': b'[  8%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/assign_storage_location__functions.c.o\n'}
+[11.250030] (-) TimerEvent: {}
+[11.258145] (warehouse_interfaces) StdoutLine: {'line': b'[  9%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/assign_storage_location__type_support.c.o\n'}
+[11.305625] (warehouse_interfaces) StdoutLine: {'line': b'[ 10%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/update_inventory__description.c.o\n'}
+[11.350154] (-) TimerEvent: {}
+[11.377570] (warehouse_interfaces) StdoutLine: {'line': b'[ 11%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/update_inventory__functions.c.o\n'}
+[11.450286] (-) TimerEvent: {}
+[11.463186] (warehouse_interfaces) StdoutLine: {'line': b'[ 12%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/update_inventory__type_support.c.o\n'}
+[11.508662] (warehouse_interfaces) StdoutLine: {'line': b'[ 12%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/place_product__description.c.o\n'}
+[11.550393] (-) TimerEvent: {}
+[11.594926] (warehouse_interfaces) StdoutLine: {'line': b'[ 13%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/place_product__functions.c.o\n'}
+[11.650499] (-) TimerEvent: {}
+[11.691837] (warehouse_interfaces) StdoutLine: {'line': b'[ 14%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/place_product__type_support.c.o\n'}
+[11.733218] (warehouse_interfaces) StdoutLine: {'line': b'[ 15%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/action/detail/execute_storage_mission__description.c.o\n'}
+[11.750626] (-) TimerEvent: {}
+[11.821388] (warehouse_interfaces) StdoutLine: {'line': b'[ 16%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/action/detail/execute_storage_mission__functions.c.o\n'}
+[11.850881] (-) TimerEvent: {}
+[11.951092] (-) TimerEvent: {}
+[12.012895] (warehouse_interfaces) StdoutLine: {'line': b'[ 17%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/action/detail/execute_storage_mission__type_support.c.o\n'}
+[12.051185] (-) TimerEvent: {}
+[12.067053] (warehouse_interfaces) StdoutLine: {'line': b'[ 18%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/register_product__description.c.o\n'}
+[12.123954] (warehouse_interfaces) StdoutLine: {'line': b'[ 19%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/storage_location__type_support.c.o\n'}
+[12.151305] (-) TimerEvent: {}
+[12.157135] (warehouse_interfaces) StdoutLine: {'line': b'[ 20%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/storage_location__functions.c.o\n'}
+[12.215707] (warehouse_interfaces) StdoutLine: {'line': b'[ 21%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/storage_location__description.c.o\n'}
+[12.251415] (-) TimerEvent: {}
+[12.264239] (warehouse_interfaces) StdoutLine: {'line': b'[ 22%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/product_record__type_support.c.o\n'}
+[12.316381] (warehouse_interfaces) StdoutLine: {'line': b'[ 23%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/product_record__functions.c.o\n'}
+[12.351522] (-) TimerEvent: {}
+[12.404897] (warehouse_interfaces) StdoutLine: {'line': b'[ 24%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/product_record__description.c.o\n'}
+[12.451678] (-) TimerEvent: {}
+[12.475457] (warehouse_interfaces) StdoutLine: {'line': b'[ 25%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/detected_product__type_support.c.o\n'}
+[12.546561] (warehouse_interfaces) StdoutLine: {'line': b'[ 26%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/detected_product__functions.c.o\n'}
+[12.551787] (-) TimerEvent: {}
+[12.635615] (warehouse_interfaces) StdoutLine: {'line': b'[ 27%] Linking C shared library libwarehouse_interfaces__rosidl_generator_c.so\n'}
+[12.651917] (-) TimerEvent: {}
+[12.710658] (warehouse_interfaces) StdoutLine: {'line': b'[ 27%] Built target warehouse_interfaces__rosidl_generator_c\n'}
+[12.745452] (warehouse_interfaces) StdoutLine: {'line': b'[ 27%] Generating C++ code for ROS interfaces\n'}
+[12.752018] (-) TimerEvent: {}
+[12.852237] (-) TimerEvent: {}
+[12.953160] (-) TimerEvent: {}
+[13.053381] (-) TimerEvent: {}
+[13.153595] (-) TimerEvent: {}
+[13.253842] (-) TimerEvent: {}
+[13.354768] (-) TimerEvent: {}
+[13.455062] (-) TimerEvent: {}
+[13.560046] (-) TimerEvent: {}
+[13.660542] (-) TimerEvent: {}
+[13.760780] (-) TimerEvent: {}
+[13.861130] (-) TimerEvent: {}
+[13.961603] (-) TimerEvent: {}
+[14.061850] (-) TimerEvent: {}
+[14.162507] (-) TimerEvent: {}
+[14.263143] (-) TimerEvent: {}
+[14.363411] (-) TimerEvent: {}
+[14.463642] (-) TimerEvent: {}
+[14.563878] (-) TimerEvent: {}
+[14.666347] (-) TimerEvent: {}
+[14.766583] (-) TimerEvent: {}
+[14.866837] (-) TimerEvent: {}
+[14.967102] (-) TimerEvent: {}
+[15.032562] (warehouse_interfaces) StdoutLine: {'line': b'[ 27%] Built target warehouse_interfaces__cpp\n'}
+[15.058351] (warehouse_interfaces) StdoutLine: {'line': b'[ 28%] Generating C type support dispatch for ROS interfaces\n'}
+[15.067206] (-) TimerEvent: {}
+[15.167440] (-) TimerEvent: {}
+[15.267685] (-) TimerEvent: {}
+[15.367939] (-) TimerEvent: {}
+[15.469751] (-) TimerEvent: {}
+[15.569991] (-) TimerEvent: {}
+[15.670212] (-) TimerEvent: {}
+[15.770451] (-) TimerEvent: {}
+[15.870701] (-) TimerEvent: {}
+[15.972559] (-) TimerEvent: {}
+[16.073097] (-) TimerEvent: {}
+[16.175667] (-) TimerEvent: {}
+[16.275890] (-) TimerEvent: {}
+[16.328753] (warehouse_interfaces) StdoutLine: {'line': b'[ 29%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/warehouse_interfaces/msg/detected_product__type_support.cpp.o\n'}
+[16.377520] (-) TimerEvent: {}
+[16.403566] (warehouse_interfaces) StdoutLine: {'line': b'[ 30%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/warehouse_interfaces/srv/place_product__type_support.cpp.o\n'}
+[16.479586] (-) TimerEvent: {}
+[16.501585] (warehouse_interfaces) StdoutLine: {'line': b'[ 31%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/warehouse_interfaces/action/execute_storage_mission__type_support.cpp.o\n'}
+[16.580042] (-) TimerEvent: {}
+[16.637935] (warehouse_interfaces) StdoutLine: {'line': b'[ 32%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/warehouse_interfaces/srv/update_inventory__type_support.cpp.o\n'}
+[16.680922] (-) TimerEvent: {}
+[16.739074] (warehouse_interfaces) StdoutLine: {'line': b'[ 33%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/warehouse_interfaces/srv/assign_storage_location__type_support.cpp.o\n'}
+[16.781058] (-) TimerEvent: {}
+[16.841471] (warehouse_interfaces) StdoutLine: {'line': b'[ 33%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/warehouse_interfaces/srv/register_product__type_support.cpp.o\n'}
+[16.881149] (-) TimerEvent: {}
+[16.943988] (warehouse_interfaces) StdoutLine: {'line': b'[ 34%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/warehouse_interfaces/msg/storage_location__type_support.cpp.o\n'}
+[16.981285] (-) TimerEvent: {}
+[17.036779] (warehouse_interfaces) StdoutLine: {'line': b'[ 35%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/warehouse_interfaces/msg/product_record__type_support.cpp.o\n'}
+[17.082014] (-) TimerEvent: {}
+[17.116165] (warehouse_interfaces) StdoutLine: {'line': b'[ 36%] Linking CXX shared library libwarehouse_interfaces__rosidl_typesupport_c.so\n'}
+[17.182133] (-) TimerEvent: {}
+[17.205709] (warehouse_interfaces) StdoutLine: {'line': b'[ 36%] Built target warehouse_interfaces__rosidl_typesupport_c\n'}
+[17.221202] (warehouse_interfaces) StdoutLine: {'line': b'[ 37%] Generating C++ type support for eProsima Fast-RTPS\n'}
+[17.283833] (-) TimerEvent: {}
+[17.384086] (-) TimerEvent: {}
+[17.484326] (-) TimerEvent: {}
+[17.584514] (-) TimerEvent: {}
+[17.684742] (-) TimerEvent: {}
+[17.784980] (-) TimerEvent: {}
+[17.885176] (-) TimerEvent: {}
+[17.985421] (-) TimerEvent: {}
+[18.085999] (-) TimerEvent: {}
+[18.186240] (-) TimerEvent: {}
+[18.286688] (-) TimerEvent: {}
+[18.387362] (-) TimerEvent: {}
+[18.489596] (-) TimerEvent: {}
+[18.589765] (-) TimerEvent: {}
+[18.594345] (warehouse_interfaces) StdoutLine: {'line': b'[ 38%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/warehouse_interfaces/msg/detail/dds_fastrtps/detected_product__type_support.cpp.o\n'}
+[18.689938] (-) TimerEvent: {}
+[18.790588] (-) TimerEvent: {}
+[18.890804] (-) TimerEvent: {}
+[18.991081] (-) TimerEvent: {}
+[19.091362] (-) TimerEvent: {}
+[19.191641] (-) TimerEvent: {}
+[19.291999] (-) TimerEvent: {}
+[19.316102] (warehouse_interfaces) StdoutLine: {'line': b'[ 39%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/warehouse_interfaces/action/detail/dds_fastrtps/execute_storage_mission__type_support.cpp.o\n'}
+[19.392079] (-) TimerEvent: {}
+[19.492284] (-) TimerEvent: {}
+[19.592460] (-) TimerEvent: {}
+[19.692672] (-) TimerEvent: {}
+[19.792970] (-) TimerEvent: {}
+[19.893243] (-) TimerEvent: {}
+[19.993862] (-) TimerEvent: {}
+[20.094034] (-) TimerEvent: {}
+[20.194296] (-) TimerEvent: {}
+[20.294724] (-) TimerEvent: {}
+[20.394969] (-) TimerEvent: {}
+[20.483629] (warehouse_interfaces) StdoutLine: {'line': b'[ 40%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/warehouse_interfaces/srv/detail/dds_fastrtps/place_product__type_support.cpp.o\n'}
+[20.495059] (-) TimerEvent: {}
+[20.595273] (-) TimerEvent: {}
+[20.695529] (-) TimerEvent: {}
+[20.795973] (-) TimerEvent: {}
+[20.896205] (-) TimerEvent: {}
+[20.996439] (-) TimerEvent: {}
+[21.096626] (-) TimerEvent: {}
+[21.196802] (-) TimerEvent: {}
+[21.203854] (warehouse_interfaces) StdoutLine: {'line': b'[ 41%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/warehouse_interfaces/srv/detail/dds_fastrtps/update_inventory__type_support.cpp.o\n'}
+[21.296853] (-) TimerEvent: {}
+[21.397054] (-) TimerEvent: {}
+[21.497299] (-) TimerEvent: {}
+[21.597524] (-) TimerEvent: {}
+[21.698599] (-) TimerEvent: {}
+[21.798822] (-) TimerEvent: {}
+[21.899389] (-) TimerEvent: {}
+[21.912137] (warehouse_interfaces) StdoutLine: {'line': b'[ 42%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/warehouse_interfaces/srv/detail/dds_fastrtps/assign_storage_location__type_support.cpp.o\n'}
+[21.999623] (-) TimerEvent: {}
+[22.099822] (-) TimerEvent: {}
+[22.200020] (-) TimerEvent: {}
+[22.300191] (-) TimerEvent: {}
+[22.400384] (-) TimerEvent: {}
+[22.500872] (-) TimerEvent: {}
+[22.537940] (warehouse_interfaces) StdoutLine: {'line': b'[ 43%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/warehouse_interfaces/srv/detail/dds_fastrtps/register_product__type_support.cpp.o\n'}
+[22.601013] (-) TimerEvent: {}
+[22.701238] (-) TimerEvent: {}
+[22.801429] (-) TimerEvent: {}
+[22.901628] (-) TimerEvent: {}
+[23.001803] (-) TimerEvent: {}
+[23.101956] (-) TimerEvent: {}
+[23.150749] (warehouse_interfaces) StdoutLine: {'line': b'[ 44%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/warehouse_interfaces/msg/detail/dds_fastrtps/storage_location__type_support.cpp.o\n'}
+[23.202240] (-) TimerEvent: {}
+[23.302518] (-) TimerEvent: {}
+[23.402766] (-) TimerEvent: {}
+[23.503062] (-) TimerEvent: {}
+[23.603320] (-) TimerEvent: {}
+[23.703635] (-) TimerEvent: {}
+[23.805377] (-) TimerEvent: {}
+[23.905673] (-) TimerEvent: {}
+[23.907230] (warehouse_interfaces) StdoutLine: {'line': b'[ 45%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/warehouse_interfaces/msg/detail/dds_fastrtps/product_record__type_support.cpp.o\n'}
+[24.005800] (-) TimerEvent: {}
+[24.106237] (-) TimerEvent: {}
+[24.206570] (-) TimerEvent: {}
+[24.306824] (-) TimerEvent: {}
+[24.407423] (-) TimerEvent: {}
+[24.507822] (-) TimerEvent: {}
+[24.609097] (-) TimerEvent: {}
+[24.709319] (-) TimerEvent: {}
+[24.754761] (warehouse_interfaces) StdoutLine: {'line': b'[ 46%] Linking CXX shared library libwarehouse_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[24.809939] (-) TimerEvent: {}
+[24.910397] (-) TimerEvent: {}
+[24.943362] (warehouse_interfaces) StdoutLine: {'line': b'[ 46%] Built target warehouse_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[24.964161] (warehouse_interfaces) StdoutLine: {'line': b'[ 47%] Generating C++ type support dispatch for ROS interfaces\n'}
+[25.011285] (-) TimerEvent: {}
+[25.111520] (-) TimerEvent: {}
+[25.211737] (-) TimerEvent: {}
+[25.312289] (-) TimerEvent: {}
+[25.413706] (-) TimerEvent: {}
+[25.513928] (-) TimerEvent: {}
+[25.614248] (-) TimerEvent: {}
+[25.714475] (-) TimerEvent: {}
+[25.816411] (-) TimerEvent: {}
+[25.916618] (-) TimerEvent: {}
+[26.016846] (-) TimerEvent: {}
+[26.117977] (-) TimerEvent: {}
+[26.180882] (warehouse_interfaces) StdoutLine: {'line': b'[ 28%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/warehouse_interfaces/msg/detected_product__type_support.cpp.o\n'}
+[26.218334] (-) TimerEvent: {}
+[26.318582] (-) TimerEvent: {}
+[26.418811] (-) TimerEvent: {}
+[26.519346] (-) TimerEvent: {}
+[26.620399] (-) TimerEvent: {}
+[26.720661] (-) TimerEvent: {}
+[26.803149] (warehouse_interfaces) StdoutLine: {'line': b'[ 48%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/warehouse_interfaces/action/execute_storage_mission__type_support.cpp.o\n'}
+[26.820801] (-) TimerEvent: {}
+[26.921036] (-) TimerEvent: {}
+[27.021334] (-) TimerEvent: {}
+[27.121571] (-) TimerEvent: {}
+[27.221815] (-) TimerEvent: {}
+[27.322039] (-) TimerEvent: {}
+[27.422284] (-) TimerEvent: {}
+[27.522507] (-) TimerEvent: {}
+[27.622787] (-) TimerEvent: {}
+[27.723214] (-) TimerEvent: {}
+[27.823453] (-) TimerEvent: {}
+[27.923687] (-) TimerEvent: {}
+[28.023903] (-) TimerEvent: {}
+[28.124100] (-) TimerEvent: {}
+[28.221223] (warehouse_interfaces) StdoutLine: {'line': b'[ 49%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/warehouse_interfaces/srv/place_product__type_support.cpp.o\n'}
+[28.224213] (-) TimerEvent: {}
+[28.324436] (-) TimerEvent: {}
+[28.424628] (-) TimerEvent: {}
+[28.525092] (-) TimerEvent: {}
+[28.625323] (-) TimerEvent: {}
+[28.653787] (warehouse_interfaces) StdoutLine: {'line': b'[ 50%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/warehouse_interfaces/srv/update_inventory__type_support.cpp.o\n'}
+[28.725438] (-) TimerEvent: {}
+[28.825679] (-) TimerEvent: {}
+[28.925879] (-) TimerEvent: {}
+[29.026122] (-) TimerEvent: {}
+[29.084234] (warehouse_interfaces) StdoutLine: {'line': b'[ 51%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/warehouse_interfaces/srv/assign_storage_location__type_support.cpp.o\n'}
+[29.126327] (-) TimerEvent: {}
+[29.226530] (-) TimerEvent: {}
+[29.326730] (-) TimerEvent: {}
+[29.426920] (-) TimerEvent: {}
+[29.527155] (-) TimerEvent: {}
+[29.576530] (warehouse_interfaces) StdoutLine: {'line': b'[ 52%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/warehouse_interfaces/srv/register_product__type_support.cpp.o\n'}
+[29.627204] (-) TimerEvent: {}
+[29.727717] (-) TimerEvent: {}
+[29.842482] (-) TimerEvent: {}
+[29.942716] (-) TimerEvent: {}
+[30.043525] (-) TimerEvent: {}
+[30.057886] (warehouse_interfaces) StdoutLine: {'line': b'[ 53%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/warehouse_interfaces/msg/storage_location__type_support.cpp.o\n'}
+[30.143621] (-) TimerEvent: {}
+[30.243814] (-) TimerEvent: {}
+[30.344107] (-) TimerEvent: {}
+[30.444341] (-) TimerEvent: {}
+[30.475382] (warehouse_interfaces) StdoutLine: {'line': b'[ 54%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/warehouse_interfaces/msg/product_record__type_support.cpp.o\n'}
+[30.544543] (-) TimerEvent: {}
+[30.645102] (-) TimerEvent: {}
+[30.745337] (-) TimerEvent: {}
+[30.845592] (-) TimerEvent: {}
+[30.846832] (warehouse_interfaces) StdoutLine: {'line': b'[ 55%] Linking CXX shared library libwarehouse_interfaces__rosidl_typesupport_cpp.so\n'}
+[30.947177] (-) TimerEvent: {}
+[31.030138] (warehouse_interfaces) StdoutLine: {'line': b'[ 57%] Built target warehouse_interfaces__rosidl_typesupport_cpp\n'}
+[31.049626] (-) TimerEvent: {}
+[31.050432] (warehouse_interfaces) StdoutLine: {'line': b'[ 57%] Generating C++ introspection for ROS interfaces\n'}
+[31.149709] (-) TimerEvent: {}
+[31.250357] (-) TimerEvent: {}
+[31.350588] (-) TimerEvent: {}
+[31.450811] (-) TimerEvent: {}
+[31.550993] (-) TimerEvent: {}
+[31.651176] (-) TimerEvent: {}
+[31.751425] (-) TimerEvent: {}
+[31.852800] (-) TimerEvent: {}
+[31.953076] (-) TimerEvent: {}
+[31.983491] (warehouse_interfaces) StdoutLine: {'line': b'[ 58%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/warehouse_interfaces/msg/detail/detected_product__type_support.cpp.o\n'}
+[32.053219] (-) TimerEvent: {}
+[32.153889] (-) TimerEvent: {}
+[32.254362] (-) TimerEvent: {}
+[32.354613] (-) TimerEvent: {}
+[32.454831] (-) TimerEvent: {}
+[32.476553] (warehouse_interfaces) StdoutLine: {'line': b'[ 59%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/warehouse_interfaces/action/detail/execute_storage_mission__type_support.cpp.o\n'}
+[32.555497] (-) TimerEvent: {}
+[32.656373] (-) TimerEvent: {}
+[32.757411] (-) TimerEvent: {}
+[32.857828] (-) TimerEvent: {}
+[32.958040] (-) TimerEvent: {}
+[33.059113] (-) TimerEvent: {}
+[33.159318] (-) TimerEvent: {}
+[33.259543] (-) TimerEvent: {}
+[33.359806] (-) TimerEvent: {}
+[33.460009] (-) TimerEvent: {}
+[33.483826] (warehouse_interfaces) StdoutLine: {'line': b'[ 60%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/warehouse_interfaces/srv/detail/place_product__type_support.cpp.o\n'}
+[33.560111] (-) TimerEvent: {}
+[33.660330] (-) TimerEvent: {}
+[33.760884] (-) TimerEvent: {}
+[33.861248] (-) TimerEvent: {}
+[33.961664] (-) TimerEvent: {}
+[34.063465] (-) TimerEvent: {}
+[34.163654] (-) TimerEvent: {}
+[34.182358] (warehouse_interfaces) StdoutLine: {'line': b'[ 61%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/warehouse_interfaces/srv/detail/update_inventory__type_support.cpp.o\n'}
+[34.263756] (-) TimerEvent: {}
+[34.363971] (-) TimerEvent: {}
+[34.464177] (-) TimerEvent: {}
+[34.564445] (-) TimerEvent: {}
+[34.664677] (-) TimerEvent: {}
+[34.746557] (warehouse_interfaces) StdoutLine: {'line': b'[ 62%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/warehouse_interfaces/srv/detail/assign_storage_location__type_support.cpp.o\n'}
+[34.764762] (-) TimerEvent: {}
+[34.865153] (-) TimerEvent: {}
+[34.965780] (-) TimerEvent: {}
+[35.066600] (-) TimerEvent: {}
+[35.166815] (-) TimerEvent: {}
+[35.267051] (-) TimerEvent: {}
+[35.367375] (-) TimerEvent: {}
+[35.456751] (warehouse_interfaces) StdoutLine: {'line': b'[ 63%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/warehouse_interfaces/srv/detail/register_product__type_support.cpp.o\n'}
+[35.469417] (-) TimerEvent: {}
+[35.569669] (-) TimerEvent: {}
+[35.669925] (-) TimerEvent: {}
+[35.770385] (-) TimerEvent: {}
+[35.870670] (-) TimerEvent: {}
+[35.970917] (-) TimerEvent: {}
+[36.071154] (-) TimerEvent: {}
+[36.171460] (-) TimerEvent: {}
+[36.271728] (-) TimerEvent: {}
+[36.371978] (-) TimerEvent: {}
+[36.439343] (warehouse_interfaces) StdoutLine: {'line': b'[ 64%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/warehouse_interfaces/msg/detail/storage_location__type_support.cpp.o\n'}
+[36.472110] (-) TimerEvent: {}
+[36.572550] (-) TimerEvent: {}
+[36.673637] (-) TimerEvent: {}
+[36.773911] (-) TimerEvent: {}
+[36.874338] (-) TimerEvent: {}
+[36.974957] (-) TimerEvent: {}
+[37.017708] (warehouse_interfaces) StdoutLine: {'line': b'[ 65%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/warehouse_interfaces/msg/detail/product_record__type_support.cpp.o\n'}
+[37.075083] (-) TimerEvent: {}
+[37.175321] (-) TimerEvent: {}
+[37.276351] (-) TimerEvent: {}
+[37.376737] (-) TimerEvent: {}
+[37.477012] (-) TimerEvent: {}
+[37.577318] (-) TimerEvent: {}
+[37.643997] (warehouse_interfaces) StdoutLine: {'line': b'[ 66%] Linking CXX shared library libwarehouse_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[37.677428] (-) TimerEvent: {}
+[37.777786] (-) TimerEvent: {}
+[37.835882] (warehouse_interfaces) StdoutLine: {'line': b'[ 66%] Built target warehouse_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[37.854215] (warehouse_interfaces) StdoutLine: {'line': b'[ 67%] Generating C introspection for ROS interfaces\n'}
+[37.882184] (-) TimerEvent: {}
+[37.982502] (-) TimerEvent: {}
+[38.135463] (-) TimerEvent: {}
+[38.235673] (-) TimerEvent: {}
+[38.335890] (-) TimerEvent: {}
+[38.436213] (-) TimerEvent: {}
+[38.538356] (-) TimerEvent: {}
+[38.638614] (-) TimerEvent: {}
+[38.738838] (-) TimerEvent: {}
+[38.839030] (-) TimerEvent: {}
+[38.939226] (-) TimerEvent: {}
+[39.039469] (-) TimerEvent: {}
+[39.139746] (-) TimerEvent: {}
+[39.239997] (-) TimerEvent: {}
+[39.340319] (-) TimerEvent: {}
+[39.382951] (warehouse_interfaces) StdoutLine: {'line': b'[ 68%] Building C object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/warehouse_interfaces/msg/detail/detected_product__type_support.c.o\n'}
+[39.440441] (-) TimerEvent: {}
+[39.452428] (warehouse_interfaces) StdoutLine: {'line': b'[ 69%] Building C object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/warehouse_interfaces/action/detail/execute_storage_mission__type_support.c.o\n'}
+[39.541039] (-) TimerEvent: {}
+[39.604711] (warehouse_interfaces) StdoutLine: {'line': b'[ 70%] Building C object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/warehouse_interfaces/srv/detail/place_product__type_support.c.o\n'}
+[39.641165] (-) TimerEvent: {}
+[39.693826] (warehouse_interfaces) StdoutLine: {'line': b'[ 70%] Building C object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/warehouse_interfaces/srv/detail/update_inventory__type_support.c.o\n'}
+[39.741294] (-) TimerEvent: {}
+[39.771116] (warehouse_interfaces) StdoutLine: {'line': b'[ 71%] Building C object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/warehouse_interfaces/srv/detail/assign_storage_location__type_support.c.o\n'}
+[39.841430] (-) TimerEvent: {}
+[39.863504] (warehouse_interfaces) StdoutLine: {'line': b'[ 72%] Building C object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/warehouse_interfaces/srv/detail/register_product__type_support.c.o\n'}
+[39.919364] (warehouse_interfaces) StdoutLine: {'line': b'[ 73%] Building C object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/warehouse_interfaces/msg/detail/storage_location__type_support.c.o\n'}
+[39.941556] (-) TimerEvent: {}
+[39.964492] (warehouse_interfaces) StdoutLine: {'line': b'[ 74%] Building C object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/warehouse_interfaces/msg/detail/product_record__type_support.c.o\n'}
+[40.007238] (warehouse_interfaces) StdoutLine: {'line': b'[ 75%] Linking C shared library libwarehouse_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[40.042043] (-) TimerEvent: {}
+[40.052229] (warehouse_interfaces) StdoutLine: {'line': b'[ 75%] Built target warehouse_interfaces__rosidl_typesupport_introspection_c\n'}
+[40.069275] (warehouse_interfaces) StdoutLine: {'line': b'[ 76%] Generating C type support for eProsima Fast-RTPS\n'}
+[40.142160] (-) TimerEvent: {}
+[40.242305] (-) TimerEvent: {}
+[40.342471] (-) TimerEvent: {}
+[40.442739] (-) TimerEvent: {}
+[40.542947] (-) TimerEvent: {}
+[40.643178] (-) TimerEvent: {}
+[40.743393] (-) TimerEvent: {}
+[40.843594] (-) TimerEvent: {}
+[40.943774] (-) TimerEvent: {}
+[41.043962] (-) TimerEvent: {}
+[41.144160] (-) TimerEvent: {}
+[41.244379] (-) TimerEvent: {}
+[41.344584] (-) TimerEvent: {}
+[41.435488] (warehouse_interfaces) StdoutLine: {'line': b'[ 77%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/warehouse_interfaces/msg/detail/detected_product__type_support_c.cpp.o\n'}
+[41.444697] (-) TimerEvent: {}
+[41.545174] (-) TimerEvent: {}
+[41.645774] (-) TimerEvent: {}
+[41.745969] (-) TimerEvent: {}
+[41.846205] (-) TimerEvent: {}
+[41.947189] (-) TimerEvent: {}
+[42.047397] (-) TimerEvent: {}
+[42.147608] (-) TimerEvent: {}
+[42.181420] (warehouse_interfaces) StdoutLine: {'line': b'[ 78%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/warehouse_interfaces/action/detail/execute_storage_mission__type_support_c.cpp.o\n'}
+[42.247710] (-) TimerEvent: {}
+[42.348012] (-) TimerEvent: {}
+[42.448199] (-) TimerEvent: {}
+[42.548447] (-) TimerEvent: {}
+[42.648681] (-) TimerEvent: {}
+[42.748889] (-) TimerEvent: {}
+[42.849122] (-) TimerEvent: {}
+[42.902109] (warehouse_interfaces) StdoutLine: {'line': b'[ 79%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/warehouse_interfaces/srv/detail/place_product__type_support_c.cpp.o\n'}
+[42.949218] (-) TimerEvent: {}
+[43.049432] (-) TimerEvent: {}
+[43.149640] (-) TimerEvent: {}
+[43.250113] (-) TimerEvent: {}
+[43.350518] (-) TimerEvent: {}
+[43.431230] (warehouse_interfaces) StdoutLine: {'line': b'[ 80%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/warehouse_interfaces/srv/detail/update_inventory__type_support_c.cpp.o\n'}
+[43.450633] (-) TimerEvent: {}
+[43.550929] (-) TimerEvent: {}
+[43.651142] (-) TimerEvent: {}
+[43.751304] (-) TimerEvent: {}
+[43.851500] (-) TimerEvent: {}
+[43.951703] (-) TimerEvent: {}
+[44.019632] (warehouse_interfaces) StdoutLine: {'line': b'[ 80%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/warehouse_interfaces/srv/detail/assign_storage_location__type_support_c.cpp.o\n'}
+[44.051811] (-) TimerEvent: {}
+[44.152066] (-) TimerEvent: {}
+[44.252867] (-) TimerEvent: {}
+[44.353090] (-) TimerEvent: {}
+[44.454332] (-) TimerEvent: {}
+[44.554566] (-) TimerEvent: {}
+[44.634575] (warehouse_interfaces) StdoutLine: {'line': b'[ 81%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/warehouse_interfaces/srv/detail/register_product__type_support_c.cpp.o\n'}
+[44.654638] (-) TimerEvent: {}
+[44.755344] (-) TimerEvent: {}
+[44.855546] (-) TimerEvent: {}
+[44.956015] (-) TimerEvent: {}
+[45.056277] (-) TimerEvent: {}
+[45.157583] (-) TimerEvent: {}
+[45.258146] (-) TimerEvent: {}
+[45.332744] (warehouse_interfaces) StdoutLine: {'line': b'[ 82%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/warehouse_interfaces/msg/detail/storage_location__type_support_c.cpp.o\n'}
+[45.358238] (-) TimerEvent: {}
+[45.458426] (-) TimerEvent: {}
+[45.559163] (-) TimerEvent: {}
+[45.659587] (-) TimerEvent: {}
+[45.759859] (-) TimerEvent: {}
+[45.860247] (-) TimerEvent: {}
+[45.960974] (-) TimerEvent: {}
+[45.999834] (warehouse_interfaces) StdoutLine: {'line': b'[ 83%] Building CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/warehouse_interfaces/msg/detail/product_record__type_support_c.cpp.o\n'}
+[46.061484] (-) TimerEvent: {}
+[46.163761] (-) TimerEvent: {}
+[46.264015] (-) TimerEvent: {}
+[46.364286] (-) TimerEvent: {}
+[46.464577] (-) TimerEvent: {}
+[46.564772] (-) TimerEvent: {}
+[46.568193] (warehouse_interfaces) StdoutLine: {'line': b'[ 84%] Linking CXX shared library libwarehouse_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[46.664869] (-) TimerEvent: {}
+[46.681835] (warehouse_interfaces) StdoutLine: {'line': b'[ 85%] Built target warehouse_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[46.711194] (warehouse_interfaces) StdoutLine: {'line': b'[ 85%] Built target warehouse_interfaces\n'}
+[46.736706] (warehouse_interfaces) StdoutLine: {'line': b'[ 85%] Generating Python code for ROS interfaces\n'}
+[46.764964] (-) TimerEvent: {}
+[46.865152] (-) TimerEvent: {}
+[46.965317] (-) TimerEvent: {}
+[47.065493] (-) TimerEvent: {}
+[47.165658] (-) TimerEvent: {}
+[47.265839] (-) TimerEvent: {}
+[47.366010] (-) TimerEvent: {}
+[47.466287] (-) TimerEvent: {}
+[47.566452] (-) TimerEvent: {}
+[47.666636] (-) TimerEvent: {}
+[47.766886] (-) TimerEvent: {}
+[47.867109] (-) TimerEvent: {}
+[47.967314] (-) TimerEvent: {}
+[48.067495] (-) TimerEvent: {}
+[48.167685] (-) TimerEvent: {}
+[48.267876] (-) TimerEvent: {}
+[48.368358] (-) TimerEvent: {}
+[48.468547] (-) TimerEvent: {}
+[48.568756] (-) TimerEvent: {}
+[48.668966] (-) TimerEvent: {}
+[48.717378] (warehouse_interfaces) StdoutLine: {'line': b'[ 86%] Built target warehouse_interfaces__py\n'}
+[48.743022] (warehouse_interfaces) StdoutLine: {'line': b'[ 86%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_py.dir/rosidl_generator_py/warehouse_interfaces/msg/_detected_product_s.c.o\n'}
+[48.769081] (-) TimerEvent: {}
+[48.869561] (-) TimerEvent: {}
+[48.879744] (warehouse_interfaces) StdoutLine: {'line': b'[ 87%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_py.dir/rosidl_generator_py/warehouse_interfaces/action/_execute_storage_mission_s.c.o\n'}
+[48.969660] (-) TimerEvent: {}
+[49.069871] (-) TimerEvent: {}
+[49.150405] (warehouse_interfaces) StdoutLine: {'line': b'[ 88%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_py.dir/rosidl_generator_py/warehouse_interfaces/srv/_place_product_s.c.o\n'}
+[49.170016] (-) TimerEvent: {}
+[49.270250] (-) TimerEvent: {}
+[49.352851] (warehouse_interfaces) StdoutLine: {'line': b'[ 89%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_py.dir/rosidl_generator_py/warehouse_interfaces/srv/_update_inventory_s.c.o\n'}
+[49.370515] (-) TimerEvent: {}
+[49.470759] (-) TimerEvent: {}
+[49.546482] (warehouse_interfaces) StdoutLine: {'line': b'[ 90%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_py.dir/rosidl_generator_py/warehouse_interfaces/srv/_assign_storage_location_s.c.o\n'}
+[49.571037] (-) TimerEvent: {}
+[49.672854] (-) TimerEvent: {}
+[49.773210] (-) TimerEvent: {}
+[49.782842] (warehouse_interfaces) StdoutLine: {'line': b'[ 91%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_py.dir/rosidl_generator_py/warehouse_interfaces/srv/_register_product_s.c.o\n'}
+[49.873336] (-) TimerEvent: {}
+[49.973887] (-) TimerEvent: {}
+[50.076351] (-) TimerEvent: {}
+[50.176623] (-) TimerEvent: {}
+[50.196999] (warehouse_interfaces) StdoutLine: {'line': b'[ 93%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_py.dir/rosidl_generator_py/warehouse_interfaces/msg/_storage_location_s.c.o\n'}
+[50.276738] (-) TimerEvent: {}
+[50.378378] (-) TimerEvent: {}
+[50.421357] (warehouse_interfaces) StdoutLine: {'line': b'[ 94%] Building C object CMakeFiles/warehouse_interfaces__rosidl_generator_py.dir/rosidl_generator_py/warehouse_interfaces/msg/_product_record_s.c.o\n'}
+[50.478492] (-) TimerEvent: {}
+[50.578802] (-) TimerEvent: {}
+[50.641149] (warehouse_interfaces) StdoutLine: {'line': b'[ 95%] Linking C shared library libwarehouse_interfaces__rosidl_generator_py.so\n'}
+[50.679005] (-) TimerEvent: {}
+[50.731766] (warehouse_interfaces) StdoutLine: {'line': b'[ 95%] Built target warehouse_interfaces__rosidl_generator_py\n'}
+[50.770653] (warehouse_interfaces) StdoutLine: {'line': b'[ 95%] Building C object CMakeFiles/warehouse_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/warehouse_interfaces/_warehouse_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o\n'}
+[50.779124] (-) TimerEvent: {}
+[50.879385] (-) TimerEvent: {}
+[50.979668] (-) TimerEvent: {}
+[51.080035] (-) TimerEvent: {}
+[51.134395] (warehouse_interfaces) StdoutLine: {'line': b'[ 97%] Linking C shared module rosidl_generator_py/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_fastrtps_c.so\n'}
+[51.180326] (-) TimerEvent: {}
+[51.200101] (warehouse_interfaces) StdoutLine: {'line': b'[ 97%] Built target warehouse_interfaces_s__rosidl_typesupport_fastrtps_c\n'}
+[51.242283] (warehouse_interfaces) StdoutLine: {'line': b'[ 97%] Building C object CMakeFiles/warehouse_interfaces_s__rosidl_typesupport_c.dir/rosidl_generator_py/warehouse_interfaces/_warehouse_interfaces_s.ep.rosidl_typesupport_c.c.o\n'}
+[51.280425] (-) TimerEvent: {}
+[51.380653] (-) TimerEvent: {}
+[51.480952] (-) TimerEvent: {}
+[51.555475] (warehouse_interfaces) StdoutLine: {'line': b'[ 99%] Linking C shared module rosidl_generator_py/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_c.so\n'}
+[51.581331] (-) TimerEvent: {}
+[51.611397] (warehouse_interfaces) StdoutLine: {'line': b'[ 99%] Built target warehouse_interfaces_s__rosidl_typesupport_c\n'}
+[51.647791] (warehouse_interfaces) StdoutLine: {'line': b'[ 99%] Building C object CMakeFiles/warehouse_interfaces_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/warehouse_interfaces/_warehouse_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o\n'}
+[51.681446] (-) TimerEvent: {}
+[51.781690] (-) TimerEvent: {}
+[51.882146] (-) TimerEvent: {}
+[51.982445] (-) TimerEvent: {}
+[52.047550] (warehouse_interfaces) StdoutLine: {'line': b'Linking C shared module rosidl_generator_py/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_introspection_c.so\n'}
+[52.082579] (-) TimerEvent: {}
+[52.138156] (warehouse_interfaces) StdoutLine: {'line': b'Built target warehouse_interfaces_s__rosidl_typesupport_introspection_c\n'}
+[52.160056] (warehouse_interfaces) CommandEnded: {'returncode': 0}
+[52.162198] (warehouse_interfaces) JobProgress: {'identifier': 'warehouse_interfaces', 'progress': 'install'}
+[52.179144] (warehouse_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces'], 'cwd': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'agonb', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/agonb', 'OLDPWD': '/home/agonb', 'DESKTOP_SESSION': 'ubuntu', 'NVM_BIN': '/home/agonb/.nvm/versions/node/v24.18.0/bin', 'NVM_INC': '/home/agonb/.nvm/versions/node/v24.18.0/include/node', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2200', 'SYSTEMD_EXEC_PID': '2817', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator23558193cd9818af7fe4d2c2f5bd9d00f', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '15184', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'NVM_DIR': '/home/agonb/.nvm', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'agonb', 'JOURNAL_STREAM': '9:16968', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'agonb', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'WINDOWPATH': '2', 'PATH': '/home/agonb/.nvm/versions/node/v24.18.0/bin:/home/agonb/.opencode/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/agonb/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/agonb-Victus:@/tmp/.ICE-unix/2663,unix/agonb-Victus:/tmp/.ICE-unix/2663', 'INVOCATION_ID': 'f8efe5813efc4f3abb5fcfe7536d1a58', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:e7150086-6202-4478-ad30-3242313fa368', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'RCUTILS_COLORIZED_OUTPUT': '1', 'NVM_CD_FLAGS': '', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[52.182633] (-) TimerEvent: {}
+[52.199946] (warehouse_interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[52.201318] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/ament_index/resource_index/rosidl_interfaces/warehouse_interfaces\n'}
+[52.202587] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/DetectedProduct.json\n'}
+[52.202872] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/ProductRecord.json\n'}
+[52.203136] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/StorageLocation.json\n'}
+[52.203752] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/RegisterProduct.json\n'}
+[52.204098] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/AssignStorageLocation.json\n'}
+[52.204446] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/UpdateInventory.json\n'}
+[52.204754] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/PlaceProduct.json\n'}
+[52.204973] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/action/ExecuteStorageMission.json\n'}
+[52.205173] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces\n'}
+[52.205383] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action\n'}
+[52.205997] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail\n'}
+[52.206425] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__struct.h\n'}
+[52.206820] (warehouse_interfaces) StdoutLine: {'line': b'-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__type_support.c\n'}
+[52.207520] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__type_support.h\n'}
+[52.207820] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__description.c\n'}
+[52.208060] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__functions.h\n'}
+[52.208282] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__functions.c\n'}
+[52.208505] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/execute_storage_mission.h\n'}
+[52.208735] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv\n'}
+[52.208950] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/assign_storage_location.h\n'}
+[52.209178] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail\n'}
+[52.209436] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__description.c\n'}
+[52.209669] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__struct.h\n'}
+[52.209905] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__type_support.h\n'}
+[52.210107] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__type_support.h\n'}
+[52.211422] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__description.c\n'}
+[52.211977] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__functions.c\n'}
+[52.212219] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__struct.h\n'}
+[52.212775] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__functions.h\n'}
+[52.212996] (warehouse_interfaces) StdoutLine: {'line': b'-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__type_support.c\n'}
+[52.214243] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__functions.c\n'}
+[52.214397] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__functions.h\n'}
+[52.214515] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__functions.h\n'}
+[52.214628] (warehouse_interfaces) StdoutLine: {'line': b'-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__type_support.c\n'}
+[52.214736] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__type_support.h\n'}
+[52.214831] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__struct.h\n'}
+[52.214919] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__type_support.h\n'}
+[52.215014] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__functions.c\n'}
+[52.215776] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__functions.c\n'}
+[52.217026] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__description.c\n'}
+[52.218802] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__struct.h\n'}
+[52.219392] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__functions.h\n'}
+[52.220858] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__description.c\n'}
+[52.221129] (warehouse_interfaces) StdoutLine: {'line': b'-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__type_support.c\n'}
+[52.221350] (warehouse_interfaces) StdoutLine: {'line': b'-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__type_support.c\n'}
+[52.221550] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/place_product.h\n'}
+[52.221750] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/register_product.h\n'}
+[52.221972] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/update_inventory.h\n'}
+[52.222181] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg\n'}
+[52.222406] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detected_product.h\n'}
+[52.222612] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail\n'}
+[52.222802] (warehouse_interfaces) StdoutLine: {'line': b'-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__type_support.c\n'}
+[52.222985] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__functions.c\n'}
+[52.223164] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__description.c\n'}
+[52.224930] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__type_support.h\n'}
+[52.225183] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__functions.h\n'}
+[52.225420] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__functions.h\n'}
+[52.225795] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__description.c\n'}
+[52.226057] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__functions.c\n'}
+[52.226288] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__description.c\n'}
+[52.226496] (warehouse_interfaces) StdoutLine: {'line': b'-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__type_support.c\n'}
+[52.226728] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__functions.c\n'}
+[52.226938] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__type_support.h\n'}
+[52.227125] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__struct.h\n'}
+[52.227342] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__struct.h\n'}
+[52.227565] (warehouse_interfaces) StdoutLine: {'line': b'-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__type_support.c\n'}
+[52.227763] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__functions.h\n'}
+[52.227956] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__type_support.h\n'}
+[52.228245] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__struct.h\n'}
+[52.228679] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[52.229118] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/storage_location.h\n'}
+[52.229362] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/product_record.h\n'}
+[52.229578] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/library_path.sh\n'}
+[52.229783] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/library_path.dsv\n'}
+[52.229971] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_generator_c.so\n'}
+[52.230147] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces\n'}
+[52.230349] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action\n'}
+[52.230541] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail\n'}
+[52.230734] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__rosidl_typesupport_fastrtps_c.h\n'}
+[52.230920] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv\n'}
+[52.231103] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail\n'}
+[52.232003] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__rosidl_typesupport_fastrtps_c.h\n'}
+[52.232242] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__rosidl_typesupport_fastrtps_c.h\n'}
+[52.232475] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__rosidl_typesupport_fastrtps_c.h\n'}
+[52.232668] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__rosidl_typesupport_fastrtps_c.h\n'}
+[52.232835] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg\n'}
+[52.233001] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[52.233165] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail\n'}
+[52.233352] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__rosidl_typesupport_fastrtps_c.h\n'}
+[52.233524] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__rosidl_typesupport_fastrtps_c.h\n'}
+[52.233723] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__rosidl_typesupport_fastrtps_c.h\n'}
+[52.233908] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[52.234102] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces\n'}
+[52.234338] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action\n'}
+[52.234534] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail\n'}
+[52.234718] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__rosidl_typesupport_introspection_c.h\n'}
+[52.234902] (warehouse_interfaces) StdoutLine: {'line': b'-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__type_support.c\n'}
+[52.236197] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv\n'}
+[52.236536] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail\n'}
+[52.236742] (warehouse_interfaces) StdoutLine: {'line': b'-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__type_support.c\n'}
+[52.236928] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__rosidl_typesupport_introspection_c.h\n'}
+[52.237103] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__rosidl_typesupport_introspection_c.h\n'}
+[52.237295] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__rosidl_typesupport_introspection_c.h\n'}
+[52.237512] (warehouse_interfaces) StdoutLine: {'line': b'-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__type_support.c\n'}
+[52.237720] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__rosidl_typesupport_introspection_c.h\n'}
+[52.237915] (warehouse_interfaces) StdoutLine: {'line': b'-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__type_support.c\n'}
+[52.238095] (warehouse_interfaces) StdoutLine: {'line': b'-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__type_support.c\n'}
+[52.238343] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg\n'}
+[52.238548] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail\n'}
+[52.238738] (warehouse_interfaces) StdoutLine: {'line': b'-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__type_support.c\n'}
+[52.238932] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__rosidl_typesupport_introspection_c.h\n'}
+[52.239124] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__rosidl_typesupport_introspection_c.h\n'}
+[52.240294] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__rosidl_typesupport_introspection_c.h\n'}
+[52.240541] (warehouse_interfaces) StdoutLine: {'line': b'-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__type_support.c\n'}
+[52.240757] (warehouse_interfaces) StdoutLine: {'line': b'-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__type_support.c\n'}
+[52.240971] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[52.241150] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[52.241364] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_c.so\n'}
+[52.241558] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces\n'}
+[52.241739] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action\n'}
+[52.241914] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail\n'}
+[52.242103] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__struct.hpp\n'}
+[52.242308] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__traits.hpp\n'}
+[52.242509] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__type_support.hpp\n'}
+[52.242715] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__builder.hpp\n'}
+[52.242905] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/execute_storage_mission.hpp\n'}
+[52.243088] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv\n'}
+[52.244154] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/assign_storage_location.hpp\n'}
+[52.244428] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail\n'}
+[52.244629] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__type_support.hpp\n'}
+[52.244840] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__struct.hpp\n'}
+[52.245044] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__builder.hpp\n'}
+[52.245271] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__traits.hpp\n'}
+[52.245467] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__struct.hpp\n'}
+[52.245678] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__traits.hpp\n'}
+[52.245868] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__traits.hpp\n'}
+[52.246069] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__builder.hpp\n'}
+[52.246253] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__struct.hpp\n'}
+[52.246489] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__type_support.hpp\n'}
+[52.246678] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__type_support.hpp\n'}
+[52.247810] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__builder.hpp\n'}
+[52.248231] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__traits.hpp\n'}
+[52.248461] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__struct.hpp\n'}
+[52.248646] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__type_support.hpp\n'}
+[52.248839] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__builder.hpp\n'}
+[52.249025] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/place_product.hpp\n'}
+[52.249225] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/update_inventory.hpp\n'}
+[52.249445] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/register_product.hpp\n'}
+[52.249648] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg\n'}
+[52.249844] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/storage_location.hpp\n'}
+[52.250034] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detected_product.hpp\n'}
+[52.250214] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail\n'}
+[52.251450] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__traits.hpp\n'}
+[52.253676] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__traits.hpp\n'}
+[52.253926] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__traits.hpp\n'}
+[52.254126] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__builder.hpp\n'}
+[52.254365] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__builder.hpp\n'}
+[52.254582] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__struct.hpp\n'}
+[52.254779] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__struct.hpp\n'}
+[52.254951] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__type_support.hpp\n'}
+[52.255163] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__type_support.hpp\n'}
+[52.255370] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__struct.hpp\n'}
+[52.255550] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__type_support.hpp\n'}
+[52.255732] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__builder.hpp\n'}
+[52.255921] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[52.256104] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/product_record.hpp\n'}
+[52.260235] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces\n'}
+[52.260541] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action\n'}
+[52.260723] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail\n'}
+[52.260897] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[52.261075] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/dds_fastrtps\n'}
+[52.261280] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv\n'}
+[52.261490] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail\n'}
+[52.261679] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[52.261903] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[52.262105] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[52.262324] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[52.262542] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/dds_fastrtps\n'}
+[52.262741] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg\n'}
+[52.262918] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail\n'}
+[52.263104] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[52.264279] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[52.264580] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[52.264813] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/dds_fastrtps\n'}
+[52.265000] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[52.265192] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[52.265395] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces\n'}
+[52.265572] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action\n'}
+[52.265750] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail\n'}
+[52.265939] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__rosidl_typesupport_introspection_cpp.hpp\n'}
+[52.266121] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__type_support.cpp\n'}
+[52.266355] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv\n'}
+[52.266552] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail\n'}
+[52.266740] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__rosidl_typesupport_introspection_cpp.hpp\n'}
+[52.266919] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__type_support.cpp\n'}
+[52.267102] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__type_support.cpp\n'}
+[52.268131] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__rosidl_typesupport_introspection_cpp.hpp\n'}
+[52.268785] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__rosidl_typesupport_introspection_cpp.hpp\n'}
+[52.269049] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__rosidl_typesupport_introspection_cpp.hpp\n'}
+[52.269240] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__type_support.cpp\n'}
+[52.269443] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__type_support.cpp\n'}
+[52.269629] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg\n'}
+[52.269807] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail\n'}
+[52.269983] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__type_support.cpp\n'}
+[52.270162] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__type_support.cpp\n'}
+[52.270388] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__rosidl_typesupport_introspection_cpp.hpp\n'}
+[52.270574] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__rosidl_typesupport_introspection_cpp.hpp\n'}
+[52.270769] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__rosidl_typesupport_introspection_cpp.hpp\n'}
+[52.270940] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__type_support.cpp\n'}
+[52.271113] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[52.272178] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_cpp.so\n'}
+[52.272575] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/pythonpath.sh\n'}
+[52.272780] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/pythonpath.dsv\n'}
+[52.272964] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces-0.1.0-py3.12.egg-info\n'}
+[52.273164] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces-0.1.0-py3.12.egg-info/top_level.txt\n'}
+[52.273371] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces-0.1.0-py3.12.egg-info/dependency_links.txt\n'}
+[52.273545] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces-0.1.0-py3.12.egg-info/PKG-INFO\n'}
+[52.273714] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces-0.1.0-py3.12.egg-info/SOURCES.txt\n'}
+[52.273886] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces\n'}
+[52.274061] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/action\n'}
+[52.274250] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/action/_execute_storage_mission_s.c\n'}
+[52.274473] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/action/__init__.py\n'}
+[52.274647] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/action/_execute_storage_mission.py\n'}
+[52.275839] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/_warehouse_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[52.276370] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_c.so\n'}
+[52.276662] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/_warehouse_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[52.276848] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv\n'}
+[52.277030] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_register_product.py\n'}
+[52.277241] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_update_inventory.py\n'}
+[52.277454] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_register_product_s.c\n'}
+[52.277653] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_assign_storage_location.py\n'}
+[52.277853] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_update_inventory_s.c\n'}
+[52.278041] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_place_product_s.c\n'}
+[52.278220] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/__init__.py\n'}
+[52.278429] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_assign_storage_location_s.c\n'}
+[52.278602] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_place_product.py\n'}
+[52.278775] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/__init__.py\n'}
+[52.278957] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg\n'}
+[52.279137] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_product_record.py\n'}
+[52.280386] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_detected_product.py\n'}
+[52.280589] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_storage_location_s.c\n'}
+[52.280774] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/__init__.py\n'}
+[52.280989] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_detected_product_s.c\n'}
+[52.281197] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_product_record_s.c\n'}
+[52.281407] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_storage_location.py\n'}
+[52.281592] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/_warehouse_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[52.281782] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_fastrtps_c.so\n'}
+[52.281972] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_introspection_c.so\n'}
+[52.282772] (-) TimerEvent: {}
+[52.314854] (warehouse_interfaces) StdoutLine: {'line': b"Listing '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces'...\n"}
+[52.315139] (warehouse_interfaces) StdoutLine: {'line': b"Listing '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/action'...\n"}
+[52.315352] (warehouse_interfaces) StdoutLine: {'line': b"Listing '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg'...\n"}
+[52.315490] (warehouse_interfaces) StdoutLine: {'line': b"Listing '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv'...\n"}
+[52.329610] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_fastrtps_c.so\n'}
+[52.330178] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_introspection_c.so\n'}
+[52.330793] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_c.so\n'}
+[52.331085] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_generator_py.so\n'}
+[52.331227] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/ament_index/resource_index/rust_packages/warehouse_interfaces\n'}
+[52.331724] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust\n'}
+[52.335028] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src\n'}
+[52.336099] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/lib.rs\n'}
+[52.336948] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/msg.rs\n'}
+[52.337464] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/action\n'}
+[52.337610] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/action/rmw.rs\n'}
+[52.337737] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/srv\n'}
+[52.337864] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/srv/rmw.rs\n'}
+[52.337992] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/action.rs\n'}
+[52.338118] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/srv.rs\n'}
+[52.338269] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/msg\n'}
+[52.338403] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/msg/rmw.rs\n'}
+[52.338517] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/Cargo.toml\n'}
+[52.338646] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/build.rs\n'}
+[52.338776] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/DetectedProduct.idl\n'}
+[52.338904] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/ProductRecord.idl\n'}
+[52.339027] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/StorageLocation.idl\n'}
+[52.339147] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/RegisterProduct.idl\n'}
+[52.339275] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/AssignStorageLocation.idl\n'}
+[52.339420] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/UpdateInventory.idl\n'}
+[52.339544] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/PlaceProduct.idl\n'}
+[52.339667] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/action/ExecuteStorageMission.idl\n'}
+[52.339783] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/DetectedProduct.msg\n'}
+[52.339932] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/ProductRecord.msg\n'}
+[52.342015] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/StorageLocation.msg\n'}
+[52.342241] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/RegisterProduct.srv\n'}
+[52.342378] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/AssignStorageLocation.srv\n'}
+[52.342494] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/UpdateInventory.srv\n'}
+[52.342603] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/PlaceProduct.srv\n'}
+[52.342705] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/action/ExecuteStorageMission.action\n'}
+[52.342806] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/ament_index/resource_index/package_run_dependencies/warehouse_interfaces\n'}
+[52.342922] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/ament_index/resource_index/parent_prefix_path/warehouse_interfaces\n'}
+[52.343024] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/ament_prefix_path.sh\n'}
+[52.343128] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/ament_prefix_path.dsv\n'}
+[52.343235] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/path.sh\n'}
+[52.343349] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/path.dsv\n'}
+[52.343470] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/local_setup.bash\n'}
+[52.343586] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/local_setup.sh\n'}
+[52.343692] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/local_setup.zsh\n'}
+[52.343796] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/local_setup.dsv\n'}
+[52.343902] (warehouse_interfaces) StdoutLine: {'line': b'-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/package.dsv\n'}
+[52.344067] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/ament_index/resource_index/packages/warehouse_interfaces\n'}
+[52.345025] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_generator_cExport.cmake\n'}
+[52.345227] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[52.350839] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[52.351246] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[52.351539] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[52.351764] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[52.352006] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[52.352363] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[52.352602] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_generator_cppExport.cmake\n'}
+[52.352821] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[52.356856] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[52.357319] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[52.357681] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[52.358291] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[52.358640] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[52.359006] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_generator_pyExport.cmake\n'}
+[52.359229] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[52.359414] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[52.359635] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[52.360339] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[52.360570] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[52.360735] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[52.360917] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[52.361020] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[52.361269] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/rosidl_cmake_aggregate_target-extras.cmake\n'}
+[52.361429] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfacesConfig.cmake\n'}
+[52.361528] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfacesConfig-version.cmake\n'}
+[52.361679] (warehouse_interfaces) StdoutLine: {'line': b'-- Up-to-date: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/package.xml\n'}
+[52.361827] (warehouse_interfaces) CommandEnded: {'returncode': 0}
+[52.383325] (-) TimerEvent: {}
+[52.404338] (warehouse_interfaces) JobEnded: {'identifier': 'warehouse_interfaces', 'rc': 0}
+[52.405022] (-) EventReactorShutdown: {}

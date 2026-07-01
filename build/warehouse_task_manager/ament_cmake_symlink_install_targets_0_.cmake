@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager/task_manager_fsm" "TARGETS" "task_manager_fsm" "DESTINATION" "lib/warehouse_task_manager")

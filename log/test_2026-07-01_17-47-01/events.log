@@ -1,0 +1,8 @@
+[0.000000] (-) TimerEvent: {}
+[0.000164] (warehouse_robot_description) JobQueued: {'identifier': 'warehouse_robot_description', 'dependencies': OrderedDict({'warehouse_robot_description': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description'})}
+[0.000350] (warehouse_manipulation) JobQueued: {'identifier': 'warehouse_manipulation', 'dependencies': OrderedDict({'warehouse_interfaces': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces', 'warehouse_manipulation': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation'})}
+[0.000456] (warehouse_robot_description) JobStarted: {'identifier': 'warehouse_robot_description'}
+[0.006014] (warehouse_manipulation) JobStarted: {'identifier': 'warehouse_manipulation'}
+[0.019763] (warehouse_robot_description) JobEnded: {'identifier': 'warehouse_robot_description', 'rc': 0}
+[0.023672] (warehouse_manipulation) JobEnded: {'identifier': 'warehouse_manipulation', 'rc': 0}
+[0.024167] (-) EventReactorShutdown: {}

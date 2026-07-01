@@ -1,0 +1,23 @@
+-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_bringup
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup/share/warehouse_bringup/config/controllers.yaml
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup/share/ament_index/resource_index/package_run_dependencies/warehouse_bringup
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup/share/ament_index/resource_index/parent_prefix_path/warehouse_bringup
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup/share/warehouse_bringup/environment/ament_prefix_path.sh
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup/share/warehouse_bringup/environment/ament_prefix_path.dsv
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup/share/warehouse_bringup/environment/path.sh
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup/share/warehouse_bringup/environment/path.dsv
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup/share/warehouse_bringup/local_setup.bash
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup/share/warehouse_bringup/local_setup.sh
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup/share/warehouse_bringup/local_setup.zsh
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup/share/warehouse_bringup/local_setup.dsv
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup/share/warehouse_bringup/package.dsv
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup/share/ament_index/resource_index/packages/warehouse_bringup
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup/share/warehouse_bringup/cmake/warehouse_bringupConfig.cmake
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup/share/warehouse_bringup/cmake/warehouse_bringupConfig-version.cmake
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup/share/warehouse_bringup/package.xml

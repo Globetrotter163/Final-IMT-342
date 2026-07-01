@@ -1,0 +1,415 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rosidl_default_generators: 1.6.1 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rosidl_adapter: 4.6.9 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+-- Found ament_cmake_ros: 0.12.1 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+-- Found PythonExtra: /usr/bin/python3  
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Configuring done (2.4s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_interfaces
+[  1%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[  2%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[  2%] Built target ament_cmake_python_symlink_warehouse_interfaces
+running egg_info
+creating warehouse_interfaces.egg-info
+writing warehouse_interfaces.egg-info/PKG-INFO
+writing dependency_links to warehouse_interfaces.egg-info/dependency_links.txt
+writing top-level names to warehouse_interfaces.egg-info/top_level.txt
+writing manifest file 'warehouse_interfaces.egg-info/SOURCES.txt'
+[  2%] Built target warehouse_interfaces__rosidl_generator_type_description
+reading manifest file 'warehouse_interfaces.egg-info/SOURCES.txt'
+writing manifest file 'warehouse_interfaces.egg-info/SOURCES.txt'
+[  3%] [34m[1mGenerating C code for ROS interfaces[0m
+[  3%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[  3%] Built target ament_cmake_python_build_warehouse_interfaces_egg
+[  3%] Built target warehouse_interfaces__rs
+[  3%] Built target warehouse_interfaces__cpp
+[  6%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/product_record__description.c.o[0m
+[  7%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/storage_location__type_support.c.o[0m
+[  8%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/detected_product__description.c.o[0m
+[  6%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/product_record__functions.c.o[0m
+[  6%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/storage_location__functions.c.o[0m
+[  9%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/detected_product__functions.c.o[0m
+[ 10%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/storage_location__description.c.o[0m
+[ 11%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/product_record__type_support.c.o[0m
+[ 12%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/msg/detail/detected_product__type_support.c.o[0m
+[ 13%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/register_product__functions.c.o[0m
+[ 14%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/register_product__description.c.o[0m
+[ 15%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/register_product__type_support.c.o[0m
+[ 16%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/assign_storage_location__description.c.o[0m
+[ 17%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/assign_storage_location__type_support.c.o[0m
+[ 18%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/assign_storage_location__functions.c.o[0m
+[ 19%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/update_inventory__description.c.o[0m
+[ 20%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/update_inventory__functions.c.o[0m
+[ 21%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/update_inventory__type_support.c.o[0m
+[ 22%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/place_product__functions.c.o[0m
+[ 22%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/place_product__description.c.o[0m
+[ 23%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/srv/detail/place_product__type_support.c.o[0m
+[ 24%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/action/detail/execute_storage_mission__description.c.o[0m
+[ 25%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/action/detail/execute_storage_mission__type_support.c.o[0m
+[ 26%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_c.dir/rosidl_generator_c/warehouse_interfaces/action/detail/execute_storage_mission__functions.c.o[0m
+[ 27%] [32m[1mLinking C shared library libwarehouse_interfaces__rosidl_generator_c.so[0m
+[ 27%] Built target warehouse_interfaces__rosidl_generator_c
+[ 28%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[ 31%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[ 31%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[ 31%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[ 32%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[ 33%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[ 34%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/warehouse_interfaces/msg/storage_location__type_support.cpp.o[0m
+[ 34%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/warehouse_interfaces/srv/register_product__type_support.cpp.o[0m
+[ 35%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/warehouse_interfaces/srv/update_inventory__type_support.cpp.o[0m
+[ 36%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/warehouse_interfaces/msg/detected_product__type_support.cpp.o[0m
+[ 37%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/warehouse_interfaces/srv/assign_storage_location__type_support.cpp.o[0m
+[ 38%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/warehouse_interfaces/msg/product_record__type_support.cpp.o[0m
+[ 39%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/warehouse_interfaces/srv/place_product__type_support.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/warehouse_interfaces/action/execute_storage_mission__type_support.cpp.o[0m
+[ 41%] [32m[1mLinking CXX shared library libwarehouse_interfaces__rosidl_typesupport_c.so[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/warehouse_interfaces/srv/detail/register_product__type_support.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/warehouse_interfaces/msg/detail/detected_product__type_support.cpp.o[0m
+[ 45%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/warehouse_interfaces/srv/detail/assign_storage_location__type_support.cpp.o[0m
+[ 44%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/warehouse_interfaces/msg/detail/product_record__type_support.cpp.o[0m
+[ 46%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/warehouse_interfaces/srv/detail/update_inventory__type_support.cpp.o[0m
+[ 47%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/warehouse_interfaces/srv/detail/place_product__type_support.cpp.o[0m
+[ 48%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/warehouse_interfaces/msg/detail/storage_location__type_support.cpp.o[0m
+[ 48%] Built target warehouse_interfaces__rosidl_typesupport_c
+[ 49%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/warehouse_interfaces/action/detail/execute_storage_mission__type_support.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/warehouse_interfaces/msg/detected_product__type_support.cpp.o[0m
+[ 51%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/warehouse_interfaces/msg/detail/detected_product__type_support.c.o[0m
+[ 52%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/warehouse_interfaces/msg/detail/product_record__type_support.c.o[0m
+[ 53%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/warehouse_interfaces/msg/product_record__type_support.cpp.o[0m
+[ 54%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/warehouse_interfaces/srv/detail/register_product__type_support.c.o[0m
+[ 55%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/warehouse_interfaces/msg/detail/storage_location__type_support.c.o[0m
+[ 56%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/warehouse_interfaces/msg/storage_location__type_support.cpp.o[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/warehouse_interfaces/srv/register_product__type_support.cpp.o[0m
+[ 58%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/warehouse_interfaces/srv/detail/assign_storage_location__type_support.c.o[0m
+[ 58%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/warehouse_interfaces/srv/detail/update_inventory__type_support.c.o[0m
+[ 59%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/warehouse_interfaces/srv/detail/place_product__type_support.c.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/warehouse_interfaces/srv/assign_storage_location__type_support.cpp.o[0m
+[ 61%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/warehouse_interfaces/msg/detail/dds_fastrtps/detected_product__type_support.cpp.o[0m
+[ 62%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/warehouse_interfaces/msg/detail/dds_fastrtps/product_record__type_support.cpp.o[0m
+[ 63%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/warehouse_interfaces/action/detail/execute_storage_mission__type_support.c.o[0m
+[ 64%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/warehouse_interfaces/msg/detail/dds_fastrtps/storage_location__type_support.cpp.o[0m
+[ 65%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/warehouse_interfaces/srv/update_inventory__type_support.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/warehouse_interfaces/srv/detail/dds_fastrtps/register_product__type_support.cpp.o[0m
+[ 67%] [32m[1mLinking C shared library libwarehouse_interfaces__rosidl_typesupport_introspection_c.so[0m
+[ 67%] Built target warehouse_interfaces__rosidl_typesupport_introspection_c
+[ 68%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/warehouse_interfaces/srv/place_product__type_support.cpp.o[0m
+[ 69%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/warehouse_interfaces/srv/detail/dds_fastrtps/assign_storage_location__type_support.cpp.o[0m
+[ 70%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/warehouse_interfaces/msg/detail/detected_product__type_support_c.cpp.o[0m
+[ 71%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/warehouse_interfaces/action/execute_storage_mission__type_support.cpp.o[0m
+[ 72%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/warehouse_interfaces/msg/detail/product_record__type_support_c.cpp.o[0m
+[ 73%] [32m[1mLinking CXX shared library libwarehouse_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[ 74%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/warehouse_interfaces/msg/detail/storage_location__type_support_c.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/warehouse_interfaces/srv/detail/register_product__type_support_c.cpp.o[0m
+[ 76%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/warehouse_interfaces/srv/detail/dds_fastrtps/update_inventory__type_support.cpp.o[0m
+[ 76%] Built target warehouse_interfaces__rosidl_typesupport_introspection_cpp
+[ 76%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/warehouse_interfaces/srv/detail/assign_storage_location__type_support_c.cpp.o[0m
+[ 77%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/warehouse_interfaces/srv/detail/update_inventory__type_support_c.cpp.o[0m
+[ 78%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/warehouse_interfaces/srv/detail/dds_fastrtps/place_product__type_support.cpp.o[0m
+[ 79%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/warehouse_interfaces/srv/detail/place_product__type_support_c.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/warehouse_interfaces/action/detail/execute_storage_mission__type_support_c.cpp.o[0m
+[ 81%] [32mBuilding CXX object CMakeFiles/warehouse_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/warehouse_interfaces/action/detail/dds_fastrtps/execute_storage_mission__type_support.cpp.o[0m
+[ 82%] [32m[1mLinking CXX shared library libwarehouse_interfaces__rosidl_typesupport_cpp.so[0m
+[ 82%] Built target warehouse_interfaces__rosidl_typesupport_cpp
+[ 83%] [32m[1mLinking CXX shared library libwarehouse_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[ 83%] Built target warehouse_interfaces__rosidl_typesupport_fastrtps_c
+[ 84%] [32m[1mLinking CXX shared library libwarehouse_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[ 84%] Built target warehouse_interfaces__rosidl_typesupport_fastrtps_cpp
+[ 84%] Built target warehouse_interfaces
+[ 85%] [34m[1mGenerating Python code for ROS interfaces[0m
+[ 85%] Built target warehouse_interfaces__py
+[ 87%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_py.dir/rosidl_generator_py/warehouse_interfaces/action/_execute_storage_mission_s.c.o[0m
+[ 87%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_py.dir/rosidl_generator_py/warehouse_interfaces/srv/_register_product_s.c.o[0m
+[ 89%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_py.dir/rosidl_generator_py/warehouse_interfaces/msg/_product_record_s.c.o[0m
+[ 89%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_py.dir/rosidl_generator_py/warehouse_interfaces/msg/_storage_location_s.c.o[0m
+[ 90%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_py.dir/rosidl_generator_py/warehouse_interfaces/srv/_assign_storage_location_s.c.o[0m
+[ 91%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_py.dir/rosidl_generator_py/warehouse_interfaces/srv/_place_product_s.c.o[0m
+[ 92%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_py.dir/rosidl_generator_py/warehouse_interfaces/msg/_detected_product_s.c.o[0m
+[ 93%] [32mBuilding C object CMakeFiles/warehouse_interfaces__rosidl_generator_py.dir/rosidl_generator_py/warehouse_interfaces/srv/_update_inventory_s.c.o[0m
+[ 94%] [32m[1mLinking C shared library libwarehouse_interfaces__rosidl_generator_py.so[0m
+[ 94%] Built target warehouse_interfaces__rosidl_generator_py
+[ 96%] [32mBuilding C object CMakeFiles/warehouse_interfaces_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/warehouse_interfaces/_warehouse_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[ 96%] [32mBuilding C object CMakeFiles/warehouse_interfaces_s__rosidl_typesupport_c.dir/rosidl_generator_py/warehouse_interfaces/_warehouse_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[ 97%] [32mBuilding C object CMakeFiles/warehouse_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/warehouse_interfaces/_warehouse_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[ 98%] [32m[1mLinking C shared module rosidl_generator_py/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_fastrtps_c.so[0m
+[ 99%] [32m[1mLinking C shared module rosidl_generator_py/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_c.so[0m
+[100%] [32m[1mLinking C shared module rosidl_generator_py/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_introspection_c.so[0m
+[100%] Built target warehouse_interfaces_s__rosidl_typesupport_c
+[100%] Built target warehouse_interfaces_s__rosidl_typesupport_fastrtps_c
+[100%] Built target warehouse_interfaces_s__rosidl_typesupport_introspection_c
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/ament_index/resource_index/rosidl_interfaces/warehouse_interfaces
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/DetectedProduct.json
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/ProductRecord.json
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/StorageLocation.json
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/RegisterProduct.json
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/AssignStorageLocation.json
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/UpdateInventory.json
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/PlaceProduct.json
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/action/ExecuteStorageMission.json
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__functions.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__struct.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__type_support.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/execute_storage_mission.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__functions.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__struct.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__type_support.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__functions.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__struct.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__type_support.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__functions.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__struct.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__type_support.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detected_product.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/product_record.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/rosidl_generator_c__visibility_control.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/storage_location.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/assign_storage_location.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__functions.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__struct.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__type_support.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__functions.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__struct.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__type_support.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__functions.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__struct.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__type_support.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__functions.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__struct.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__type_support.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/place_product.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/register_product.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/update_inventory.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/library_path.sh
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/library_path.dsv
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__rosidl_typesupport_introspection_c.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__rosidl_typesupport_introspection_c.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__rosidl_typesupport_introspection_c.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__rosidl_typesupport_introspection_c.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__rosidl_typesupport_introspection_c.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__rosidl_typesupport_introspection_c.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__rosidl_typesupport_introspection_c.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__rosidl_typesupport_introspection_c.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__builder.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__struct.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__traits.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__type_support.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/execute_storage_mission.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__builder.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__struct.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__traits.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__type_support.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__builder.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__struct.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__traits.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__type_support.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__builder.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__struct.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__traits.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__type_support.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detected_product.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/product_record.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/storage_location.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/assign_storage_location.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__builder.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__struct.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__traits.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__type_support.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__builder.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__struct.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__traits.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__type_support.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__builder.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__struct.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__traits.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__type_support.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__builder.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__struct.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__traits.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__type_support.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/place_product.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/register_product.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/update_inventory.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/action/detail/execute_storage_mission__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/detected_product__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/product_record__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/msg/detail/storage_location__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/assign_storage_location__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/place_product__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/register_product__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/include/warehouse_interfaces/warehouse_interfaces/srv/detail/update_inventory__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/pythonpath.sh
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/pythonpath.dsv
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces-0.1.0-py3.12.egg-info/PKG-INFO
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces-0.1.0-py3.12.egg-info/SOURCES.txt
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces-0.1.0-py3.12.egg-info/dependency_links.txt
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces-0.1.0-py3.12.egg-info/top_level.txt
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/__init__.py
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/_warehouse_interfaces_s.ep.rosidl_typesupport_c.c
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/_warehouse_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/_warehouse_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/action/__init__.py
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/action/_execute_storage_mission.py
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/action/_execute_storage_mission_s.c
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/__init__.py
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_detected_product.py
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_detected_product_s.c
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_product_record.py
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_product_record_s.c
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_storage_location.py
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_storage_location_s.c
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/__init__.py
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_assign_storage_location.py
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_assign_storage_location_s.c
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_place_product.py
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_place_product_s.c
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_register_product.py
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_register_product_s.c
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_update_inventory.py
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_update_inventory_s.c
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_c.so
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_fastrtps_c.so
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_introspection_c.so
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_fastrtps_c.so
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_introspection_c.so
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/warehouse_interfaces_s__rosidl_typesupport_c.so
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/ament_index/resource_index/rust_packages/warehouse_interfaces
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/Cargo.toml
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/build.rs
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/action.rs
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/action/rmw.rs
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/lib.rs
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/msg.rs
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/msg/rmw.rs
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/srv.rs
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/rust/src/srv/rmw.rs
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/DetectedProduct.idl
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/ProductRecord.idl
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/StorageLocation.idl
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/RegisterProduct.idl
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/AssignStorageLocation.idl
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/UpdateInventory.idl
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/PlaceProduct.idl
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/action/ExecuteStorageMission.idl
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/DetectedProduct.msg
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/ProductRecord.msg
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/msg/StorageLocation.msg
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/RegisterProduct.srv
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/AssignStorageLocation.srv
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/UpdateInventory.srv
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/srv/PlaceProduct.srv
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/action/ExecuteStorageMission.action
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/ament_index/resource_index/package_run_dependencies/warehouse_interfaces
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/ament_index/resource_index/parent_prefix_path/warehouse_interfaces
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/ament_prefix_path.sh
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/ament_prefix_path.dsv
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/path.sh
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/environment/path.dsv
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/local_setup.bash
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/local_setup.sh
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/local_setup.zsh
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/local_setup.dsv
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/package.dsv
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/ament_index/resource_index/packages/warehouse_interfaces
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/rosidl_cmake-extras.cmake
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/rosidl_cmake_aggregate_target-extras.cmake
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfacesConfig.cmake
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfacesConfig-version.cmake
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/package.xml
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_generator_c.so
+-- Set non-toolchain portion of runtime path of "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_generator_c.so" to ""
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_fastrtps_c.so
+-- Set non-toolchain portion of runtime path of "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_introspection_c.so
+-- Set non-toolchain portion of runtime path of "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_introspection_c.so" to ""
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_c.so
+-- Set non-toolchain portion of runtime path of "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_c.so" to ""
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_fastrtps_cpp.so
+-- Set non-toolchain portion of runtime path of "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_introspection_cpp.so
+-- Set non-toolchain portion of runtime path of "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_cpp.so
+-- Set non-toolchain portion of runtime path of "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_typesupport_cpp.so" to ""
+Listing '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces'...
+Compiling '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/__init__.py'...
+Listing '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/action'...
+Compiling '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/action/__init__.py'...
+Compiling '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/action/_execute_storage_mission.py'...
+Listing '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg'...
+Compiling '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/__init__.py'...
+Compiling '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_detected_product.py'...
+Compiling '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_product_record.py'...
+Compiling '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/msg/_storage_location.py'...
+Listing '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv'...
+Compiling '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/__init__.py'...
+Compiling '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_assign_storage_location.py'...
+Compiling '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_place_product.py'...
+Compiling '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_register_product.py'...
+Compiling '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages/warehouse_interfaces/srv/_update_inventory.py'...
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_generator_py.so
+-- Set non-toolchain portion of runtime path of "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/libwarehouse_interfaces__rosidl_generator_py.so" to ""
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_generator_cExport.cmake
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_generator_cExport-noconfig.cmake
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_introspection_cExport.cmake
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_cExport.cmake
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_generator_cppExport.cmake
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_cppExport.cmake
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/warehouse_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_generator_pyExport.cmake
+-- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake/export_warehouse_interfaces__rosidl_generator_pyExport-noconfig.cmake

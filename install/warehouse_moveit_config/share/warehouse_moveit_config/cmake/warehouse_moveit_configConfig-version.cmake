@@ -1,0 +1,1 @@
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_moveit_config/ament_cmake_core/warehouse_moveit_configConfig-version.cmake

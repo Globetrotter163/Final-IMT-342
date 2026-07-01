@@ -1,0 +1,61 @@
+[0.036s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory': AMENT_PREFIX_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process
+[0.054s] UpdateCTestConfiguration  from :/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CTestConfiguration.ini
+[0.054s] Parse Config file:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CTestConfiguration.ini
+[0.055s]    Site: agonb-Victus
+[0.055s]    Build name: (empty)
+[0.056s]  Add coverage exclude regular expressions.
+[0.056s] Create new tag: 20260626-0735 - Experimental
+[0.056s] UpdateCTestConfiguration  from :/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CTestConfiguration.ini
+[0.056s] Parse Config file:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CTestConfiguration.ini
+[0.056s] Test project /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory
+[0.057s] Constructing a list of tests
+[0.057s] Done constructing a list of tests
+[0.057s] Updating test list for fixtures
+[0.057s] Added 0 tests to meet fixture requirements
+[0.057s] Checking test dependency graph...
+[0.057s] Checking test dependency graph end
+[0.057s] test 1
+[0.057s]     Start 1: test_inventory_store
+[0.057s] 
+[0.057s] 1: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml" "--package-name" "warehouse_inventory" "--output-file" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/ament_cmake_gtest/test_inventory_store.txt" "--command" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_inventory_store" "--gtest_output=xml:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml"
+[0.057s] 1: Working Directory: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory
+[0.058s] 1: Test timeout computed to be: 60
+[0.169s] 1: -- run_test.py: invoking following command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory':
+[0.169s] 1:  - /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_inventory_store --gtest_output=xml:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml
+[0.172s] 1: Running main() from /opt/ros/jazzy/src/gtest_vendor/src/gtest_main.cc
+[0.172s] 1: [==========] Running 8 tests from 1 test suite.
+[0.172s] 1: [----------] Global test environment set-up.
+[0.172s] 1: [----------] 8 tests from InventoryStoreTest
+[0.172s] 1: [ RUN      ] InventoryStoreTest.SeedsStorageLocations
+[0.366s] 1: [       OK ] InventoryStoreTest.SeedsStorageLocations (195 ms)
+[0.366s] 1: [ RUN      ] InventoryStoreTest.RegistersProduct
+[0.589s] 1: [       OK ] InventoryStoreTest.RegistersProduct (221 ms)
+[0.589s] 1: [ RUN      ] InventoryStoreTest.RejectsEmptyProductId
+[0.749s] 1: [       OK ] InventoryStoreTest.RejectsEmptyProductId (160 ms)
+[0.749s] 1: [ RUN      ] InventoryStoreTest.AssignsFirstAvailableLocation
+[0.953s] 1: [       OK ] InventoryStoreTest.AssignsFirstAvailableLocation (204 ms)
+[0.953s] 1: [ RUN      ] InventoryStoreTest.DoesNotReassignExistingLocation
+[1.178s] 1: [       OK ] InventoryStoreTest.DoesNotReassignExistingLocation (225 ms)
+[1.178s] 1: [ RUN      ] InventoryStoreTest.RejectsAssignmentForUnknownProduct
+[1.368s] 1: [       OK ] InventoryStoreTest.RejectsAssignmentForUnknownProduct (188 ms)
+[1.368s] 1: [ RUN      ] InventoryStoreTest.UpdatesInventoryWithoutGoingNegative
+[1.548s] 1: [       OK ] InventoryStoreTest.UpdatesInventoryWithoutGoingNegative (180 ms)
+[1.549s] 1: [ RUN      ] InventoryStoreTest.RejectsInventoryUpdateForUnknownProduct
+[1.692s] 1: [       OK ] InventoryStoreTest.RejectsInventoryUpdateForUnknownProduct (143 ms)
+[1.692s] 1: [----------] 8 tests from InventoryStoreTest (1520 ms total)
+[1.693s] 1: 
+[1.693s] 1: [----------] Global test environment tear-down
+[1.693s] 1: [==========] 8 tests from 1 test suite ran. (1520 ms total)
+[1.693s] 1: [  PASSED  ] 8 tests.
+[1.694s] 1: -- run_test.py: return code 0
+[1.694s] 1: -- run_test.py: inject classname prefix into gtest result file '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml'
+[1.696s] 1: -- run_test.py: verify result file '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml'
+[1.714s] 1/1 Test #1: test_inventory_store .............   Passed    1.66 sec
+[1.714s] 
+[1.715s] 100% tests passed, 0 tests failed out of 1
+[1.715s] 
+[1.715s] Label Time Summary:
+[1.715s] gtest    =   1.66 sec*proc (1 test)
+[1.715s] 
+[1.715s] Total Test time (real) =   1.66 sec
+[1.719s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory' returned '0': AMENT_PREFIX_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/ctest -C Release -D ExperimentalTest --no-compress-output -V --force-new-ctest-process

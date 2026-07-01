@@ -1,0 +1,54 @@
+[0.018s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_robot_description': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_robot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description
+[0.028s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.222s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.227s] -- Found urdf: 2.10.1 (/opt/ros/jazzy/share/urdf/cmake)
+[0.244s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[0.247s] -- Found xacro: 2.1.1 (/opt/ros/jazzy/share/xacro/cmake)
+[0.247s] -- Found robot_state_publisher: 3.3.4 (/opt/ros/jazzy/share/robot_state_publisher/cmake)
+[0.261s] -- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.268s] -- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.276s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.284s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.348s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.349s] -- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.363s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[0.369s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[0.385s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[0.394s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[0.402s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.578s] -- Found rviz2: 14.1.22 (/opt/ros/jazzy/share/rviz2/cmake)
+[0.646s] -- Configuring done (0.6s)
+[0.649s] -- Generating done (0.0s)
+[0.650s] -- Build files have been written to: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_robot_description
+[0.658s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_robot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_robot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description
+[0.659s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_robot_description': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_robot_description -- -j12 -l12
+[0.699s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_robot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_robot_description -- -j12 -l12
+[0.703s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_robot_description': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_robot_description
+[0.708s] -- Install configuration: ""
+[0.709s] -- Execute custom install script
+[0.709s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/urdf/arm.xacro
+[0.710s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/urdf/arm_mount.xacro
+[0.710s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/urdf/base.xacro
+[0.710s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/urdf/gripper.xacro
+[0.710s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/urdf/robot.urdf.xacro
+[0.710s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/urdf/ros2_control.xacro
+[0.710s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/urdf/sensors.xacro
+[0.710s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/urdf/wheels.xacro
+[0.710s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/launch/display.launch.py
+[0.711s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/rviz/urdf.rviz
+[0.711s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/ament_index/resource_index/package_run_dependencies/warehouse_robot_description
+[0.711s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/ament_index/resource_index/parent_prefix_path/warehouse_robot_description
+[0.711s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/environment/ament_prefix_path.sh
+[0.711s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/environment/ament_prefix_path.dsv
+[0.711s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/environment/path.sh
+[0.711s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/environment/path.dsv
+[0.712s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/local_setup.bash
+[0.712s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/local_setup.sh
+[0.712s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/local_setup.zsh
+[0.712s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/local_setup.dsv
+[0.712s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/package.dsv
+[0.723s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/ament_index/resource_index/packages/warehouse_robot_description
+[0.724s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/cmake/warehouse_robot_descriptionConfig.cmake
+[0.724s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/cmake/warehouse_robot_descriptionConfig-version.cmake
+[0.724s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description/share/warehouse_robot_description/package.xml
+[0.729s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_robot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_robot_description

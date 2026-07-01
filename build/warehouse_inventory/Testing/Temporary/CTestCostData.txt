@@ -1,0 +1,2 @@
+test_inventory_store 42 0.0472778
+---

@@ -1,0 +1,46 @@
+[0.024s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_perception -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception
+[0.663s] -- The C compiler identification is GNU 13.3.0
+[0.663s] -- The CXX compiler identification is GNU 13.3.0
+[0.663s] -- Detecting C compiler ABI info
+[0.663s] -- Detecting C compiler ABI info - done
+[0.663s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.663s] -- Detecting C compile features
+[0.663s] -- Detecting C compile features - done
+[0.664s] -- Detecting CXX compiler ABI info
+[0.664s] -- Detecting CXX compiler ABI info - done
+[0.664s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.664s] -- Detecting CXX compile features
+[0.664s] -- Detecting CXX compile features - done
+[0.664s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.921s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.263s] -- Configuring done (1.2s)
+[1.265s] -- Generating done (0.0s)
+[1.266s] [33mCMake Warning:
+[1.266s]   Manually-specified variables were not used by the project:
+[1.266s] 
+[1.266s]     CATKIN_INSTALL_INTO_PREFIX_ROOT
+[1.266s]     CATKIN_SYMLINK_INSTALL
+[1.266s] 
+[1.266s] [0m
+[1.266s] -- Build files have been written to: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception
+[1.297s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_perception -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCATKIN_SYMLINK_INSTALL=ON -DCMAKE_INSTALL_PREFIX=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception
+[1.298s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception -- -j12 -l12
+[1.425s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception -- -j12 -l12
+[1.426s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception
+[1.449s] -- Install configuration: ""
+[1.449s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/ament_index/resource_index/package_run_dependencies/warehouse_perception
+[1.449s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/ament_index/resource_index/parent_prefix_path/warehouse_perception
+[1.449s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/environment/ament_prefix_path.sh
+[1.449s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/environment/ament_prefix_path.dsv
+[1.449s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/environment/path.sh
+[1.449s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/environment/path.dsv
+[1.449s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/local_setup.bash
+[1.450s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/local_setup.sh
+[1.450s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/local_setup.zsh
+[1.450s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/local_setup.dsv
+[1.450s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/package.dsv
+[1.450s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/ament_index/resource_index/packages/warehouse_perception
+[1.450s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/cmake/warehouse_perceptionConfig.cmake
+[1.450s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/cmake/warehouse_perceptionConfig-version.cmake
+[1.450s] -- Installing: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception/share/warehouse_perception/package.xml
+[1.450s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception

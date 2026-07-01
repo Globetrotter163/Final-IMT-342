@@ -1,0 +1,36 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "warehouse_interfaces/srv/DeleteProduct_Request",
+      "fields": [
+        {
+          "name": "aruco_id",
+          "type": {
+            "type_id": 6,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "delete_all",
+          "type": {
+            "type_id": 15,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "warehouse_interfaces/srv/DeleteProduct_Request",
+      "hash_string": "RIHS01_3822250d400de33051b9df477d2d660719bdbc9ba3f02b9327498459c8cc6d29"
+    }
+  ]
+}

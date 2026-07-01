@@ -1,0 +1,25 @@
+[0.011s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation -- -j12 -l12
+[0.046s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation -- -j12 -l12
+[0.056s] Invoking command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation
+[0.063s] -- Install configuration: ""
+[0.063s] -- Execute custom install script
+[0.063s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/launch/navigation_launch.py
+[0.063s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/launch/warehouse_nav2.launch.py
+[0.063s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/config/nav2_params.yaml
+[0.064s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/rviz/nav2_warehouse_view.rviz
+[0.064s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/ament_index/resource_index/package_run_dependencies/warehouse_navigation
+[0.064s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/ament_index/resource_index/parent_prefix_path/warehouse_navigation
+[0.064s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/environment/ament_prefix_path.sh
+[0.064s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/environment/ament_prefix_path.dsv
+[0.064s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/environment/path.sh
+[0.064s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/environment/path.dsv
+[0.064s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/local_setup.bash
+[0.065s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/local_setup.sh
+[0.065s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/local_setup.zsh
+[0.065s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/local_setup.dsv
+[0.065s] -- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/package.dsv
+[0.075s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/ament_index/resource_index/packages/warehouse_navigation
+[0.075s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/cmake/warehouse_navigationConfig.cmake
+[0.075s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/cmake/warehouse_navigationConfig-version.cmake
+[0.075s] -- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation/share/warehouse_navigation/package.xml
+[0.077s] Invoked command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation' returned '0': CMAKE_PREFIX_PATH=/opt/ros/jazzy:${CMAKE_PREFIX_PATH} DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation

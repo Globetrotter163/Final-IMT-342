@@ -1,0 +1,51 @@
+Start testing: Jul 01 16:43 -04
+----------------------------------------------------------
+1/1 Testing: test_inventory_store
+1/1 Test: test_inventory_store
+Command: "/usr/bin/python3" "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml" "--package-name" "warehouse_inventory" "--output-file" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/ament_cmake_gtest/test_inventory_store.txt" "--command" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_inventory_store" "--gtest_output=xml:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml"
+Directory: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory
+"test_inventory_store" start time: Jul 01 16:43 -04
+Output:
+----------------------------------------------------------
+-- run_test.py: invoking following command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory':
+ - /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_inventory_store --gtest_output=xml:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml
+Running main() from /opt/ros/jazzy/src/gtest_vendor/src/gtest_main.cc
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from InventoryStoreTest
+[ RUN      ] InventoryStoreTest.SeedsStorageLocations
+[       OK ] InventoryStoreTest.SeedsStorageLocations (254 ms)
+[ RUN      ] InventoryStoreTest.RegistersProduct
+[       OK ] InventoryStoreTest.RegistersProduct (241 ms)
+[ RUN      ] InventoryStoreTest.RejectsEmptyProductId
+[       OK ] InventoryStoreTest.RejectsEmptyProductId (247 ms)
+[ RUN      ] InventoryStoreTest.AssignsFirstAvailableLocation
+[       OK ] InventoryStoreTest.AssignsFirstAvailableLocation (271 ms)
+[ RUN      ] InventoryStoreTest.DoesNotReassignExistingLocation
+[       OK ] InventoryStoreTest.DoesNotReassignExistingLocation (278 ms)
+[ RUN      ] InventoryStoreTest.RejectsAssignmentForUnknownProduct
+[       OK ] InventoryStoreTest.RejectsAssignmentForUnknownProduct (247 ms)
+[ RUN      ] InventoryStoreTest.UpdatesInventoryWithoutGoingNegative
+[       OK ] InventoryStoreTest.UpdatesInventoryWithoutGoingNegative (220 ms)
+[ RUN      ] InventoryStoreTest.RejectsInventoryUpdateForUnknownProduct
+[       OK ] InventoryStoreTest.RejectsInventoryUpdateForUnknownProduct (127 ms)
+[----------] 8 tests from InventoryStoreTest (1888 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test suite ran. (1888 ms total)
+[  PASSED  ] 8 tests.
+-- run_test.py: return code 0
+-- run_test.py: inject classname prefix into gtest result file '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml'
+-- run_test.py: verify result file '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml'
+<end of output>
+Test time =   1.94 sec
+----------------------------------------------------------
+Test Passed.
+"test_inventory_store" end time: Jul 01 16:43 -04
+"test_inventory_store" time elapsed: 00:00:01
+----------------------------------------------------------
+
+End testing: Jul 01 16:43 -04
+
+gtest =   1.94 sec*proc
+

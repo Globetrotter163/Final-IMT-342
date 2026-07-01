@@ -1,0 +1,14 @@
+[0.000000] (-) TimerEvent: {}
+[0.000170] (warehouse_moveit_config) JobQueued: {'identifier': 'warehouse_moveit_config', 'dependencies': OrderedDict({'warehouse_moveit_config': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config'})}
+[0.000262] (warehouse_robot_description) JobQueued: {'identifier': 'warehouse_robot_description', 'dependencies': OrderedDict({'warehouse_robot_description': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description'})}
+[0.000308] (warehouse_gazebo) JobQueued: {'identifier': 'warehouse_gazebo', 'dependencies': OrderedDict({'warehouse_bringup': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup', 'warehouse_interfaces': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces', 'warehouse_robot_description': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description', 'warehouse_gazebo': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo'})}
+[0.000463] (warehouse_manipulation) JobQueued: {'identifier': 'warehouse_manipulation', 'dependencies': OrderedDict({'warehouse_interfaces': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces', 'warehouse_manipulation': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation'})}
+[0.000514] (warehouse_robot_description) JobStarted: {'identifier': 'warehouse_robot_description'}
+[0.009722] (warehouse_moveit_config) JobStarted: {'identifier': 'warehouse_moveit_config'}
+[0.013634] (warehouse_manipulation) JobStarted: {'identifier': 'warehouse_manipulation'}
+[0.036387] (warehouse_robot_description) JobEnded: {'identifier': 'warehouse_robot_description', 'rc': 0}
+[0.037629] (warehouse_moveit_config) JobEnded: {'identifier': 'warehouse_moveit_config', 'rc': 0}
+[0.038432] (warehouse_gazebo) JobStarted: {'identifier': 'warehouse_gazebo'}
+[0.049618] (warehouse_manipulation) JobEnded: {'identifier': 'warehouse_manipulation', 'rc': 0}
+[0.068029] (warehouse_gazebo) JobEnded: {'identifier': 'warehouse_gazebo', 'rc': 0}
+[0.068993] (-) EventReactorShutdown: {}

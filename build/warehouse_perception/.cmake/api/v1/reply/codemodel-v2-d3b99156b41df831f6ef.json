@@ -1,0 +1,97 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-f67eda81faecb986e83e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "warehouse_perception",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "apriltag_detector_mock::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apriltag_detector_mock-0f9af82ebd80952939b5.json",
+					"name" : "apriltag_detector_mock",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "aruco_detector::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-aruco_detector-40078872bc6aa62f0b57.json",
+					"name" : "aruco_detector",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-cd927741634a836cef1e.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "warehouse_perception_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-warehouse_perception_uninstall-8c7652edeadd6c8e6139.json",
+					"name" : "warehouse_perception_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "yolo_detector_mock::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-yolo_detector_mock-4bba5041affb0302325d.json",
+					"name" : "yolo_detector_mock",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception",
+		"source" : "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_perception"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

@@ -1,0 +1,1 @@
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_gazebo/ament_cmake_environment_hooks/local_setup.zsh

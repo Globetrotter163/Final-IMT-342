@@ -1,0 +1,114 @@
+[0.000000] (-) TimerEvent: {}
+[0.000137] (robot_amr_description) JobQueued: {'identifier': 'robot_amr_description', 'dependencies': OrderedDict({'robot_amr_description': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/robot_amr_description'})}
+[0.000368] (warehouse_bringup) JobQueued: {'identifier': 'warehouse_bringup', 'dependencies': OrderedDict({'warehouse_bringup': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup'})}
+[0.000436] (warehouse_interfaces) JobQueued: {'identifier': 'warehouse_interfaces', 'dependencies': OrderedDict({'warehouse_interfaces': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces'})}
+[0.000474] (warehouse_moveit_config) JobQueued: {'identifier': 'warehouse_moveit_config', 'dependencies': OrderedDict({'warehouse_moveit_config': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config'})}
+[0.000506] (warehouse_navigation) JobQueued: {'identifier': 'warehouse_navigation', 'dependencies': OrderedDict({'warehouse_navigation': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation'})}
+[0.000535] (warehouse_robot_description) JobQueued: {'identifier': 'warehouse_robot_description', 'dependencies': OrderedDict({'warehouse_robot_description': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description'})}
+[0.000563] (warehouse_gazebo) JobQueued: {'identifier': 'warehouse_gazebo', 'dependencies': OrderedDict({'warehouse_bringup': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup', 'warehouse_robot_description': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description', 'warehouse_gazebo': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo'})}
+[0.000604] (warehouse_inventory) JobQueued: {'identifier': 'warehouse_inventory', 'dependencies': OrderedDict({'warehouse_interfaces': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces', 'warehouse_inventory': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory'})}
+[0.000961] (warehouse_manipulation) JobQueued: {'identifier': 'warehouse_manipulation', 'dependencies': OrderedDict({'warehouse_interfaces': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces', 'warehouse_manipulation': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation'})}
+[0.001003] (warehouse_perception) JobQueued: {'identifier': 'warehouse_perception', 'dependencies': OrderedDict({'warehouse_interfaces': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces', 'warehouse_perception': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception'})}
+[0.001029] (warehouse_task_manager) JobQueued: {'identifier': 'warehouse_task_manager', 'dependencies': OrderedDict({'warehouse_interfaces': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces', 'warehouse_moveit_config': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config', 'warehouse_navigation': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation', 'warehouse_inventory': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory', 'warehouse_manipulation': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation', 'warehouse_perception': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception', 'warehouse_task_manager': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager'})}
+[0.001234] (warehouse_interfaces) JobStarted: {'identifier': 'warehouse_interfaces'}
+[0.013405] (warehouse_bringup) JobStarted: {'identifier': 'warehouse_bringup'}
+[0.020917] (warehouse_moveit_config) JobStarted: {'identifier': 'warehouse_moveit_config'}
+[0.031215] (warehouse_navigation) JobStarted: {'identifier': 'warehouse_navigation'}
+[0.039817] (warehouse_robot_description) JobStarted: {'identifier': 'warehouse_robot_description'}
+[0.045403] (robot_amr_description) JobStarted: {'identifier': 'robot_amr_description'}
+[0.071847] (warehouse_moveit_config) JobEnded: {'identifier': 'warehouse_moveit_config', 'rc': 0}
+[0.072365] (warehouse_navigation) JobEnded: {'identifier': 'warehouse_navigation', 'rc': 0}
+[0.077120] (warehouse_interfaces) JobEnded: {'identifier': 'warehouse_interfaces', 'rc': 0}
+[0.081057] (warehouse_inventory) JobStarted: {'identifier': 'warehouse_inventory'}
+[0.083843] (warehouse_manipulation) JobStarted: {'identifier': 'warehouse_manipulation'}
+[0.091212] (warehouse_perception) JobStarted: {'identifier': 'warehouse_perception'}
+[0.100205] (-) TimerEvent: {}
+[0.104160] (warehouse_robot_description) JobEnded: {'identifier': 'warehouse_robot_description', 'rc': 0}
+[0.104581] (warehouse_bringup) JobEnded: {'identifier': 'warehouse_bringup', 'rc': 0}
+[0.105459] (robot_amr_description) JobEnded: {'identifier': 'robot_amr_description', 'rc': 0}
+[0.107959] (warehouse_gazebo) JobStarted: {'identifier': 'warehouse_gazebo'}
+[0.119194] (warehouse_inventory) Command: {'cmd': ['/usr/bin/ctest', '-C', 'Release', '-D', 'ExperimentalTest', '--no-compress-output', '-V', '--force-new-ctest-process'], 'cwd': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory', 'env': OrderedDict({'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'VSCODE_CWD': '/home/agonb', 'VSCODE_ESM_ENTRYPOINT': 'vs/workbench/api/node/extensionHostProcess', 'CODEX_CI': '1', 'USER': 'agonb', 'CODEX_INTERNAL_ORIGINATOR_OVERRIDE': 'codex_vscode', 'VSCODE_NLS_CONFIG': '{"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","locale":"en-us","availableLanguages":{}}', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'VSCODE_HANDLES_UNCAUGHT_ERRORS': 'true', 'XDG_SESSION_TYPE': 'x11', 'DEBUG': 'release', 'CLUTTER_DISABLE_MIPMAPPED_TEXT': '1', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/agonb', 'CHROME_DESKTOP': 'code.desktop', 'DESKTOP_SESSION': 'ubuntu', 'VSCODE_IPC_HOOK': '/run/user/1000/vscode-3f5238eb-1.12-main.sock', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'MANAGERPID': '2200', 'LC_CTYPE': 'C.UTF-8', 'SYSTEMD_EXEC_PID': '2708', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': '', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '11355', 'VSCODE_CRASH_REPORTER_PROCESS_TYPE': 'extensionHost', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'agonb', 'JOURNAL_STREAM': '9:24282', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.Shell@x11.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'RUST_LOG': 'warn', 'USERNAME': 'agonb', 'TERM': 'dumb', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'PATH': '/home/agonb/.local/bin:/home/agonb/.local/bin:/home/agonb/.codex/tmp/arg0/codex-arg0Hhhxdd:/home/agonb/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/agonb/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/agonb/.vscode/extensions/openai.chatgpt-26.623.70822-linux-x64/bin/linux-x86_64', 'SESSION_MANAGER': 'local/agonb-Victus:@/tmp/.ICE-unix/2663,unix/agonb-Victus:/tmp/.ICE-unix/2663', 'INVOCATION_ID': 'e65ab5f97bc641db9469e4a800973f50', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'GH_PAGER': 'cat', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/robot_amr_description:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'ELECTRON_RUN_AS_NODE': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CODEX_THREAD_ID': '019f1bcc-5694-70a0-8fff-6a1078fc7d6e', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory', 'LC_ALL': 'C.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'VSCODE_CODE_CACHE_PATH': '/home/agonb/.config/Code/CachedData/7e7950df89d055b5a378379db9ee14290772148a', 'RCUTILS_COLORIZED_OUTPUT': '1', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'CMAKE_PREFIX_PATH': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_gazebo:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_robot_description:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/robot_amr_description:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'VSCODE_PID': '11355'}), 'shell': False}
+[0.125405] (warehouse_manipulation) JobEnded: {'identifier': 'warehouse_manipulation', 'rc': 0}
+[0.130252] (warehouse_perception) JobEnded: {'identifier': 'warehouse_perception', 'rc': 0}
+[0.136732] (warehouse_inventory) StdoutLine: {'line': b'UpdateCTestConfiguration  from :/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CTestConfiguration.ini\n'}
+[0.138937] (warehouse_inventory) StdoutLine: {'line': b'Parse Config file:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CTestConfiguration.ini\n'}
+[0.139127] (warehouse_inventory) StdoutLine: {'line': b'   Site: agonb-Victus\n'}
+[0.139259] (warehouse_inventory) StdoutLine: {'line': b'   Build name: (empty)\n'}
+[0.140166] (warehouse_inventory) StdoutLine: {'line': b' Add coverage exclude regular expressions.\n'}
+[0.140446] (warehouse_inventory) StdoutLine: {'line': b'Create new tag: 20260701-0353 - Experimental\n'}
+[0.140614] (warehouse_inventory) StdoutLine: {'line': b'UpdateCTestConfiguration  from :/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CTestConfiguration.ini\n'}
+[0.140737] (warehouse_inventory) StdoutLine: {'line': b'Parse Config file:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/CTestConfiguration.ini\n'}
+[0.140862] (warehouse_inventory) StdoutLine: {'line': b'Test project /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory\n'}
+[0.140980] (warehouse_inventory) StdoutLine: {'line': b'Constructing a list of tests\n'}
+[0.141093] (warehouse_inventory) StdoutLine: {'line': b'Done constructing a list of tests\n'}
+[0.141204] (warehouse_inventory) StdoutLine: {'line': b'Updating test list for fixtures\n'}
+[0.141315] (warehouse_inventory) StdoutLine: {'line': b'Added 0 tests to meet fixture requirements\n'}
+[0.141443] (warehouse_inventory) StdoutLine: {'line': b'Checking test dependency graph...\n'}
+[0.141557] (warehouse_inventory) StdoutLine: {'line': b'Checking test dependency graph end\n'}
+[0.141669] (warehouse_inventory) StdoutLine: {'line': b'test 1\n'}
+[0.141779] (warehouse_inventory) StdoutLine: {'line': b'    Start 1: test_inventory_store\n'}
+[0.141884] (warehouse_inventory) StdoutLine: {'line': b'\n'}
+[0.141992] (warehouse_inventory) StdoutLine: {'line': b'1: Test command: /usr/bin/python3 "-u" "/opt/ros/jazzy/share/ament_cmake_test/cmake/run_test.py" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml" "--package-name" "warehouse_inventory" "--output-file" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/ament_cmake_gtest/test_inventory_store.txt" "--command" "/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_inventory_store" "--gtest_output=xml:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml"\n'}
+[0.142109] (warehouse_inventory) StdoutLine: {'line': b'1: Working Directory: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory\n'}
+[0.142458] (warehouse_inventory) StdoutLine: {'line': b'1: Test timeout computed to be: 60\n'}
+[0.142584] (warehouse_gazebo) JobEnded: {'identifier': 'warehouse_gazebo', 'rc': 0}
+[0.200317] (-) TimerEvent: {}
+[0.215791] (warehouse_inventory) StdoutLine: {'line': b"1: -- run_test.py: invoking following command in '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory':\n"}
+[0.216055] (warehouse_inventory) StdoutLine: {'line': b'1:  - /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_inventory_store --gtest_output=xml:/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml\n'}
+[0.221054] (warehouse_inventory) StdoutLine: {'line': b'1: Running main() from /opt/ros/jazzy/src/gtest_vendor/src/gtest_main.cc\n'}
+[0.222359] (warehouse_inventory) StdoutLine: {'line': b'1: [==========] Running 8 tests from 1 test suite.\n'}
+[0.222559] (warehouse_inventory) StdoutLine: {'line': b'1: [----------] Global test environment set-up.\n'}
+[0.222687] (warehouse_inventory) StdoutLine: {'line': b'1: [----------] 8 tests from InventoryStoreTest\n'}
+[0.222817] (warehouse_inventory) StdoutLine: {'line': b'1: [ RUN      ] InventoryStoreTest.SeedsStorageLocations\n'}
+[0.300747] (-) TimerEvent: {}
+[0.401002] (-) TimerEvent: {}
+[0.426409] (warehouse_inventory) StdoutLine: {'line': b'1: [       OK ] InventoryStoreTest.SeedsStorageLocations (207 ms)\n'}
+[0.428168] (warehouse_inventory) StdoutLine: {'line': b'1: [ RUN      ] InventoryStoreTest.RegistersProduct\n'}
+[0.501434] (-) TimerEvent: {}
+[0.602173] (-) TimerEvent: {}
+[0.691100] (warehouse_inventory) StdoutLine: {'line': b'1: [       OK ] InventoryStoreTest.RegistersProduct (264 ms)\n'}
+[0.691385] (warehouse_inventory) StdoutLine: {'line': b'1: [ RUN      ] InventoryStoreTest.RejectsEmptyProductId\n'}
+[0.702284] (-) TimerEvent: {}
+[0.802520] (-) TimerEvent: {}
+[0.903121] (-) TimerEvent: {}
+[0.950377] (warehouse_inventory) StdoutLine: {'line': b'1: [       OK ] InventoryStoreTest.RejectsEmptyProductId (259 ms)\n'}
+[0.950732] (warehouse_inventory) StdoutLine: {'line': b'1: [ RUN      ] InventoryStoreTest.AssignsFirstAvailableLocation\n'}
+[1.003221] (-) TimerEvent: {}
+[1.103451] (-) TimerEvent: {}
+[1.196622] (warehouse_inventory) StdoutLine: {'line': b'1: [       OK ] InventoryStoreTest.AssignsFirstAvailableLocation (245 ms)\n'}
+[1.196931] (warehouse_inventory) StdoutLine: {'line': b'1: [ RUN      ] InventoryStoreTest.DoesNotReassignExistingLocation\n'}
+[1.203582] (-) TimerEvent: {}
+[1.303882] (-) TimerEvent: {}
+[1.362007] (warehouse_inventory) StdoutLine: {'line': b'1: [       OK ] InventoryStoreTest.DoesNotReassignExistingLocation (165 ms)\n'}
+[1.362296] (warehouse_inventory) StdoutLine: {'line': b'1: [ RUN      ] InventoryStoreTest.RejectsAssignmentForUnknownProduct\n'}
+[1.404053] (-) TimerEvent: {}
+[1.502103] (warehouse_inventory) StdoutLine: {'line': b'1: [       OK ] InventoryStoreTest.RejectsAssignmentForUnknownProduct (140 ms)\n'}
+[1.502403] (warehouse_inventory) StdoutLine: {'line': b'1: [ RUN      ] InventoryStoreTest.UpdatesInventoryWithoutGoingNegative\n'}
+[1.504201] (-) TimerEvent: {}
+[1.604522] (-) TimerEvent: {}
+[1.681902] (warehouse_inventory) StdoutLine: {'line': b'1: [       OK ] InventoryStoreTest.UpdatesInventoryWithoutGoingNegative (179 ms)\n'}
+[1.682091] (warehouse_inventory) StdoutLine: {'line': b'1: [ RUN      ] InventoryStoreTest.RejectsInventoryUpdateForUnknownProduct\n'}
+[1.704873] (-) TimerEvent: {}
+[1.805290] (-) TimerEvent: {}
+[1.822634] (warehouse_inventory) StdoutLine: {'line': b'1: [       OK ] InventoryStoreTest.RejectsInventoryUpdateForUnknownProduct (140 ms)\n'}
+[1.822898] (warehouse_inventory) StdoutLine: {'line': b'1: [----------] 8 tests from InventoryStoreTest (1603 ms total)\n'}
+[1.823001] (warehouse_inventory) StdoutLine: {'line': b'1: \n'}
+[1.823084] (warehouse_inventory) StdoutLine: {'line': b'1: [----------] Global test environment tear-down\n'}
+[1.823572] (warehouse_inventory) StdoutLine: {'line': b'1: [==========] 8 tests from 1 test suite ran. (1603 ms total)\n'}
+[1.823926] (warehouse_inventory) StdoutLine: {'line': b'1: [  PASSED  ] 8 tests.\n'}
+[1.824095] (warehouse_inventory) StdoutLine: {'line': b'1: -- run_test.py: return code 0\n'}
+[1.824237] (warehouse_inventory) StdoutLine: {'line': b"1: -- run_test.py: inject classname prefix into gtest result file '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml'\n"}
+[1.824399] (warehouse_inventory) StdoutLine: {'line': b"1: -- run_test.py: verify result file '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_inventory/test_results/warehouse_inventory/test_inventory_store.gtest.xml'\n"}
+[1.837517] (warehouse_inventory) StdoutLine: {'line': b'1/1 Test #1: test_inventory_store .............   Passed    1.70 sec\n'}
+[1.839040] (warehouse_inventory) StdoutLine: {'line': b'\n'}
+[1.839282] (warehouse_inventory) StdoutLine: {'line': b'100% tests passed, 0 tests failed out of 1\n'}
+[1.839447] (warehouse_inventory) StdoutLine: {'line': b'\n'}
+[1.839578] (warehouse_inventory) StdoutLine: {'line': b'Label Time Summary:\n'}
+[1.839695] (warehouse_inventory) StdoutLine: {'line': b'gtest    =   1.70 sec*proc (1 test)\n'}
+[1.839825] (warehouse_inventory) StdoutLine: {'line': b'\n'}
+[1.839971] (warehouse_inventory) StdoutLine: {'line': b'Total Test time (real) =   1.70 sec\n'}
+[1.841571] (warehouse_inventory) CommandEnded: {'returncode': 0}
+[1.842396] (warehouse_inventory) JobEnded: {'identifier': 'warehouse_inventory', 'rc': 0}
+[1.843066] (warehouse_task_manager) JobStarted: {'identifier': 'warehouse_task_manager'}
+[1.878937] (warehouse_task_manager) JobEnded: {'identifier': 'warehouse_task_manager', 'rc': 0}
+[1.879831] (-) EventReactorShutdown: {}

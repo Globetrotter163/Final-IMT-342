@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from warehouse_interfaces/srv/SpawnProduct.srv
+// generated code does not contain a copyright notice
+
+
+module warehouse_interfaces {
+  module srv {
+    struct SpawnProduct_Request {
+      int32 aruco_id;
+    };
+    struct SpawnProduct_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

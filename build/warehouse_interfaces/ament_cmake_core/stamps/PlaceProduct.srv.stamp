@@ -1,0 +1,4 @@
+warehouse_interfaces/StorageLocation location
+---
+bool success
+string message

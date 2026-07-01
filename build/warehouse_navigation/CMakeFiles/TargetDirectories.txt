@@ -1,0 +1,9 @@
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation/CMakeFiles/uninstall.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation/CMakeFiles/warehouse_navigation_uninstall.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation/CMakeFiles/test.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation/CMakeFiles/edit_cache.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation/CMakeFiles/rebuild_cache.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation/CMakeFiles/list_install_components.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation/CMakeFiles/install.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation/CMakeFiles/install/local.dir
+/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_navigation/CMakeFiles/install/strip.dir

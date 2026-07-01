@@ -1,0 +1,334 @@
+[0.000000] (-) TimerEvent: {}
+[0.000318] (-) JobUnselected: {'identifier': 'robot_amr_description'}
+[0.000402] (-) JobUnselected: {'identifier': 'warehouse_bringup'}
+[0.000435] (-) JobUnselected: {'identifier': 'warehouse_gazebo'}
+[0.000459] (-) JobUnselected: {'identifier': 'warehouse_interfaces'}
+[0.000480] (-) JobUnselected: {'identifier': 'warehouse_inventory'}
+[0.000501] (-) JobUnselected: {'identifier': 'warehouse_moveit_config'}
+[0.000521] (-) JobUnselected: {'identifier': 'warehouse_navigation'}
+[0.000540] (-) JobUnselected: {'identifier': 'warehouse_perception'}
+[0.000557] (-) JobUnselected: {'identifier': 'warehouse_robot_description'}
+[0.000576] (-) JobUnselected: {'identifier': 'warehouse_task_manager'}
+[0.000600] (warehouse_manipulation) JobQueued: {'identifier': 'warehouse_manipulation', 'dependencies': OrderedDict({'warehouse_interfaces': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces'})}
+[0.003979] (warehouse_manipulation) JobStarted: {'identifier': 'warehouse_manipulation'}
+[0.025414] (warehouse_manipulation) JobProgress: {'identifier': 'warehouse_manipulation', 'progress': 'cmake'}
+[0.028470] (warehouse_manipulation) Command: {'cmd': ['/usr/bin/cmake', '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_manipulation', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation'], 'cwd': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_manipulation', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'CHROME_DEVTOOLS_MCP_JS': '/home/agonb/Desktop/Antigravity/Antigravity/Antigravity-x64/resources/app.asar.unpacked/node_modules/chrome-devtools-mcp/build/src/bin/chrome-devtools-mcp.js', 'USER': 'agonb', 'ANTIGRAVITY_SOURCE_METADATA': '{"tool":{"conversationId":"550d9b1f-bc7e-4ed3-aa01-85e67f672d5b","stepIndex":627,"toolCall":{"id":"brxnrq1r","name":"run_command","argumentsJson":"{\\"CommandLine\\":\\"source /opt/ros/jazzy/setup.bash \\\\u0026\\\\u0026 colcon build --packages-select warehouse_manipulation --symlink-install --event-handlers console_direct+\\",\\"Cwd\\":\\"/home/agonb/Desktop/Robotica1-26/robotics/final_ws\\",\\"WaitMsBeforeAsync\\":2000,\\"toolAction\\":\\"Building warehouse_manipulation\\",\\"toolSummary\\":\\"Build warehouse_manipulation\\"}","thinkingSignature":"EogICoUIAQw51sfgOxJAurGHoYQvoKDv4iZQ8DhxVh05EG1k0Jvg9R0rYS/QN4EluCDtdnr8jH+FjlulWESFZSSaYbq3Bd02/aYu816eGOlAvnEkP/AD1oFf4+9ut4FmMaOFqMpl7scwXRDtku9WBh2a0KkEmD+tT8HTf2OhPH/A+byl/ECtbkvlrtLCDFqH10pUNKijm/1Pq5nziMpV/FV0mYxLV6ECn9qgXoOIe7K2Gitj520XzQa5Qvcw5/YMoEL3tstW9zC7oRdzjHtP9E5DgmbFt0mbfgWWXZ4qDFIITWtPWCiL7RYhjMH2o2g0sD/M+ZQ+PE90yPoOLMGfoZsuvsDYgQSDw5qMtfoFav2umsLYc9mD/qvXdSx+koumbyV36NaS2c/whjp05DN+AQyub78aLbGYl05mt50vtdx71LNF4GzOoDQ3Ob8wPIfQG6ZfUeEUiOvL/0kesM3lX7+cUSHx9/wcVwpbjK5NgNY0iD8hWKuKNWe+e7UV05UU4WKZbVoY93j3XsZQB4w88DvONWxm5SHsog/N8A6RWqtmfLC18p46dKS8WQ+TG4Nnhdu3T1t7nv+QbA9U7GYrbwvTbQmo+k6wPSB4UbZ0R2ZRRJ6OwEG6YghUO1m3pb4ndeMxwWATk28EABMoPOC3qWsyDMYi5h3WE6D9lD1ZoDlSHJgwG4LMcHd7lczcA5bOajJ9plF4OdtV25b/PRa2SybYr1nkG3hScLUdIc+q7M8o0U4XdhQSwtuDp8JYyA11OjVPHuUSBuhefTj4Bqr/ArEGg0adDLpEolt2v/beqvBuYC6u/Sz/z7s9eAoJbcgsHoRRQdTuH2U1l9rMKfNi44aHGs8yw0U6kRmIeR7a7F6yOqy+pke+c9iHeYkOPO0Xgmx9tISVCZNP34ORAFV3EdVqb2Nr0S/acnfS2dEv208p5L4fH2uRNEuWw8hpbjEBaL4Awhu0OmdZ0iVxfTHFts4oN131rvoR+GPGk/t12s0UW6oR3fERbr5DiG6Em/mO/E2IplrXPc7GXZqSnuxkc4RsM14CDcseOobzesonhkh9Rib+wlWGsAVT7clf9lrfgvVyBihWevEonlQtGiBfnsPZUU0olN/1snYBa/aJwkJbuJRjuA3GGpAE2jUf5lgZh9MRfAeShEoNR/PDXzDv5rX1v2sPowlG6yqNya4wd01WB1+C98dAZZmflUpvxdywiSm9hfj8eFc/juVVvGxTrfTEFsisdENlG0KrKO9rexTU8hUJxJPLWxEl1zCkQx57DToNxTWS5zOGGoDz5/5hasSs6Jzsxwt03XIyBlr+6q6tK/TisW5FpNsot2bj8vLGxscNR3fGM0DPaDykB/tY7+eyzhk+1fAGWqPc","originalName":"run_command"}}}', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/agonb', 'CHROME_DESKTOP': 'antigravity.desktop', 'DISABLE_AUTO_UPDATE': 'true', 'DESKTOP_SESSION': 'ubuntu', 'NVM_BIN': '/home/agonb/.nvm/versions/node/v24.18.0/bin', 'NVM_INC': '/home/agonb/.nvm/versions/node/v24.18.0/include/node', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'MANAGERPID': '2246', 'DBUS_STARTER_BUS_TYPE': 'session', 'SYSTEMD_EXEC_PID': '2699', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=48a8c39a0b47f16e48e4fd6e6a455bb3', 'ANTIGRAVITY_AGENT': '1', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '8473', 'AGY_BROWSER_ACTIVE_PORT_FILE': '/home/agonb/.config/Antigravity/DevToolsActivePort', 'NVM_DIR': '/home/agonb/.nvm', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'ZSH_TMUX_AUTOSTARTED': 'true', 'LOGNAME': 'agonb', 'AGY_BROWSER_WS_URL': 'ws://127.0.0.1:33337/devtools/browser/c84d1188-3dcb-4b84-948b-7eacd41471d0', 'JOURNAL_STREAM': '9:16104', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome\\x2dsession\\x2dmanager.slice/gnome-session-manager@ubuntu.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'agonb', 'TERM': 'dumb', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'PATH': '/home/agonb/.gemini/antigravity/bin:/home/agonb/.config/Antigravity/bin:/home/agonb/.local/bin:/home/agonb/.nvm/versions/node/v24.18.0/bin:/home/agonb/.opencode/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/agonb/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/agonb-Victus:@/tmp/.ICE-unix/2699,unix/agonb-Victus:/tmp/.ICE-unix/2699', 'INVOCATION_ID': '27fbf0863d9c419e91aa135497d3d71b', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': '', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:/opt/ros/jazzy', 'ANTIGRAVITY_PROJECT_ID': '8cfe502d-84e1-4504-b39a-3cb240dcf3fa', 'SHELL': '/bin/bash', 'ANTIGRAVITY_LS_ADDRESS': 'localhost:37193', 'QT_ACCESSIBILITY': '1', 'NO_AT_BRIDGE': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'ibus', 'ANTIGRAVITY_TRAJECTORY_ID': '1def8394-8c0d-4ca6-8725-c19ac9da0e8c', 'PWD': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_manipulation', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'ZSH_TMUX_AUTOSTART': 'false', 'RCUTILS_COLORIZED_OUTPUT': '1', 'NVM_CD_FLAGS': '', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=48a8c39a0b47f16e48e4fd6e6a455bb3', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'ANTIGRAVITY_CSRF_TOKEN': '0f01f0d6-919a-41c2-86b8-5086452076ce', 'CMAKE_PREFIX_PATH': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.059863] (warehouse_manipulation) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.103098] (-) TimerEvent: {}
+[0.203534] (-) TimerEvent: {}
+[0.304142] (-) TimerEvent: {}
+[0.406550] (-) TimerEvent: {}
+[0.479854] (warehouse_manipulation) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.494850] (warehouse_manipulation) StdoutLine: {'line': b'-- Found rclcpp: 28.1.21 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.507233] (-) TimerEvent: {}
+[0.580380] (warehouse_manipulation) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.598586] (warehouse_manipulation) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.607381] (-) TimerEvent: {}
+[0.623373] (warehouse_manipulation) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.653182] (warehouse_manipulation) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.709225] (-) TimerEvent: {}
+[0.796176] (warehouse_manipulation) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.799522] (warehouse_manipulation) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.809385] (-) TimerEvent: {}
+[0.909744] (-) TimerEvent: {}
+[0.953542] (warehouse_manipulation) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.010134] (-) TimerEvent: {}
+[1.099087] (warehouse_manipulation) StdoutLine: {'line': b'-- Found rclcpp_action: 28.1.21 (/opt/ros/jazzy/share/rclcpp_action/cmake)\n'}
+[1.110255] (-) TimerEvent: {}
+[1.182518] (warehouse_manipulation) StdoutLine: {'line': b'-- Found control_msgs: 5.9.0 (/opt/ros/jazzy/share/control_msgs/cmake)\n'}
+[1.210387] (-) TimerEvent: {}
+[1.310751] (-) TimerEvent: {}
+[1.412159] (-) TimerEvent: {}
+[1.489874] (warehouse_manipulation) StdoutLine: {'line': b'-- Found moveit_ros_planning_interface: 2.12.4 (/opt/ros/jazzy/share/moveit_ros_planning_interface/cmake)\n'}
+[1.512351] (-) TimerEvent: {}
+[1.532535] (warehouse_manipulation) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: date_time filesystem program_options system thread \n'}
+[1.613201] (-) TimerEvent: {}
+[1.714471] (-) TimerEvent: {}
+[1.815972] (-) TimerEvent: {}
+[1.917246] (-) TimerEvent: {}
+[1.928404] (warehouse_manipulation) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread \n'}
+[2.017435] (-) TimerEvent: {}
+[2.022285] (warehouse_manipulation) StdoutLine: {'line': b'-- Found parameter_traits: 0.7.3 (/opt/ros/jazzy/share/parameter_traits/cmake)\n'}
+[2.042804] (warehouse_manipulation) StderrLine: {'line': b'CMake Deprecation Warning at /opt/ros/jazzy/share/tl_expected/cmake/tl_expectedConfig.cmake:37 (message):\n'}
+[2.044024] (warehouse_manipulation) StderrLine: {'line': b"  Package 'tl_expected' is deprecated (This package will be removed in ROS 2\n"}
+[2.044649] (warehouse_manipulation) StderrLine: {'line': b'  Lyrical Luth.\n'}
+[2.044945] (warehouse_manipulation) StderrLine: {'line': b'\n'}
+[2.045221] (warehouse_manipulation) StderrLine: {'line': b'        Use tl/expected.hpp from libexpected-dev,\n'}
+[2.045502] (warehouse_manipulation) StderrLine: {'line': b'        or rcpputils/tl_expected/expected.hpp if the system header is not available)\n'}
+[2.045756] (warehouse_manipulation) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[2.045994] (warehouse_manipulation) StderrLine: {'line': b'  /opt/ros/jazzy/share/parameter_traits/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)\n'}
+[2.046222] (warehouse_manipulation) StderrLine: {'line': b'  /opt/ros/jazzy/share/parameter_traits/cmake/parameter_traitsConfig.cmake:41 (include)\n'}
+[2.048001] (warehouse_manipulation) StderrLine: {'line': b'  /opt/ros/jazzy/share/generate_parameter_library/cmake/generate_parameter_library-extras.cmake:30 (find_package)\n'}
+[2.048285] (warehouse_manipulation) StderrLine: {'line': b'  /opt/ros/jazzy/share/generate_parameter_library/cmake/generate_parameter_libraryConfig.cmake:41 (include)\n'}
+[2.048565] (warehouse_manipulation) StderrLine: {'line': b'  /opt/ros/jazzy/share/moveit_core/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)\n'}
+[2.048787] (warehouse_manipulation) StderrLine: {'line': b'  /opt/ros/jazzy/share/moveit_core/cmake/moveit_coreConfig.cmake:41 (include)\n'}
+[2.048999] (warehouse_manipulation) StderrLine: {'line': b'  /opt/ros/jazzy/share/moveit_ros_planning_interface/cmake/ament_cmake_export_dependencies-extras.cmake:21 (find_package)\n'}
+[2.049414] (warehouse_manipulation) StderrLine: {'line': b'  /opt/ros/jazzy/share/moveit_ros_planning_interface/cmake/moveit_ros_planning_interfaceConfig.cmake:41 (include)\n'}
+[2.049562] (warehouse_manipulation) StderrLine: {'line': b'  CMakeLists.txt:9 (find_package)\n'}
+[2.049689] (warehouse_manipulation) StderrLine: {'line': b'\n'}
+[2.049813] (warehouse_manipulation) StderrLine: {'line': b'\n'}
+[2.049932] (warehouse_manipulation) StdoutLine: {'line': b'-- Found rclcpp_lifecycle: 28.1.21 (/opt/ros/jazzy/share/rclcpp_lifecycle/cmake)\n'}
+[2.117666] (-) TimerEvent: {}
+[2.218314] (-) TimerEvent: {}
+[2.249643] (warehouse_manipulation) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[2.318447] (-) TimerEvent: {}
+[2.418923] (-) TimerEvent: {}
+[2.520746] (-) TimerEvent: {}
+[2.620021] (warehouse_manipulation) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread chrono \n'}
+[2.620401] (-) TimerEvent: {}
+[2.720421] (warehouse_manipulation) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: thread system filesystem regex date_time program_options \n'}
+[2.721758] (-) TimerEvent: {}
+[2.775244] (warehouse_manipulation) StdoutLine: {'line': b'-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: system filesystem date_time program_options thread \n'}
+[2.821858] (-) TimerEvent: {}
+[2.831434] (warehouse_manipulation) StdoutLine: {'line': b'-- Found warehouse_interfaces: 0.1.0 (/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/share/warehouse_interfaces/cmake)\n'}
+[2.922154] (-) TimerEvent: {}
+[3.000274] (warehouse_manipulation) StdoutLine: {'line': b'-- Configuring done (3.0s)\n'}
+[3.022267] (-) TimerEvent: {}
+[3.094262] (warehouse_manipulation) StdoutLine: {'line': b'-- Generating done (0.1s)\n'}
+[3.114953] (warehouse_manipulation) StdoutLine: {'line': b'-- Build files have been written to: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_manipulation\n'}
+[3.122393] (-) TimerEvent: {}
+[3.138433] (warehouse_manipulation) CommandEnded: {'returncode': 0}
+[3.140314] (warehouse_manipulation) JobProgress: {'identifier': 'warehouse_manipulation', 'progress': 'build'}
+[3.140367] (warehouse_manipulation) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_manipulation', '--', '-j12', '-l12'], 'cwd': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_manipulation', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'CHROME_DEVTOOLS_MCP_JS': '/home/agonb/Desktop/Antigravity/Antigravity/Antigravity-x64/resources/app.asar.unpacked/node_modules/chrome-devtools-mcp/build/src/bin/chrome-devtools-mcp.js', 'USER': 'agonb', 'ANTIGRAVITY_SOURCE_METADATA': '{"tool":{"conversationId":"550d9b1f-bc7e-4ed3-aa01-85e67f672d5b","stepIndex":627,"toolCall":{"id":"brxnrq1r","name":"run_command","argumentsJson":"{\\"CommandLine\\":\\"source /opt/ros/jazzy/setup.bash \\\\u0026\\\\u0026 colcon build --packages-select warehouse_manipulation --symlink-install --event-handlers console_direct+\\",\\"Cwd\\":\\"/home/agonb/Desktop/Robotica1-26/robotics/final_ws\\",\\"WaitMsBeforeAsync\\":2000,\\"toolAction\\":\\"Building warehouse_manipulation\\",\\"toolSummary\\":\\"Build warehouse_manipulation\\"}","thinkingSignature":"EogICoUIAQw51sfgOxJAurGHoYQvoKDv4iZQ8DhxVh05EG1k0Jvg9R0rYS/QN4EluCDtdnr8jH+FjlulWESFZSSaYbq3Bd02/aYu816eGOlAvnEkP/AD1oFf4+9ut4FmMaOFqMpl7scwXRDtku9WBh2a0KkEmD+tT8HTf2OhPH/A+byl/ECtbkvlrtLCDFqH10pUNKijm/1Pq5nziMpV/FV0mYxLV6ECn9qgXoOIe7K2Gitj520XzQa5Qvcw5/YMoEL3tstW9zC7oRdzjHtP9E5DgmbFt0mbfgWWXZ4qDFIITWtPWCiL7RYhjMH2o2g0sD/M+ZQ+PE90yPoOLMGfoZsuvsDYgQSDw5qMtfoFav2umsLYc9mD/qvXdSx+koumbyV36NaS2c/whjp05DN+AQyub78aLbGYl05mt50vtdx71LNF4GzOoDQ3Ob8wPIfQG6ZfUeEUiOvL/0kesM3lX7+cUSHx9/wcVwpbjK5NgNY0iD8hWKuKNWe+e7UV05UU4WKZbVoY93j3XsZQB4w88DvONWxm5SHsog/N8A6RWqtmfLC18p46dKS8WQ+TG4Nnhdu3T1t7nv+QbA9U7GYrbwvTbQmo+k6wPSB4UbZ0R2ZRRJ6OwEG6YghUO1m3pb4ndeMxwWATk28EABMoPOC3qWsyDMYi5h3WE6D9lD1ZoDlSHJgwG4LMcHd7lczcA5bOajJ9plF4OdtV25b/PRa2SybYr1nkG3hScLUdIc+q7M8o0U4XdhQSwtuDp8JYyA11OjVPHuUSBuhefTj4Bqr/ArEGg0adDLpEolt2v/beqvBuYC6u/Sz/z7s9eAoJbcgsHoRRQdTuH2U1l9rMKfNi44aHGs8yw0U6kRmIeR7a7F6yOqy+pke+c9iHeYkOPO0Xgmx9tISVCZNP34ORAFV3EdVqb2Nr0S/acnfS2dEv208p5L4fH2uRNEuWw8hpbjEBaL4Awhu0OmdZ0iVxfTHFts4oN131rvoR+GPGk/t12s0UW6oR3fERbr5DiG6Em/mO/E2IplrXPc7GXZqSnuxkc4RsM14CDcseOobzesonhkh9Rib+wlWGsAVT7clf9lrfgvVyBihWevEonlQtGiBfnsPZUU0olN/1snYBa/aJwkJbuJRjuA3GGpAE2jUf5lgZh9MRfAeShEoNR/PDXzDv5rX1v2sPowlG6yqNya4wd01WB1+C98dAZZmflUpvxdywiSm9hfj8eFc/juVVvGxTrfTEFsisdENlG0KrKO9rexTU8hUJxJPLWxEl1zCkQx57DToNxTWS5zOGGoDz5/5hasSs6Jzsxwt03XIyBlr+6q6tK/TisW5FpNsot2bj8vLGxscNR3fGM0DPaDykB/tY7+eyzhk+1fAGWqPc","originalName":"run_command"}}}', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/agonb', 'CHROME_DESKTOP': 'antigravity.desktop', 'DISABLE_AUTO_UPDATE': 'true', 'DESKTOP_SESSION': 'ubuntu', 'NVM_BIN': '/home/agonb/.nvm/versions/node/v24.18.0/bin', 'NVM_INC': '/home/agonb/.nvm/versions/node/v24.18.0/include/node', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'MANAGERPID': '2246', 'DBUS_STARTER_BUS_TYPE': 'session', 'SYSTEMD_EXEC_PID': '2699', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=48a8c39a0b47f16e48e4fd6e6a455bb3', 'ANTIGRAVITY_AGENT': '1', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '8473', 'AGY_BROWSER_ACTIVE_PORT_FILE': '/home/agonb/.config/Antigravity/DevToolsActivePort', 'NVM_DIR': '/home/agonb/.nvm', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'ZSH_TMUX_AUTOSTARTED': 'true', 'LOGNAME': 'agonb', 'AGY_BROWSER_WS_URL': 'ws://127.0.0.1:33337/devtools/browser/c84d1188-3dcb-4b84-948b-7eacd41471d0', 'JOURNAL_STREAM': '9:16104', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome\\x2dsession\\x2dmanager.slice/gnome-session-manager@ubuntu.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'agonb', 'TERM': 'dumb', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'PATH': '/home/agonb/.gemini/antigravity/bin:/home/agonb/.config/Antigravity/bin:/home/agonb/.local/bin:/home/agonb/.nvm/versions/node/v24.18.0/bin:/home/agonb/.opencode/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/agonb/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/agonb-Victus:@/tmp/.ICE-unix/2699,unix/agonb-Victus:/tmp/.ICE-unix/2699', 'INVOCATION_ID': '27fbf0863d9c419e91aa135497d3d71b', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': '', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:/opt/ros/jazzy', 'ANTIGRAVITY_PROJECT_ID': '8cfe502d-84e1-4504-b39a-3cb240dcf3fa', 'SHELL': '/bin/bash', 'ANTIGRAVITY_LS_ADDRESS': 'localhost:37193', 'QT_ACCESSIBILITY': '1', 'NO_AT_BRIDGE': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'ibus', 'ANTIGRAVITY_TRAJECTORY_ID': '1def8394-8c0d-4ca6-8725-c19ac9da0e8c', 'PWD': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_manipulation', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'ZSH_TMUX_AUTOSTART': 'false', 'RCUTILS_COLORIZED_OUTPUT': '1', 'NVM_CD_FLAGS': '', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=48a8c39a0b47f16e48e4fd6e6a455bb3', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'ANTIGRAVITY_CSRF_TOKEN': '0f01f0d6-919a-41c2-86b8-5086452076ce', 'CMAKE_PREFIX_PATH': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[3.222487] (-) TimerEvent: {}
+[3.251226] (warehouse_manipulation) StdoutLine: {'line': b'[ 33%] Built target demo_pick_place\n'}
+[3.305094] (warehouse_manipulation) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/pick_product_server.dir/src/pick_product_server.cpp.o\x1b[0m\n'}
+[3.322853] (-) TimerEvent: {}
+[3.423200] (-) TimerEvent: {}
+[3.524188] (-) TimerEvent: {}
+[3.624486] (-) TimerEvent: {}
+[3.725741] (-) TimerEvent: {}
+[3.826069] (-) TimerEvent: {}
+[3.927385] (-) TimerEvent: {}
+[4.027664] (-) TimerEvent: {}
+[4.128095] (-) TimerEvent: {}
+[4.228570] (-) TimerEvent: {}
+[4.329385] (-) TimerEvent: {}
+[4.429744] (-) TimerEvent: {}
+[4.530116] (-) TimerEvent: {}
+[4.630728] (-) TimerEvent: {}
+[4.731957] (-) TimerEvent: {}
+[4.833422] (-) TimerEvent: {}
+[4.933764] (-) TimerEvent: {}
+[5.034077] (-) TimerEvent: {}
+[5.134575] (-) TimerEvent: {}
+[5.235021] (-) TimerEvent: {}
+[5.335309] (-) TimerEvent: {}
+[5.435887] (-) TimerEvent: {}
+[5.536758] (-) TimerEvent: {}
+[5.637087] (-) TimerEvent: {}
+[5.737798] (-) TimerEvent: {}
+[5.838194] (-) TimerEvent: {}
+[5.939427] (-) TimerEvent: {}
+[6.040519] (-) TimerEvent: {}
+[6.140849] (-) TimerEvent: {}
+[6.241238] (-) TimerEvent: {}
+[6.341695] (-) TimerEvent: {}
+[6.442076] (-) TimerEvent: {}
+[6.542588] (-) TimerEvent: {}
+[6.642992] (-) TimerEvent: {}
+[6.743343] (-) TimerEvent: {}
+[6.844021] (-) TimerEvent: {}
+[6.945682] (-) TimerEvent: {}
+[7.045974] (-) TimerEvent: {}
+[7.146304] (-) TimerEvent: {}
+[7.246774] (-) TimerEvent: {}
+[7.348298] (-) TimerEvent: {}
+[7.448685] (-) TimerEvent: {}
+[7.548993] (-) TimerEvent: {}
+[7.649372] (-) TimerEvent: {}
+[7.749752] (-) TimerEvent: {}
+[7.850120] (-) TimerEvent: {}
+[7.950434] (-) TimerEvent: {}
+[8.050761] (-) TimerEvent: {}
+[8.151102] (-) TimerEvent: {}
+[8.251413] (-) TimerEvent: {}
+[8.351724] (-) TimerEvent: {}
+[8.452028] (-) TimerEvent: {}
+[8.552974] (-) TimerEvent: {}
+[8.653386] (-) TimerEvent: {}
+[8.753834] (-) TimerEvent: {}
+[8.854349] (-) TimerEvent: {}
+[8.955239] (-) TimerEvent: {}
+[9.056255] (-) TimerEvent: {}
+[9.156826] (-) TimerEvent: {}
+[9.257161] (-) TimerEvent: {}
+[9.357732] (-) TimerEvent: {}
+[9.458125] (-) TimerEvent: {}
+[9.558677] (-) TimerEvent: {}
+[9.658994] (-) TimerEvent: {}
+[9.760139] (-) TimerEvent: {}
+[9.860485] (-) TimerEvent: {}
+[9.889827] (warehouse_manipulation) StderrLine: {'line': b'/home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_manipulation/src/pick_product_server.cpp: In constructor \xe2\x80\x98PickProductServer::PickProductServer(const rclcpp::Node::SharedPtr&)\xe2\x80\x99:\n'}
+[9.890415] (warehouse_manipulation) StderrLine: {'line': b'/home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_manipulation/src/pick_product_server.cpp:73:71: warning: \xe2\x80\x98typename rclcpp::Client<ServiceT>::SharedPtr rclcpp::Node::create_client(const std::string&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr) [with ServiceT = std_srvs::srv::Empty; typename rclcpp::Client<ServiceT>::SharedPtr = std::shared_ptr<rclcpp::Client<std_srvs::srv::Empty> >; std::string = std::__cxx11::basic_string<char>; rmw_qos_profile_t = rmw_qos_profile_s; rclcpp::CallbackGroup::SharedPtr = std::shared_ptr<rclcpp::CallbackGroup>]\xe2\x80\x99 is deprecated: use rclcpp::QoS instead of rmw_qos_profile_t [-Wdeprecated-declarations]\n'}
+[9.890639] (warehouse_manipulation) StderrLine: {'line': b'   73 |     clear_octomap_client_ = node_->create_client<std_srvs::srv::Empty>(\n'}
+[9.890771] (warehouse_manipulation) StderrLine: {'line': b'      |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n'}
+[9.890880] (warehouse_manipulation) StderrLine: {'line': b'   74 |       "/clear_octomap", rmw_qos_profile_services_default, callback_group_);\n'}
+[9.891298] (warehouse_manipulation) StderrLine: {'line': b'      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'}
+[9.891538] (warehouse_manipulation) StderrLine: {'line': b'In file included from /opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:1663,\n'}
+[9.891770] (warehouse_manipulation) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/moveit_core/moveit/kinematics_base/kinematics_base.hpp:43,\n'}
+[9.891994] (warehouse_manipulation) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/moveit_core/moveit/robot_model/joint_model_group.hpp:42,\n'}
+[9.892089] (warehouse_manipulation) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/moveit_core/moveit/robot_model/robot_model.hpp:45,\n'}
+[9.892285] (warehouse_manipulation) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/moveit_core/moveit/robot_state/robot_state.hpp:40,\n'}
+[9.892466] (warehouse_manipulation) StderrLine: {'line': b'                 from /opt/ros/jazzy/include/moveit_ros_planning_interface/moveit/move_group_interface/move_group_interface.hpp:41,\n'}
+[9.892562] (warehouse_manipulation) StderrLine: {'line': b'                 from /home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_manipulation/src/pick_product_server.cpp:11:\n'}
+[9.892651] (warehouse_manipulation) StderrLine: {'line': b'/opt/ros/jazzy/include/rclcpp/rclcpp/node_impl.hpp:159:1: note: declared here\n'}
+[9.892726] (warehouse_manipulation) StderrLine: {'line': b'  159 | Node::create_client(\n'}
+[9.892801] (warehouse_manipulation) StderrLine: {'line': b'      | ^~~~\n'}
+[9.960603] (-) TimerEvent: {}
+[10.060936] (-) TimerEvent: {}
+[10.161503] (-) TimerEvent: {}
+[10.262056] (-) TimerEvent: {}
+[10.362458] (-) TimerEvent: {}
+[10.463648] (-) TimerEvent: {}
+[10.564158] (-) TimerEvent: {}
+[10.664533] (-) TimerEvent: {}
+[10.765226] (-) TimerEvent: {}
+[10.866960] (-) TimerEvent: {}
+[10.967346] (-) TimerEvent: {}
+[11.068305] (-) TimerEvent: {}
+[11.170902] (-) TimerEvent: {}
+[11.271378] (-) TimerEvent: {}
+[11.371828] (-) TimerEvent: {}
+[11.472238] (-) TimerEvent: {}
+[11.573608] (-) TimerEvent: {}
+[11.674505] (-) TimerEvent: {}
+[11.774951] (-) TimerEvent: {}
+[11.877443] (-) TimerEvent: {}
+[11.977856] (-) TimerEvent: {}
+[12.078242] (-) TimerEvent: {}
+[12.178836] (-) TimerEvent: {}
+[12.280202] (-) TimerEvent: {}
+[12.381297] (-) TimerEvent: {}
+[12.481673] (-) TimerEvent: {}
+[12.583121] (-) TimerEvent: {}
+[12.684467] (-) TimerEvent: {}
+[12.784904] (-) TimerEvent: {}
+[12.886928] (-) TimerEvent: {}
+[12.987468] (-) TimerEvent: {}
+[13.090692] (-) TimerEvent: {}
+[13.191094] (-) TimerEvent: {}
+[13.291726] (-) TimerEvent: {}
+[13.392950] (-) TimerEvent: {}
+[13.493425] (-) TimerEvent: {}
+[13.594457] (-) TimerEvent: {}
+[13.695241] (-) TimerEvent: {}
+[13.795966] (-) TimerEvent: {}
+[13.896473] (-) TimerEvent: {}
+[13.996913] (-) TimerEvent: {}
+[14.097300] (-) TimerEvent: {}
+[14.197708] (-) TimerEvent: {}
+[14.298437] (-) TimerEvent: {}
+[14.398823] (-) TimerEvent: {}
+[14.499877] (-) TimerEvent: {}
+[14.600270] (-) TimerEvent: {}
+[14.700668] (-) TimerEvent: {}
+[14.802045] (-) TimerEvent: {}
+[14.902493] (-) TimerEvent: {}
+[15.003883] (-) TimerEvent: {}
+[15.104337] (-) TimerEvent: {}
+[15.206592] (-) TimerEvent: {}
+[15.307572] (-) TimerEvent: {}
+[15.407955] (-) TimerEvent: {}
+[15.508690] (-) TimerEvent: {}
+[15.610644] (-) TimerEvent: {}
+[15.712924] (-) TimerEvent: {}
+[15.813394] (-) TimerEvent: {}
+[15.914636] (-) TimerEvent: {}
+[16.015304] (-) TimerEvent: {}
+[16.115884] (-) TimerEvent: {}
+[16.216242] (-) TimerEvent: {}
+[16.316754] (-) TimerEvent: {}
+[16.417481] (-) TimerEvent: {}
+[16.518032] (-) TimerEvent: {}
+[16.618413] (-) TimerEvent: {}
+[16.718868] (-) TimerEvent: {}
+[16.820937] (-) TimerEvent: {}
+[16.921367] (-) TimerEvent: {}
+[17.021840] (-) TimerEvent: {}
+[17.123321] (-) TimerEvent: {}
+[17.223985] (-) TimerEvent: {}
+[17.324392] (-) TimerEvent: {}
+[17.424850] (-) TimerEvent: {}
+[17.525326] (-) TimerEvent: {}
+[17.626817] (-) TimerEvent: {}
+[17.727194] (-) TimerEvent: {}
+[17.827620] (-) TimerEvent: {}
+[17.929828] (-) TimerEvent: {}
+[18.030818] (-) TimerEvent: {}
+[18.131331] (-) TimerEvent: {}
+[18.231788] (-) TimerEvent: {}
+[18.332153] (-) TimerEvent: {}
+[18.432529] (-) TimerEvent: {}
+[18.532925] (-) TimerEvent: {}
+[18.634534] (-) TimerEvent: {}
+[18.736514] (-) TimerEvent: {}
+[18.836915] (-) TimerEvent: {}
+[18.937313] (-) TimerEvent: {}
+[19.037696] (-) TimerEvent: {}
+[19.138144] (-) TimerEvent: {}
+[19.238542] (-) TimerEvent: {}
+[19.338954] (-) TimerEvent: {}
+[19.439399] (-) TimerEvent: {}
+[19.539932] (-) TimerEvent: {}
+[19.640563] (-) TimerEvent: {}
+[19.741104] (-) TimerEvent: {}
+[19.841632] (-) TimerEvent: {}
+[19.942054] (-) TimerEvent: {}
+[20.043455] (-) TimerEvent: {}
+[20.143936] (-) TimerEvent: {}
+[20.244460] (-) TimerEvent: {}
+[20.344807] (-) TimerEvent: {}
+[20.445461] (-) TimerEvent: {}
+[20.547301] (-) TimerEvent: {}
+[20.647698] (-) TimerEvent: {}
+[20.749692] (-) TimerEvent: {}
+[20.851540] (-) TimerEvent: {}
+[20.952435] (-) TimerEvent: {}
+[21.052806] (-) TimerEvent: {}
+[21.153332] (-) TimerEvent: {}
+[21.253823] (-) TimerEvent: {}
+[21.354143] (-) TimerEvent: {}
+[21.454517] (-) TimerEvent: {}
+[21.555114] (-) TimerEvent: {}
+[21.574779] (warehouse_manipulation) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX executable pick_product_server\x1b[0m\n'}
+[21.655461] (-) TimerEvent: {}
+[21.755798] (-) TimerEvent: {}
+[21.856170] (-) TimerEvent: {}
+[21.957065] (-) TimerEvent: {}
+[22.058885] (-) TimerEvent: {}
+[22.159313] (-) TimerEvent: {}
+[22.259958] (-) TimerEvent: {}
+[22.360307] (-) TimerEvent: {}
+[22.460759] (-) TimerEvent: {}
+[22.494653] (warehouse_manipulation) StdoutLine: {'line': b'[ 66%] Built target pick_product_server\n'}
+[22.542408] (warehouse_manipulation) StdoutLine: {'line': b'[100%] Built target place_product_server\n'}
+[22.557717] (warehouse_manipulation) CommandEnded: {'returncode': 0}
+[22.559661] (warehouse_manipulation) JobProgress: {'identifier': 'warehouse_manipulation', 'progress': 'install'}
+[22.560941] (-) TimerEvent: {}
+[22.573092] (warehouse_manipulation) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_manipulation'], 'cwd': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_manipulation', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'CHROME_DEVTOOLS_MCP_JS': '/home/agonb/Desktop/Antigravity/Antigravity/Antigravity-x64/resources/app.asar.unpacked/node_modules/chrome-devtools-mcp/build/src/bin/chrome-devtools-mcp.js', 'USER': 'agonb', 'ANTIGRAVITY_SOURCE_METADATA': '{"tool":{"conversationId":"550d9b1f-bc7e-4ed3-aa01-85e67f672d5b","stepIndex":627,"toolCall":{"id":"brxnrq1r","name":"run_command","argumentsJson":"{\\"CommandLine\\":\\"source /opt/ros/jazzy/setup.bash \\\\u0026\\\\u0026 colcon build --packages-select warehouse_manipulation --symlink-install --event-handlers console_direct+\\",\\"Cwd\\":\\"/home/agonb/Desktop/Robotica1-26/robotics/final_ws\\",\\"WaitMsBeforeAsync\\":2000,\\"toolAction\\":\\"Building warehouse_manipulation\\",\\"toolSummary\\":\\"Build warehouse_manipulation\\"}","thinkingSignature":"EogICoUIAQw51sfgOxJAurGHoYQvoKDv4iZQ8DhxVh05EG1k0Jvg9R0rYS/QN4EluCDtdnr8jH+FjlulWESFZSSaYbq3Bd02/aYu816eGOlAvnEkP/AD1oFf4+9ut4FmMaOFqMpl7scwXRDtku9WBh2a0KkEmD+tT8HTf2OhPH/A+byl/ECtbkvlrtLCDFqH10pUNKijm/1Pq5nziMpV/FV0mYxLV6ECn9qgXoOIe7K2Gitj520XzQa5Qvcw5/YMoEL3tstW9zC7oRdzjHtP9E5DgmbFt0mbfgWWXZ4qDFIITWtPWCiL7RYhjMH2o2g0sD/M+ZQ+PE90yPoOLMGfoZsuvsDYgQSDw5qMtfoFav2umsLYc9mD/qvXdSx+koumbyV36NaS2c/whjp05DN+AQyub78aLbGYl05mt50vtdx71LNF4GzOoDQ3Ob8wPIfQG6ZfUeEUiOvL/0kesM3lX7+cUSHx9/wcVwpbjK5NgNY0iD8hWKuKNWe+e7UV05UU4WKZbVoY93j3XsZQB4w88DvONWxm5SHsog/N8A6RWqtmfLC18p46dKS8WQ+TG4Nnhdu3T1t7nv+QbA9U7GYrbwvTbQmo+k6wPSB4UbZ0R2ZRRJ6OwEG6YghUO1m3pb4ndeMxwWATk28EABMoPOC3qWsyDMYi5h3WE6D9lD1ZoDlSHJgwG4LMcHd7lczcA5bOajJ9plF4OdtV25b/PRa2SybYr1nkG3hScLUdIc+q7M8o0U4XdhQSwtuDp8JYyA11OjVPHuUSBuhefTj4Bqr/ArEGg0adDLpEolt2v/beqvBuYC6u/Sz/z7s9eAoJbcgsHoRRQdTuH2U1l9rMKfNi44aHGs8yw0U6kRmIeR7a7F6yOqy+pke+c9iHeYkOPO0Xgmx9tISVCZNP34ORAFV3EdVqb2Nr0S/acnfS2dEv208p5L4fH2uRNEuWw8hpbjEBaL4Awhu0OmdZ0iVxfTHFts4oN131rvoR+GPGk/t12s0UW6oR3fERbr5DiG6Em/mO/E2IplrXPc7GXZqSnuxkc4RsM14CDcseOobzesonhkh9Rib+wlWGsAVT7clf9lrfgvVyBihWevEonlQtGiBfnsPZUU0olN/1snYBa/aJwkJbuJRjuA3GGpAE2jUf5lgZh9MRfAeShEoNR/PDXzDv5rX1v2sPowlG6yqNya4wd01WB1+C98dAZZmflUpvxdywiSm9hfj8eFc/juVVvGxTrfTEFsisdENlG0KrKO9rexTU8hUJxJPLWxEl1zCkQx57DToNxTWS5zOGGoDz5/5hasSs6Jzsxwt03XIyBlr+6q6tK/TisW5FpNsot2bj8vLGxscNR3fGM0DPaDykB/tY7+eyzhk+1fAGWqPc","originalName":"run_command"}}}', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib:/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/agonb', 'CHROME_DESKTOP': 'antigravity.desktop', 'DISABLE_AUTO_UPDATE': 'true', 'DESKTOP_SESSION': 'ubuntu', 'NVM_BIN': '/home/agonb/.nvm/versions/node/v24.18.0/bin', 'NVM_INC': '/home/agonb/.nvm/versions/node/v24.18.0/include/node', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'MANAGERPID': '2246', 'DBUS_STARTER_BUS_TYPE': 'session', 'SYSTEMD_EXEC_PID': '2699', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=48a8c39a0b47f16e48e4fd6e6a455bb3', 'ANTIGRAVITY_AGENT': '1', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '8473', 'AGY_BROWSER_ACTIVE_PORT_FILE': '/home/agonb/.config/Antigravity/DevToolsActivePort', 'NVM_DIR': '/home/agonb/.nvm', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'ROS_DISTRO': 'jazzy', 'ZSH_TMUX_AUTOSTARTED': 'true', 'LOGNAME': 'agonb', 'AGY_BROWSER_WS_URL': 'ws://127.0.0.1:33337/devtools/browser/c84d1188-3dcb-4b84-948b-7eacd41471d0', 'JOURNAL_STREAM': '9:16104', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome\\x2dsession\\x2dmanager.slice/gnome-session-manager@ubuntu.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'agonb', 'TERM': 'dumb', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'WINDOWPATH': '2', 'PATH': '/home/agonb/.gemini/antigravity/bin:/home/agonb/.config/Antigravity/bin:/home/agonb/.local/bin:/home/agonb/.nvm/versions/node/v24.18.0/bin:/home/agonb/.opencode/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/home/agonb/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/agonb-Victus:@/tmp/.ICE-unix/2699,unix/agonb-Victus:/tmp/.ICE-unix/2699', 'INVOCATION_ID': '27fbf0863d9c419e91aa135497d3d71b', 'XDG_MENU_PREFIX': 'gnome-', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': '', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:/opt/ros/jazzy', 'ANTIGRAVITY_PROJECT_ID': '8cfe502d-84e1-4504-b39a-3cb240dcf3fa', 'SHELL': '/bin/bash', 'ANTIGRAVITY_LS_ADDRESS': 'localhost:37193', 'QT_ACCESSIBILITY': '1', 'NO_AT_BRIDGE': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'ibus', 'ANTIGRAVITY_TRAJECTORY_ID': '1def8394-8c0d-4ca6-8725-c19ac9da0e8c', 'PWD': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_manipulation', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'ZSH_TMUX_AUTOSTART': 'false', 'RCUTILS_COLORIZED_OUTPUT': '1', 'NVM_CD_FLAGS': '', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=48a8c39a0b47f16e48e4fd6e6a455bb3', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'ANTIGRAVITY_CSRF_TOKEN': '0f01f0d6-919a-41c2-86b8-5086452076ce', 'CMAKE_PREFIX_PATH': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[22.582377] (warehouse_manipulation) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[22.582993] (warehouse_manipulation) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[22.583266] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/lib/warehouse_manipulation/demo_pick_place\n'}
+[22.583644] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/lib/warehouse_manipulation/place_product_server\n'}
+[22.583906] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/lib/warehouse_manipulation/pick_product_server\n'}
+[22.584297] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/launch/pick_product_server.launch.py\n'}
+[22.584568] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/launch/place_product_server.launch.py\n'}
+[22.584956] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/ament_index/resource_index/package_run_dependencies/warehouse_manipulation\n'}
+[22.585133] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/ament_index/resource_index/parent_prefix_path/warehouse_manipulation\n'}
+[22.587430] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/environment/ament_prefix_path.sh\n'}
+[22.588825] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/environment/ament_prefix_path.dsv\n'}
+[22.589085] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/environment/path.sh\n'}
+[22.590222] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/environment/path.dsv\n'}
+[22.590725] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/local_setup.bash\n'}
+[22.590878] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/local_setup.sh\n'}
+[22.591017] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/local_setup.zsh\n'}
+[22.591138] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/local_setup.dsv\n'}
+[22.591267] (warehouse_manipulation) StdoutLine: {'line': b'-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/package.dsv\n'}
+[22.597517] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/ament_index/resource_index/packages/warehouse_manipulation\n'}
+[22.599367] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/cmake/warehouse_manipulationConfig.cmake\n'}
+[22.599989] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/cmake/warehouse_manipulationConfig-version.cmake\n'}
+[22.602130] (warehouse_manipulation) StdoutLine: {'line': b'-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation/share/warehouse_manipulation/package.xml\n'}
+[22.602238] (warehouse_manipulation) CommandEnded: {'returncode': 0}
+[22.633370] (warehouse_manipulation) JobEnded: {'identifier': 'warehouse_manipulation', 'rc': 0}
+[22.634695] (-) EventReactorShutdown: {}

@@ -1,0 +1,26 @@
+[ 20%] Built target inventory_store
+[ 40%] Built target gtest
+[ 60%] Built target gtest_main
+[ 80%] Built target test_inventory_store
+[100%] Built target inventory_manager
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/lib/libinventory_store.a
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/lib/warehouse_inventory/inventory_manager
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/include/warehouse_inventory/inventory_store.hpp
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/launch/inventory_manager.launch.py
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/ament_index/resource_index/package_run_dependencies/warehouse_inventory
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/ament_index/resource_index/parent_prefix_path/warehouse_inventory
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/environment/path.sh
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/environment/path.dsv
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/local_setup.bash
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/local_setup.sh
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/local_setup.zsh
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/local_setup.dsv
+-- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/package.dsv
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/ament_index/resource_index/packages/warehouse_inventory
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/cmake/warehouse_inventoryConfig.cmake
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/cmake/warehouse_inventoryConfig-version.cmake
+-- Up-to-date symlink: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory/share/warehouse_inventory/package.xml
