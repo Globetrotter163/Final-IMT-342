@@ -44,7 +44,7 @@
     <sensor type="gpu_lidar" name="lidar_sensor">
       <pose>0 0 0 0 0 0</pose>
       <visualize>true</visualize>
-      <update_rate>10.0</update_rate>
+      <update_rate>5.0</update_rate>
       <ray>
         <scan>
           <horizontal>
@@ -89,7 +89,9 @@
   <joint name="camera_joint" type="fixed">
     <parent link="base_link"/>
     <child link="camera_link"/>
-    <origin xyz="0.3 0 ${0.25/2 - 0.02}" rpy="0 0 0"/>
+    <!-- Raise the camera above the conveyor edge so it can see product tags
+         during the reception stop without the belt occluding the marker. -->
+    <origin xyz="0.3 0 0.45" rpy="0 -0.35 0"/>
   </joint>
 
   <link name="camera_link_optical"/>
@@ -120,6 +122,64 @@
       </camera>
       <topic>camera/image_raw</topic>
       <gz_frame_id>camera_link_optical</gz_frame_id>
+    </sensor>
+  </gazebo>
+
+  <!-- Downward-facing camera for floor landmarks -->
+  <link name="down_camera_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.03"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.03"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.04"/>
+      <inertia ixx="0.00005" ixy="0.0" ixz="0.0" iyy="0.00005" iyz="0.0" izz="0.00005"/>
+    </inertial>
+  </link>
+
+  <joint name="down_camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="down_camera_link"/>
+    <origin xyz="0.18 0 0.08" rpy="0 ${-pi/2} 0"/>
+  </joint>
+
+  <link name="down_camera_link_optical"/>
+
+  <joint name="down_camera_optical_joint" type="fixed">
+    <parent link="down_camera_link"/>
+    <child link="down_camera_link_optical"/>
+    <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+  </joint>
+
+  <gazebo reference="down_camera_link">
+    <sensor type="camera" name="down_camera_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>20.0</update_rate>
+      <always_on>true</always_on>
+      <camera name="down_rgb_camera">
+        <horizontal_fov>1.2217304764</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>5.0</far>
+        </clip>
+      </camera>
+      <topic>down_camera/image_raw</topic>
+      <gz_frame_id>down_camera_link_optical</gz_frame_id>
     </sensor>
   </gazebo>
 

@@ -9,6 +9,7 @@ from std_srvs.srv import Empty
 
 from warehouse_interfaces.srv import DashboardCommand, SpawnProduct
 from warehouse_interfaces.msg import DetectedProduct
+from slam_toolbox.srv import Pause
 from rclpy.qos import QoSProfile, QoSDurabilityPolicy, QoSReliabilityPolicy, QoSHistoryPolicy
 from nav2_msgs.action import Spin, NavigateToPose
 from geometry_msgs.msg import PoseStamped
@@ -35,8 +36,10 @@ class DashboardOrchestrator(Node):
             self.command_callback
         )
         
-        self.spin_client = ActionClient(self, Spin, 'spin')
-        self.nav_client = ActionClient(self, NavigateToPose, 'navigate_to_pose')
+        self.spin_client = ActionClient(self, Spin, '/spin')
+        self.nav_client = ActionClient(self, NavigateToPose, '/navigate_to_pose')
+        
+        self.slam_pause_client = self.create_client(Pause, '/slam_toolbox/pause_new_measurements')
         
         # Misión trigger
         qos = QoSProfile(
@@ -179,6 +182,31 @@ class DashboardOrchestrator(Node):
         except Exception as e:
             self.get_logger().error(f"DB Error: {e}")
             return False, f"DB Error: {e}"
+
+
+    def spin_goal_response_callback(self, future):
+        goal_handle = future.result()
+        if not goal_handle.accepted:
+            self.get_logger().error('Spin goal rejected :(')
+            return
+        
+        self.get_logger().info('Spin goal accepted, waiting for result...')
+        get_result_future = goal_handle.get_result_async()
+        get_result_future.add_done_callback(self.spin_result_callback)
+
+    def spin_result_callback(self, future):
+        result = future.result().result
+        self.get_logger().info('Spin complete! Pausing SLAM toolbox...')
+        
+        if self.slam_pause_client.wait_for_service(timeout_sec=2.0):
+            req = Pause.Request()
+            # The pause toggle doesn't have a specific pause/unpause boolean in jazzy?
+            # It just toggles, or maybe Pause.srv has pause_new_measurements? Let's check Pause.srv.
+            # Usually Pause.srv has empty request and returns status.
+            self.slam_pause_client.call_async(req)
+            self.get_logger().info('SLAM toolbox mapping paused successfully.')
+        else:
+            self.get_logger().warn('Could not contact /slam_toolbox/pause_new_measurements')
 
 def main(args=None):
     rclpy.init(args=args)
