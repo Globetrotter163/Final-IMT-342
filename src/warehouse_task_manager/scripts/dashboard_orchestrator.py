@@ -135,10 +135,18 @@ class DashboardOrchestrator(Node):
 
     def spin_result_callback(self, future):
         result = future.result().result
-        self.get_logger().info('Spin completed. Triggering map save...')
+        self.get_logger().info('Spin completed. Triggering map save and pausing SLAM toolbox...')
+        
         # Call map saver CLI in a separate process
         os.system("ros2 run nav2_map_server map_saver_cli -f /tmp/warehouse_map &")
-
+        
+        # Pause SLAM toolbox
+        if self.slam_pause_client.wait_for_service(timeout_sec=2.0):
+            req = Pause.Request()
+            self.slam_pause_client.call_async(req)
+            self.get_logger().info('SLAM toolbox mapping paused successfully.')
+        else:
+            self.get_logger().warn('Could not contact /slam_toolbox/pause_new_measurements')
     def execute_return_to_station(self):
         if not self.nav_client.wait_for_server(timeout_sec=5.0):
             self.get_logger().error('NavigateToPose server not available')
@@ -182,31 +190,6 @@ class DashboardOrchestrator(Node):
         except Exception as e:
             self.get_logger().error(f"DB Error: {e}")
             return False, f"DB Error: {e}"
-
-
-    def spin_goal_response_callback(self, future):
-        goal_handle = future.result()
-        if not goal_handle.accepted:
-            self.get_logger().error('Spin goal rejected :(')
-            return
-        
-        self.get_logger().info('Spin goal accepted, waiting for result...')
-        get_result_future = goal_handle.get_result_async()
-        get_result_future.add_done_callback(self.spin_result_callback)
-
-    def spin_result_callback(self, future):
-        result = future.result().result
-        self.get_logger().info('Spin complete! Pausing SLAM toolbox...')
-        
-        if self.slam_pause_client.wait_for_service(timeout_sec=2.0):
-            req = Pause.Request()
-            # The pause toggle doesn't have a specific pause/unpause boolean in jazzy?
-            # It just toggles, or maybe Pause.srv has pause_new_measurements? Let's check Pause.srv.
-            # Usually Pause.srv has empty request and returns status.
-            self.slam_pause_client.call_async(req)
-            self.get_logger().info('SLAM toolbox mapping paused successfully.')
-        else:
-            self.get_logger().warn('Could not contact /slam_toolbox/pause_new_measurements')
 
 def main(args=None):
     rclpy.init(args=args)
