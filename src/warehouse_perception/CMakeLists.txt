@@ -38,7 +38,13 @@ install(TARGETS
   DESTINATION lib/${PROJECT_NAME}
 )
 
-install(DIRECTORY launch
+install(PROGRAMS
+  src/apriltag_detector.py
+  src/landmark_manager.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(DIRECTORY launch config
   DESTINATION share/${PROJECT_NAME}
   PATTERN "__pycache__" EXCLUDE
   PATTERN "*.pyc" EXCLUDE

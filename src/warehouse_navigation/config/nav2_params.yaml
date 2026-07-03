@@ -70,7 +70,7 @@ controller_server:
     controller_frequency: 20.0
     costmap_update_timeout: 0.30
     min_x_velocity_threshold: 0.001
-    min_y_velocity_threshold: 0.5
+    min_y_velocity_threshold: 0.0
     min_theta_velocity_threshold: 0.001
     failure_tolerance: 0.3
     progress_checker_plugins: ["progress_checker"]
@@ -81,8 +81,8 @@ controller_server:
     # Progress checker parameters
     progress_checker:
       plugin: "nav2_controller::SimpleProgressChecker"
-      required_movement_radius: 0.5
-      movement_time_allowance: 10.0
+      required_movement_radius: 0.15
+      movement_time_allowance: 15.0
     # Goal checker parameters
     #precise_goal_checker:
     #  plugin: "nav2_controller::SimpleGoalChecker"
@@ -105,12 +105,12 @@ controller_server:
       ay_min: -3.0
       az_max: 3.5
       vx_std: 0.2
-      vy_std: 0.2
+      vy_std: 0.0
       wz_std: 0.4
       vx_max: 0.5
       vx_min: -0.35
-      vy_max: 0.5
-      wz_max: 1.9
+      vy_max: 0.0
+      wz_max: 0.8
       iteration_count: 1
       prune_distance: 1.7
       transform_tolerance: 0.1
@@ -215,6 +215,7 @@ local_costmap:
         scan:
           topic: /scan
           max_obstacle_height: 2.0
+          min_obstacle_height: 0.05
           clearing: True
           marking: True
           data_type: "LaserScan"
@@ -248,6 +249,7 @@ global_costmap:
         scan:
           topic: /scan
           max_obstacle_height: 2.0
+          min_obstacle_height: 0.05
           clearing: True
           marking: True
           data_type: "LaserScan"
@@ -334,9 +336,9 @@ behavior_server:
     robot_base_frame: base_footprint
     transform_tolerance: 0.1
     simulate_ahead_time: 2.0
-    max_rotational_vel: 1.0
-    min_rotational_vel: 0.4
-    rotational_acc_lim: 3.2
+    max_rotational_vel: 0.5
+    min_rotational_vel: 0.2
+    rotational_acc_lim: 1.5
 
 waypoint_follower:
   ros__parameters:
@@ -377,7 +379,7 @@ velocity_smoother:
     smoothing_frequency: 20.0
     stamp_smoothed_velocity_with_smoothing_time: False
     scale_velocities: False
-    feedback: "OPEN_LOOP"
+    feedback: "CLOSED_LOOP"
     max_velocity: [0.5, 0.0, 2.0]
     min_velocity: [-0.5, 0.0, -2.0]
     max_accel: [2.5, 0.0, 3.2]

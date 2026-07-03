@@ -28,3 +28,14 @@ CMakeFiles/
 CMakeCache.txt
 .env
 .vscode/
+
+# AI and Agent Markdown files
+docs/
+codex/
+PROJECT_STATE.md
+AGENT.md
+CODEX.md
+DEEPSEEK.md
+GEMINI.md
+PROMPTS.md
+skills-lock.json

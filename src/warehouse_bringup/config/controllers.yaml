@@ -23,7 +23,9 @@ diff_drive_controller:
     odom_frame_id: odom
     base_frame_id: base_footprint
     enable_odom_tf: true
-    open_loop: true
+    # Use the wheel state interfaces exported by gz_ros2_control so odometry
+    # follows the simulated robot instead of only the commanded velocity.
+    open_loop: false
     publish_rate: 50.0
     cmd_vel_timeout: 0.5
     publish_limited_velocity: true

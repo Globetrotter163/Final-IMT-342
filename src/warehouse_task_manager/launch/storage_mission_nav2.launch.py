@@ -16,6 +16,7 @@ def generate_launch_description():
     detected_products_topic = LaunchConfiguration("detected_products_topic")
     place_product_service_name = LaunchConfiguration("place_product_service_name")
     manipulation_timeout_sec = LaunchConfiguration("manipulation_timeout_sec")
+    require_full_calibration = LaunchConfiguration("require_full_calibration")
     storage_map_offset_x = LaunchConfiguration("storage_map_offset_x")
     storage_map_offset_y = LaunchConfiguration("storage_map_offset_y")
     recover_outside_map_goals = LaunchConfiguration("recover_outside_map_goals")
@@ -61,6 +62,11 @@ def generate_launch_description():
             "manipulation_timeout_sec",
             default_value="60.0",
             description="Timeout for the MoveIt2 place service.",
+        ),
+        DeclareLaunchArgument(
+            "require_full_calibration",
+            default_value="true",
+            description="Reject missions until startup calibration completes.",
         ),
         DeclareLaunchArgument(
             "storage_map_offset_x",
@@ -144,6 +150,9 @@ def generate_launch_description():
                 "nav2_action_name": "/navigate_to_pose",
                 "place_product_service_name": place_product_service_name,
                 "nav_goal_frame_id": "map",
+                "require_full_calibration": require_full_calibration,
+                "calibration_status_topic": "/calibration_status",
+                "landmark_pose_service_name": "/get_landmark_pose",
                 "storage_map_offset_x": storage_map_offset_x,
                 "storage_map_offset_y": storage_map_offset_y,
                 "recover_outside_map_goals": recover_outside_map_goals,

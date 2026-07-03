@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
+import math
 import os
+import re
 import subprocess
 import tempfile
 from ament_index_python.packages import get_package_share_directory
@@ -14,7 +16,6 @@ from warehouse_interfaces.srv import SpawnProduct
 ALBEDO_MAP_TEMPLATE = (
     '<albedo_map>model://product_box/materials/textures/aruco_1.png</albedo_map>'
 )
-CUSTOM_SDF_PATH = os.path.join(tempfile.gettempdir(), 'product_box_custom.sdf')
 
 
 class ConveyorSpawner(Node):
@@ -32,6 +33,7 @@ class ConveyorSpawner(Node):
         self.declare_parameter('auto_spawn', True)
         self.declare_parameter('spawn_delay', 3.0)
         self.declare_parameter('single_box_mode', True)
+        self.declare_parameter('world_name', 'warehouse_level2')
 
         self.model_name = self.get_parameter('model_name').value
         self.model_instance_prefix = self.get_parameter('model_instance_name').value
@@ -41,6 +43,9 @@ class ConveyorSpawner(Node):
         self.spawn_yaw = self.get_parameter('spawn_yaw').value
         self.default_aruco_id = int(self.get_parameter('default_aruco_id').value)
         self.single_box_mode = bool(self.get_parameter('single_box_mode').value)
+        self.world_name = self.get_parameter('world_name').value
+        self.spawned_name_pattern = re.compile(
+            rf'^{re.escape(self.model_instance_prefix)}_aruco_[1-9][0-9]*$')
 
         self.srv = self.create_service(SpawnProduct, 'spawn_product_box', self.spawn_callback)
         self.delete_srv = self.create_service(DeleteProduct, 'delete_product_box', self.delete_callback)
@@ -53,6 +58,7 @@ class ConveyorSpawner(Node):
         self.get_logger().info(
             f'ConveyorSpawner ready. auto_spawn={auto_spawn}, '
             f'name_prefix={self.model_instance_prefix}, '
+            f'world={self.world_name}, '
             f'pickup_position=({self.spawn_x}, {self.spawn_y}, {self.spawn_z}), '
             f'default_aruco_id={self.default_aruco_id}'
         )
@@ -117,22 +123,17 @@ class ConveyorSpawner(Node):
         y = self.spawn_y
         z = self.spawn_z
 
-        cmd = [
-            'ros2', 'run', 'ros_gz_sim', 'create',
-            '-file', custom_sdf_path,
-            '-name', name,
-            '-x', str(x),
-            '-y', str(y),
-            '-z', str(z),
-            '-Y', str(yaw),
-        ]
-
         self.get_logger().info(
             f'Spawning {name} with ArUco {aruco_id} at ({x}, {y}, {z}) '
             f'from {custom_sdf_path}...'
         )
         try:
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=15.0)
+            result = subprocess.run(
+                self._build_create_command(custom_sdf_path, name, x, y, z, yaw),
+                capture_output=True,
+                text=True,
+                timeout=15.0,
+            )
             if result.returncode == 0:
                 self.get_logger().info(f'{name} spawned successfully')
                 return True, f'{name} spawned successfully with ArUco {aruco_id}'
@@ -142,7 +143,7 @@ class ConveyorSpawner(Node):
         except subprocess.TimeoutExpired:
             return False, 'Spawn command timed out'
         except FileNotFoundError:
-            return False, 'ros_gz_sim create executable not found'
+            return False, 'gz executable not found'
 
     def _instance_name(self, aruco_id):
         return f'{self.model_instance_prefix}_aruco_{aruco_id}'
@@ -159,12 +160,33 @@ class ConveyorSpawner(Node):
             return None, f'Expected albedo map template not found in {sdf_path}'
 
         custom_sdf = sdf_text.replace(ALBEDO_MAP_TEMPLATE, texture_tag)
-        with open(CUSTOM_SDF_PATH, 'w', encoding='utf-8') as custom_file:
+        custom_sdf_path = os.path.join(
+            tempfile.gettempdir(), f'product_box_custom_{aruco_id}.sdf')
+        with open(custom_sdf_path, 'w', encoding='utf-8') as custom_file:
             custom_file.write(custom_sdf)
 
-        msg = f'Wrote custom product SDF to {CUSTOM_SDF_PATH} with aruco_id={aruco_id}'
+        msg = f'Wrote custom product SDF to {custom_sdf_path} with aruco_id={aruco_id}'
         self.get_logger().info(msg)
-        return CUSTOM_SDF_PATH, msg
+        return custom_sdf_path, msg
+
+    def _build_create_command(self, sdf_path, name, x, y, z, yaw):
+        half_yaw = float(yaw) * 0.5
+        req = (
+            f'sdf_filename: "{sdf_path}", '
+            f'name: "{name}", '
+            f'pose: {{'
+            f'position: {{x: {x}, y: {y}, z: {z}}}, '
+            f'orientation: {{x: 0.0, y: 0.0, z: {math.sin(half_yaw)}, w: {math.cos(half_yaw)}}}'
+            f'}}'
+        )
+        return [
+            'gz', 'service',
+            '-s', f'/world/{self.world_name}/create',
+            '--reqtype', 'gz.msgs.EntityFactory',
+            '--reptype', 'gz.msgs.Boolean',
+            '--timeout', '5000',
+            '--req', req,
+        ]
 
     def _model_exists(self, name):
         return name in self._list_models()
@@ -191,16 +213,23 @@ class ConveyorSpawner(Node):
     def _spawned_model_names(self):
         names = []
         for name in self._list_models():
-            if name == self.model_instance_prefix:
-                names.append(name)
-            elif name.startswith(f'{self.model_instance_prefix}_aruco_'):
+            if self._is_spawned_product_name(name):
                 names.append(name)
         return names
 
+    def _is_spawned_product_name(self, name):
+        return bool(self.spawned_name_pattern.fullmatch(name))
+
     def _remove_model(self, name):
+        if not self._is_spawned_product_name(name):
+            self.get_logger().error(
+                f'Refusing to remove non-product model "{name}". '
+                f'Expected pattern: {self.model_instance_prefix}_aruco_<id>')
+            return False
+
         import time
         cmd = [
-            'gz', 'service', '-s', '/world/warehouse_level2/remove',
+            'gz', 'service', '-s', f'/world/{self.world_name}/remove',
             '--reqtype', 'gz.msgs.Entity',
             '--reptype', 'gz.msgs.Boolean',
             '--timeout', '2000',
@@ -211,10 +240,13 @@ class ConveyorSpawner(Node):
             if result.returncode == 0:
                 self.get_logger().info(f'Removed {name}')
                 time.sleep(0.2)  # Give physics engine time to clear the entity
+                return True
             else:
                 self.get_logger().error(f'Failed to remove {name}: {result.stderr}')
+                return False
         except Exception as e:
             self.get_logger().error(f'Exception removing {name}: {e}')
+            return False
 
     def _remove_by_aruco_id(self, aruco_id):
         if aruco_id <= 0:
@@ -224,7 +256,8 @@ class ConveyorSpawner(Node):
         if not self._model_exists(target_name):
             return False, f'No spawned product box found for ArUco {aruco_id}'
 
-        self._remove_model(target_name)
+        if not self._remove_model(target_name):
+            return False, f'Failed to remove spawned product box for ArUco {aruco_id}'
         if self._model_exists(target_name):
             return False, f'Failed to remove spawned product box for ArUco {aruco_id}'
         return True, f'Removed spawned product box for ArUco {aruco_id}'
@@ -234,14 +267,16 @@ class ConveyorSpawner(Node):
         if not names:
             return True, 'No spawned product boxes found'
 
+        removed_count = 0
         for name in names:
-            self._remove_model(name)
+            if self._remove_model(name):
+                removed_count += 1
 
         remaining = self._spawned_model_names()
         if remaining:
             return False, f'Failed to remove all spawned product boxes: {", ".join(remaining)}'
 
-        return True, f'Removed {len(names)} spawned product box(es)'
+        return True, f'Removed {removed_count} spawned product box(es)'
 
 
 def main():

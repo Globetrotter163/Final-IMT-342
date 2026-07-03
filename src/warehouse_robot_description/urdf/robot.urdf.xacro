@@ -12,6 +12,9 @@
   <!-- Plugins for Gazebo Sim -->
   <gazebo>
     <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <ros>
+        <namespace>/</namespace>
+      </ros>
       <parameters>$(find warehouse_bringup)/config/controllers.yaml</parameters>
     </plugin>
   </gazebo>

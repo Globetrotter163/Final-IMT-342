@@ -190,7 +190,9 @@ private:
     arm_group_->setPoseReferenceFrame("base_link");
     arm_group_->setStartStateToCurrentState();
     arm_group_->clearPoseTargets();
-    arm_group_->setPositionTarget(target_pose.position.x, target_pose.position.y, target_pose.position.z);
+    arm_group_->setGoalPositionTolerance(0.01);
+    arm_group_->setGoalOrientationTolerance(0.08);
+    arm_group_->setPoseTarget(target_pose);
 
     RCLCPP_INFO(
       logger_,

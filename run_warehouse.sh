@@ -30,6 +30,6 @@ export ROS_DOMAIN_ID=70
 trap cleanup EXIT INT TERM
 
 ros2 launch warehouse_task_manager operator_console.launch.py \
-  rviz:=false open_dashboard_browser:=true launch_dashboard:=true \
-  launch_mission_stack:=true use_mock_perception:=false mock_manipulation:=false \
+  rviz:=true open_dashboard_browser:=true launch_dashboard:=true \
+  launch_mission_stack:=false use_mock_perception:=false mock_manipulation:=false \
   auto_start_mission:=false "$@"

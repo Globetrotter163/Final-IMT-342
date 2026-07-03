@@ -1,0 +1,33 @@
+waypoints:
+  - name: startup
+    x: 1.8
+    y: 1.2
+    yaw: 0.0
+  - name: A-S1
+    x: 6.8
+    y: 1.2
+    yaw: 0.0
+    approach_tag_id: 201
+    align_tag_id: 202
+  - name: A-S2
+    x: 6.8
+    y: 4.0
+    yaw: 0.0
+    approach_tag_id: 211
+    align_tag_id: 212
+  - name: B-S1
+    x: 6.8
+    y: 6.2
+    yaw: 0.0
+    approach_tag_id: 221
+    align_tag_id: 222
+  - name: conveyor
+    x: 1.1
+    y: 5.7
+    yaw: 1.57
+    approach_tag_id: 101
+    align_tag_id: 102
+  - name: home
+    x: 1.8
+    y: 1.2
+    yaw: 0.0

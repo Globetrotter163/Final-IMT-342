@@ -3,7 +3,7 @@
 # Uso: source /opt/ros/jazzy/setup.bash && source install/setup.bash && ./scripts/sprint_validator.sh
 # El Director ejecuta esto después de recibir los reportes de las 3 plataformas.
 
-set -euo pipefail
+set -eo pipefail
 
 WORKSPACE="/home/agonb/Desktop/Robotica1-26/robotics/final_ws"
 cd "$WORKSPACE"

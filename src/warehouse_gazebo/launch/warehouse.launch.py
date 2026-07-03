@@ -33,7 +33,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             os.path.join(get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py')
         ),
-        launch_arguments={'gz_args': [LaunchConfiguration('world'), ' -r']}.items()
+        launch_arguments={'gz_args': [LaunchConfiguration('world'), ' -r -v 4']}.items()
     )
 
     # Robot State Publisher
@@ -123,6 +123,8 @@ def generate_launch_description():
             '/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
             '/camera/image_raw@sensor_msgs/msg/Image[gz.msgs.Image',
             '/camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo',
+            '/down_camera/image_raw@sensor_msgs/msg/Image[gz.msgs.Image',
+            '/down_camera/camera_info@sensor_msgs/msg/CameraInfo[gz.msgs.CameraInfo',
             '/imu/data@sensor_msgs/msg/Imu[gz.msgs.IMU',
         ],
         output='screen'

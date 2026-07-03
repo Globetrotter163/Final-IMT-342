@@ -1,89 +1,40 @@
-# PROJECT_STATE.md — Executive dashboard
+# PROJECT_STATE.md — Executive Dashboard
 
-Estado actualizado: 2026-07-01.
+Estado actualizado: 2026-07-02.
 
-## Estado ejecutivo
+## Estado Ejecutivo
 
-**Nivel 2 no esta cerrado con evidencia S5.**
+**La base de navegación, SLAM y control general desde el Dashboard está consolidada.**
+El sistema ahora obedece comandos interactivos para mapear el entorno y evita falsos obstáculos, resolviendo problemas de rutas "imposibles" o choques contra la cinta transportadora. Sin embargo, todavía queda un detalle pendiente en la calibración y falta implementar la manipulación del brazo.
 
-El workspace compila y las pruebas pasan, pero la corrida end-to-end real
-solicitada para Sprint S5 no finalizo en `SUCCEEDED`. El bloqueo activo esta en
-la activacion lifecycle de Nav2: despues de corregir el problema inicial de TF
-`odom -> base_footprint`, el stack queda atascado durante la transicion de
-Nav2 y no publica `/navigate_to_pose` activo.
+## Cómo Ejecutar el Proyecto
 
-## Evidencia S5 validada
-
-| Area | Estado | Evidencia |
-|---|:---:|---|
-| Build | OK | `colcon build --symlink-install --event-handlers console_direct+`: 11 paquetes finalizados |
-| Tests | OK | `colcon test` + `colcon test-result --verbose`: 9 tests, 0 errores, 0 fallos |
-| Validador sprint | OK | `./scripts/sprint_validator.sh`: build/test OK e interfaces obligatorias OK |
-| Interfaces | OK | Incluye `PickProduct`, `SpawnProduct` y `ExecuteStorageMission` |
-| Gazebo + spawn | OK parcial | El launch S5 arranca Gazebo y spawnea `product_box_conveyor` con ArUco 1 |
-| Percepcion ArUco | OK parcial | `aruco_detector` arranca y escucha camara; requiere mision completa para validar inventario final |
-| Manipulacion | OK parcial | Servidores `/pick_product` y `/place_product` arrancan con MoveIt2 |
-| TF odometria | OK tras fix | `diff_drive_controller` publica odom TF; EKF ya no duplica TF; smoke confirmo `odom -> base_footprint` |
-| Nav2 | BLOQUEADO | Lifecycle no llega a activar `bt_navigator`; `/navigate_to_pose` no queda disponible |
-| Mision S5 | FALLA | `/execute_storage_mission` termina ABORTED, no `SUCCEEDED` |
-| SQLite S5 | FALLA | DB temporal queda sin producto registrado por aborto temprano de la mision |
-
-## Cambios tecnicos S5
-
-- `scripts/sprint_validator.sh`: sourcing robusto con `set -u`, validacion de
-  `PickProduct` y `SpawnProduct`.
-- `warehouse_task_manager`: launch integrado con Gazebo, producto ArUco 1 por
-  defecto y FSM sin `|| true` en navegacion a cinta.
-- `warehouse_bringup`: `diff_drive_controller.enable_odom_tf=true` y
-  `ekf.publish_tf=false` para evitar TF duplicado.
-- `warehouse_navigation`: Nav2 consume `/diff_drive_controller/odom`; launch
-  reducido a core Nav2 para aislar lifecycle.
-- `warehouse_manipulation`: `pick_product_server` robustecido y
-  `place_product_server.launch.py` recibe configuracion MoveIt.
-
-## Bloqueador activo
-
-| Bloqueador | Evidencia | Impacto | Proxima accion |
-|---|---|---|---|
-| Nav2 lifecycle service timeout | Logs S5 muestran timeout en transicion lifecycle (`/planner_server/change_state`; previamente `/behavior_server/change_state` con launch oficial) | Sin `bt_navigator` activo no existe navegacion real y la mision aborta | Aislar middleware/lifecycle: probar transiciones manuales, comparar `rmw_cyclonedds_cpp` vs Fast DDS, revisar timeouts y secuenciar Nav2 tras controladores |
-
-## Comando de reproduccion S5
+El punto de entrada centralizado para correr la simulación, el dashboard y el stack de navegación es el script de inicialización de la raíz del workspace:
 
 ```bash
-rm -f /tmp/warehouse_s5_e2e.db /tmp/warehouse_s5_e2e_launch.log
-ros2 daemon stop || true
-ros2 daemon start
-source /opt/ros/jazzy/setup.bash
-source install/setup.bash
-
-ROS_DOMAIN_ID=57 timeout --signal=SIGINT --kill-after=20s 360s \
-  ros2 launch warehouse_task_manager level2_integration.launch.py \
-  rviz:=false \
-  auto_start_mission:=true \
-  use_mock_perception:=false \
-  mock_manipulation:=false \
-  nav_start_delay:=8.0 \
-  mission_stack_delay:=35.0 \
-  auto_goal_delay:=55.0 \
-  detection_timeout_sec:=30.0 \
-  product_id:=mock_product_1 \
-  database_path:=/tmp/warehouse_s5_e2e.db \
-  2>&1 | tee /tmp/warehouse_s5_e2e_launch.log
+# Ejecutar el simulador completo
+./run_warehouse.sh
 ```
+*Nota: Este script se encarga de limpiar procesos zombies anteriores (Nav2, Gazebo, ROS), configurar variables de entorno y lanzar el entorno de forma segura. Desde el Dashboard web (que se lanza en conjunto) puedes usar el botón de "Calibrar".*
 
-Resultado observado: goal `/execute_storage_mission` abortado porque Nav2 no
-estaba activo. SQLite consultado con Python stdlib porque `sqlite3` CLI no esta
-instalado; no hubo filas de producto ni ubicaciones ocupadas.
+## Cambios Realizados y Optimizaciones (Última Sesión)
 
-## Criterio pendiente para cerrar Nivel 2
+1. **Dashboard y Calibración a Demanda**:
+   - Se removió el auto-arranque del `startup_calibration_manager.py`. Ahora expone un servicio `/start_calibration`.
+   - El `dashboard_orchestrator.py` maneja el botón "Calibrar", llamando al servicio y esperando el final de la calibración (`/calibration_status`) para guardar el mapa generado (`map_saver_cli`) y pausar el mapeo (`slam_toolbox/Pause`).
 
-Nivel 2 solo puede cerrarse cuando una corrida sin mocks de percepcion ni
-manipulacion demuestre:
+2. **Refinamiento de Mapeo LiDAR y Costmaps**:
+   - **Estantes**: Se extendió el panel trasero (`backboard`) y la caja de colisión del láser de los estantes de 1.9m a 2.5m en Gazebo (`shelf/model.sdf`). Esto cierra las "brechas" de 0.5m entre estantes, evitando que Nav2 busque rutas detrás.
+   - **Cartel del piso**: Se añadió `min_obstacle_height: 0.05` en el `local_costmap` y `global_costmap` (`nav2_params.yaml`), ignorando las marcas del suelo.
+   - **Cinta Transportadora**: Se eliminó el poste de soporte. Se ajustó el waypoint a `Y=5.7` alejándolo de la zona letal del obstáculo.
 
-1. ArUco detectado desde la caja en cinta.
-2. Producto registrado en SQLite.
-3. Ubicacion asignada.
-4. Navegacion Nav2 a cinta y almacenamiento completada.
-5. Pick y place ejecutados en simulacion.
-6. `/execute_storage_mission` termina `SUCCEEDED`.
-7. SQLite final queda coherente con producto almacenado.
+3. **Corrección de Desfase de SLAM**:
+   - Se redujo la velocidad máxima de giro en Nav2 (`max_rotational_vel=0.5 rad/s` y `wz_max=0.8` en MPPI) para suavizar la rotación del robot. Esto otorga tiempo al algoritmo SLAM para alinear los escaneos y evita el desfase.
+
+## Auditoría del Sistema: Qué Falta
+
+| Área | Estado | Siguiente Acción |
+|---|---|---|
+| **Calibración y SLAM** | **Casi Listo** | Ajustar el detalle pendiente reportado para la calibración. |
+| **Manipulación (Brazo)** | **Pendiente** | Secuencia MoveIt 2: Navegar al Conveyor -> Pose `pre-grasp` -> `/detect_products` -> Attach -> `carry_pose`. |
+| **Gestión de Misión** | **Pendiente** | Conectar la lógica para navegar hacia el estante destino y colocar el producto. |

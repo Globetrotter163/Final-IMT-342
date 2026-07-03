@@ -32,9 +32,9 @@
         <geometry><box><size>0.2 0.15 0.12</size></box></geometry>
         <material><ambient>0.6 0.4 0.2 1</ambient><diffuse>0.6 0.4 0.2 1</diffuse></material>
       </visual>
-      <!-- Front marker for the perception camera. It is visual-only. -->
+      <!-- Top marker stays visible above the conveyor side wall. -->
       <visual name="tag_visual">
-        <pose>0.101 0 0 0 1.5707 0</pose>
+        <pose>0 0 0.061 0 0 0</pose>
         <geometry><box><size>0.10 0.10 0.001</size></box></geometry>
         <material>
           <ambient>1 1 1 1</ambient>

@@ -29,7 +29,7 @@
       <pose>0 0 0.35 0 0 0</pose>
       <collision name="base_lidar_collision">
         <pose>0 0 -0.20 0 0 0</pose>
-        <geometry><box><size>2.0 0.6 0.3</size></box></geometry>
+        <geometry><box><size>2.5 0.6 0.3</size></box></geometry>
       </collision>
       <collision name="col_level1">
         <geometry><box><size>2.0 0.6 0.05</size></box></geometry>
@@ -59,6 +59,17 @@
       <visual name="vis_level3">
         <geometry><box><size>2.0 0.6 0.05</size></box></geometry>
         <material><ambient>0 0 0.8 1</ambient><diffuse>0 0 0.8 1</diffuse></material>
+      </visual>
+    </link>
+    <!-- Backboard -->
+    <link name="backboard">
+      <pose>0 -0.29 0.55 0 0 0</pose>
+      <collision name="col_backboard">
+        <geometry><box><size>2.5 0.02 1.1</size></box></geometry>
+      </collision>
+      <visual name="vis_backboard">
+        <geometry><box><size>2.5 0.02 1.1</size></box></geometry>
+        <material><ambient>0.6 0.6 0.6 1</ambient><diffuse>0.6 0.6 0.6 1</diffuse></material>
       </visual>
     </link>
   </model>

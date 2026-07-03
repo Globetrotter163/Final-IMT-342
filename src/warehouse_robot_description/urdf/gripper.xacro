@@ -58,7 +58,8 @@
     <child link="left_finger"/>
     <origin xyz="-0.11 0 0.04" rpy="0 0 0"/>
     <axis xyz="1 0 0"/>
-    <limit lower="0.0" upper="0.08" effort="20" velocity="0.1"/>
+    <limit lower="0.0" upper="0.04" effort="20" velocity="0.08"/>
+    <dynamics damping="6.0" friction="2.0"/>
   </joint>
 
   <!-- Right Finger -->
@@ -87,7 +88,8 @@
     <child link="right_finger"/>
     <origin xyz="0.11 0 0.04" rpy="0 0 0"/>
     <axis xyz="-1 0 0"/>
-    <limit lower="0.0" upper="0.08" effort="20" velocity="0.1"/>
+    <limit lower="0.0" upper="0.04" effort="20" velocity="0.08"/>
+    <dynamics damping="6.0" friction="2.0"/>
   </joint>
 
   <!-- Gazebo Colors -->
@@ -96,19 +98,19 @@
   </gazebo>
   <gazebo reference="left_finger">
     <material>Gazebo/Grey</material>
-    <mu1>100.0</mu1>
-    <mu2>100.0</mu2>
-    <kp>1000000.0</kp>
-    <kd>1.0</kd>
-    <minDepth>0.001</minDepth>
+    <mu1>12.0</mu1>
+    <mu2>12.0</mu2>
+    <kp>50000.0</kp>
+    <kd>15.0</kd>
+    <minDepth>0.0005</minDepth>
   </gazebo>
   <gazebo reference="right_finger">
     <material>Gazebo/Grey</material>
-    <mu1>100.0</mu1>
-    <mu2>100.0</mu2>
-    <kp>1000000.0</kp>
-    <kd>1.0</kd>
-    <minDepth>0.001</minDepth>
+    <mu1>12.0</mu1>
+    <mu2>12.0</mu2>
+    <kp>50000.0</kp>
+    <kd>15.0</kd>
+    <minDepth>0.0005</minDepth>
   </gazebo>
 
 </robot>

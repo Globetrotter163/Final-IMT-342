@@ -21,6 +21,9 @@ def generate_launch_description():
     storage_map_offset_x = LaunchConfiguration("storage_map_offset_x")
     storage_map_offset_y = LaunchConfiguration("storage_map_offset_y")
     storage_map_offset_z = LaunchConfiguration("storage_map_offset_z")
+    require_full_calibration = LaunchConfiguration("require_full_calibration")
+    calibration_status_topic = LaunchConfiguration("calibration_status_topic")
+    landmark_pose_service_name = LaunchConfiguration("landmark_pose_service_name")
     recover_outside_map_goals = LaunchConfiguration("recover_outside_map_goals")
     outside_map_recovery_max_x = LaunchConfiguration("outside_map_recovery_max_x")
 
@@ -106,6 +109,21 @@ def generate_launch_description():
             description="Z offset added when converting inventory coordinates to Nav2 map goals.",
         ),
         DeclareLaunchArgument(
+            "require_full_calibration",
+            default_value="true",
+            description="Reject missions until startup calibration completes.",
+        ),
+        DeclareLaunchArgument(
+            "calibration_status_topic",
+            default_value="/calibration_status",
+            description="Topic with latched CalibrationStatus messages.",
+        ),
+        DeclareLaunchArgument(
+            "landmark_pose_service_name",
+            default_value="/get_landmark_pose",
+            description="Service used to resolve semantic landmark poses.",
+        ),
+        DeclareLaunchArgument(
             "recover_outside_map_goals",
             default_value="true",
             description="Send an intermediate Nav2 goal when a storage goal is outside the SLAM map.",
@@ -137,6 +155,9 @@ def generate_launch_description():
                 "storage_map_offset_x": storage_map_offset_x,
                 "storage_map_offset_y": storage_map_offset_y,
                 "storage_map_offset_z": storage_map_offset_z,
+                "require_full_calibration": require_full_calibration,
+                "calibration_status_topic": calibration_status_topic,
+                "landmark_pose_service_name": landmark_pose_service_name,
                 "recover_outside_map_goals": recover_outside_map_goals,
                 "outside_map_recovery_max_x": outside_map_recovery_max_x,
             }],

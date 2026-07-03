@@ -1,0 +1,50 @@
+global_frame: map
+tag_specs:
+  - tag_id: 101
+    landmark_id: conveyor_approach
+    station_id: conveyor
+    role: approach
+    goal_yaw: 1.57
+    offset_x: -0.525
+    offset_y: 0.0
+  - tag_id: 102
+    landmark_id: conveyor_align_floor
+    station_id: conveyor
+    role: align
+    goal_yaw: 1.57
+  - tag_id: 201
+    landmark_id: shelf_a_s1_approach
+    station_id: A-S1
+    role: approach
+    goal_yaw: 0.0
+    offset_x: -1.49
+    offset_y: 0.0
+  - tag_id: 202
+    landmark_id: shelf_a_s1_align_floor
+    station_id: A-S1
+    role: align
+    goal_yaw: 0.0
+  - tag_id: 211
+    landmark_id: shelf_a_s2_approach
+    station_id: A-S2
+    role: approach
+    goal_yaw: 0.0
+    offset_x: -1.49
+    offset_y: 0.0
+  - tag_id: 212
+    landmark_id: shelf_a_s2_align_floor
+    station_id: A-S2
+    role: align
+    goal_yaw: 1.57
+  - tag_id: 221
+    landmark_id: shelf_b_s1_approach
+    station_id: B-S1
+    role: approach
+    goal_yaw: 0.0
+    offset_x: -1.49
+    offset_y: 0.0
+  - tag_id: 222
+    landmark_id: shelf_b_s1_align_floor
+    station_id: B-S1
+    role: align
+    goal_yaw: 3.14

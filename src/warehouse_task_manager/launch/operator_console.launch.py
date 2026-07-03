@@ -1,4 +1,5 @@
 import os
+from launch_ros.actions import Node
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
@@ -23,6 +24,10 @@ def generate_launch_description():
     slam_warmup_delay = LaunchConfiguration("slam_warmup_delay")
     launch_mission_stack = LaunchConfiguration("launch_mission_stack")
     mission_stack_delay = LaunchConfiguration("mission_stack_delay")
+    launch_landmark_stack = LaunchConfiguration("launch_landmark_stack")
+    enable_startup_calibration = LaunchConfiguration("enable_startup_calibration")
+    calibration_waypoints_file = LaunchConfiguration("calibration_waypoints_file")
+    require_full_calibration = LaunchConfiguration("require_full_calibration")
     auto_start_mission = LaunchConfiguration("auto_start_mission")
     auto_goal_delay = LaunchConfiguration("auto_goal_delay")
     mock_manipulation = LaunchConfiguration("mock_manipulation")
@@ -44,6 +49,14 @@ def generate_launch_description():
         "level2_integration.launch.py",
     )
     dashboard_web_dir = _dashboard_web_dir()
+    dashboard_orchestrator_node = Node(
+        package="warehouse_task_manager",
+        executable="dashboard_orchestrator.py",
+        name="dashboard_orchestrator",
+        output="screen",
+        parameters=[{"database_path": database_path}]
+    )
+
     dashboard_server = ExecuteProcess(
         condition=IfCondition(launch_dashboard),
         cmd=[
@@ -105,6 +118,30 @@ def generate_launch_description():
             "mission_stack_delay",
             default_value="35.0",
             description="Delay before inventory, manipulation and FSM start.",
+        ),
+        DeclareLaunchArgument(
+            "launch_landmark_stack",
+            default_value="true",
+            description="Launch the AprilTag landmark stack.",
+        ),
+        DeclareLaunchArgument(
+            "enable_startup_calibration",
+            default_value="true",
+            description="Run startup calibration loop before missions are accepted.",
+        ),
+        DeclareLaunchArgument(
+            "calibration_waypoints_file",
+            default_value=os.path.join(
+                get_package_share_directory("warehouse_task_manager"),
+                "config",
+                "calibration_waypoints.yaml",
+            ),
+            description="YAML file for startup calibration waypoints.",
+        ),
+        DeclareLaunchArgument(
+            "require_full_calibration",
+            default_value="true",
+            description="Reject missions until startup calibration completes.",
         ),
         DeclareLaunchArgument(
             "auto_start_mission",
@@ -189,6 +226,10 @@ def generate_launch_description():
                 "slam_warmup_delay": slam_warmup_delay,
                 "launch_mission_stack": launch_mission_stack,
                 "mission_stack_delay": mission_stack_delay,
+                "launch_landmark_stack": launch_landmark_stack,
+                "enable_startup_calibration": enable_startup_calibration,
+                "calibration_waypoints_file": calibration_waypoints_file,
+                "require_full_calibration": require_full_calibration,
                 "auto_start_mission": auto_start_mission,
                 "auto_goal_delay": auto_goal_delay,
                 "database_path": database_path,
@@ -201,6 +242,7 @@ def generate_launch_description():
                 "quantity": quantity,
             }.items(),
         ),
+        dashboard_orchestrator_node,
         dashboard_server,
         open_browser,
     ])

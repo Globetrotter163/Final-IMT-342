@@ -3,6 +3,7 @@ from launch.actions import DeclareLaunchArgument, ExecuteProcess, IncludeLaunchD
 from launch.conditions import IfCondition, UnlessCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
+from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
 
@@ -15,6 +16,10 @@ def generate_launch_description():
     auto_start_mission = LaunchConfiguration("auto_start_mission")
     auto_goal_delay = LaunchConfiguration("auto_goal_delay")
     launch_mission_stack = LaunchConfiguration("launch_mission_stack")
+    launch_landmark_stack = LaunchConfiguration("launch_landmark_stack")
+    enable_startup_calibration = LaunchConfiguration("enable_startup_calibration")
+    calibration_waypoints_file = LaunchConfiguration("calibration_waypoints_file")
+    require_full_calibration = LaunchConfiguration("require_full_calibration")
     database_path = LaunchConfiguration("database_path")
     mock_manipulation = LaunchConfiguration("mock_manipulation")
     use_mock_perception = LaunchConfiguration("use_mock_perception")
@@ -44,6 +49,11 @@ def generate_launch_description():
         FindPackageShare("warehouse_perception"),
         "launch",
         "camera_aruco.launch.py",
+    ])
+    landmark_launch = PathJoinSubstitution([
+        FindPackageShare("warehouse_perception"),
+        "launch",
+        "landmark_apriltag.launch.py",
     ])
     mission_launch = PathJoinSubstitution([
         FindPackageShare("warehouse_task_manager"),
@@ -91,6 +101,30 @@ def generate_launch_description():
             "launch_mission_stack",
             default_value="true",
             description="Launch inventory, manipulation and FSM stack after the configured delay.",
+        ),
+        DeclareLaunchArgument(
+            "launch_landmark_stack",
+            default_value="true",
+            description="Launch the AprilTag landmark detectors and landmark manager.",
+        ),
+        DeclareLaunchArgument(
+            "enable_startup_calibration",
+            default_value="true",
+            description="Run the startup calibration loop before missions are accepted.",
+        ),
+        DeclareLaunchArgument(
+            "calibration_waypoints_file",
+            default_value=PathJoinSubstitution([
+                FindPackageShare("warehouse_task_manager"),
+                "config",
+                "calibration_waypoints.yaml",
+            ]),
+            description="YAML file with startup calibration waypoints and expected landmark IDs.",
+        ),
+        DeclareLaunchArgument(
+            "require_full_calibration",
+            default_value="true",
+            description="Reject missions until startup calibration completes.",
         ),
         DeclareLaunchArgument(
             "database_path",
@@ -170,6 +204,31 @@ def generate_launch_description():
                 "product_name": product_name,
             }.items(),
         ),
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(landmark_launch),
+            condition=IfCondition(launch_landmark_stack),
+            launch_arguments={
+                "use_sim_time": use_sim_time,
+                "tag_spec_file": PathJoinSubstitution([
+                    FindPackageShare("warehouse_perception"),
+                    "config",
+                    "landmarks.yaml",
+                ]),
+            }.items(),
+        ),
+        Node(
+            condition=IfCondition(enable_startup_calibration),
+            package="warehouse_task_manager",
+            executable="startup_calibration_manager.py",
+            name="startup_calibration_manager",
+            output="screen",
+            parameters=[{
+                "use_sim_time": use_sim_time,
+                "enable_startup_calibration": enable_startup_calibration,
+                "require_full_calibration": require_full_calibration,
+                "calibration_waypoints_file": calibration_waypoints_file,
+            }],
+        ),
         TimerAction(
             period=mission_stack_delay,
             condition=IfCondition(launch_mission_stack),
@@ -183,6 +242,7 @@ def generate_launch_description():
                         "detected_products_topic": detected_products_topic,
                         "detection_timeout_sec": detection_timeout_sec,
                         "mock_manipulation": mock_manipulation,
+                        "require_full_calibration": require_full_calibration,
                     }.items(),
                 )
             ],

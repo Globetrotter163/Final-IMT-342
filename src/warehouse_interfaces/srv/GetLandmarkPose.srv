@@ -1,0 +1,6 @@
+string landmark_id
+string pose_kind
+---
+bool success
+geometry_msgs/PoseStamped pose
+string message

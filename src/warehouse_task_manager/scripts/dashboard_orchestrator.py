@@ -8,7 +8,7 @@ import time
 from std_srvs.srv import Empty
 
 from warehouse_interfaces.srv import DashboardCommand, SpawnProduct
-from warehouse_interfaces.msg import DetectedProduct
+from warehouse_interfaces.msg import DetectedProduct, CalibrationStatus
 from slam_toolbox.srv import Pause
 from rclpy.qos import QoSProfile, QoSDurabilityPolicy, QoSReliabilityPolicy, QoSHistoryPolicy
 from nav2_msgs.action import Spin, NavigateToPose
@@ -40,6 +40,7 @@ class DashboardOrchestrator(Node):
         self.nav_client = ActionClient(self, NavigateToPose, '/navigate_to_pose')
         
         self.slam_pause_client = self.create_client(Pause, '/slam_toolbox/pause_new_measurements')
+        self.start_calibration_client = self.create_client(Empty, '/start_calibration')
         
         # Misión trigger
         qos = QoSProfile(
@@ -49,6 +50,14 @@ class DashboardOrchestrator(Node):
             durability=QoSDurabilityPolicy.TRANSIENT_LOCAL
         )
         self.mission_publisher = self.create_publisher(DetectedProduct, '/detected_products', qos)
+        
+        self.calibration_sub = self.create_subscription(
+            CalibrationStatus, 
+            '/calibration_status', 
+            self.calibration_status_callback, 
+            qos
+        )
+        self.map_saved = False
         
         self.get_logger().info('Dashboard Orchestrator Ready.')
 
@@ -114,39 +123,30 @@ class DashboardOrchestrator(Node):
         return response
 
     def execute_calibration(self):
-        if not self.spin_client.wait_for_server(timeout_sec=5.0):
-            self.get_logger().error('Spin action server not available')
+        if not self.start_calibration_client.wait_for_service(timeout_sec=5.0):
+            self.get_logger().error('Service /start_calibration not available')
             return
             
-        goal_msg = Spin.Goal()
-        goal_msg.target_yaw = 6.28 # 360 grados
-        
-        self.get_logger().info('Sending spin goal...')
-        self.spin_client.send_goal_async(goal_msg).add_done_callback(self.spin_done_callback)
+        self.map_saved = False
+        self.get_logger().info('Sending /start_calibration request...')
+        req = Empty.Request()
+        self.start_calibration_client.call_async(req)
 
-    def spin_done_callback(self, future):
-        goal_handle = future.result()
-        if not goal_handle.accepted:
-            self.get_logger().info('Spin goal rejected :(')
-            return
-
-        self.get_logger().info('Spin goal accepted, waiting for result...')
-        goal_handle.get_result_async().add_done_callback(self.spin_result_callback)
-
-    def spin_result_callback(self, future):
-        result = future.result().result
-        self.get_logger().info('Spin completed. Triggering map save and pausing SLAM toolbox...')
-        
-        # Call map saver CLI in a separate process
-        os.system("ros2 run nav2_map_server map_saver_cli -f /tmp/warehouse_map &")
-        
-        # Pause SLAM toolbox
-        if self.slam_pause_client.wait_for_service(timeout_sec=2.0):
-            req = Pause.Request()
-            self.slam_pause_client.call_async(req)
-            self.get_logger().info('SLAM toolbox mapping paused successfully.')
-        else:
-            self.get_logger().warn('Could not contact /slam_toolbox/pause_new_measurements')
+    def calibration_status_callback(self, msg):
+        if msg.complete and not self.map_saved:
+            self.map_saved = True
+            self.get_logger().info('Calibration completed. Triggering map save and pausing SLAM toolbox...')
+            
+            # Call map saver CLI in a separate process
+            os.system("ros2 run nav2_map_server map_saver_cli -f /tmp/warehouse_map &")
+            
+            # Pause SLAM toolbox
+            if self.slam_pause_client.wait_for_service(timeout_sec=2.0):
+                req = Pause.Request()
+                self.slam_pause_client.call_async(req)
+                self.get_logger().info('SLAM toolbox mapping paused successfully.')
+            else:
+                self.get_logger().warn('Could not contact /slam_toolbox/pause_new_measurements')
     def execute_return_to_station(self):
         if not self.nav_client.wait_for_server(timeout_sec=5.0):
             self.get_logger().error('NavigateToPose server not available')

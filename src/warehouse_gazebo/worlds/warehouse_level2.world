@@ -115,5 +115,11 @@
       <name>receiving_conveyor</name>
       <pose>0 6.5 0 0 0 0</pose>
     </include>
+
+    <include>
+      <uri>model://landmark_tags</uri>
+      <name>landmark_tags</name>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
   </world>
 </sdf>

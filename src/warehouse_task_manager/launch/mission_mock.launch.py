@@ -49,6 +49,8 @@ def generate_launch_description():
                 "mock_detection": mock_detection,
                 "mock_navigation": True,
                 "mock_manipulation": True,
+                "mock_product_id": "mock_product_1",
+                "require_full_calibration": False,
                 "detected_products_topic": detected_products_topic,
                 "detection_timeout_sec": detection_timeout_sec,
             }],

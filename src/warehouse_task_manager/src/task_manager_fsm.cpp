@@ -17,10 +17,12 @@
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
 #include "warehouse_interfaces/action/execute_storage_mission.hpp"
+#include "warehouse_interfaces/msg/calibration_status.hpp"
 #include "warehouse_interfaces/msg/detected_product.hpp"
 #include "warehouse_interfaces/msg/product_record.hpp"
 #include "warehouse_interfaces/msg/storage_location.hpp"
 #include "warehouse_interfaces/srv/assign_storage_location.hpp"
+#include "warehouse_interfaces/srv/get_landmark_pose.hpp"
 #include "warehouse_interfaces/srv/pick_product.hpp"
 #include "warehouse_interfaces/srv/place_product.hpp"
 #include "warehouse_interfaces/srv/register_product.hpp"
@@ -49,7 +51,7 @@ public:
       declare_parameter<double>("manipulation_timeout_sec", 60.0));
     detection_timeout_ = std::chrono::duration<double>(
       declare_parameter<double>("detection_timeout_sec", 10.0));
-    mock_product_id_ = declare_parameter<std::string>("mock_product_id", "mock_product_001");
+    mock_product_id_ = declare_parameter<std::string>("mock_product_id", "mock_product_1");
     mock_product_name_ = declare_parameter<std::string>("mock_product_name", "Tipo A");
     mock_barcode_ = declare_parameter<std::string>("mock_barcode", "TAG-001");
     detected_products_topic_ =
@@ -63,8 +65,16 @@ public:
     storage_map_offset_x_ = declare_parameter<double>("storage_map_offset_x", 0.0);
     storage_map_offset_y_ = declare_parameter<double>("storage_map_offset_y", 0.0);
     storage_map_offset_z_ = declare_parameter<double>("storage_map_offset_z", 0.0);
+    require_full_calibration_ = declare_parameter<bool>("require_full_calibration", true);
+    calibration_status_topic_ =
+      declare_parameter<std::string>("calibration_status_topic", "/calibration_status");
+    landmark_pose_service_name_ =
+      declare_parameter<std::string>("landmark_pose_service_name", "/get_landmark_pose");
     recover_outside_map_goals_ = declare_parameter<bool>("recover_outside_map_goals", true);
     outside_map_recovery_max_x_ = declare_parameter<double>("outside_map_recovery_max_x", 3.0);
+    conveyor_pick_x_ = declare_parameter<double>("conveyor_pick_x", 0.50);
+    conveyor_pick_y_ = declare_parameter<double>("conveyor_pick_y", 0.20);
+    conveyor_pick_z_ = declare_parameter<double>("conveyor_pick_z", 0.35);
 
     register_product_client_ =
       create_client<warehouse_interfaces::srv::RegisterProduct>("register_product");
@@ -76,12 +86,18 @@ public:
       create_client<warehouse_interfaces::srv::PlaceProduct>(place_product_service_name_);
     pick_product_client_ =
       create_client<warehouse_interfaces::srv::PickProduct>("/pick_product");
+    landmark_pose_client_ =
+      create_client<warehouse_interfaces::srv::GetLandmarkPose>(landmark_pose_service_name_);
     nav2_client_ = rclcpp_action::create_client<NavigateToPose>(this, nav2_action_name_);
     nav2_lifecycle_client_ = create_client<lifecycle_msgs::srv::GetState>("/bt_navigator/get_state");
     detected_product_subscription_ =
       create_subscription<warehouse_interfaces::msg::DetectedProduct>(
       detected_products_topic_, rclcpp::QoS(10).transient_local(),
       std::bind(&TaskManagerFsm::handle_detected_product, this, std::placeholders::_1));
+    calibration_status_subscription_ =
+      create_subscription<warehouse_interfaces::msg::CalibrationStatus>(
+      calibration_status_topic_, rclcpp::QoS(1).transient_local(),
+      std::bind(&TaskManagerFsm::handle_calibration_status, this, std::placeholders::_1));
 
     mission_server_ = rclcpp_action::create_server<ExecuteStorageMission>(
       this,
@@ -98,6 +114,7 @@ private:
   {
     IDLE,
     NAVIGATE_TO_CONVEYOR,
+    ALIGN_WITH_CONVEYOR,
     DETECT_PRODUCT,
     REGISTER_PRODUCT,
     ASSIGN_LOCATION,
@@ -124,6 +141,14 @@ private:
   {
     if (goal->quantity == 0) {
       RCLCPP_WARN(get_logger(), "Rejecting mission with zero quantity");
+      return rclcpp_action::GoalResponse::REJECT;
+    }
+
+    if (require_full_calibration_ && !calibration_complete_) {
+      RCLCPP_WARN(
+        get_logger(),
+        "Rejecting mission while calibration is incomplete (phase=%s)",
+        calibration_phase_.c_str());
       return rclcpp_action::GoalResponse::REJECT;
     }
 
@@ -160,6 +185,8 @@ private:
         return "IDLE";
       case State::NAVIGATE_TO_CONVEYOR:
         return "NAVIGATE_TO_CONVEYOR";
+      case State::ALIGN_WITH_CONVEYOR:
+        return "ALIGN_WITH_CONVEYOR";
       case State::DETECT_PRODUCT:
         return "DETECT_PRODUCT";
       case State::REGISTER_PRODUCT:
@@ -211,6 +238,13 @@ private:
       has_detection_ = true;
     }
     detection_cv_.notify_all();
+  }
+
+  void handle_calibration_status(
+    const warehouse_interfaces::msg::CalibrationStatus::SharedPtr status)
+  {
+    calibration_complete_ = status->complete;
+    calibration_phase_ = status->phase;
   }
 
   warehouse_interfaces::msg::ProductRecord wait_for_detected_product(
@@ -330,18 +364,32 @@ private:
     RCLCPP_INFO(get_logger(), "Pick success: %s", response->message.c_str());
   }
 
-  geometry_msgs::msg::PoseStamped build_storage_nav_goal(
-    const warehouse_interfaces::msg::StorageLocation & location)
+  geometry_msgs::msg::PoseStamped lookup_landmark_pose(
+    const std::string & landmark_id,
+    const std::string & pose_kind)
   {
-    geometry_msgs::msg::PoseStamped pose;
-    pose.header.frame_id = nav_goal_frame_id_;
+    auto request = std::make_shared<warehouse_interfaces::srv::GetLandmarkPose::Request>();
+    request->landmark_id = landmark_id;
+    request->pose_kind = pose_kind;
+
+    const auto response =
+      call_service<warehouse_interfaces::srv::GetLandmarkPose>(
+      request, landmark_pose_client_, landmark_pose_service_name_, service_timeout_);
+    if (!response->success) {
+      throw std::runtime_error(response->message);
+    }
+
+    auto pose = response->pose;
     pose.header.stamp = now();
-    pose.pose.position.x = static_cast<double>(location.x) + storage_map_offset_x_;
-    pose.pose.position.y = static_cast<double>(location.y) + storage_map_offset_y_;
-    pose.pose.position.z = storage_map_offset_z_;
-    pose.pose.orientation.z = std::sin(nav_goal_yaw_ * 0.5);
-    pose.pose.orientation.w = std::cos(nav_goal_yaw_ * 0.5);
     return pose;
+  }
+
+  std::string station_id_for_location(
+    const warehouse_interfaces::msg::StorageLocation & location) const
+  {
+    std::ostringstream station;
+    station << location.zone << "-S" << static_cast<int>(location.shelf);
+    return station.str();
   }
 
   NavExecutionResult send_nav_goal(
@@ -413,6 +461,14 @@ private:
     error << prefix << " (error_code=" << result.error_code
           << ", error_msg='" << result.error_msg << "')";
     return error.str();
+  }
+
+  bool is_goal_outside_map_error(const NavExecutionResult & result) const
+  {
+    constexpr uint16_t goal_outside_map = 204;
+    return result.error_code == goal_outside_map ||
+           result.error_msg.find("outside") != std::string::npos ||
+           result.error_msg.find("Outside") != std::string::npos;
   }
 
   bool build_outside_map_recovery_goal(
@@ -514,22 +570,13 @@ private:
 
   void navigate_to_conveyor(const std::shared_ptr<GoalHandleMission> & mission_goal_handle)
   {
-    geometry_msgs::msg::PoseStamped target_pose;
-    target_pose.header.frame_id = nav_goal_frame_id_;
-    target_pose.header.stamp = now();
-    target_pose.pose.position.x = 1.0;
-    target_pose.pose.position.y = 5.7;
-    target_pose.pose.position.z = 0.0;
-
-    // Yaw = pi/2
-    target_pose.pose.orientation.z = std::sin(M_PI / 4.0);
-    target_pose.pose.orientation.w = std::cos(M_PI / 4.0);
-
     if (mock_navigation_) {
       RCLCPP_INFO(get_logger(), "Mock navigation to conveyor");
       std::this_thread::sleep_for(300ms);
       return;
     }
+
+    auto target_pose = lookup_landmark_pose("conveyor", "approach");
 
     const std::string readiness_error = check_nav2_readiness();
     if (!readiness_error.empty()) {
@@ -540,12 +587,7 @@ private:
     auto result = send_nav_goal(target_pose, "conveyor", mission_goal_handle);
 
     if (!result.succeeded) {
-      constexpr uint16_t goal_outside_map = 204;
-      const bool likely_outside_map =
-        result.error_code == goal_outside_map ||
-        result.error_msg.find("outside") != std::string::npos ||
-        result.error_msg.find("Outside") != std::string::npos;
-      if (likely_outside_map) {
+      if (recover_outside_map_goals_ && is_goal_outside_map_error(result)) {
         // Recover by navigating to a midpoint first
         RCLCPP_WARN(get_logger(), "Conveyor goal failed (likely outside map). Trying intermediate goal.");
         geometry_msgs::msg::PoseStamped midpoint = target_pose;
@@ -572,17 +614,16 @@ private:
     const warehouse_interfaces::msg::StorageLocation & location,
     const std::shared_ptr<GoalHandleMission> & mission_goal_handle)
   {
-    auto target_pose = build_storage_nav_goal(location);
-
     if (mock_navigation_) {
       RCLCPP_INFO(
         get_logger(),
-        "Mock navigation to %s at %s(%.2f, %.2f, %.2f)",
-        location.location_id.c_str(), target_pose.header.frame_id.c_str(),
-        target_pose.pose.position.x, target_pose.pose.position.y, target_pose.pose.position.z);
+        "Mock navigation to %s",
+        location.location_id.c_str());
       std::this_thread::sleep_for(300ms);
       return;
     }
+
+    auto target_pose = lookup_landmark_pose(station_id_for_location(location), "approach");
 
     // ── C2: Readiness gate — fail fast with diagnostic before sending goal ──
     const std::string readiness_error = check_nav2_readiness();
@@ -604,8 +645,7 @@ private:
       return;
     }
 
-    constexpr uint16_t goal_outside_map = 204;
-    if (recover_outside_map_goals_ && result.error_code == goal_outside_map) {
+    if (recover_outside_map_goals_ && is_goal_outside_map_error(result)) {
       geometry_msgs::msg::PoseStamped recovery_pose;
       if (build_outside_map_recovery_goal(target_pose, recovery_pose)) {
         RCLCPP_WARN(
@@ -633,13 +673,42 @@ private:
     throw std::runtime_error(nav_error_message("Nav2 did not complete storage navigation", result));
   }
 
-  void align_with_shelf(const warehouse_interfaces::msg::StorageLocation & location)
+  void align_with_landmark(
+    const std::string & landmark_id,
+    const std::shared_ptr<GoalHandleMission> & mission_goal_handle,
+    const std::string & label)
+  {
+    if (mock_navigation_) {
+      RCLCPP_INFO(get_logger(), "Mock alignment using landmark %s", landmark_id.c_str());
+      std::this_thread::sleep_for(150ms);
+      return;
+    }
+
+    auto target_pose = lookup_landmark_pose(landmark_id, "align");
+    const auto result = send_nav_goal(target_pose, label, mission_goal_handle);
+    if (!result.succeeded) {
+      throw std::runtime_error(nav_error_message("Landmark alignment failed", result));
+    }
+  }
+
+  void align_with_conveyor(const std::shared_ptr<GoalHandleMission> & mission_goal_handle)
+  {
+    RCLCPP_INFO(get_logger(), "Aligning with conveyor floor landmark");
+    align_with_landmark("conveyor", mission_goal_handle, "conveyor_align");
+  }
+
+  void align_with_shelf(
+    const warehouse_interfaces::msg::StorageLocation & location,
+    const std::shared_ptr<GoalHandleMission> & mission_goal_handle)
   {
     RCLCPP_INFO(
       get_logger(),
       "Aligning with shelf %u bin %u at z=%.2f",
       location.shelf, location.bin, location.z);
-    std::this_thread::sleep_for(150ms);
+    align_with_landmark(
+      station_id_for_location(location),
+      mission_goal_handle,
+      location.location_id + "_align");
   }
 
   void place_product(const warehouse_interfaces::msg::StorageLocation & location)
@@ -710,6 +779,10 @@ private:
       publish_feedback(goal_handle, 0.05F, state_name(state));
       navigate_to_conveyor(goal_handle);
 
+      state = State::ALIGN_WITH_CONVEYOR;
+      publish_feedback(goal_handle, 0.08F, state_name(state));
+      align_with_conveyor(goal_handle);
+
       if (goal_handle->is_canceling()) {
         complete_goal(goal_handle, false, "mission canceled");
         return;
@@ -735,10 +808,13 @@ private:
       state = State::PICK_PRODUCT;
       publish_feedback(goal_handle, 0.45F, state_name(state));
 
-      // Call pick_product with relative coordinates to the robot base
-      // Robot is at x=1.0, y=5.7 facing North (pi/2). Box is at x=1.0, y=6.5. Relative front (local X) is 0.8m
-      // We pass Z=0.15 so that MoveIt doesn't hit the floor.
-      pick_product(product.product_id, 0.8, 0.0, 0.15);
+      // Pick pose is expressed in base_link after conveyor landmark alignment.
+      // Defaults target the center of the spawned conveyor box.
+      pick_product(
+        product.product_id,
+        static_cast<float>(conveyor_pick_x_),
+        static_cast<float>(conveyor_pick_y_),
+        static_cast<float>(conveyor_pick_z_));
 
       state = State::NAVIGATE_TO_STORAGE;
       publish_feedback(goal_handle, 0.55F, state_name(state));
@@ -746,7 +822,7 @@ private:
 
       state = State::ALIGN_WITH_SHELF;
       publish_feedback(goal_handle, 0.70F, state_name(state));
-      align_with_shelf(location);
+      align_with_shelf(location, goal_handle);
 
       state = State::PLACE_PRODUCT;
       publish_feedback(goal_handle, 0.82F, state_name(state));
@@ -793,18 +869,29 @@ private:
   double storage_map_offset_x_{0.0};
   double storage_map_offset_y_{0.0};
   double storage_map_offset_z_{0.0};
+  bool require_full_calibration_{true};
+  std::string calibration_status_topic_;
+  std::string landmark_pose_service_name_;
   bool recover_outside_map_goals_{true};
   double outside_map_recovery_max_x_{3.0};
+  double conveyor_pick_x_{0.50};
+  double conveyor_pick_y_{0.20};
+  double conveyor_pick_z_{0.35};
+  bool calibration_complete_{false};
+  std::string calibration_phase_{"unknown"};
 
   rclcpp::Client<warehouse_interfaces::srv::RegisterProduct>::SharedPtr register_product_client_;
   rclcpp::Client<warehouse_interfaces::srv::AssignStorageLocation>::SharedPtr assign_location_client_;
   rclcpp::Client<warehouse_interfaces::srv::UpdateInventory>::SharedPtr update_inventory_client_;
   rclcpp::Client<warehouse_interfaces::srv::PlaceProduct>::SharedPtr place_product_client_;
   rclcpp::Client<warehouse_interfaces::srv::PickProduct>::SharedPtr pick_product_client_;
+  rclcpp::Client<warehouse_interfaces::srv::GetLandmarkPose>::SharedPtr landmark_pose_client_;
   rclcpp::Client<lifecycle_msgs::srv::GetState>::SharedPtr nav2_lifecycle_client_;
   rclcpp_action::Client<NavigateToPose>::SharedPtr nav2_client_;
   rclcpp::Subscription<warehouse_interfaces::msg::DetectedProduct>::SharedPtr
     detected_product_subscription_;
+  rclcpp::Subscription<warehouse_interfaces::msg::CalibrationStatus>::SharedPtr
+    calibration_status_subscription_;
   rclcpp_action::Server<ExecuteStorageMission>::SharedPtr mission_server_;
   std::mutex detection_mutex_;
   std::condition_variable detection_cv_;
