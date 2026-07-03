@@ -1,1 +1,0 @@
-/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_task_manager/ament_cmake_environment_hooks/local_setup.bash

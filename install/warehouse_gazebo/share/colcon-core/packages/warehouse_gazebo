@@ -1,1 +1,0 @@
-rclpy:robot_state_publisher:ros_gz_bridge:ros_gz_sim:rosbridge_server:topic_tools:warehouse_bringup:warehouse_interfaces:warehouse_robot_description:xacro

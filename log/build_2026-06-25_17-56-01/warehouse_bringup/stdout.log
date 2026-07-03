@@ -1,8 +1,0 @@
--- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
--- Override CMake install command with custom implementation using symlinks instead of copying resources
--- Configuring done (0.2s)
--- Generating done (0.0s)
--- Build files have been written to: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_bringup
--- Install configuration: ""
--- Execute custom install script
--- Symlinking: /home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_bringup/share/warehouse_bringup/config/controllers.yaml

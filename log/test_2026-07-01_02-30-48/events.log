@@ -1,5 +1,0 @@
-[0.000000] (-) TimerEvent: {}
-[0.000098] (warehouse_interfaces) JobQueued: {'identifier': 'warehouse_interfaces', 'dependencies': OrderedDict({'warehouse_interfaces': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces'})}
-[0.000656] (warehouse_interfaces) JobStarted: {'identifier': 'warehouse_interfaces'}
-[0.019688] (warehouse_interfaces) JobEnded: {'identifier': 'warehouse_interfaces', 'rc': 0}
-[0.020229] (-) EventReactorShutdown: {}

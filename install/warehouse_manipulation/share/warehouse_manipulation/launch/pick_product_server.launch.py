@@ -1,1 +1,0 @@
-/home/agonb/Desktop/Robotica1-26/robotics/final_ws/src/warehouse_manipulation/launch/pick_product_server.launch.py

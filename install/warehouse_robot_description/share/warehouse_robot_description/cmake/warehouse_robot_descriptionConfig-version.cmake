@@ -1,1 +1,0 @@
-/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_robot_description/ament_cmake_core/warehouse_robot_descriptionConfig-version.cmake

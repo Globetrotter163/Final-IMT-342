@@ -1,4 +1,0 @@
-source;share/warehouse_moveit_config/local_setup.bash
-source;share/warehouse_moveit_config/local_setup.dsv
-source;share/warehouse_moveit_config/local_setup.sh
-source;share/warehouse_moveit_config/local_setup.zsh

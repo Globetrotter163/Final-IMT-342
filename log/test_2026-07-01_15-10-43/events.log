@@ -1,5 +1,0 @@
-[0.000000] (-) TimerEvent: {}
-[0.001863] (warehouse_task_manager) JobQueued: {'identifier': 'warehouse_task_manager', 'dependencies': OrderedDict({'warehouse_interfaces': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_interfaces', 'warehouse_moveit_config': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_moveit_config', 'warehouse_navigation': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_navigation', 'warehouse_inventory': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_inventory', 'warehouse_manipulation': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_manipulation', 'warehouse_perception': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_perception', 'warehouse_task_manager': '/home/agonb/Desktop/Robotica1-26/robotics/final_ws/install/warehouse_task_manager'})}
-[0.002126] (warehouse_task_manager) JobStarted: {'identifier': 'warehouse_task_manager'}
-[0.063173] (warehouse_task_manager) JobEnded: {'identifier': 'warehouse_task_manager', 'rc': 0}
-[0.064888] (-) EventReactorShutdown: {}

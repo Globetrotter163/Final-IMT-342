@@ -1,1 +1,0 @@
-/home/agonb/Desktop/Robotica1-26/robotics/final_ws/build/warehouse_perception/ament_cmake_core/warehouse_perceptionConfig-version.cmake

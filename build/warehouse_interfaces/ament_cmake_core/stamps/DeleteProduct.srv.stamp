@@ -1,5 +1,0 @@
-int32 aruco_id
-bool delete_all
----
-bool success
-string message
