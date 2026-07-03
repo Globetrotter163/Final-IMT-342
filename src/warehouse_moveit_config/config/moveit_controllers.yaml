@@ -1,0 +1,31 @@
+moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
+
+moveit_simple_controller_manager:
+  controller_names:
+    - arm_controller
+    - gripper_controller
+
+  arm_controller:
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
+    default: true
+    joints:
+      - joint1_yaw
+      - joint2_pitch
+      - joint3_pitch
+      - joint4_pitch
+      - joint5_roll
+
+  gripper_controller:
+    # Since gripper uses ForwardCommandController (Position), we might need to use a standard controller or create an Action for it.
+    # For now, if we use ForwardCommandController, MoveIt might need a JointTrajectory controller for it too, or we can just send commands directly.
+    # Let's map it as FollowJointTrajectory for now, though it won't work perfectly unless we change the gripper_controller in ROS2_control to a JointTrajectoryController.
+    # Wait, Phase 7 used ForwardCommandController for the gripper, which doesn't expose an action server. 
+    # MoveIt requires an action server (FollowJointTrajectory or GripperCommand).
+    # We might need to change the gripper_controller to JointTrajectoryController in the controllers.yaml as well.
+    type: FollowJointTrajectory
+    action_ns: follow_joint_trajectory
+    default: true
+    joints:
+      - left_finger_joint
+      - right_finger_joint

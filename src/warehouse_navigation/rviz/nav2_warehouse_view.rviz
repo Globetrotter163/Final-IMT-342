@@ -1,0 +1,108 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: rviz_common/Selection
+    Name: Selection
+  - Class: rviz_common/Tool Properties
+    Name: Tool Properties
+  - Class: rviz_common/Views
+    Name: Views
+  - Class: nav2_rviz_plugins/Navigation 2
+    Name: Navigation 2
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Enabled: true
+      Name: Grid
+      Plane: XY
+      Value: true
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Value: true
+    - Class: rviz_default_plugins/RobotModel
+      Description Source: Topic
+      Description Topic:
+        Value: /robot_description
+      Enabled: true
+      Name: RobotModel
+      Value: true
+    - Class: rviz_default_plugins/Map
+      Enabled: true
+      Name: SLAM Map
+      Topic:
+        Durability Policy: Transient Local
+        Reliability Policy: Reliable
+        Value: /map
+      Value: true
+    - Class: rviz_default_plugins/LaserScan
+      Enabled: true
+      Name: LiDAR /scan
+      Size (Pixels): 3
+      Style: Points
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
+        Value: /scan
+      Use Fixed Frame: true
+      Value: true
+    - Class: rviz_default_plugins/Map
+      Enabled: true
+      Name: Global Costmap
+      Topic:
+        Durability Policy: Transient Local
+        Reliability Policy: Reliable
+        Value: /global_costmap/costmap
+      Value: true
+    - Class: rviz_default_plugins/Map
+      Enabled: true
+      Name: Local Costmap
+      Topic:
+        Durability Policy: Transient Local
+        Reliability Policy: Reliable
+        Value: /local_costmap/costmap
+      Value: true
+    - Class: rviz_default_plugins/Path
+      Enabled: true
+      Name: Global Path
+      Topic:
+        Value: /plan
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: map
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/SetInitialPose
+      Topic:
+        Value: /initialpose
+    - Class: nav2_rviz_plugins/GoalTool
+      Topic:
+        Value: /goal_pose
+  Value: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 12
+      Focal Point:
+        X: 5
+        Y: 4
+        Z: 0
+      Name: Current View
+      Pitch: 1.1
+      Target Frame: map
+      Yaw: 0.8
+Window Geometry:
+  Height: 900
+  Width: 1400

@@ -1,0 +1,74 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
+
+    arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    gripper_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+diff_drive_controller:
+  ros__parameters:
+    left_wheel_names: ["left_wheel_joint"]
+    right_wheel_names: ["right_wheel_joint"]
+    wheel_separation: 0.5
+    wheel_radius: 0.1
+    odom_frame_id: odom
+    base_frame_id: base_footprint
+    enable_odom_tf: true
+    # Use the wheel state interfaces exported by gz_ros2_control so odometry
+    # follows the simulated robot instead of only the commanded velocity.
+    open_loop: false
+    publish_rate: 50.0
+    cmd_vel_timeout: 0.5
+    publish_limited_velocity: true
+    linear:
+      x:
+        has_velocity_limits: true
+        has_acceleration_limits: true
+        has_jerk_limits: false
+        max_velocity: 0.5
+        min_velocity: -0.35
+        max_acceleration: 1.0
+        max_deceleration: -1.0
+    angular:
+      z:
+        has_velocity_limits: true
+        has_acceleration_limits: true
+        has_jerk_limits: false
+        max_velocity: 1.5
+        min_velocity: -1.5
+        max_acceleration: 2.0
+        max_deceleration: -2.0
+
+arm_controller:
+  ros__parameters:
+    joints:
+      - joint1_yaw
+      - joint2_pitch
+      - joint3_pitch
+      - joint4_pitch
+      - joint5_roll
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+
+gripper_controller:
+  ros__parameters:
+    joints:
+      - left_finger_joint
+      - right_finger_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity

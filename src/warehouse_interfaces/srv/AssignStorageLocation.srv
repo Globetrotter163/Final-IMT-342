@@ -1,0 +1,6 @@
+string product_id
+uint32 quantity
+---
+bool success
+warehouse_interfaces/StorageLocation location
+string message

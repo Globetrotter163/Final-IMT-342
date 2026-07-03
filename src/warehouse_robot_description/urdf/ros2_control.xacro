@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <ros2_control name="GazeboSimSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+
+    <!-- Base / Wheels -->
+    <joint name="left_wheel_joint">
+      <command_interface name="velocity">
+        <param name="min">-10</param>
+        <param name="max">10</param>
+      </command_interface>
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+
+    <joint name="right_wheel_joint">
+      <command_interface name="velocity">
+        <param name="min">-10</param>
+        <param name="max">10</param>
+      </command_interface>
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+
+    <!-- Arm -->
+    <joint name="joint1_yaw">
+      <command_interface name="position">
+        <param name="min">-3.1415</param>
+        <param name="max">3.1415</param>
+      </command_interface>
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint2_pitch">
+      <command_interface name="position">
+        <param name="min">-1.57</param>
+        <param name="max">1.57</param>
+      </command_interface>
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint3_pitch">
+      <command_interface name="position">
+        <param name="min">-1.57</param>
+        <param name="max">1.57</param>
+      </command_interface>
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint4_pitch">
+      <command_interface name="position">
+        <param name="min">-1.57</param>
+        <param name="max">1.57</param>
+      </command_interface>
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="joint5_roll">
+      <command_interface name="position">
+        <param name="min">-3.1415</param>
+        <param name="max">3.1415</param>
+      </command_interface>
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+
+    <!-- Gripper -->
+    <joint name="left_finger_joint">
+      <command_interface name="position">
+        <param name="min">0.0</param>
+        <param name="max">0.04</param>
+      </command_interface>
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+    <joint name="right_finger_joint">
+      <command_interface name="position">
+        <param name="min">0.0</param>
+        <param name="max">0.04</param>
+      </command_interface>
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+    </joint>
+  </ros2_control>
+
+</robot>

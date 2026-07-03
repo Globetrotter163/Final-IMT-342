@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot name="warehouse_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find warehouse_robot_description)/urdf/base.xacro" />
+  <xacro:include filename="$(find warehouse_robot_description)/urdf/wheels.xacro" />
+  <xacro:include filename="$(find warehouse_robot_description)/urdf/sensors.xacro" />
+  <xacro:include filename="$(find warehouse_robot_description)/urdf/arm_mount.xacro" />
+  <xacro:include filename="$(find warehouse_robot_description)/urdf/arm.xacro" />
+  <xacro:include filename="$(find warehouse_robot_description)/urdf/gripper.xacro" />
+  <xacro:include filename="$(find warehouse_robot_description)/urdf/ros2_control.xacro" />
+
+  <!-- Plugins for Gazebo Sim -->
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <ros>
+        <namespace>/</namespace>
+      </ros>
+      <parameters>$(find warehouse_bringup)/config/controllers.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+</robot>

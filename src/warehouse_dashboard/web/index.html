@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Warehouse Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+    
+    :root {
+      --bg: hsl(220, 20%, 10%);
+      --surface: hsla(220, 20%, 18%, 0.6);
+      --surface-border: hsla(220, 20%, 30%, 0.3);
+      --text: hsl(220, 20%, 95%);
+      --text-muted: hsl(220, 10%, 70%);
+      --primary: hsl(210, 100%, 60%);
+      --primary-hover: hsl(210, 100%, 70%);
+      --success: hsl(150, 70%, 50%);
+      --warn: hsl(40, 90%, 60%);
+      --danger: hsl(0, 80%, 60%);
+      --radius: 12px;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, hsla(210, 100%, 30%, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, hsla(280, 100%, 30%, 0.15) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: var(--surface);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--surface-border);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, #fff, var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .status-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      background: hsla(0,0%,0%,0.2);
+    }
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .status-dot.connected { background: var(--success); box-shadow: 0 0 10px var(--success); }
+    .status-dot.disconnected { background: var(--danger); }
+    .status-dot.connecting { background: var(--warn); }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      border-bottom: 1px solid hsla(0,0%,100%,0.1);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .metric {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 0.5rem 0;
+    }
+    .muted {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      width: 100%;
+      margin-bottom: 0.75rem;
+    }
+    button:hover:not(:disabled) {
+      background: var(--primary-hover);
+      box-shadow: 0 0 15px hsla(210, 100%, 60%, 0.4);
+    }
+    button:disabled {
+      background: hsla(210, 100%, 60%, 0.3);
+      cursor: not-allowed;
+      color: hsla(0,0%,100%,0.5);
+    }
+    button.danger {
+      background: var(--danger);
+    }
+    button.danger:hover:not(:disabled) {
+      background: hsl(0, 80%, 70%);
+      box-shadow: 0 0 15px hsla(0, 80%, 60%, 0.4);
+    }
+    button.success {
+      background: var(--success);
+    }
+    button.success:hover:not(:disabled) {
+      background: hsl(150, 70%, 60%);
+      box-shadow: 0 0 15px hsla(150, 70%, 50%, 0.4);
+    }
+
+    input {
+      width: calc(100% - 2rem);
+      padding: 0.75rem 1rem;
+      background: hsla(0,0%,0%,0.2);
+      border: 1px solid var(--surface-border);
+      border-radius: 8px;
+      color: white;
+      font-family: inherit;
+      margin-bottom: 1rem;
+    }
+    input:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .log-area {
+      height: 200px;
+      overflow-y: auto;
+      background: hsla(0,0%,0%,0.3);
+      border-radius: 8px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+    .log-entry { margin-bottom: 0.25rem; }
+    .log-entry.success { color: var(--success); }
+    .log-entry.error { color: var(--danger); }
+    .log-entry.info { color: var(--primary); }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Warehouse AI Dashboard</h1>
+  <div class="status-bar" id="status-bar">
+    <div class="status-dot" id="status-dot"></div>
+    <span id="status-text">Conectando...</span>
+  </div>
+</header>
+
+<div class="container">
+  
+  <div class="card">
+    <h2>Control del Robot</h2>
+    <div class="grid-2">
+      <button id="btn-calibrate">Calibrar (360° + Mapa)</button>
+      <button id="btn-return">Regresar a Estación</button>
+    </div>
+    <button id="btn-execute" class="success" style="margin-top: 0.5rem;">Ejecutar Almacenamiento</button>
+  </div>
+
+  <div class="card">
+    <h2>Spawneo de Caja (Banda)</h2>
+    <label for="aruco-id">ArUco ID (1–10)</label>
+    <input type="number" id="aruco-id" min="1" max="10" value="1">
+    <button id="btn-spawn">Spawn Caja</button>
+  </div>
+
+  <div class="card">
+    <h2>Telemetría</h2>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+      <div>
+        <div class="muted">Posición X</div>
+        <div class="metric" id="pose-x">0.00</div>
+      </div>
+      <div>
+        <div class="muted">Posición Y</div>
+        <div class="metric" id="pose-y">0.00</div>
+      </div>
+      <div>
+        <div class="muted">Yaw</div>
+        <div class="metric" id="pose-yaw">0.00</div>
+      </div>
+    </div>
+    <div class="muted" style="border-top: 1px solid var(--surface-border); padding-top: 0.5rem;">
+      Landmarks vistos: <span id="observed-landmarks" style="color: white; font-weight: bold;">0</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="container" style="margin-top: 0;">
+  <div class="card" style="grid-column: 1 / -1;">
+    <h2>Registro de Eventos</h2>
+    <div class="log-area" id="log-area"></div>
+  </div>
+</div>
+
+<script>
+const ROSBRIDGE_URL = 'ws://localhost:9090';
+const ros = new ROSLIB.Ros({ url: ROSBRIDGE_URL });
+
+const statusDot = document.getElementById('status-dot');
+const statusText = document.getElementById('status-text');
+const logArea = document.getElementById('log-area');
+
+// Buttons
+const btnCalibrate = document.getElementById('btn-calibrate');
+const btnReturn = document.getElementById('btn-return');
+const btnExecute = document.getElementById('btn-execute');
+const btnSpawn = document.getElementById('btn-spawn');
+
+function log(text, type) {
+  const entry = document.createElement('div');
+  entry.className = 'log-entry ' + (type || '');
+  entry.textContent = '[' + new Date().toLocaleTimeString() + '] ' + text;
+  logArea.appendChild(entry);
+  logArea.scrollTop = logArea.scrollHeight;
+}
+
+function setConnected() {
+  statusDot.className = 'status-dot connected';
+  statusText.textContent = 'Conectado a rosbridge';
+  log('Conectado a rosbridge', 'success');
+}
+
+function setDisconnected() {
+  statusDot.className = 'status-dot disconnected';
+  statusText.textContent = 'Desconectado';
+  log('Desconectado de rosbridge', 'error');
+}
+
+ros.on('connection', setConnected);
+ros.on('close', setDisconnected);
+ros.on('error', function(e) { log('Error de conexión: ' + e, 'error'); setDisconnected(); });
+
+// Telemetry
+const poseListener = new ROSLIB.Topic({
+  ros: ros,
+  name: '/diff_drive_controller/odom',
+  messageType: 'nav_msgs/msg/Odometry',
+});
+
+poseListener.subscribe(function(msg) {
+  document.getElementById('pose-x').textContent = msg.pose.pose.position.x.toFixed(2);
+  document.getElementById('pose-y').textContent = msg.pose.pose.position.y.toFixed(2);
+  // Basic Yaw approx for display (assuming planar movement)
+  const q = msg.pose.pose.orientation;
+  const yaw = Math.atan2(2.0 * (q.w * q.z + q.x * q.y), 1.0 - 2.0 * (q.y * q.y + q.z * q.z));
+  document.getElementById('pose-yaw').textContent = yaw.toFixed(2);
+});
+
+// Services
+const dashboardCmdClient = new ROSLIB.Service({
+  ros: ros,
+  name: '/dashboard_command',
+  serviceType: 'warehouse_interfaces/srv/DashboardCommand'
+});
+
+const spawnClient = new ROSLIB.Service({
+  ros: ros,
+  name: '/ui_spawn_product_box',
+  serviceType: 'warehouse_interfaces/srv/SpawnProduct',
+});
+
+function callDashboardCommand(cmdName, btnElement) {
+  btnElement.disabled = true;
+  log('Enviando comando: ' + cmdName, 'info');
+  const req = new ROSLIB.ServiceRequest({ command: cmdName });
+  dashboardCmdClient.callService(req, function(res) {
+    log('Respuesta: ' + res.message, res.success ? 'success' : 'error');
+    btnElement.disabled = false;
+  }, function(err) {
+    log('Error: ' + err, 'error');
+    btnElement.disabled = false;
+  });
+}
+
+btnCalibrate.addEventListener('click', () => callDashboardCommand('CALIBRATE', btnCalibrate));
+btnReturn.addEventListener('click', () => callDashboardCommand('RETURN_TO_STATION', btnReturn));
+btnExecute.addEventListener('click', () => callDashboardCommand('EXECUTE_STORAGE', btnExecute));
+
+btnSpawn.addEventListener('click', function() {
+  const arucoId = parseInt(document.getElementById('aruco-id').value, 10);
+  if (isNaN(arucoId) || arucoId < 1 || arucoId > 10) {
+    log('ArUco ID inválido (1-10)', 'error');
+    return;
+  }
+  btnSpawn.disabled = true;
+  log('Spawneando caja ArUco ' + arucoId, 'info');
+  const req = new ROSLIB.ServiceRequest({ aruco_id: arucoId });
+  spawnClient.callService(req, function(res) {
+    log('Spawn: ' + res.message, res.success ? 'success' : 'error');
+    btnSpawn.disabled = false;
+    // We optionally insert into the SQLite via a separate service, but /spawn_product_box does it!
+  }, function(err) {
+    log('Error: ' + err, 'error');
+    btnSpawn.disabled = false;
+  });
+});
+</script>
+</body>
+</html>

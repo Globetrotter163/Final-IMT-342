@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "multiagent-workflow": {
+      "source": ".agents/skills/multiagent-workflow",
+      "sourceType": "local",
+      "skillPath": "SKILL.md",
+      "computedHash": "e28e296517355a3e79a635c5b2f03d980dc34d74b27c4d9468d3d972f4947538"
+    },
+    "ros2-engineering-skills": {
+      "source": "dbwls99706/ros2-engineering-skills",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "51939612f35b68aba08b1f80c8c01ca2bc1544da6f62303ef8b381df58af8c12"
+    },
+    "ros2-robotics": {
+      "source": "omer-metin/skills-for-antigravity",
+      "sourceType": "github",
+      "skillPath": "skills/ros2-robotics/SKILL.md",
+      "computedHash": "1538202a07efdc14482af45531f891cec5b29784d902f1b31075196e3953c694"
+    }
+  }
+}

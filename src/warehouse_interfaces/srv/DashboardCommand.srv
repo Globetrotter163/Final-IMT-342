@@ -1,0 +1,4 @@
+string command  # "CALIBRATE", "RETURN_TO_STATION", "EXECUTE_STORAGE"
+---
+bool success
+string message

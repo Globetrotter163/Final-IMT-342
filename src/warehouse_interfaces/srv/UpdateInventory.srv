@@ -1,0 +1,5 @@
+string product_id
+int32 delta
+---
+bool success
+string message
